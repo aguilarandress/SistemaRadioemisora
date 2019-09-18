@@ -1,13 +1,16 @@
 package main;
 
+import interfaz.FormularioRadioEmisora;
+
 /**
- * Progra #1 - Radioemisora
- * POO
+ *
+ * @author Andres
  */
 public class Main {
 
     public static void main(String[] args) {
-        System.out.println("Hello World...");
+        // Crear formulario para radioemisora
+        FormularioRadioEmisora formularioRadioemisora = new FormularioRadioEmisora();
+        formularioRadioemisora.setVisible(true);
     }
-    
 }

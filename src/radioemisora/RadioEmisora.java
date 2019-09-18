@@ -55,6 +55,4 @@ public class RadioEmisora {
     public void setUrlSitioWeb(String urlSitioWeb) {
         this.urlSitioWeb = urlSitioWeb;
     }
-    
-    
 }
