@@ -1,10 +1,7 @@
 package interfaz;
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+import javax.swing.JOptionPane;
+import radioemisora.RadioEmisora;
 
 /**
  *
@@ -65,6 +62,11 @@ public class FormularioRadioEmisora extends javax.swing.JFrame {
         inputSitioWeb.setText("Sitio Web");
 
         agregarBtn.setText("Agregar");
+        agregarBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                agregarBtnActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -121,6 +123,21 @@ public class FormularioRadioEmisora extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void agregarBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_agregarBtnActionPerformed
+        // Obtener datos
+        String nombre = this.inputNombre.getText();
+        String direccion = this.inputDireccion.getText();
+        String frecuencia = this.inputFrecuencia.getText();
+        String sitioWeb = this.inputSitioWeb.getText();
+        // Validar datos
+        if(nombre.isEmpty() || direccion.isEmpty() || 
+           frecuencia.isEmpty() || sitioWeb.isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Datos invalidos...", "ERROR", JOptionPane.ERROR_MESSAGE);
+        }
+        RadioEmisora radioEmisora = new RadioEmisora(nombre, direccion, frecuencia, sitioWeb);
+        System.out.println(radioEmisora.toString());
+    }//GEN-LAST:event_agregarBtnActionPerformed
 
     /**
      * @param args the command line arguments
