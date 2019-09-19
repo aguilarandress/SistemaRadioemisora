@@ -58,6 +58,26 @@ public class MenuPrincipal extends javax.swing.JFrame {
         direccionFisicaInput = new javax.swing.JTextField();
         btnActualizarEmisora = new javax.swing.JButton();
         locutoresTab = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        listaLocutoresBox = new javax.swing.JList<>();
+        nuevoLocutorLabel = new javax.swing.JLabel();
+        listaLocutoresLabel = new javax.swing.JLabel();
+        IdLocutorLabel = new javax.swing.JLabel();
+        nombreLocutorLabel = new javax.swing.JLabel();
+        correoLocutorLabel = new javax.swing.JLabel();
+        telefonoLocutorLabel = new javax.swing.JLabel();
+        direccionLocutorLabel = new javax.swing.JLabel();
+        sexoLocutorLabel = new javax.swing.JLabel();
+        fechaLocutorLabel = new javax.swing.JLabel();
+        jSeparator2 = new javax.swing.JSeparator();
+        locutorNombreInput = new javax.swing.JTextField();
+        locutorIdInput = new javax.swing.JTextField();
+        locutorCorreoInput = new javax.swing.JTextField();
+        locutorTelefonoInput = new javax.swing.JTextField();
+        locutorDireccionInput = new javax.swing.JTextField();
+        locutorSexoInput = new javax.swing.JTextField();
+        locutorFechaInput = new javax.swing.JTextField();
+        botonAgregarLocutor = new javax.swing.JButton();
 
         menu1.setLabel("File");
         menuBar1.add(menu1);
@@ -202,15 +222,130 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
         Tabs.addTab("RadioEmisora", radioEmisoraTab);
 
+        listaLocutoresBox.setModel(new javax.swing.AbstractListModel<String>() {
+            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
+            public int getSize() { return strings.length; }
+            public String getElementAt(int i) { return strings[i]; }
+        });
+        jScrollPane1.setViewportView(listaLocutoresBox);
+
+        nuevoLocutorLabel.setText("Agregar Nuevo Locutor");
+
+        listaLocutoresLabel.setText("Lista de locutores:");
+
+        IdLocutorLabel.setText("Id:");
+
+        nombreLocutorLabel.setText("Nombre:");
+
+        correoLocutorLabel.setText("Correo:");
+
+        telefonoLocutorLabel.setText("Telefono:");
+
+        direccionLocutorLabel.setText("Dirección:");
+
+        sexoLocutorLabel.setText("Sexo:");
+
+        fechaLocutorLabel.setText("Fecha:");
+
+        locutorNombreInput.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                locutorNombreInputActionPerformed(evt);
+            }
+        });
+
+        locutorCorreoInput.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                locutorCorreoInputActionPerformed(evt);
+            }
+        });
+
+        locutorTelefonoInput.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                locutorTelefonoInputActionPerformed(evt);
+            }
+        });
+
+        botonAgregarLocutor.setText("Agregar Nuevo Locutor");
+
         javax.swing.GroupLayout locutoresTabLayout = new javax.swing.GroupLayout(locutoresTab);
         locutoresTab.setLayout(locutoresTabLayout);
         locutoresTabLayout.setHorizontalGroup(
             locutoresTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 687, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, locutoresTabLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(locutoresTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jSeparator2)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, locutoresTabLayout.createSequentialGroup()
+                        .addGroup(locutoresTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(nombreLocutorLabel)
+                            .addComponent(IdLocutorLabel)
+                            .addComponent(correoLocutorLabel)
+                            .addComponent(telefonoLocutorLabel)
+                            .addComponent(direccionLocutorLabel)
+                            .addComponent(sexoLocutorLabel)
+                            .addComponent(fechaLocutorLabel))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(locutoresTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(locutorNombreInput)
+                            .addComponent(locutorIdInput)
+                            .addComponent(locutorCorreoInput)
+                            .addComponent(locutorTelefonoInput)
+                            .addComponent(locutorDireccionInput)
+                            .addComponent(locutorSexoInput)
+                            .addComponent(locutorFechaInput, javax.swing.GroupLayout.DEFAULT_SIZE, 362, Short.MAX_VALUE)))
+                    .addGroup(locutoresTabLayout.createSequentialGroup()
+                        .addComponent(nuevoLocutorLabel)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addComponent(botonAgregarLocutor, javax.swing.GroupLayout.DEFAULT_SIZE, 433, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(locutoresTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(listaLocutoresLabel)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap())
         );
         locutoresTabLayout.setVerticalGroup(
             locutoresTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 435, Short.MAX_VALUE)
+            .addGroup(locutoresTabLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(locutoresTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(nuevoLocutorLabel)
+                    .addComponent(listaLocutoresLabel))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(locutoresTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(locutoresTabLayout.createSequentialGroup()
+                        .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(2, 2, 2)
+                        .addGroup(locutoresTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(nombreLocutorLabel)
+                            .addComponent(locutorNombreInput, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(locutoresTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(IdLocutorLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(locutorIdInput, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(locutoresTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(correoLocutorLabel)
+                            .addComponent(locutorCorreoInput, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(locutoresTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(telefonoLocutorLabel)
+                            .addComponent(locutorTelefonoInput, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(6, 6, 6)
+                        .addGroup(locutoresTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(direccionLocutorLabel)
+                            .addComponent(locutorDireccionInput, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(locutoresTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(sexoLocutorLabel)
+                            .addComponent(locutorSexoInput, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(locutoresTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(fechaLocutorLabel)
+                            .addComponent(locutorFechaInput, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addComponent(botonAgregarLocutor))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 257, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(147, Short.MAX_VALUE))
         );
 
         Tabs.addTab("Locutores", locutoresTab);
@@ -262,19 +397,47 @@ public class MenuPrincipal extends javax.swing.JFrame {
           }
     }//GEN-LAST:event_btnActualizarEmisoraActionPerformed
 
+    private void locutorNombreInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_locutorNombreInputActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_locutorNombreInputActionPerformed
+
+    private void locutorCorreoInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_locutorCorreoInputActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_locutorCorreoInputActionPerformed
+
+    private void locutorTelefonoInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_locutorTelefonoInputActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_locutorTelefonoInputActionPerformed
+
     /**
      * @param args the command line arguments
      */
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel IdLocutorLabel;
     private javax.swing.JTabbedPane Tabs;
+    private javax.swing.JButton botonAgregarLocutor;
     private javax.swing.JButton btnActualizarEmisora;
+    private javax.swing.JLabel correoLocutorLabel;
     public javax.swing.JLabel direccionFisicaEmisoraShow;
     public javax.swing.JTextField direccionFisicaInput;
     private javax.swing.JLabel direccionFisicaLabel;
+    private javax.swing.JLabel direccionLocutorLabel;
+    private javax.swing.JLabel fechaLocutorLabel;
     public javax.swing.JTextField frecuenciaEmisoraInput;
     public javax.swing.JLabel frecuenciaEmisoraShow;
     private javax.swing.JLabel frecuenciaLabel;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JSeparator jSeparator2;
+    private javax.swing.JList<String> listaLocutoresBox;
+    private javax.swing.JLabel listaLocutoresLabel;
+    private javax.swing.JTextField locutorCorreoInput;
+    private javax.swing.JTextField locutorDireccionInput;
+    private javax.swing.JTextField locutorFechaInput;
+    private javax.swing.JTextField locutorIdInput;
+    private javax.swing.JTextField locutorNombreInput;
+    private javax.swing.JTextField locutorSexoInput;
+    private javax.swing.JTextField locutorTelefonoInput;
     private javax.swing.JPanel locutoresTab;
     private java.awt.Menu menu1;
     private java.awt.Menu menu2;
@@ -285,11 +448,15 @@ public class MenuPrincipal extends javax.swing.JFrame {
     public javax.swing.JTextField nombreEmisoraInput;
     public javax.swing.JLabel nombreEmisoraShow;
     private javax.swing.JLabel nombreLabel;
+    private javax.swing.JLabel nombreLocutorLabel;
     private javax.swing.JLabel nuevaDireccionFisicaLabel;
     private javax.swing.JLabel nuevaFrecuenciaLabel;
+    private javax.swing.JLabel nuevoLocutorLabel;
     private javax.swing.JLabel nuevoNombreLabel;
     private javax.swing.JLabel nuevoUrlLabel;
     private javax.swing.JPanel radioEmisoraTab;
+    private javax.swing.JLabel sexoLocutorLabel;
+    private javax.swing.JLabel telefonoLocutorLabel;
     public javax.swing.JTextField urlEmisoraInput;
     public javax.swing.JLabel urlEmisoraShow;
     private javax.swing.JLabel urlLabel;
