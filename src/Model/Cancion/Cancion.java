@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package cancion;
+package Model.Cancion;
 
 /**
  *
@@ -60,5 +60,5 @@ public class Cancion {
     public void setCantante(String cantante) {
         this.cantante = cantante;
     }
-    
+
 }

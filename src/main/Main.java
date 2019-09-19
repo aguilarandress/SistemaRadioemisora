@@ -1,6 +1,9 @@
 package main;
 
-import interfaz.FormularioRadioEmisora;
+import Controller.Radioemisora.ControllerRadioemisora;
+import Model.Radioemisora.RadioEmisora;
+import View.FormularioRadioEmisora;
+import View.MenuPrincipal;
 
 /**
  *
@@ -10,7 +13,8 @@ public class Main {
 
     public static void main(String[] args) {
         // Crear formulario para radioemisora
-        FormularioRadioEmisora formularioRadioemisora = new FormularioRadioEmisora();
-        formularioRadioemisora.setVisible(true);
+        RadioEmisora emisora = new RadioEmisora("INDEFINIDO", "INDEFINIDO", "INDEFINIDO", "INDEFINIDO");
+        MenuPrincipal guiEmisora = new MenuPrincipal(emisora);
+       guiEmisora.setVisible(true);
     }
 }
