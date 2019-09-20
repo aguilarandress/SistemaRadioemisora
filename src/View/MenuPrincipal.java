@@ -266,6 +266,11 @@ public class MenuPrincipal extends javax.swing.JFrame {
         });
 
         botonAgregarLocutor.setText("Agregar Nuevo Locutor");
+        botonAgregarLocutor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonAgregarLocutorActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout locutoresTabLayout = new javax.swing.GroupLayout(locutoresTab);
         locutoresTab.setLayout(locutoresTabLayout);
@@ -343,7 +348,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
                             .addComponent(fechaLocutorLabel)
                             .addComponent(locutorFechaInput, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
-                        .addComponent(botonAgregarLocutor))
+                        .addComponent(botonAgregarLocutor, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 257, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(147, Short.MAX_VALUE))
         );
@@ -408,6 +413,10 @@ public class MenuPrincipal extends javax.swing.JFrame {
     private void locutorTelefonoInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_locutorTelefonoInputActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_locutorTelefonoInputActionPerformed
+
+    private void botonAgregarLocutorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonAgregarLocutorActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_botonAgregarLocutorActionPerformed
 
     /**
      * @param args the command line arguments
