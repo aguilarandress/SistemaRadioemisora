@@ -3,10 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Model.Radioemisora;
+package Modelos.Radioemisora;
+
+import Modelos.Locutor.Locutor;
+import java.util.ArrayList;
 
 /**
- *
+ * 
  * @author fabia
  */
 public class RadioEmisora {
@@ -15,6 +18,8 @@ public class RadioEmisora {
     private String direccionFisica;
     private String frecuencia;
     private String urlSitioWeb;
+    
+    private ArrayList<Locutor> locutores;
     
     public RadioEmisora(String nombre, String direccionFisica,
             String frecuencia, String urlSitioWeb){
@@ -54,5 +59,28 @@ public class RadioEmisora {
 
     public void setUrlSitioWeb(String urlSitioWeb) {
         this.urlSitioWeb = urlSitioWeb;
+    }
+    
+    /**
+     * Agrega un nuevo locutor a la radio emisora
+     * @param locutorNuevo 
+     */
+    public void agregarLocutor(Locutor locutorNuevo) {
+        if(locutorNuevo != null) {
+            locutores.add(locutorNuevo);
+        }
+    }
+    /**
+     * Verfica si ya existe un locutor con dicha cedula
+     * @param cedula
+     * @return true si ya existe un locutor con ese ID, false de lo contrario
+     */
+    public boolean verificarCedulaRepetida(String cedula) {
+        for(int i = 0; i < this.locutores.size(); i++) {
+            if(locutores.get(i).getId() == cedula) {
+                return true;
+            }
+        }
+        return false;
     }
 }
