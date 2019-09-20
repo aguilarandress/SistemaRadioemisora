@@ -13,6 +13,6 @@ public class Main {
         // Crear formulario para radioemisora
         RadioEmisora emisora = new RadioEmisora("INDEFINIDO", "INDEFINIDO", "INDEFINIDO", "INDEFINIDO");
         MenuPrincipal guiEmisora = new MenuPrincipal(emisora);
-       guiEmisora.setVisible(true);
+        guiEmisora.setVisible(true);
     }
 }
