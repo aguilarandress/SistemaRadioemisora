@@ -1,7 +1,6 @@
 package main;
 
-import Model.Radioemisora.RadioEmisora;
-import View.FormularioRadioEmisora;
+import Modelos.Radioemisora.RadioEmisora;
 import View.MenuPrincipal;
 
 /**

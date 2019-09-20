@@ -1,7 +1,7 @@
 package View;
 
 import javax.swing.JOptionPane;
-import Model.Radioemisora.RadioEmisora;
+import Modelos.Radioemisora.RadioEmisora;
 
 /**
  *
