@@ -3,7 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Modelos.Locutor;
+package Model.Locutor;
+
+import com.sun.xml.internal.ws.util.StringUtils;
 
 /**
  *
@@ -17,6 +19,10 @@ public class Locutor {
     private String direccion;
     private String sexo;
     private String fecha;
+    
+    public Locutor() {
+        
+    }
     
     public Locutor(String id, String nombre, String correo, String telefono,
             String direccion, String sexo, String fecha){
@@ -83,6 +89,22 @@ public class Locutor {
 
     public void setFecha(String fecha) {
         this.fecha = fecha;
+    }
+    
+    /**
+     * Verifica si el telefono tiene un formato valido
+     * @return true si el telefono es valido 
+     */
+    public boolean telefonoValido() {
+        if(this.telefono.length() != 8) {
+            return false;
+        }
+        try {
+            Integer.parseInt(this.telefono);
+        } catch(NumberFormatException e) {
+            return false;
+        }
+        return true;
     }
     
 }

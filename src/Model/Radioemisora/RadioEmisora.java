@@ -3,9 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Modelos.Radioemisora;
+package Model.Radioemisora;
 
-import Modelos.Locutor.Locutor;
+import Model.Locutor.Locutor;
 import java.util.ArrayList;
 
 /**
@@ -27,6 +27,7 @@ public class RadioEmisora {
         this.direccionFisica = direccionFisica;
         this.frecuencia = frecuencia;
         this.urlSitioWeb = urlSitioWeb;
+        this.locutores = new ArrayList<Locutor>();
     }
 
     public String getNombre() {
@@ -76,8 +77,11 @@ public class RadioEmisora {
      * @return true si ya existe un locutor con ese ID, false de lo contrario
      */
     public boolean verificarCedulaRepetida(String cedula) {
-        for(int i = 0; i < this.locutores.size(); i++) {
-            if(locutores.get(i).getId() == cedula) {
+        if(this.locutores.isEmpty()) {
+            return false;
+        }
+        for (int i = 0; i < this.locutores.size(); i++) {
+            if (this.locutores.get(i).getId().equals(cedula)) {
                 return true;
             }
         }

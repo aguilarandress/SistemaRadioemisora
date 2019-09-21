@@ -5,7 +5,8 @@
  */
 package View;
 
-import Modelos.Radioemisora.RadioEmisora;
+import Model.Radioemisora.RadioEmisora;
+import Model.Locutor.Locutor;
 import javax.swing.JOptionPane;
 
 /**
@@ -13,14 +14,16 @@ import javax.swing.JOptionPane;
  * @author kenne
  */
 public class MenuPrincipal extends javax.swing.JFrame {
+
     private RadioEmisora emisora;
+
     /**
      * Creates new form MenuPrincipal
      */
     public MenuPrincipal(RadioEmisora pEmisora) {
         initComponents();
         emisora = pEmisora;
-        
+
         // Desabiliatr tabs
         this.toggleWindowTabs(false);
     }
@@ -732,17 +735,18 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-    
+
     /**
      * Activa los tabs de las ventas o las desactiva
-     * @param activar 
+     *
+     * @param activar
      */
     private void toggleWindowTabs(boolean activar) {
-        for(int i = 1; i < this.windowTabs.getTabCount(); i++) {
+        for (int i = 1; i < this.windowTabs.getTabCount(); i++) {
             this.windowTabs.setEnabledAt(i, activar);
         }
     }
-    
+
     private void nombreEmisoraInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nombreEmisoraInputActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_nombreEmisoraInputActionPerformed
@@ -755,31 +759,34 @@ public class MenuPrincipal extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_direccionFisicaInputActionPerformed
     /**
-     * Evento para actualizar la informacion de la radio emisora
-     * Las ventanillas se abilitaran hasta que la informacion se ingrese
-     * @param evt 
+     * Evento para actualizar la informacion de la radio emisora Las ventanillas
+     * se abilitaran hasta que la informacion se ingrese
+     *
+     * @param evt
      */
     private void btnActualizarEmisoraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnActualizarEmisoraActionPerformed
         String nombre = this.nombreEmisoraInput.getText();
         String url = this.urlEmisoraInput.getText();
         String frecuencia = this.frecuenciaEmisoraInput.getText();
         String direccion = this.direccionFisicaInput.getText();
-          if(nombre.isEmpty() || url.isEmpty()
-             || frecuencia.isEmpty() || direccion.isEmpty()) {
+        if (nombre.isEmpty() || url.isEmpty()
+                || frecuencia.isEmpty() || direccion.isEmpty()) {
             JOptionPane.showMessageDialog(this, "Datos invalidos...", "ERROR", JOptionPane.ERROR_MESSAGE);
-          } else {
-              emisora.setNombre(nombre);
-              emisora.setFrecuencia(frecuencia);
-              emisora.setUrlSitioWeb(url);
-              emisora.setDireccionFisica(direccion);
-              
-              this.direccionFisicaEmisoraShow.setText(emisora.getDireccionFisica());
-              this.frecuenciaEmisoraShow.setText(emisora.getFrecuencia());
-              this.nombreEmisoraShow.setText(emisora.getNombre());
-              this.urlEmisoraShow.setText(emisora.getUrlSitioWeb());
-              
-              this.toggleWindowTabs(true);
-          }
+        } else {
+            emisora.setNombre(nombre);
+            emisora.setFrecuencia(frecuencia);
+            emisora.setUrlSitioWeb(url);
+            emisora.setDireccionFisica(direccion);
+
+            this.direccionFisicaEmisoraShow.setText(emisora.getDireccionFisica());
+            this.frecuenciaEmisoraShow.setText(emisora.getFrecuencia());
+            this.nombreEmisoraShow.setText(emisora.getNombre());
+            this.urlEmisoraShow.setText(emisora.getUrlSitioWeb());
+
+            this.toggleWindowTabs(true);
+
+            JOptionPane.showMessageDialog(this, "Emisora actualizada...", "Exito", JOptionPane.INFORMATION_MESSAGE);
+        }
     }//GEN-LAST:event_btnActualizarEmisoraActionPerformed
 
     private void locutorNombreInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_locutorNombreInputActionPerformed
@@ -794,8 +801,38 @@ public class MenuPrincipal extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_locutorTelefonoInputActionPerformed
 
+    /**
+     * Realiza la accion para agregar los datos de un locutor nuevo
+     *
+     * @param evt
+     */
     private void botonAgregarLocutorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonAgregarLocutorActionPerformed
-        // TODO add your handling code here:
+        String id = this.locutorIdInput.getText();
+        String nombre = this.locutorNombreInput.getText();
+        String correo = this.locutorCorreoInput.getText();
+        String telefono = this.locutorTelefonoInput.getText();
+        String direccion = this.locutorDireccionInput.getText();
+        String sexo = this.locutorSexoInput.getText();
+        String fecha = this.locutorFechaInput.getText();
+
+        if (id.isEmpty() || nombre.isEmpty() || correo.isEmpty()
+                || telefono.isEmpty() || direccion.isEmpty() || sexo.isEmpty()
+                || fecha.isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Datos invalidos...", "ERROR", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        
+        Locutor locutorNuevo = new Locutor(id, nombre, correo, telefono, direccion, sexo, fecha);
+        if (!locutorNuevo.telefonoValido()) {
+            JOptionPane.showMessageDialog(this, "Telefono invalido...", "ERROR", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        if (this.emisora.verificarCedulaRepetida(locutorNuevo.getId())) {
+            JOptionPane.showMessageDialog(this, "ID repetido...", "ERROR", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        this.emisora.agregarLocutor(locutorNuevo);
+        JOptionPane.showMessageDialog(this, "Locutor agregado...", "Exito", JOptionPane.INFORMATION_MESSAGE);
     }//GEN-LAST:event_botonAgregarLocutorActionPerformed
 
     private void programaHorarioInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_programaHorarioInputActionPerformed
