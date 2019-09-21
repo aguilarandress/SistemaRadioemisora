@@ -93,6 +93,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
         jSeparator8 = new javax.swing.JSeparator();
         locutoresActualizarCombo = new javax.swing.JComboBox<>();
         botonVerInfoLocutor = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
         programasTab = new javax.swing.JPanel();
         nuevoProgramaLabel = new javax.swing.JLabel();
         jSeparator3 = new javax.swing.JSeparator();
@@ -329,6 +330,11 @@ public class MenuPrincipal extends javax.swing.JFrame {
         actualizarLocutorLabel.setText("Actualizar Locutor:");
 
         locutoresActualizarCombo.setModel(this.locutoresComboBoxModel);
+        locutoresActualizarCombo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                locutoresActualizarComboActionPerformed(evt);
+            }
+        });
 
         botonVerInfoLocutor.setText("Ver Información");
         botonVerInfoLocutor.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -342,6 +348,8 @@ public class MenuPrincipal extends javax.swing.JFrame {
             }
         });
 
+        jLabel3.setText("ID:");
+
         javax.swing.GroupLayout locutoresTabLayout = new javax.swing.GroupLayout(locutoresTab);
         locutoresTab.setLayout(locutoresTabLayout);
         locutoresTabLayout.setHorizontalGroup(
@@ -349,9 +357,6 @@ public class MenuPrincipal extends javax.swing.JFrame {
             .addGroup(locutoresTabLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(locutoresTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(locutoresTabLayout.createSequentialGroup()
-                        .addComponent(actualizarLocutorLabel)
-                        .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, locutoresTabLayout.createSequentialGroup()
                         .addGroup(locutoresTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jSeparator8, javax.swing.GroupLayout.Alignment.LEADING)
@@ -385,7 +390,12 @@ public class MenuPrincipal extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(locutoresTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(listaLocutoresLabel)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(locutoresTabLayout.createSequentialGroup()
+                        .addGroup(locutoresTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(actualizarLocutorLabel)
+                            .addComponent(jLabel3))
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         locutoresTabLayout.setVerticalGroup(
@@ -434,11 +444,13 @@ public class MenuPrincipal extends javax.swing.JFrame {
                 .addComponent(actualizarLocutorLabel)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator8, javax.swing.GroupLayout.PREFERRED_SIZE, 11, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(locutoresTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(locutoresActualizarCombo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(botonVerInfoLocutor))
-                .addContainerGap(77, Short.MAX_VALUE))
+                .addGap(1, 1, 1)
+                .addComponent(jLabel3)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(locutoresTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(botonVerInfoLocutor)
+                    .addComponent(locutoresActualizarCombo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(57, Short.MAX_VALUE))
         );
 
         windowTabs.addTab("Locutores", locutoresTab);
@@ -823,6 +835,11 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
             this.toggleWindowTabs(true);
              
+            this.frecuenciaEmisoraInput.setText("");
+            this.direccionFisicaInput.setText("");
+            this.nombreEmisoraInput.setText("");
+            this.urlEmisoraInput.setText("");
+            
             JOptionPane.showMessageDialog(this, "Emisora actualizada...", "Exito", JOptionPane.INFORMATION_MESSAGE);
         }
     }//GEN-LAST:event_btnActualizarEmisoraActionPerformed
@@ -881,6 +898,14 @@ public class MenuPrincipal extends javax.swing.JFrame {
         this.locutoresListModel.addElement("-Nombre: " + locutorNuevo.getNombre() + "  " 
                                            +"-ID: "+ locutorNuevo.getId());
         
+        this.locutorNombreInput.setText("");
+        this.locutorIdInput.setText("");
+        this.locutorTelefonoInput.setText("");
+        this.locutorCorreoInput.setText("");
+        this.locutorSexoInput.setText("");
+        this.locutorDireccionInput.setText("");
+        this.locutorFechaInput.setText("");
+        
         JOptionPane.showMessageDialog(this, "Locutor agregado...", "Exito", JOptionPane.INFORMATION_MESSAGE);
     }//GEN-LAST:event_botonAgregarLocutorActionPerformed
 
@@ -936,6 +961,10 @@ public class MenuPrincipal extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_botonVerInfoLocutorMouseClicked
 
+    private void locutoresActualizarComboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_locutoresActualizarComboActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_locutoresActualizarComboActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -962,6 +991,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
     private javax.swing.JLabel frecuenciaLabel;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
