@@ -21,10 +21,8 @@ public class MenuPrincipal extends javax.swing.JFrame {
         initComponents();
         emisora = pEmisora;
         
-        // Desabilitar tabs
-        for(int i = 1; i < this.windowTabs.getTabCount(); i++) {
-            this.windowTabs.setEnabledAt(i, false);
-        }
+        // Desabiliatr tabs
+        this.toggleWindowTabs(false);
     }
 
     /**
@@ -734,7 +732,17 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+    
+    /**
+     * Activa los tabs de las ventas o las desactiva
+     * @param activar 
+     */
+    private void toggleWindowTabs(boolean activar) {
+        for(int i = 1; i < this.windowTabs.getTabCount(); i++) {
+            this.windowTabs.setEnabledAt(i, activar);
+        }
+    }
+    
     private void nombreEmisoraInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nombreEmisoraInputActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_nombreEmisoraInputActionPerformed
@@ -746,7 +754,11 @@ public class MenuPrincipal extends javax.swing.JFrame {
     private void direccionFisicaInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_direccionFisicaInputActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_direccionFisicaInputActionPerformed
-
+    /**
+     * Evento para actualizar la informacion de la radio emisora
+     * Las ventanillas se abilitaran hasta que la informacion se ingrese
+     * @param evt 
+     */
     private void btnActualizarEmisoraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnActualizarEmisoraActionPerformed
         String nombre = this.nombreEmisoraInput.getText();
         String url = this.urlEmisoraInput.getText();
@@ -765,6 +777,8 @@ public class MenuPrincipal extends javax.swing.JFrame {
               this.frecuenciaEmisoraShow.setText(emisora.getFrecuencia());
               this.nombreEmisoraShow.setText(emisora.getNombre());
               this.urlEmisoraShow.setText(emisora.getUrlSitioWeb());
+              
+              this.toggleWindowTabs(true);
           }
     }//GEN-LAST:event_btnActualizarEmisoraActionPerformed
 
