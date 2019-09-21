@@ -7,6 +7,7 @@ package View;
 
 import Model.Radioemisora.RadioEmisora;
 import Model.Locutor.Locutor;
+import javax.swing.DefaultListModel;
 import javax.swing.JOptionPane;
 
 /**
@@ -16,7 +17,8 @@ import javax.swing.JOptionPane;
 public class MenuPrincipal extends javax.swing.JFrame {
 
     private RadioEmisora emisora;
-
+    private DefaultListModel locutoresListModel = new DefaultListModel();
+    
     /**
      * Creates new form MenuPrincipal
      */
@@ -272,11 +274,6 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
         windowTabs.addTab("RadioEmisora", radioEmisoraTab);
 
-        listaLocutoresBox.setModel(new javax.swing.AbstractListModel() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
-            public int getSize() { return strings.length; }
-            public Object getElementAt(int i) { return strings[i]; }
-        });
         jScrollPane1.setViewportView(listaLocutoresBox);
 
         nuevoLocutorLabel.setText("Agregar Nuevo Locutor");
@@ -784,7 +781,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
             this.urlEmisoraShow.setText(emisora.getUrlSitioWeb());
 
             this.toggleWindowTabs(true);
-
+             
             JOptionPane.showMessageDialog(this, "Emisora actualizada...", "Exito", JOptionPane.INFORMATION_MESSAGE);
         }
     }//GEN-LAST:event_btnActualizarEmisoraActionPerformed
@@ -832,6 +829,10 @@ public class MenuPrincipal extends javax.swing.JFrame {
             return;
         }
         this.emisora.agregarLocutor(locutorNuevo);
+        
+        this.listaLocutoresBox.setModel(this.locutoresListModel);
+        this.locutoresListModel.addElement(locutorNuevo.getNombre());
+        
         JOptionPane.showMessageDialog(this, "Locutor agregado...", "Exito", JOptionPane.INFORMATION_MESSAGE);
     }//GEN-LAST:event_botonAgregarLocutorActionPerformed
 
