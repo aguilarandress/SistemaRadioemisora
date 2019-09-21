@@ -5,7 +5,8 @@
  */
 package Model.Locutor;
 
-import com.sun.xml.internal.ws.util.StringUtils;
+import java.util.regex.Matcher; 
+import java.util.regex.Pattern; 
 
 /**
  *
@@ -105,6 +106,23 @@ public class Locutor {
             return false;
         }
         return true;
+    }
+    
+    /**
+     * Mediante una expresion regular se encarga de verificar que el correo
+     * tenga el formato adecuado
+     * @return true si el correo es valido, false de lo contrario 
+     */
+    public boolean correoValido() {
+       String emailRegex =  "^[a-zA-Z0-9_+&*-]+(?:\\."+ 
+                            "[a-zA-Z0-9_+&*-]+)*@" + 
+                            "(?:[a-zA-Z0-9-]+\\.)+[a-z" + 
+                            "A-Z]{2,7}$";
+       Pattern pat = Pattern.compile(emailRegex); 
+        if (this.correo.isEmpty()){
+            return false;
+        } 
+        return pat.matcher(this.correo).matches(); 
     }
     
 }

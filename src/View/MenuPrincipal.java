@@ -759,7 +759,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
      * Evento para actualizar la informacion de la radio emisora Las ventanillas
      * se abilitaran hasta que la informacion se ingrese
      *
-     * @param evt
+     * @param evt Evento realizado a la hora de presionar el boton
      */
     private void btnActualizarEmisoraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnActualizarEmisoraActionPerformed
         String nombre = this.nombreEmisoraInput.getText();
@@ -800,8 +800,8 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
     /**
      * Realiza la accion para agregar los datos de un locutor nuevo
-     *
-     * @param evt
+     * 
+     * @param evt Evento realizado a la hora de presionar el boton
      */
     private void botonAgregarLocutorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonAgregarLocutorActionPerformed
         String id = this.locutorIdInput.getText();
@@ -824,6 +824,10 @@ public class MenuPrincipal extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "Telefono invalido...", "ERROR", JOptionPane.ERROR_MESSAGE);
             return;
         }
+        if(!locutorNuevo.correoValido()) {
+            JOptionPane.showMessageDialog(this, "Correo invalido...", "ERROR", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
         if (this.emisora.verificarCedulaRepetida(locutorNuevo.getId())) {
             JOptionPane.showMessageDialog(this, "ID repetido...", "ERROR", JOptionPane.ERROR_MESSAGE);
             return;
@@ -831,7 +835,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
         this.emisora.agregarLocutor(locutorNuevo);
         
         this.listaLocutoresBox.setModel(this.locutoresListModel);
-        this.locutoresListModel.addElement(locutorNuevo.getNombre());
+        this.locutoresListModel.addElement(locutorNuevo.getId());
         
         JOptionPane.showMessageDialog(this, "Locutor agregado...", "Exito", JOptionPane.INFORMATION_MESSAGE);
     }//GEN-LAST:event_botonAgregarLocutorActionPerformed

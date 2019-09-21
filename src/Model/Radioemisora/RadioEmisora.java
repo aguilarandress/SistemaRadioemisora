@@ -64,7 +64,7 @@ public class RadioEmisora {
     
     /**
      * Agrega un nuevo locutor a la radio emisora
-     * @param locutorNuevo 
+     * @param locutorNuevo El nuevo locutor que se desea agregar
      */
     public void agregarLocutor(Locutor locutorNuevo) {
         if(locutorNuevo != null) {
@@ -73,7 +73,7 @@ public class RadioEmisora {
     }
     /**
      * Verfica si ya existe un locutor con dicha cedula
-     * @param cedula
+     * @param cedula Cedula del locutor que se desea ingresar
      * @return true si ya existe un locutor con ese ID, false de lo contrario
      */
     public boolean verificarCedulaRepetida(String cedula) {
