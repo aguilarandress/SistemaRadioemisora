@@ -255,24 +255,12 @@ public class InformacionLocutor extends javax.swing.JFrame {
         String sexo = this.sexoLocutorInput.getText();
         String fecha = this.fechaLocutorInput.getText();
         
+        String idOriginal = id;
+        
         if (id.isEmpty() || nombre.isEmpty() || correo.isEmpty() ||
             telefono.isEmpty() || direccion.isEmpty() || sexo.isEmpty() ||
             fecha.isEmpty()){
             JOptionPane.showMessageDialog(this, "Datos invalidos...", "ERROR", JOptionPane.ERROR_MESSAGE);
-            return;
-        }
-        
-        if (!this.locutor.telefonoValido()) {
-            JOptionPane.showMessageDialog(this, "Telefono invalido...", "ERROR", JOptionPane.ERROR_MESSAGE);
-            return;
-        }
-        if(!this.locutor.correoValido()) {
-            JOptionPane.showMessageDialog(this, "Correo invalido...", "ERROR", JOptionPane.ERROR_MESSAGE);
-            return;
-        }
-        
-        if (this.emisora.verificarCedulaRepetida(id)) {
-            JOptionPane.showMessageDialog(this, "ID repetido...", "ERROR", JOptionPane.ERROR_MESSAGE);
             return;
         }
         
@@ -284,15 +272,32 @@ public class InformacionLocutor extends javax.swing.JFrame {
         this.locutor.setNombre(nombre);
         this.locutor.setId(id);
         this.locutor.setCorreo(correo);
-        this.locutor.setTelefono(telefono);
         this.locutor.setDireccion(direccion);
         this.locutor.setSexo(sexo);
         this.locutor.setFecha(fecha);
+        this.locutor.setTelefono(telefono);
+        
+        if (!this.locutor.telefonoValido()) {
+            System.out.println("Telefono: " + this.locutor.getTelefono());
+            JOptionPane.showMessageDialog(this, "Telefono invalido...", "ERROR", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        if(!this.locutor.correoValido()) {
+            JOptionPane.showMessageDialog(this, "Correo invalido...", "ERROR", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        if (idOriginal.equals(this.locutor.getId())){
+            ;
+        } else if(this.emisora.verificarCedulaRepetida(id)) {
+            JOptionPane.showMessageDialog(this, "ID repetido...", "ERROR", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
         
         this.locutoresListModel.addElement("-Nombre: " + this.locutor.getNombre() + "  " 
                                            +"-ID: "+ this.locutor.getId());
         this.locutoresComboBoxModel.addElement(this.locutor.getId());
         
+        this.dispose();
     }//GEN-LAST:event_botonActualizarInfoActionPerformed
     
     /**
