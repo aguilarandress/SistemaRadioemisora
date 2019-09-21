@@ -7,7 +7,9 @@ package View;
 
 import Model.Radioemisora.RadioEmisora;
 import Model.Locutor.Locutor;
+import javax.swing.DefaultComboBoxModel;
 import javax.swing.DefaultListModel;
+import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
 /**
@@ -18,6 +20,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
     private RadioEmisora emisora;
     private DefaultListModel locutoresListModel = new DefaultListModel();
+    private DefaultComboBoxModel locutoresComboBoxModel = new DefaultComboBoxModel();
     
     /**
      * Creates new form MenuPrincipal
@@ -67,7 +70,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
         btnActualizarEmisora = new javax.swing.JButton();
         locutoresTab = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        listaLocutoresBox = new javax.swing.JList<String>();
+        listaLocutoresBox = new javax.swing.JList<>();
         nuevoLocutorLabel = new javax.swing.JLabel();
         listaLocutoresLabel = new javax.swing.JLabel();
         IdLocutorLabel = new javax.swing.JLabel();
@@ -86,6 +89,10 @@ public class MenuPrincipal extends javax.swing.JFrame {
         locutorSexoInput = new javax.swing.JTextField();
         locutorFechaInput = new javax.swing.JTextField();
         botonAgregarLocutor = new javax.swing.JButton();
+        actualizarLocutorLabel = new javax.swing.JLabel();
+        jSeparator8 = new javax.swing.JSeparator();
+        locutoresActualizarCombo = new javax.swing.JComboBox<>();
+        botonVerInfoLocutor = new javax.swing.JButton();
         programasTab = new javax.swing.JPanel();
         nuevoProgramaLabel = new javax.swing.JLabel();
         jSeparator3 = new javax.swing.JSeparator();
@@ -98,18 +105,18 @@ public class MenuPrincipal extends javax.swing.JFrame {
         programaDuracionInput = new javax.swing.JTextField();
         programasGeneroInput = new javax.swing.JTextField();
         botonCrearNuevoPrograma = new javax.swing.JButton();
-        programasListaCombo = new javax.swing.JComboBox<String>();
+        programasListaCombo = new javax.swing.JComboBox<>();
         jSeparator4 = new javax.swing.JSeparator();
         programaAsignarLocutorLabel = new javax.swing.JLabel();
-        programasLocutoresCombo = new javax.swing.JComboBox<String>();
+        programasLocutoresCombo = new javax.swing.JComboBox<>();
         botonAsignarLocutor = new javax.swing.JButton();
         programasListaLabel = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
-        programasListaProgramasBox = new javax.swing.JList<String>();
+        programasListaProgramasBox = new javax.swing.JList<>();
         programaAsignarPlaylistLabel = new javax.swing.JLabel();
         jSeparator6 = new javax.swing.JSeparator();
-        programasListaCombo2 = new javax.swing.JComboBox<String>();
-        programasPlaylistsCombo = new javax.swing.JComboBox<String>();
+        programasListaCombo2 = new javax.swing.JComboBox<>();
+        programasPlaylistsCombo = new javax.swing.JComboBox<>();
         botonAsignarPlaylist = new javax.swing.JButton();
         playlistsTab = new javax.swing.JPanel();
         nuevaPlaylistLabel = new javax.swing.JLabel();
@@ -120,13 +127,13 @@ public class MenuPrincipal extends javax.swing.JFrame {
         playlistGeneroInput = new javax.swing.JTextField();
         botonAgregarPlaylist = new javax.swing.JButton();
         jScrollPane3 = new javax.swing.JScrollPane();
-        playlistsListaPlaylistsBox = new javax.swing.JList<String>();
+        playlistsListaPlaylistsBox = new javax.swing.JList<>();
         listaPlaylistsLabel = new javax.swing.JLabel();
         verCancionesPlaylistLabel = new javax.swing.JLabel();
         jSeparator7 = new javax.swing.JSeparator();
-        playlistsCombo = new javax.swing.JComboBox<String>();
+        playlistsCombo = new javax.swing.JComboBox<>();
         jScrollPane4 = new javax.swing.JScrollPane();
-        playlistsListaCancionesBox = new javax.swing.JList<String>();
+        playlistsListaCancionesBox = new javax.swing.JList<>();
         cancionesTab = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         discosTab = new javax.swing.JPanel();
@@ -319,40 +326,66 @@ public class MenuPrincipal extends javax.swing.JFrame {
             }
         });
 
+        actualizarLocutorLabel.setText("Actualizar Locutor:");
+
+        locutoresActualizarCombo.setModel(this.locutoresComboBoxModel);
+
+        botonVerInfoLocutor.setText("Ver Información");
+        botonVerInfoLocutor.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                botonVerInfoLocutorMouseClicked(evt);
+            }
+        });
+        botonVerInfoLocutor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonVerInfoLocutorActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout locutoresTabLayout = new javax.swing.GroupLayout(locutoresTab);
         locutoresTab.setLayout(locutoresTabLayout);
         locutoresTabLayout.setHorizontalGroup(
             locutoresTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, locutoresTabLayout.createSequentialGroup()
+            .addGroup(locutoresTabLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(locutoresTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jSeparator2)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, locutoresTabLayout.createSequentialGroup()
-                        .addGroup(locutoresTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(nombreLocutorLabel)
-                            .addComponent(IdLocutorLabel)
-                            .addComponent(correoLocutorLabel)
-                            .addComponent(telefonoLocutorLabel)
-                            .addComponent(direccionLocutorLabel)
-                            .addComponent(sexoLocutorLabel)
-                            .addComponent(fechaLocutorLabel))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(locutoresTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(locutorNombreInput)
-                            .addComponent(locutorIdInput)
-                            .addComponent(locutorCorreoInput)
-                            .addComponent(locutorTelefonoInput)
-                            .addComponent(locutorDireccionInput)
-                            .addComponent(locutorSexoInput)
-                            .addComponent(locutorFechaInput, javax.swing.GroupLayout.DEFAULT_SIZE, 362, Short.MAX_VALUE)))
                     .addGroup(locutoresTabLayout.createSequentialGroup()
-                        .addComponent(nuevoLocutorLabel)
+                        .addComponent(actualizarLocutorLabel)
                         .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(botonAgregarLocutor, javax.swing.GroupLayout.DEFAULT_SIZE, 421, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(locutoresTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(listaLocutoresLabel)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, locutoresTabLayout.createSequentialGroup()
+                        .addGroup(locutoresTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jSeparator8, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jSeparator2, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(locutoresTabLayout.createSequentialGroup()
+                                .addGroup(locutoresTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(nombreLocutorLabel)
+                                    .addComponent(IdLocutorLabel)
+                                    .addComponent(correoLocutorLabel)
+                                    .addComponent(telefonoLocutorLabel)
+                                    .addComponent(direccionLocutorLabel)
+                                    .addComponent(sexoLocutorLabel)
+                                    .addComponent(fechaLocutorLabel))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGroup(locutoresTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(locutorNombreInput)
+                                    .addComponent(locutorIdInput)
+                                    .addComponent(locutorCorreoInput)
+                                    .addComponent(locutorTelefonoInput)
+                                    .addComponent(locutorDireccionInput)
+                                    .addComponent(locutorSexoInput)
+                                    .addComponent(locutorFechaInput, javax.swing.GroupLayout.DEFAULT_SIZE, 362, Short.MAX_VALUE)))
+                            .addComponent(botonAgregarLocutor, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 421, Short.MAX_VALUE)
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, locutoresTabLayout.createSequentialGroup()
+                                .addComponent(nuevoLocutorLabel)
+                                .addGap(0, 0, Short.MAX_VALUE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, locutoresTabLayout.createSequentialGroup()
+                                .addComponent(locutoresActualizarCombo, javax.swing.GroupLayout.PREFERRED_SIZE, 235, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(botonVerInfoLocutor, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(locutoresTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(listaLocutoresLabel)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap())
         );
         locutoresTabLayout.setVerticalGroup(
@@ -397,7 +430,15 @@ public class MenuPrincipal extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addComponent(botonAgregarLocutor, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 257, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(155, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(actualizarLocutorLabel)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jSeparator8, javax.swing.GroupLayout.PREFERRED_SIZE, 11, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(locutoresTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(locutoresActualizarCombo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(botonVerInfoLocutor))
+                .addContainerGap(77, Short.MAX_VALUE))
         );
 
         windowTabs.addTab("Locutores", locutoresTab);
@@ -431,7 +472,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
             }
         });
 
-        programasListaCombo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        programasListaCombo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         programasListaCombo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 programasListaComboActionPerformed(evt);
@@ -440,7 +481,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
         programaAsignarLocutorLabel.setText("Asignar Locutor a Programa:");
 
-        programasLocutoresCombo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        programasLocutoresCombo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         programasLocutoresCombo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 programasLocutoresComboActionPerformed(evt);
@@ -456,18 +497,18 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
         programasListaLabel.setText("Lista de Programas:");
 
-        programasListaProgramasBox.setModel(new javax.swing.AbstractListModel() {
+        programasListaProgramasBox.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
             public int getSize() { return strings.length; }
-            public Object getElementAt(int i) { return strings[i]; }
+            public String getElementAt(int i) { return strings[i]; }
         });
         jScrollPane2.setViewportView(programasListaProgramasBox);
 
         programaAsignarPlaylistLabel.setText("Asignar Playlist a Programa:");
 
-        programasListaCombo2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        programasListaCombo2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
-        programasPlaylistsCombo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        programasPlaylistsCombo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         botonAsignarPlaylist.setText("Asignar Playlist");
 
@@ -600,10 +641,10 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
         botonAgregarPlaylist.setText("Agregar Playlist");
 
-        playlistsListaPlaylistsBox.setModel(new javax.swing.AbstractListModel() {
+        playlistsListaPlaylistsBox.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
             public int getSize() { return strings.length; }
-            public Object getElementAt(int i) { return strings[i]; }
+            public String getElementAt(int i) { return strings[i]; }
         });
         jScrollPane3.setViewportView(playlistsListaPlaylistsBox);
 
@@ -611,12 +652,12 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
         verCancionesPlaylistLabel.setText("Ver Canciones:");
 
-        playlistsCombo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        playlistsCombo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
-        playlistsListaCancionesBox.setModel(new javax.swing.AbstractListModel() {
+        playlistsListaCancionesBox.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
             public int getSize() { return strings.length; }
-            public Object getElementAt(int i) { return strings[i]; }
+            public String getElementAt(int i) { return strings[i]; }
         });
         jScrollPane4.setViewportView(playlistsListaCancionesBox);
 
@@ -834,8 +875,11 @@ public class MenuPrincipal extends javax.swing.JFrame {
         }
         this.emisora.agregarLocutor(locutorNuevo);
         
+        this.locutoresActualizarCombo.setModel(this.locutoresComboBoxModel);
         this.listaLocutoresBox.setModel(this.locutoresListModel);
-        this.locutoresListModel.addElement(locutorNuevo.getId());
+        this.locutoresComboBoxModel.addElement(locutorNuevo.getId());
+        this.locutoresListModel.addElement("-Nombre: " + locutorNuevo.getNombre() + "  " 
+                                           +"-ID: "+ locutorNuevo.getId());
         
         JOptionPane.showMessageDialog(this, "Locutor agregado...", "Exito", JOptionPane.INFORMATION_MESSAGE);
     }//GEN-LAST:event_botonAgregarLocutorActionPerformed
@@ -871,17 +915,39 @@ public class MenuPrincipal extends javax.swing.JFrame {
     private void playlistGeneroInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_playlistGeneroInputActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_playlistGeneroInputActionPerformed
+    /** 
+     * Despliega la información del locutor seleccionado para actualizarla
+     * @param evt 
+     */
+    private void botonVerInfoLocutorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonVerInfoLocutorActionPerformed
+        // TODO add your handling code here:
+        String idLocutor = (String) locutoresActualizarCombo.getSelectedItem();
+        Locutor locutorSeleccionado = this.emisora.obtenerPorId(idLocutor);
+        
+        //SE TIENE QUE CARGAR OTRA VENTANA
+        InformacionLocutor ventanaInformacion = new InformacionLocutor(locutorSeleccionado, 
+                this.emisora, this.locutoresListModel, this.locutoresComboBoxModel);
+        ventanaInformacion.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        ventanaInformacion.setVisible(true);
+        
+    }//GEN-LAST:event_botonVerInfoLocutorActionPerformed
+
+    private void botonVerInfoLocutorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonVerInfoLocutorMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_botonVerInfoLocutorMouseClicked
 
     /**
      * @param args the command line arguments
      */
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel IdLocutorLabel;
+    private javax.swing.JLabel actualizarLocutorLabel;
     private javax.swing.JButton botonAgregarLocutor;
     private javax.swing.JButton botonAgregarPlaylist;
     private javax.swing.JButton botonAsignarLocutor;
     private javax.swing.JButton botonAsignarPlaylist;
     private javax.swing.JButton botonCrearNuevoPrograma;
+    private javax.swing.JButton botonVerInfoLocutor;
     private javax.swing.JButton btnActualizarEmisora;
     private javax.swing.JPanel cancionesTab;
     private javax.swing.JLabel correoLocutorLabel;
@@ -907,6 +973,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator5;
     private javax.swing.JSeparator jSeparator6;
     private javax.swing.JSeparator jSeparator7;
+    private javax.swing.JSeparator jSeparator8;
     private javax.swing.JList<String> listaLocutoresBox;
     private javax.swing.JLabel listaLocutoresLabel;
     private javax.swing.JLabel listaPlaylistsLabel;
@@ -917,6 +984,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
     private javax.swing.JTextField locutorNombreInput;
     private javax.swing.JTextField locutorSexoInput;
     private javax.swing.JTextField locutorTelefonoInput;
+    private javax.swing.JComboBox<String> locutoresActualizarCombo;
     private javax.swing.JPanel locutoresTab;
     private java.awt.Menu menu1;
     private java.awt.Menu menu2;

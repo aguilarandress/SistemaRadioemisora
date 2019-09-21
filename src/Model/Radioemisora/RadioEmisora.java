@@ -71,6 +71,14 @@ public class RadioEmisora {
             locutores.add(locutorNuevo);
         }
     }
+    
+    /**
+     * Remueve a un locutor de la emisora
+     * @param locutorQuitar 
+     */
+    public void removerLocutor(Locutor locutorQuitar) {
+        locutores.remove(locutorQuitar);
+    }
     /**
      * Verfica si ya existe un locutor con dicha cedula
      * @param cedula Cedula del locutor que se desea ingresar
@@ -86,5 +94,19 @@ public class RadioEmisora {
             }
         }
         return false;
+    }
+        
+    /**
+     * Obtiene el locutor que se busca por su Id
+     * @param pId
+     * @return 
+     */
+    public Locutor obtenerPorId(String pId) {
+        for (int i = 0; i < locutores.size(); i++) {
+            if (locutores.get(i).getId().equals(pId)) {
+                return locutores.get(i);
+            }
+        }
+        return null;
     }
 }
