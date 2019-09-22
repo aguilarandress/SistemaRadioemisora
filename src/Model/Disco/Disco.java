@@ -14,17 +14,18 @@ public class Disco {
     private String cantante;
     private String genero;
     private String ubicacionFisica;
-    private int año;
-   //  Falta agregar imagen.
+    private int anio;
+   private String imagen;
     
-    public Disco(String nombre, String cantante, String genero, int año,
-            String ubicacionFisica){
+    public Disco(String nombre, String cantante, String genero, int anio,
+            String ubicacionFisica, String imagen){
         
         this.nombre = nombre;
         this.cantante = cantante;
         this.genero = genero;
-        this.año = año;
+        this.anio = anio;
         this.ubicacionFisica = ubicacionFisica;
+        this.imagen = imagen;
     }
 
     public String getNombre() {
@@ -60,11 +61,11 @@ public class Disco {
     }
 
     public int getAño() {
-        return año;
+        return anio;
     }
 
     public void setAño(int año) {
-        this.año = año;
+        this.anio = año;
     }
     
 }
