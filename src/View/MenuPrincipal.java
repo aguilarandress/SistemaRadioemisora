@@ -29,7 +29,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
     private DefaultComboBoxModel locutoresProgramasComboBoxModel = new DefaultComboBoxModel();
     private DefaultComboBoxModel programasComboBoxModel = new DefaultComboBoxModel();
     private DefaultComboBoxModel discoComboBoxModel = new DefaultComboBoxModel();
-    
+
     /**
      * Creates new form MenuPrincipal
      */
@@ -41,7 +41,6 @@ public class MenuPrincipal extends javax.swing.JFrame {
         this.programasListaCombo.setModel(this.programasComboBoxModel);
         this.listaDiscoComboBox.setModel(this.discoComboBoxModel);
         this.discosListaBox.setModel(this.discosListModel);
-        
 
         // Desabiliatr tabs
         this.toggleWindowTabs(false);
@@ -976,12 +975,12 @@ public class MenuPrincipal extends javax.swing.JFrame {
             this.urlEmisoraShow.setText(emisora.getUrlSitioWeb());
 
             this.toggleWindowTabs(true);
-             
+
             this.frecuenciaEmisoraInput.setText("");
             this.direccionFisicaInput.setText("");
             this.nombreEmisoraInput.setText("");
             this.urlEmisoraInput.setText("");
-            
+
             JOptionPane.showMessageDialog(this, "Emisora actualizada...", "Exito", JOptionPane.INFORMATION_MESSAGE);
         }
     }//GEN-LAST:event_btnActualizarEmisoraActionPerformed
@@ -1000,7 +999,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
     /**
      * Realiza la accion para agregar los datos de un locutor nuevo
-     * 
+     *
      * @param evt Evento realizado a la hora de presionar el boton
      */
     private void botonAgregarLocutorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonAgregarLocutorActionPerformed
@@ -1018,13 +1017,13 @@ public class MenuPrincipal extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "Datos invalidos...", "ERROR", JOptionPane.ERROR_MESSAGE);
             return;
         }
-        
+
         Locutor locutorNuevo = new Locutor(id, nombre, correo, telefono, direccion, sexo, fecha);
         if (!locutorNuevo.telefonoValido()) {
             JOptionPane.showMessageDialog(this, "Telefono invalido...", "ERROR", JOptionPane.ERROR_MESSAGE);
             return;
         }
-        if(!locutorNuevo.correoValido()) {
+        if (!locutorNuevo.correoValido()) {
             JOptionPane.showMessageDialog(this, "Correo invalido...", "ERROR", JOptionPane.ERROR_MESSAGE);
             return;
         }
@@ -1033,15 +1032,14 @@ public class MenuPrincipal extends javax.swing.JFrame {
             return;
         }
         this.emisora.agregarLocutor(locutorNuevo);
-        
+
         this.locutoresActualizarCombo.setModel(this.locutoresComboBoxModel);
         this.listaLocutoresBox.setModel(this.locutoresListModel);
         this.locutoresComboBoxModel.addElement(locutorNuevo.getId());
-        this.locutoresListModel.addElement("-Nombre: " + locutorNuevo.getNombre() + "  " 
-                                           +"-ID: "+ locutorNuevo.getId());
+        this.locutoresListModel.addElement("-Nombre: " + locutorNuevo.getNombre() + "  "
+                + "-ID: " + locutorNuevo.getId());
         this.locutoresProgramasComboBoxModel.addElement(id);
-        
-        
+
         this.locutorNombreInput.setText("");
         this.locutorIdInput.setText("");
         this.locutorTelefonoInput.setText("");
@@ -1049,14 +1047,14 @@ public class MenuPrincipal extends javax.swing.JFrame {
         this.locutorSexoInput.setText("");
         this.locutorDireccionInput.setText("");
         this.locutorFechaInput.setText("");
-        
+
         JOptionPane.showMessageDialog(this, "Locutor agregado...", "Exito", JOptionPane.INFORMATION_MESSAGE);
     }//GEN-LAST:event_botonAgregarLocutorActionPerformed
-    
+
     private void locutoresActualizarComboActionPerformed(java.awt.event.ActionEvent evt) {
-        
+
     }
-    
+
     private void programaHorarioInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_programaHorarioInputActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_programaHorarioInputActionPerformed
@@ -1070,26 +1068,21 @@ public class MenuPrincipal extends javax.swing.JFrame {
         String horario = this.programaHorarioInput.getText();
         String duracionStr = this.programaDuracionInput.getText();
         String genero = this.programasGeneroInput.getText();
-        
-        if(nombre.isEmpty() || horario.isEmpty() || duracionStr.isEmpty()
-                || genero.isEmpty()){
+
+        if (nombre.isEmpty() || horario.isEmpty() || duracionStr.isEmpty()
+                || genero.isEmpty()) {
             JOptionPane.showMessageDialog(this, "Datos invalidos...", "ERROR", JOptionPane.ERROR_MESSAGE);
             return;
         }
-        
+
         int duracion = Integer.parseInt(duracionStr);
         Programa programaNuevo = new Programa(nombre, horario, duracion, genero);
         this.emisora.agregarPrograma(programaNuevo);
-        
-        
+
         this.programasListModel.addElement(programaNuevo.getNombre() + " " + programaNuevo.getGenero());
         this.programasComboBoxModel.addElement(programaNuevo.getNombre());
-        
-        
-        
-        JOptionPane.showMessageDialog(this, "Programa creado...", "Exito", JOptionPane.INFORMATION_MESSAGE);
 
-        
+        JOptionPane.showMessageDialog(this, "Programa creado...", "Exito", JOptionPane.INFORMATION_MESSAGE);
     }//GEN-LAST:event_botonCrearNuevoProgramaActionPerformed
 
     private void programasListaComboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_programasListaComboActionPerformed
@@ -1105,21 +1098,18 @@ public class MenuPrincipal extends javax.swing.JFrame {
         Locutor locutorAsignar;
         String locutorId = (String) locutoresProgramasComboBoxModel.getSelectedItem();
         String programaNombre = (String) this.programasComboBoxModel.getSelectedItem();
-        for(Locutor locutor : locutores){
-            if(locutor.getId() == locutorId){
+        for (Locutor locutor : locutores) {
+            if (locutor.getId() == locutorId) {
                 locutorAsignar = locutor;
-                for(Programa programa : programas){
-                    if(programa.getNombre() == programaNombre){
+                for (Programa programa : programas) {
+                    if (programa.getNombre() == programaNombre) {
                         programa.setLocutor(locutorAsignar);
-                        locutorAsignar.setNombre("FABIAN");
-                        Locutor locutorPro = programa.getLocutor();
-                        System.out.println(locutorPro.getNombre());
                         break;
                     }
                 }
                 break;
             }
-        }       
+        }
         JOptionPane.showMessageDialog(this, "Se asigno correctamente el locutor...", "Exito", JOptionPane.INFORMATION_MESSAGE);
     }//GEN-LAST:event_botonAsignarLocutorActionPerformed
 
@@ -1134,21 +1124,24 @@ public class MenuPrincipal extends javax.swing.JFrame {
     private void playlistGeneroInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_playlistGeneroInputActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_playlistGeneroInputActionPerformed
-    /** 
+    /**
      * Despliega la información del locutor seleccionado para actualizarla
-     * @param evt 
+     *
+     * @param evt Evento para el click del boton
      */
     private void botonVerInfoLocutorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonVerInfoLocutorActionPerformed
-
+        if (this.emisora.getLocutores().isEmpty()) {
+            JOptionPane.showMessageDialog(this, "No hay locutores creados...", "Error...", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
         String idLocutor = (String) locutoresActualizarCombo.getSelectedItem();
         Locutor locutorSeleccionado = this.emisora.obtenerPorId(idLocutor);
-        
-        //SE TIENE QUE CARGAR OTRA VENTANA
-        InformacionLocutor ventanaInformacion = new InformacionLocutor(locutorSeleccionado, 
+
+        // SE TIENE QUE CARGAR OTRA VENTANA
+        InformacionLocutor ventanaInformacion = new InformacionLocutor(locutorSeleccionado,
                 this.emisora, this.locutoresListModel, this.locutoresComboBoxModel, this.locutoresProgramasComboBoxModel);
         ventanaInformacion.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         ventanaInformacion.setVisible(true);
-        
     }//GEN-LAST:event_botonVerInfoLocutorActionPerformed
 
     private void botonVerInfoLocutorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonVerInfoLocutorMouseClicked
@@ -1157,7 +1150,9 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
     private void programaDuracionInputKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_programaDuracionInputKeyTyped
         char c = evt.getKeyChar();
-        if(c<'0' || c>'9') evt.consume();
+        if (c < '0' || c > '9') {
+            evt.consume();
+        }
     }//GEN-LAST:event_programaDuracionInputKeyTyped
 
     private void botonCrearDiscoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonCrearDiscoActionPerformed
@@ -1167,21 +1162,19 @@ public class MenuPrincipal extends javax.swing.JFrame {
         String anioStr = this.anioDiscoTextField.getText();
         String ubicacion = this.ubicacionDiscoTextField.getText();
         String imagen = this.imagenDiscoTextField.getText();
-        
 
-        
-        if(nombre.isEmpty() || cantante.isEmpty() || genero.isEmpty() || anioStr.isEmpty() ||
-                ubicacion.isEmpty() || imagen.isEmpty()){
+        if (nombre.isEmpty() || cantante.isEmpty() || genero.isEmpty() || anioStr.isEmpty()
+                || ubicacion.isEmpty() || imagen.isEmpty()) {
             JOptionPane.showMessageDialog(this, "Datos incorrectos...", "ERROR", JOptionPane.ERROR_MESSAGE);
         }
         int anio = Integer.parseInt(anioStr);
         Disco discoNuevo = new Disco(nombre, cantante, genero, anio, ubicacion, imagen);
-        
+
         this.emisora.agregarDisco(discoNuevo);
         this.discosListModel.addElement(discoNuevo.getNombre() + "- Genero: " + discoNuevo.getGenero());
         this.discoComboBoxModel.addElement(discoNuevo.getNombre() + " : " + discoNuevo.getGenero());
-        
-        
+
+
     }//GEN-LAST:event_botonCrearDiscoActionPerformed
 
     private void anioDiscoTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_anioDiscoTextFieldActionPerformed
@@ -1190,7 +1183,9 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
     private void anioDiscoTextFieldKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_anioDiscoTextFieldKeyTyped
         char c = evt.getKeyChar();
-        if(c<'0' || c > '9') evt.consume();
+        if (c < '0' || c > '9') {
+            evt.consume();
+        }
     }//GEN-LAST:event_anioDiscoTextFieldKeyTyped
 
     private void botonVerDiscoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonVerDiscoActionPerformed
