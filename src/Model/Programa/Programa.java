@@ -59,8 +59,10 @@ public class Programa {
     
     public void setLocutor(Locutor locutor){
         this.locutor = locutor;
-        System.out.println(this.locutor.getNombre());
     }
     
+    public Locutor getLocutor(){
+        return this.locutor;
+    }
     
 }
