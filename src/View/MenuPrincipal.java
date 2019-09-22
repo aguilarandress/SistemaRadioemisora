@@ -341,11 +341,6 @@ public class MenuPrincipal extends javax.swing.JFrame {
         actualizarLocutorLabel.setText("Actualizar Locutor:");
 
         locutoresActualizarCombo.setModel(this.locutoresComboBoxModel);
-        locutoresActualizarCombo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                locutoresActualizarComboActionPerformed(evt);
-            }
-        });
 
         botonVerInfoLocutor.setText("Ver Información");
         botonVerInfoLocutor.addMouseListener(new java.awt.event.MouseAdapter() {

@@ -257,7 +257,7 @@ public class InformacionLocutor extends javax.swing.JFrame {
         String sexo = this.sexoLocutorInput.getText();
         String fecha = this.fechaLocutorInput.getText();
         
-        String idOriginal = id;
+        String idOriginal = this.locutor.getId();
         
         if (id.isEmpty() || nombre.isEmpty() || correo.isEmpty() ||
             telefono.isEmpty() || direccion.isEmpty() || sexo.isEmpty() ||
