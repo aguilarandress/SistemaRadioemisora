@@ -1113,11 +1113,9 @@
                                       <Group type="103" groupAlignment="0" attributes="0">
                                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                               <Component id="ubicacionDiscoLabel" max="32767" attributes="0"/>
-                                              <Group type="103" alignment="0" groupAlignment="0" max="-2" attributes="0">
-                                                  <Component id="generoDiscoLabel" max="32767" attributes="0"/>
-                                                  <Component id="discoNombreLabel" max="32767" attributes="0"/>
-                                                  <Component id="cantanteDiscoLabel" max="32767" attributes="0"/>
-                                              </Group>
+                                              <Component id="generoDiscoLabel" max="32767" attributes="0"/>
+                                              <Component id="discoNombreLabel" max="32767" attributes="0"/>
+                                              <Component id="cantanteDiscoLabel" max="32767" attributes="0"/>
                                               <Component id="anioDiscoLabel" alignment="0" min="-2" max="-2" attributes="0"/>
                                           </Group>
                                           <Component id="imagenDiscoLabel" min="-2" max="-2" attributes="0"/>
@@ -1143,7 +1141,7 @@
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                                  <Component id="jLabel3" alignment="0" pref="165" max="32767" attributes="0"/>
+                                  <Component id="jLabel4" alignment="0" pref="165" max="32767" attributes="0"/>
                                   <Component id="listaDiscoComboBox" alignment="0" max="32767" attributes="0"/>
                               </Group>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
@@ -1197,13 +1195,13 @@
                       <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
                       <Component id="botonCrearDisco" min="-2" max="-2" attributes="0"/>
                       <EmptySpace pref="48" max="32767" attributes="0"/>
-                      <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
                       <Component id="jSeparator9" min="-2" pref="5" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="listaDiscoComboBox" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="botonVerDisco" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="botonVerDisco" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
                   </Group>
@@ -1310,7 +1308,7 @@
                 <Property name="text" type="java.lang.String" value="Lista de discos:"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="jLabel3">
+            <Component class="javax.swing.JLabel" name="jLabel4">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Actualizar disco:"/>
               </Properties>
