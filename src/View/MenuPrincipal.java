@@ -7,10 +7,12 @@ package View;
 
 import Model.Radioemisora.RadioEmisora;
 import Model.Locutor.Locutor;
+import Model.Programa.Programa;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.DefaultListModel;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
+import java.util.ArrayList;
 
 /**
  *
@@ -20,7 +22,11 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
     private RadioEmisora emisora;
     private DefaultListModel locutoresListModel = new DefaultListModel();
+    private DefaultListModel programasListModel = new DefaultListModel();
     private DefaultComboBoxModel locutoresComboBoxModel = new DefaultComboBoxModel();
+    private DefaultComboBoxModel locutoresProgramasComboBoxModel = new DefaultComboBoxModel();
+    private DefaultComboBoxModel programasComboBoxModel = new DefaultComboBoxModel();
+    
     
     /**
      * Creates new form MenuPrincipal
@@ -28,6 +34,10 @@ public class MenuPrincipal extends javax.swing.JFrame {
     public MenuPrincipal(RadioEmisora pEmisora) {
         initComponents();
         emisora = pEmisora;
+        this.programasLocutoresCombo.setModel(this.locutoresProgramasComboBoxModel);
+        this.programasListaProgramasBox.setModel(this.programasListModel);
+        this.programasListaCombo.setModel(this.programasComboBoxModel);
+        
 
         // Desabiliatr tabs
         this.toggleWindowTabs(false);
@@ -48,6 +58,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
         menuBar2 = new java.awt.MenuBar();
         menu3 = new java.awt.Menu();
         menu4 = new java.awt.Menu();
+        jColorChooser1 = new javax.swing.JColorChooser();
         windowTabs = new javax.swing.JTabbedPane();
         radioEmisoraTab = new javax.swing.JPanel();
         nombreLabel = new javax.swing.JLabel();
@@ -476,6 +487,11 @@ public class MenuPrincipal extends javax.swing.JFrame {
                 programaDuracionInputActionPerformed(evt);
             }
         });
+        programaDuracionInput.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                programaDuracionInputKeyTyped(evt);
+            }
+        });
 
         botonCrearNuevoPrograma.setText("Agregar Progama");
         botonCrearNuevoPrograma.addActionListener(new java.awt.event.ActionListener() {
@@ -897,6 +913,8 @@ public class MenuPrincipal extends javax.swing.JFrame {
         this.locutoresComboBoxModel.addElement(locutorNuevo.getId());
         this.locutoresListModel.addElement("-Nombre: " + locutorNuevo.getNombre() + "  " 
                                            +"-ID: "+ locutorNuevo.getId());
+        this.locutoresProgramasComboBoxModel.addElement(id);
+        
         
         this.locutorNombreInput.setText("");
         this.locutorIdInput.setText("");
@@ -918,7 +936,30 @@ public class MenuPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_programaDuracionInputActionPerformed
 
     private void botonCrearNuevoProgramaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonCrearNuevoProgramaActionPerformed
-        // TODO add your handling code here:
+        String nombre = this.programaNombreInput.getText();
+        String horario = this.programaHorarioInput.getText();
+        String duracionStr = this.programaDuracionInput.getText();
+        String genero = this.programasGeneroInput.getText();
+        
+        if(nombre.isEmpty() || horario.isEmpty() || duracionStr.isEmpty()
+                || genero.isEmpty()){
+            JOptionPane.showMessageDialog(this, "Datos invalidos...", "ERROR", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        
+        int duracion = Integer.parseInt(duracionStr);
+        Programa programaNuevo = new Programa(nombre, horario, duracion, genero);
+        this.emisora.agregarPrograma(programaNuevo);
+        
+        
+        this.programasListModel.addElement(programaNuevo.getNombre() + " " + programaNuevo.getGenero());
+        this.programasComboBoxModel.addElement(programaNuevo.getNombre());
+        
+        
+        
+        JOptionPane.showMessageDialog(this, "Programa creado...", "Exito", JOptionPane.INFORMATION_MESSAGE);
+
+        
     }//GEN-LAST:event_botonCrearNuevoProgramaActionPerformed
 
     private void programasListaComboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_programasListaComboActionPerformed
@@ -926,11 +967,31 @@ public class MenuPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_programasListaComboActionPerformed
 
     private void botonAsignarLocutorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonAsignarLocutorActionPerformed
-        // TODO add your handling code here:
+        ArrayList<Locutor> locutores;
+        ArrayList<Programa> programas;
+
+        programas = emisora.getProgramas();
+        locutores = emisora.getLocutores();
+        Locutor locutorAsignar;
+        String locutorId = (String) locutoresProgramasComboBoxModel.getSelectedItem();
+        String programaNombre = (String) this.programasComboBoxModel.getSelectedItem();
+        for(Locutor locutor : locutores){
+            if(locutor.getId() == locutorId){
+                locutorAsignar = locutor;
+                for(Programa programa : programas){
+                    if(programa.getNombre() == programaNombre){
+                        programa.setLocutor(locutorAsignar);
+                        break;
+                    }
+                }
+                break;
+            }
+        }       
+        JOptionPane.showMessageDialog(this, "Se asigno correctamente el locutor...", "Exito", JOptionPane.INFORMATION_MESSAGE);
     }//GEN-LAST:event_botonAsignarLocutorActionPerformed
 
     private void programasLocutoresComboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_programasLocutoresComboActionPerformed
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_programasLocutoresComboActionPerformed
 
     private void playlistNombreInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_playlistNombreInputActionPerformed
@@ -951,7 +1012,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
         
         //SE TIENE QUE CARGAR OTRA VENTANA
         InformacionLocutor ventanaInformacion = new InformacionLocutor(locutorSeleccionado, 
-                this.emisora, this.locutoresListModel, this.locutoresComboBoxModel);
+                this.emisora, this.locutoresListModel, this.locutoresComboBoxModel, this.locutoresProgramasComboBoxModel);
         ventanaInformacion.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         ventanaInformacion.setVisible(true);
         
@@ -961,9 +1022,10 @@ public class MenuPrincipal extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_botonVerInfoLocutorMouseClicked
 
-    private void locutoresActualizarComboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_locutoresActualizarComboActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_locutoresActualizarComboActionPerformed
+    private void programaDuracionInputKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_programaDuracionInputKeyTyped
+        char c = evt.getKeyChar();
+        if(c<'0' || c>'9') evt.consume();
+    }//GEN-LAST:event_programaDuracionInputKeyTyped
 
     /**
      * @param args the command line arguments
@@ -989,6 +1051,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
     public javax.swing.JTextField frecuenciaEmisoraInput;
     public javax.swing.JLabel frecuenciaEmisoraShow;
     private javax.swing.JLabel frecuenciaLabel;
+    private javax.swing.JColorChooser jColorChooser1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

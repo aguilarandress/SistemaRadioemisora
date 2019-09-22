@@ -21,15 +21,17 @@ public class InformacionLocutor extends javax.swing.JFrame {
     private RadioEmisora emisora;
     private DefaultListModel locutoresListModel;
     private DefaultComboBoxModel locutoresComboBoxModel;
+    private DefaultComboBoxModel locutoresProgramasComboBoxModel;
     /**
      * Creates new form InformacionLocutor
      */
     public InformacionLocutor(Locutor pLocutor, RadioEmisora pEmisora,
-            DefaultListModel pLocutoresListModel, DefaultComboBoxModel pLocutoresComboBoxModel) {
+            DefaultListModel pLocutoresListModel, DefaultComboBoxModel pLocutoresComboBoxModel, DefaultComboBoxModel pLocutoresProgramasComboBoxModel) {
         this.locutor = pLocutor;
         this.emisora = pEmisora;
         this.locutoresListModel = pLocutoresListModel;
         this.locutoresComboBoxModel = pLocutoresComboBoxModel;
+        this.locutoresProgramasComboBoxModel = pLocutoresProgramasComboBoxModel;
         initComponents();
     }
 
@@ -296,6 +298,7 @@ public class InformacionLocutor extends javax.swing.JFrame {
         this.locutoresListModel.addElement("-Nombre: " + this.locutor.getNombre() + "  " 
                                            +"-ID: "+ this.locutor.getId());
         this.locutoresComboBoxModel.addElement(this.locutor.getId());
+        this.locutoresProgramasComboBoxModel.addElement(this.locutor.getId());
         
         this.dispose();
     }//GEN-LAST:event_botonActualizarInfoActionPerformed
@@ -309,6 +312,7 @@ public class InformacionLocutor extends javax.swing.JFrame {
                                            +"-ID: "+ this.locutor.getId());
         
         this.locutoresComboBoxModel.removeElement(this.locutor.getId());
+        this.locutoresProgramasComboBoxModel.removeElement(this.locutor.getId());
         this.emisora.removerLocutor(this.locutor);
         this.dispose();
     }//GEN-LAST:event_botonEliminarLocutorActionPerformed
