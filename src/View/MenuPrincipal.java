@@ -942,7 +942,27 @@ public class MenuPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_programasListaComboActionPerformed
 
     private void botonAsignarLocutorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonAsignarLocutorActionPerformed
-        // TODO add your handling code here:
+        ArrayList<Locutor> locutores;
+        ArrayList<Programa> programas;
+
+        programas = emisora.getProgramas();
+        locutores = emisora.getLocutores();
+        Locutor locutorAsignar;
+        String locutorId = (String) locutoresProgramasComboBoxModel.getSelectedItem();
+        String programaNombre = (String) this.programasComboBoxModel.getSelectedItem();
+        for(Locutor locutor : locutores){
+            if(locutor.getId() == locutorId){
+                locutorAsignar = locutor;
+                for(Programa programa : programas){
+                    if(programa.getNombre() == programaNombre){
+                        programa.setLocutor(locutorAsignar);
+                        break;
+                    }
+                }
+                break;
+            }
+        }       
+        JOptionPane.showMessageDialog(this, "Se asigno correctamente el locutor...", "Exito", JOptionPane.INFORMATION_MESSAGE);
     }//GEN-LAST:event_botonAsignarLocutorActionPerformed
 
     private void programasLocutoresComboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_programasLocutoresComboActionPerformed

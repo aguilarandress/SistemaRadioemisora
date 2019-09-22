@@ -73,6 +73,10 @@ public class RadioEmisora {
     public ArrayList getLocutores(){
         return locutores;
     }
+    
+    public ArrayList getProgramas(){
+        return programas;
+    }
     /**
      * Agrega un nuevo locutor a la radio emisora
      * @param locutorNuevo El nuevo locutor que se desea agregar
@@ -127,8 +131,6 @@ public class RadioEmisora {
          */
     public void agregarPrograma(Programa programaNuevo){
         this.programas.add(programaNuevo);
-        for(Locutor e : locutores){
-            System.out.println(e.getNombre());
-        }
+       
     }
 }
