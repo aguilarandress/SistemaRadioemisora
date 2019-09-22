@@ -270,7 +270,7 @@ public class InformacionLocutor extends javax.swing.JFrame {
         this.locutoresComboBoxModel.removeElement(this.locutor.getId());
         
         this.locutor.setNombre(nombre);
-        this.locutor.setId(id);
+        
         this.locutor.setCorreo(correo);
         this.locutor.setDireccion(direccion);
         this.locutor.setSexo(sexo);
@@ -287,7 +287,7 @@ public class InformacionLocutor extends javax.swing.JFrame {
             return;
         }
         if (idOriginal.equals(this.locutor.getId())){
-            ;
+            this.locutor.setId(id);
         } else if(this.emisora.verificarCedulaRepetida(id)) {
             JOptionPane.showMessageDialog(this, "ID repetido...", "ERROR", JOptionPane.ERROR_MESSAGE);
             return;
