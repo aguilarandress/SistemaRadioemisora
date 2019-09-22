@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package Model.Programa;
+import Model.Locutor.Locutor;
 
 /**
  *
@@ -14,12 +15,14 @@ public class Programa {
     private String horario;
     private int duracion;
     private String genero;
+    Locutor locutor;
     
     public Programa(String nombre, String horario, int duracion, String genero){
         this.nombre = nombre;
         this.horario = horario;
         this.duracion = duracion;
         this.genero = genero;
+        locutor = null;
     }
 
     public String getNombre() {
@@ -52,6 +55,11 @@ public class Programa {
 
     public void setGenero(String genero) {
         this.genero = genero;
+    }
+    
+    public void setLocutor(Locutor locutor){
+        this.locutor = locutor;
+        System.out.println(this.locutor.getNombre());
     }
     
     
