@@ -1173,6 +1173,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
         if(nombre.isEmpty() || cantante.isEmpty() || genero.isEmpty() || anioStr.isEmpty() ||
                 ubicacion.isEmpty() || imagen.isEmpty()){
             JOptionPane.showMessageDialog(this, "Datos incorrectos...", "ERROR", JOptionPane.ERROR_MESSAGE);
+            return;
         }
         int anio = Integer.parseInt(anioStr);
         Disco discoNuevo = new Disco(nombre, cantante, genero, anio, ubicacion, imagen);
