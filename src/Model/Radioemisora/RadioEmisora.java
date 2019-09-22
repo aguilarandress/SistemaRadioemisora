@@ -6,6 +6,7 @@
 package Model.Radioemisora;
 
 import Model.Locutor.Locutor;
+import Model.Programa.Programa;
 import java.util.ArrayList;
 
 /**
@@ -21,6 +22,8 @@ public class RadioEmisora {
     
     private ArrayList<Locutor> locutores;
     
+    private ArrayList<Programa> programas;
+    
     public RadioEmisora(String nombre, String direccionFisica,
             String frecuencia, String urlSitioWeb){
         this.nombre = nombre;
@@ -28,6 +31,7 @@ public class RadioEmisora {
         this.frecuencia = frecuencia;
         this.urlSitioWeb = urlSitioWeb;
         this.locutores = new ArrayList<Locutor>();
+        this.programas = new ArrayList<Programa>();
     }
 
     public String getNombre() {
@@ -62,6 +66,13 @@ public class RadioEmisora {
         this.urlSitioWeb = urlSitioWeb;
     }
     
+    /**
+     * Se obtiene la lista de locutores
+     * @return la lista de locutores
+     */
+    public ArrayList getLocutores(){
+        return locutores;
+    }
     /**
      * Agrega un nuevo locutor a la radio emisora
      * @param locutorNuevo El nuevo locutor que se desea agregar
@@ -108,5 +119,16 @@ public class RadioEmisora {
             }
         }
         return null;
+    }
+    
+        /**
+         * Agrega un programa nuevo a la radioemisora
+         * @param programaNuevo Programa nuevo que se desea agregar
+         */
+    public void agregarPrograma(Programa programaNuevo){
+        this.programas.add(programaNuevo);
+        for(Locutor e : locutores){
+            System.out.println(e.getNombre());
+        }
     }
 }
