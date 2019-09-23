@@ -1148,16 +1148,15 @@ public class MenuPrincipal extends javax.swing.JFrame {
                                 " |Genero: " + programaSeleccionado.getGenero() + 
                                 " |Locutor: SIN ASIGNAR");
             
-            programaSeleccionado.setLocutor(locutorSeleccionado);
-            
-            // Revisa si el programa tiene el id del mismo locutor pero con diferente informacion
-        } else if (programaSeleccionado.getLocutor().getId() ==  locutorSeleccionado.getId()) { 
+        } else { // El id del locutor existe
             
             this.programasListModel.removeElement(programaSeleccionado.getNombre() + 
                                 " |Genero: " + programaSeleccionado.getGenero() + 
                                 " |Locutor: " + programaSeleccionado.getLocutor().getNombre());
-            
-        } 
+        }
+        
+            programaSeleccionado.setLocutor(locutorSeleccionado);
+        
             this.programasListModel.addElement(programaSeleccionado.getNombre() + 
                                 " |Genero: " + programaSeleccionado.getGenero() + 
                                 " |Locutor: " + locutorSeleccionado.getNombre());
