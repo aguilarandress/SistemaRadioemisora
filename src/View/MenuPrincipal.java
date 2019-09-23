@@ -17,7 +17,9 @@ import java.util.ArrayList;
 
 /**
  *
- * @author kenne
+ * @author Andres Aguilar
+ * @author Fabian Vargas
+ * @author Kenneth Sanchez
  */
 public class MenuPrincipal extends javax.swing.JFrame {
 
@@ -34,8 +36,10 @@ public class MenuPrincipal extends javax.swing.JFrame {
      * Creates new form MenuPrincipal
      */
     public MenuPrincipal(RadioEmisora pEmisora) {
+        
         initComponents();
         emisora = pEmisora;
+        
         this.programasLocutoresCombo.setModel(this.locutoresProgramasComboBoxModel);
         this.programasListaProgramasBox.setModel(this.programasListModel);
         this.programasListaCombo.setModel(this.programasComboBoxModel);
@@ -954,14 +958,17 @@ public class MenuPrincipal extends javax.swing.JFrame {
      * @param evt Evento realizado a la hora de presionar el boton
      */
     private void btnActualizarEmisoraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnActualizarEmisoraActionPerformed
+        
         String nombre = this.nombreEmisoraInput.getText();
         String url = this.urlEmisoraInput.getText();
         String frecuencia = this.frecuenciaEmisoraInput.getText();
         String direccion = this.direccionFisicaInput.getText();
+        
+        // Validacion
         if (nombre.isEmpty() || url.isEmpty()
                 || frecuencia.isEmpty() || direccion.isEmpty()) {
             JOptionPane.showMessageDialog(this, "Datos invalidos...", "ERROR", JOptionPane.ERROR_MESSAGE);
-        } else {
+        } else { // Crea la emisora
             emisora.setNombre(nombre);
             emisora.setFrecuencia(frecuencia);
             emisora.setUrlSitioWeb(url);
@@ -973,7 +980,8 @@ public class MenuPrincipal extends javax.swing.JFrame {
             this.urlEmisoraShow.setText(emisora.getUrlSitioWeb());
 
             this.toggleWindowTabs(true);
-             
+            
+             // Se deshace del texto en los inputs
             this.frecuenciaEmisoraInput.setText("");
             this.direccionFisicaInput.setText("");
             this.nombreEmisoraInput.setText("");
@@ -1009,6 +1017,8 @@ public class MenuPrincipal extends javax.swing.JFrame {
         String sexo = this.locutorSexoInput.getText();
         String fecha = this.locutorFechaInput.getText();
 
+        // Verificaciones
+        
         if (id.isEmpty() || nombre.isEmpty() || correo.isEmpty()
                 || telefono.isEmpty() || direccion.isEmpty() || sexo.isEmpty()
                 || fecha.isEmpty()) {
@@ -1029,16 +1039,20 @@ public class MenuPrincipal extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "ID repetido...", "ERROR", JOptionPane.ERROR_MESSAGE);
             return;
         }
+        
+        // Agrega al locutor
         this.emisora.agregarLocutor(locutorNuevo);
         
         this.locutoresActualizarCombo.setModel(this.locutoresComboBoxModel);
         this.listaLocutoresBox.setModel(this.locutoresListModel);
+        
+        // Agrega la informacion de los locutores a los lugares indicados
         this.locutoresComboBoxModel.addElement(locutorNuevo.getId());
         this.locutoresListModel.addElement("-Nombre: " + locutorNuevo.getNombre() + "  " 
                                            +"-ID: "+ locutorNuevo.getId());
         this.locutoresProgramasComboBoxModel.addElement(id);
         
-        
+        // Vacia el texto de cada casilla de input
         this.locutorNombreInput.setText("");
         this.locutorIdInput.setText("");
         this.locutorTelefonoInput.setText("");
@@ -1061,12 +1075,17 @@ public class MenuPrincipal extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_programaDuracionInputActionPerformed
     
+    /**
+     * Crea un programa y lo muestra en pantalla
+     * @param evt 
+     */
     private void botonCrearNuevoProgramaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonCrearNuevoProgramaActionPerformed
         String nombre = this.programaNombreInput.getText();
         String horario = this.programaHorarioInput.getText();
         String duracionStr = this.programaDuracionInput.getText();
         String genero = this.programasGeneroInput.getText();
         
+        // Verificaciones
         if(nombre.isEmpty() || horario.isEmpty() || duracionStr.isEmpty()
                 || genero.isEmpty()){
             JOptionPane.showMessageDialog(this, "Datos invalidos...", "ERROR", JOptionPane.ERROR_MESSAGE);
@@ -1079,14 +1098,17 @@ public class MenuPrincipal extends javax.swing.JFrame {
         }
         
         int duracion = Integer.parseInt(duracionStr);
+        
+        // Agrega el nuevo locutor
         Programa programaNuevo = new Programa(nombre, horario, duracion, genero);
         this.emisora.agregarPrograma(programaNuevo);
         
-        
-        this.programasListModel.addElement("Nombre: " + programaNuevo.getNombre() + 
-                " Genero:" + programaNuevo.getGenero() + " Locutor: SIN ASIGNAR");
+        // Agrega el programa a la Lista y el comboBox respectivo
+        this.programasListModel.addElement(programaNuevo.getNombre() + 
+                " |Genero: " + programaNuevo.getGenero() + " |Locutor: SIN ASIGNAR");
         this.programasComboBoxModel.addElement(programaNuevo.getNombre());
         
+        // Vacia el texto de cada casilla de input
         this.programasGeneroInput.setText("");
         this.programaDuracionInput.setText("");
         this.programaHorarioInput.setText("");
@@ -1112,19 +1134,45 @@ public class MenuPrincipal extends javax.swing.JFrame {
         Locutor locutorAsignar;
         String locutorId = (String) locutoresProgramasComboBoxModel.getSelectedItem();
         String programaNombre = (String) this.programasComboBoxModel.getSelectedItem();
-        for(Locutor locutor : locutores){
-            if(locutor.getId() == locutorId){
+        
+        for(Locutor locutor : locutores){ //Itera por cada locutor hasta encontrar al correcto
+            
+            if(locutor.getId().equals(locutorId)){
                 locutorAsignar = locutor;
-                for(Programa programa : programas){
-                    if(programa.getNombre() == programaNombre){
-                        programa.setLocutor(locutorAsignar);
-                        break;
+                
+                for(Programa programa : programas){ //Itera por cada programa hasta encontrar al correcto
+                    
+                    if(programa.getNombre().equals(programaNombre)){
+                        
+                        if (programa.getLocutor() == null) { //Revisa si el locutor existe
+                            
+                            programa.setLocutor(locutorAsignar);
+                            
+                            this.programasListModel.removeElement (programa.getNombre() + 
+                                " |Genero: " + programa.getGenero() + " |Locutor: SIN ASIGNAR");
+                            
+                        } else if (programa.getLocutor() != locutor) { // Revisa si el locutor asignado es diferente al nuevo por asignar
+                            
+                            this.programasListModel.removeElement(programa.getNombre() + 
+                                " |Genero: " + programa.getGenero() + 
+                                " |Locutor: " + programa.getLocutor().getNombre());
+                            
+                        }
+                        
+                        // Asigna al locutor
+                        
+                        this.programasListModel.addElement(programa.getNombre() + 
+                                " |Genero: " + programa.getGenero() + 
+                                " |Locutor: " + locutor.getNombre());
+         
+                        JOptionPane.showMessageDialog(this, "Se asigno correctamente el locutor...", 
+                                "Exito", JOptionPane.INFORMATION_MESSAGE);
+                        
+                        return;
                     }
                 }
-                break;
             }
-        }       
-        JOptionPane.showMessageDialog(this, "Se asigno correctamente el locutor...", "Exito", JOptionPane.INFORMATION_MESSAGE);
+        }
     }//GEN-LAST:event_botonAsignarLocutorActionPerformed
 
     private void programasLocutoresComboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_programasLocutoresComboActionPerformed

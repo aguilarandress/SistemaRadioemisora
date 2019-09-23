@@ -12,7 +12,9 @@ import java.util.ArrayList;
 
 /**
  * 
- * @author fabia
+ * @author Fabian Vargas
+ * @author Andres Aguilar
+ * @author Kenneth Sanchez
  */
 public class RadioEmisora {
     

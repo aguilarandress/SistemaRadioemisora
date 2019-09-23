@@ -14,7 +14,9 @@ import javax.swing.JOptionPane;
 
 /**
  *
- * @author kenne
+ * @author Kenneth Sanchez
+ * @author Andres Aguilar
+ * @author Fabian Vargas
  */
 public class InformacionLocutor extends javax.swing.JFrame {
     private Locutor locutor;
@@ -260,6 +262,7 @@ public class InformacionLocutor extends javax.swing.JFrame {
         
         String idOriginal = id;
         
+        // Verificaciones
         if (id.isEmpty() || nombre.isEmpty() || correo.isEmpty() ||
             telefono.isEmpty() || direccion.isEmpty() || sexo.isEmpty() ||
             fecha.isEmpty()){
@@ -267,13 +270,14 @@ public class InformacionLocutor extends javax.swing.JFrame {
             return;
         }
         
+        // Remueve los strings con la informacion desactualizada del lugar respectivo
         this.locutoresListModel.removeElement("-Nombre: " + this.locutor.getNombre() + "  " 
                                            +"-ID: "+ this.locutor.getId());
         
         this.locutoresComboBoxModel.removeElement(this.locutor.getId());
         this.locutoresProgramasComboBoxModel.removeElement(this.locutor.getId());
         
-        
+        // Validaciones
         if (!this.locutor.telefonoValido()) {
             System.out.println("Telefono: " + this.locutor.getTelefono());
             JOptionPane.showMessageDialog(this, "Telefono invalido...", "ERROR", JOptionPane.ERROR_MESSAGE);
@@ -301,11 +305,13 @@ public class InformacionLocutor extends javax.swing.JFrame {
         this.locutor.setFecha(fecha);
         this.locutor.setTelefono(telefono);
         
+        // Pone un nuevo string con la informacion actualizada en el lugar respectivo
         this.locutoresListModel.addElement("-Nombre: " + this.locutor.getNombre() + "  " 
                                            +"-ID: "+ this.locutor.getId());
         this.locutoresComboBoxModel.addElement(this.locutor.getId());
         this.locutoresProgramasComboBoxModel.addElement(this.locutor.getId());
         
+        // Cierra la ventanilla sin cerrar la principal
         this.dispose();
     }//GEN-LAST:event_botonActualizarInfoActionPerformed
     
@@ -314,12 +320,17 @@ public class InformacionLocutor extends javax.swing.JFrame {
      * @param evt 
      */
     private void botonEliminarLocutorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonEliminarLocutorActionPerformed
+        // Remueve el string con la informacion del locutor a desecha de los lugares respectivos 
         this.locutoresListModel.removeElement("-Nombre: " + this.locutor.getNombre() + "  " 
                                            +"-ID: "+ this.locutor.getId());
         
         this.locutoresComboBoxModel.removeElement(this.locutor.getId());
         this.locutoresProgramasComboBoxModel.removeElement(this.locutor.getId());
+        
+        // Remueva al locutor del sistema
         this.emisora.removerLocutor(this.locutor);
+        
+        // Cierra la ventanilla sin cerrar la ventana principal
         this.dispose();
     }//GEN-LAST:event_botonEliminarLocutorActionPerformed
 
