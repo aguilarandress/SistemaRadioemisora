@@ -12,7 +12,9 @@ import java.util.ArrayList;
 
 /**
  * 
- * @author fabia
+ * @author Fabian Vargas
+ * @author Andres Aguilar
+ * @author Kenneth Sanchez
  */
 public class RadioEmisora {
     
@@ -98,6 +100,19 @@ public class RadioEmisora {
     public void removerLocutor(Locutor locutorQuitar) {
         locutores.remove(locutorQuitar);
     }
+    
+    public boolean verificarNombreProgramaRepetido(String nombrePrograma) {
+        if (this.programas.isEmpty()) {
+            return false;
+        } 
+        for (Programa programaActual : programas) {
+            if (programaActual.getNombre().equals(nombrePrograma)) {
+                return true;
+            }
+        }
+        return false;
+    }
+    
     /**
      * Verfica si ya existe un locutor con dicha cedula
      * @param cedula Cedula del locutor que se desea ingresar
@@ -129,10 +144,17 @@ public class RadioEmisora {
         return null;
     }
     
-        /**
-         * Agrega un programa nuevo a la radioemisora
-         * @param programaNuevo Programa nuevo que se desea agregar
-         */
+    public Disco obtenerDisco(String nombre){
+        for(int i = 0; i < discos.size(); i++){
+            if(discos.get(i).getNombre().equals(nombre)) return discos.get(i);
+        }
+        return null;
+    }
+    
+     /**
+     * Agrega un programa nuevo a la radioemisora
+     * @param programaNuevo Programa nuevo que se desea agregar
+     */
     public void agregarPrograma(Programa programaNuevo){
         this.programas.add(programaNuevo);
        
@@ -140,6 +162,10 @@ public class RadioEmisora {
     
     public void agregarDisco(Disco discoNuevo){
         this.discos.add(discoNuevo);
+    }
+    
+    public ArrayList<Disco> getDiscos(){
+        return this.discos;
     }
 }
     
