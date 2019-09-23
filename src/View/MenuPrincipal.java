@@ -1158,6 +1158,11 @@ public class MenuPrincipal extends javax.swing.JFrame {
                                 " |Locutor: " + programa.getLocutor().getNombre());
                             
                         }
+                        else if(programa.getLocutor() == locutor){
+                            JOptionPane.showMessageDialog(this, "Este locutor ya esta asignado a este programa", 
+                                "Advertencia", JOptionPane.INFORMATION_MESSAGE);
+                            return;
+                        }
                         
                         // Asigna al locutor
                         
