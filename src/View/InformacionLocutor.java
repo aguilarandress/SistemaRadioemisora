@@ -265,6 +265,7 @@ public class InformacionLocutor extends javax.swing.JFrame {
         String sexo = this.sexoLocutorInput.getText().trim();
         String fecha = this.fechaLocutorInput.getText().trim();
         
+        String nombreOriginal = this.locutor.getNombre();
         String idOriginal = id;
         
         // Verificaciones
@@ -316,7 +317,7 @@ public class InformacionLocutor extends javax.swing.JFrame {
         this.locutoresProgramasComboBoxModel.addElement(this.locutor.getId());
         
         // Actualiza al locutor si está asignado a algún programa
-        actualizarProgramas(this.locutor.getNombre());
+        actualizarProgramas(nombre, nombreOriginal);
         
         // Cierra la ventanilla sin cerrar la principal
         this.dispose();
@@ -344,7 +345,7 @@ public class InformacionLocutor extends javax.swing.JFrame {
     }//GEN-LAST:event_botonEliminarLocutorActionPerformed
     
     /**
-     * Actualiza la lista de programas con el locutor asignado
+     * Actualiza la lista de programas si se elimina el locutor
      * @param mensaje 
      */
     public void actualizarProgramas(String mensaje) {
@@ -366,6 +367,28 @@ public class InformacionLocutor extends javax.swing.JFrame {
         }
     }
 
+    
+    /**
+     * Actualzia la lista de programas si se cambia el nombre del locutor
+     * @param nombreNuevo
+     * @param nombreOriginal 
+     */
+    public void actualizarProgramas(String nombreNuevo, String nombreOriginal) {
+        ArrayList<Programa> programas = this.emisora.getProgramas();
+        
+        for (Programa programaActual : programas) {
+            if (programaActual.getLocutor() == this.locutor) {
+                this.programasListModel.removeElement(programaActual.getNombre() + 
+                                " |Genero: " + programaActual.getGenero() + 
+                                " |Locutor: " + nombreOriginal);
+                
+                this.programasListModel.addElement(programaActual.getNombre() + 
+                                " |Genero: " + programaActual.getGenero() + 
+                                " |Locutor: " + nombreNuevo);
+            }
+        }
+    }
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton botonActualizarInfo;
     private javax.swing.JButton botonEliminarLocutor;
