@@ -958,10 +958,10 @@ public class MenuPrincipal extends javax.swing.JFrame {
      */
     private void btnActualizarEmisoraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnActualizarEmisoraActionPerformed
         
-        String nombre = this.nombreEmisoraInput.getText();
-        String url = this.urlEmisoraInput.getText();
-        String frecuencia = this.frecuenciaEmisoraInput.getText();
-        String direccion = this.direccionFisicaInput.getText();
+        String nombre = this.nombreEmisoraInput.getText().trim();
+        String url = this.urlEmisoraInput.getText().trim();
+        String frecuencia = this.frecuenciaEmisoraInput.getText().trim();
+        String direccion = this.direccionFisicaInput.getText().trim();
         
         // Validacion
         if (nombre.isEmpty() || url.isEmpty()
@@ -1008,13 +1008,13 @@ public class MenuPrincipal extends javax.swing.JFrame {
      * @param evt Evento realizado a la hora de presionar el boton
      */
     private void botonAgregarLocutorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonAgregarLocutorActionPerformed
-        String id = this.locutorIdInput.getText();
-        String nombre = this.locutorNombreInput.getText();
-        String correo = this.locutorCorreoInput.getText();
-        String telefono = this.locutorTelefonoInput.getText();
-        String direccion = this.locutorDireccionInput.getText();
-        String sexo = this.locutorSexoInput.getText();
-        String fecha = this.locutorFechaInput.getText();
+        String id = this.locutorIdInput.getText().trim();
+        String nombre = this.locutorNombreInput.getText().trim();
+        String correo = this.locutorCorreoInput.getText().trim();
+        String telefono = this.locutorTelefonoInput.getText().trim();
+        String direccion = this.locutorDireccionInput.getText().trim();
+        String sexo = this.locutorSexoInput.getText().trim();
+        String fecha = this.locutorFechaInput.getText().trim();
 
         // Verificaciones
         
@@ -1079,10 +1079,10 @@ public class MenuPrincipal extends javax.swing.JFrame {
      * @param evt 
      */
     private void botonCrearNuevoProgramaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonCrearNuevoProgramaActionPerformed
-        String nombre = this.programaNombreInput.getText();
-        String horario = this.programaHorarioInput.getText();
-        String duracionStr = this.programaDuracionInput.getText();
-        String genero = this.programasGeneroInput.getText();
+        String nombre = this.programaNombreInput.getText().trim();
+        String horario = this.programaHorarioInput.getText().trim();
+        String duracionStr = this.programaDuracionInput.getText().trim();
+        String genero = this.programasGeneroInput.getText().trim();
         
         // Verificaciones
         if(nombre.isEmpty() || horario.isEmpty() || duracionStr.isEmpty()
@@ -1217,12 +1217,12 @@ public class MenuPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_programaDuracionInputKeyTyped
     
     private void botonCrearDiscoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonCrearDiscoActionPerformed
-        String nombre = this.nombreDiscoTextField.getText();
-        String cantante = this.cantanteDiscoTextField.getText();
-        String genero = this.generoDiscoTextField.getText();
-        String anioStr = this.anioDiscoTextField.getText();
-        String ubicacion = this.ubicacionDiscoTextField.getText();
-        String imagen = this.imagenDiscoTextField.getText();
+        String nombre = this.nombreDiscoTextField.getText().trim();
+        String cantante = this.cantanteDiscoTextField.getText().trim();
+        String genero = this.generoDiscoTextField.getText().trim();
+        String anioStr = this.anioDiscoTextField.getText().trim();
+        String ubicacion = this.ubicacionDiscoTextField.getText().trim();
+        String imagen = this.imagenDiscoTextField.getText().trim();
 
         if (nombre.isEmpty() || cantante.isEmpty() || genero.isEmpty() || anioStr.isEmpty()
                 || ubicacion.isEmpty() || imagen.isEmpty()) {

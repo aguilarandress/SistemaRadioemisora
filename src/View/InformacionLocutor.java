@@ -252,13 +252,13 @@ public class InformacionLocutor extends javax.swing.JFrame {
      * @param evt 
      */
     private void botonActualizarInfoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonActualizarInfoActionPerformed
-        String id = this.idLocutorInput.getText();
-        String nombre = this.nombreLocutorInput.getText();
-        String correo = this.correoLocutorInput.getText();
-        String telefono = this.telefonoLocutorInput.getText();
-        String direccion = this.direccionLocutorInput.getText();
-        String sexo = this.sexoLocutorInput.getText();
-        String fecha = this.fechaLocutorInput.getText();
+        String id = this.idLocutorInput.getText().trim();
+        String nombre = this.nombreLocutorInput.getText().trim();
+        String correo = this.correoLocutorInput.getText().trim();
+        String telefono = this.telefonoLocutorInput.getText().trim();
+        String direccion = this.direccionLocutorInput.getText().trim();
+        String sexo = this.sexoLocutorInput.getText().trim();
+        String fecha = this.fechaLocutorInput.getText().trim();
         
         String idOriginal = id;
         
