@@ -1125,53 +1125,43 @@ public class MenuPrincipal extends javax.swing.JFrame {
      * @param evt 
      */
     private void botonAsignarLocutorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonAsignarLocutorActionPerformed
-        ArrayList<Locutor> locutores;
-        ArrayList<Programa> programas;
-
-        programas = emisora.getProgramas();
-        locutores = emisora.getLocutores();
-        Locutor locutorAsignar;
-        String locutorId = (String) locutoresProgramasComboBoxModel.getSelectedItem();
-        String programaNombre = (String) this.programasComboBoxModel.getSelectedItem();
         
-        for(Locutor locutor : locutores){ //Itera por cada locutor hasta encontrar al correcto
-            
-            if(locutor.getId().equals(locutorId)){
-                locutorAsignar = locutor;
-                
-                for(Programa programa : programas){ //Itera por cada programa hasta encontrar al correcto
-                    
-                    if(programa.getNombre().equals(programaNombre)){
-                        
-                        if (programa.getLocutor() == null) { //Revisa si el locutor existe
-                            
-                            programa.setLocutor(locutorAsignar);
-                            
-                            this.programasListModel.removeElement (programa.getNombre() + 
-                                " |Genero: " + programa.getGenero() + " |Locutor: SIN ASIGNAR");
-                            
-                        } else if (programa.getLocutor() != locutor) { // Revisa si el locutor asignado es diferente al nuevo por asignar
-                            
-                            this.programasListModel.removeElement(programa.getNombre() + 
-                                " |Genero: " + programa.getGenero() + 
-                                " |Locutor: " + programa.getLocutor().getNombre());
-                            
-                        }
-                        
-                        // Asigna al locutor
-                        
-                        this.programasListModel.addElement(programa.getNombre() + 
-                                " |Genero: " + programa.getGenero() + 
-                                " |Locutor: " + locutor.getNombre());
-         
-                        JOptionPane.showMessageDialog(this, "Se asigno correctamente el locutor...", 
-                                "Exito", JOptionPane.INFORMATION_MESSAGE);
-                        
-                        return;
-                    }
-                }
-            }
+        if (this.emisora.getLocutores().isEmpty()) {
+            JOptionPane.showMessageDialog(this, "No hay locutores creados...", "Error...", JOptionPane.ERROR_MESSAGE);
+            return;
+        } 
+        
+        if (this.emisora.getProgramas().isEmpty()) {
+            JOptionPane.showMessageDialog(this, "No hay locutores creados...", "Error...", JOptionPane.ERROR_MESSAGE);
+            return;
         }
+       
+        String idLocutor = (String) programasLocutoresCombo.getSelectedItem();
+        Locutor locutorSeleccionado = this.emisora.getLocutorPorId(idLocutor);
+        
+        String nombrePrograma = (String) programasListaCombo.getSelectedItem();
+        Programa programaSeleccionado = this.emisora.getProgramaPorNombre(nombrePrograma);
+        
+        if (programaSeleccionado.getLocutor() == null) { // Revisa si el programa tiene locutor asignado
+            
+            this.programasListModel.removeElement(programaSeleccionado.getNombre() + 
+                                " |Genero: " + programaSeleccionado.getGenero() + 
+                                " |Locutor: SIN ASIGNAR");
+            
+            programaSeleccionado.setLocutor(locutorSeleccionado);
+            
+            // Revisa si el programa tiene el id del mismo locutor pero con diferente informacion
+        } else if (programaSeleccionado.getLocutor().getId() ==  locutorSeleccionado.getId()) { 
+            
+            this.programasListModel.removeElement(programaSeleccionado.getNombre() + 
+                                " |Genero: " + programaSeleccionado.getGenero() + 
+                                " |Locutor: " + programaSeleccionado.getLocutor().getNombre());
+            
+        } 
+            this.programasListModel.addElement(programaSeleccionado.getNombre() + 
+                                " |Genero: " + programaSeleccionado.getGenero() + 
+                                " |Locutor: " + locutorSeleccionado.getNombre());
+       
     }//GEN-LAST:event_botonAsignarLocutorActionPerformed
 
     private void programasLocutoresComboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_programasLocutoresComboActionPerformed
@@ -1196,7 +1186,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
             return;
         }
         String idLocutor = (String) locutoresActualizarCombo.getSelectedItem();
-        Locutor locutorSeleccionado = this.emisora.obtenerPorId(idLocutor);
+        Locutor locutorSeleccionado = this.emisora.getLocutorPorId(idLocutor);
 
         // SE TIENE QUE CARGAR OTRA VENTANA
         InformacionLocutor ventanaInformacion = new InformacionLocutor(locutorSeleccionado,

@@ -135,10 +135,24 @@ public class RadioEmisora {
      * @param pId
      * @return 
      */
-    public Locutor obtenerPorId(String pId) {
+    public Locutor getLocutorPorId(String pId) {
         for (int i = 0; i < locutores.size(); i++) {
             if (locutores.get(i).getId().equals(pId)) {
                 return locutores.get(i);
+            }
+        }
+        return null;
+    }
+    
+    /**
+     * Obtiene el programa que se busca por su nombre
+     * @param pNombre
+     * @return 
+     */
+    public Programa getProgramaPorNombre(String pNombre) {
+        for (int i = 0; i < programas.size(); i++) {
+            if (programas.get(i).getNombre().equals(pNombre)) {
+                return programas.get(i);
             }
         }
         return null;

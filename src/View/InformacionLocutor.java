@@ -317,6 +317,7 @@ public class InformacionLocutor extends javax.swing.JFrame {
         
         // Actualiza al locutor si está asignado a algún programa
         actualizarProgramas(this.locutor.getNombre());
+        
         // Cierra la ventanilla sin cerrar la principal
         this.dispose();
     }//GEN-LAST:event_botonActualizarInfoActionPerformed
@@ -327,6 +328,8 @@ public class InformacionLocutor extends javax.swing.JFrame {
      */
     private void botonEliminarLocutorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonEliminarLocutorActionPerformed
         // Remueve el string con la informacion del locutor a desecha de los lugares respectivos 
+        
+        actualizarProgramas("SIN ASIGNAR");
         this.locutoresListModel.removeElement("-Nombre: " + this.locutor.getNombre() + "  " 
                                            +"-ID: "+ this.locutor.getId());
         
@@ -334,7 +337,6 @@ public class InformacionLocutor extends javax.swing.JFrame {
         this.locutoresProgramasComboBoxModel.removeElement(this.locutor.getId());
         
         // Actualiza al locutor si está asignado a algún programa
-        actualizarProgramas("SIN ASIGNAR");
         // Remueva al locutor del sistema
         this.emisora.removerLocutor(this.locutor);
         // Cierra la ventanilla sin cerrar la ventana principal
@@ -350,7 +352,9 @@ public class InformacionLocutor extends javax.swing.JFrame {
         
         for (Programa programaActual : programas) {
             if (programaActual.getLocutor() == this.locutor) {
-                programaActual.setLocutor(null);
+                if (mensaje == "SIN ASIGNAR") {
+                    programaActual.setLocutor(null);
+                }
                 this.programasListModel.removeElement(programaActual.getNombre() + 
                                 " |Genero: " + programaActual.getGenero() + 
                                 " |Locutor: " + this.locutor.getNombre());
