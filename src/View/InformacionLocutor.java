@@ -14,7 +14,9 @@ import javax.swing.JOptionPane;
 
 /**
  *
- * @author kenne
+ * @author Kenneth Sanchez
+ * @author Andres Aguilar
+ * @author Fabian Vargas
  */
 public class InformacionLocutor extends javax.swing.JFrame {
     private Locutor locutor;
@@ -26,7 +28,8 @@ public class InformacionLocutor extends javax.swing.JFrame {
      * Creates new form InformacionLocutor
      */
     public InformacionLocutor(Locutor pLocutor, RadioEmisora pEmisora,
-            DefaultListModel pLocutoresListModel, DefaultComboBoxModel pLocutoresComboBoxModel, DefaultComboBoxModel pLocutoresProgramasComboBoxModel) {
+            DefaultListModel pLocutoresListModel, DefaultComboBoxModel pLocutoresComboBoxModel,
+            DefaultComboBoxModel pLocutoresProgramasComboBoxModel) {
         this.locutor = pLocutor;
         this.emisora = pEmisora;
         this.locutoresListModel = pLocutoresListModel;
@@ -154,16 +157,16 @@ public class InformacionLocutor extends javax.swing.JFrame {
                             .addComponent(telefonoLocutorLabel))
                         .addGap(10, 10, 10)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(telefonoLocutorInput)
-                            .addComponent(correoLocutorInput)))
+                            .addComponent(correoLocutorInput)
+                            .addComponent(telefonoLocutorInput)))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(direccionLocutorLabel)
                             .addComponent(sexoLocutorLabel))
                         .addGap(11, 11, 11)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(sexoLocutorInput)
-                            .addComponent(direccionLocutorInput)))
+                            .addComponent(direccionLocutorInput)
+                            .addComponent(sexoLocutorInput)))
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(layout.createSequentialGroup()
                             .addComponent(fechaLocutorLabel)
@@ -259,6 +262,7 @@ public class InformacionLocutor extends javax.swing.JFrame {
         
         String idOriginal = id;
         
+        // Verificaciones
         if (id.isEmpty() || nombre.isEmpty() || correo.isEmpty() ||
             telefono.isEmpty() || direccion.isEmpty() || sexo.isEmpty() ||
             fecha.isEmpty()){
@@ -266,19 +270,14 @@ public class InformacionLocutor extends javax.swing.JFrame {
             return;
         }
         
+        // Remueve los strings con la informacion desactualizada del lugar respectivo
         this.locutoresListModel.removeElement("-Nombre: " + this.locutor.getNombre() + "  " 
                                            +"-ID: "+ this.locutor.getId());
         
         this.locutoresComboBoxModel.removeElement(this.locutor.getId());
+        this.locutoresProgramasComboBoxModel.removeElement(this.locutor.getId());
         
-        this.locutor.setNombre(nombre);
-        
-        this.locutor.setCorreo(correo);
-        this.locutor.setDireccion(direccion);
-        this.locutor.setSexo(sexo);
-        this.locutor.setFecha(fecha);
-        this.locutor.setTelefono(telefono);
-        
+        // Validaciones
         if (!this.locutor.telefonoValido()) {
             System.out.println("Telefono: " + this.locutor.getTelefono());
             JOptionPane.showMessageDialog(this, "Telefono invalido...", "ERROR", JOptionPane.ERROR_MESSAGE);
@@ -288,32 +287,31 @@ public class InformacionLocutor extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "Correo invalido...", "ERROR", JOptionPane.ERROR_MESSAGE);
             return;
         }
+        
         if (idOriginal.equals(this.locutor.getId())){
             this.locutor.setId(id);
+            System.out.println("MISMA CEDULA QUE ANTES");
         } else if(this.emisora.verificarCedulaRepetida(id)) {
             JOptionPane.showMessageDialog(this, "ID repetido...", "ERROR", JOptionPane.ERROR_MESSAGE);
             return;
+        } else {
+            this.locutor.setId(id);
         }
         
-        this.locutoresListModel.removeElement("-Nombre: " + this.locutor.getNombre() + "  " 
-                                           +"-ID: "+ this.locutor.getId());
-        
-        this.locutoresComboBoxModel.removeElement(this.locutor.getId());
-        this.locutoresProgramasComboBoxModel.removeElement(this.locutor.getId());
-        
         this.locutor.setNombre(nombre);
-        this.locutor.setId(id);
         this.locutor.setCorreo(correo);
-        this.locutor.setTelefono(telefono);
         this.locutor.setDireccion(direccion);
         this.locutor.setSexo(sexo);
         this.locutor.setFecha(fecha);
+        this.locutor.setTelefono(telefono);
         
+        // Pone un nuevo string con la informacion actualizada en el lugar respectivo
         this.locutoresListModel.addElement("-Nombre: " + this.locutor.getNombre() + "  " 
                                            +"-ID: "+ this.locutor.getId());
         this.locutoresComboBoxModel.addElement(this.locutor.getId());
         this.locutoresProgramasComboBoxModel.addElement(this.locutor.getId());
         
+        // Cierra la ventanilla sin cerrar la principal
         this.dispose();
     }//GEN-LAST:event_botonActualizarInfoActionPerformed
     
@@ -322,12 +320,17 @@ public class InformacionLocutor extends javax.swing.JFrame {
      * @param evt 
      */
     private void botonEliminarLocutorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonEliminarLocutorActionPerformed
+        // Remueve el string con la informacion del locutor a desecha de los lugares respectivos 
         this.locutoresListModel.removeElement("-Nombre: " + this.locutor.getNombre() + "  " 
                                            +"-ID: "+ this.locutor.getId());
         
         this.locutoresComboBoxModel.removeElement(this.locutor.getId());
         this.locutoresProgramasComboBoxModel.removeElement(this.locutor.getId());
+        
+        // Remueva al locutor del sistema
         this.emisora.removerLocutor(this.locutor);
+        
+        // Cierra la ventanilla sin cerrar la ventana principal
         this.dispose();
     }//GEN-LAST:event_botonEliminarLocutorActionPerformed
 

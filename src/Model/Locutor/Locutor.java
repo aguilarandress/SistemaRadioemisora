@@ -125,4 +125,10 @@ public class Locutor {
         return pat.matcher(this.correo).matches(); 
     }
     
+    @Override
+    public String toString(){
+        return (this.nombre + " - " + this.id);
+    }
+    
+    
 }
