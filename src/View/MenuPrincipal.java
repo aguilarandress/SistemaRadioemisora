@@ -258,7 +258,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
                             .addComponent(urlEmisoraShow)
                             .addComponent(frecuenciaEmisoraShow)
                             .addComponent(nombreEmisoraShow))
-                        .addGap(0, 443, Short.MAX_VALUE))
+                        .addGap(0, 455, Short.MAX_VALUE))
                     .addGroup(radioEmisoraTabLayout.createSequentialGroup()
                         .addGroup(radioEmisoraTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(nuevaDireccionFisicaLabel)
@@ -414,7 +414,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
                                     .addComponent(locutorDireccionInput)
                                     .addComponent(locutorSexoInput)
                                     .addComponent(locutorFechaInput, javax.swing.GroupLayout.DEFAULT_SIZE, 362, Short.MAX_VALUE)))
-                            .addComponent(botonAgregarLocutor, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 428, Short.MAX_VALUE)
+                            .addComponent(botonAgregarLocutor, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 421, Short.MAX_VALUE)
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, locutoresTabLayout.createSequentialGroup()
                                 .addComponent(nuevoLocutorLabel)
                                 .addGap(0, 0, Short.MAX_VALUE))
@@ -719,7 +719,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
                     .addComponent(jScrollPane3)
                     .addGroup(playlistsTabLayout.createSequentialGroup()
                         .addComponent(listaPlaylistsLabel)
-                        .addGap(0, 252, Short.MAX_VALUE)))
+                        .addGap(0, 257, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         playlistsTabLayout.setVerticalGroup(
@@ -766,7 +766,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
             .addGroup(cancionesTabLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel2)
-                .addContainerGap(634, Short.MAX_VALUE))
+                .addContainerGap(630, Short.MAX_VALUE))
         );
         cancionesTabLayout.setVerticalGroup(
             cancionesTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -851,7 +851,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
                                     .addComponent(anioDiscoTextField)
                                     .addComponent(ubicacionDiscoTextField)))
                             .addComponent(botonCrearDisco))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 76, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 73, Short.MAX_VALUE)
                         .addGroup(discosTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 225, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(listaDiscosLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -915,10 +915,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(39, 39, 39)
-                .addComponent(windowTabs)
-                .addContainerGap())
+            .addComponent(windowTabs)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1076,15 +1073,24 @@ public class MenuPrincipal extends javax.swing.JFrame {
             return;
         }
         
+        if (this.emisora.verificarNombreProgramaRepetido(nombre)) {
+            JOptionPane.showMessageDialog(this, "Ya existe un programa con ese nombre...", "ERROR", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        
         int duracion = Integer.parseInt(duracionStr);
         Programa programaNuevo = new Programa(nombre, horario, duracion, genero);
         this.emisora.agregarPrograma(programaNuevo);
         
         
-        this.programasListModel.addElement(programaNuevo.getNombre() + " " + programaNuevo.getGenero());
+        this.programasListModel.addElement("Nombre: " + programaNuevo.getNombre() + 
+                " Genero:" + programaNuevo.getGenero() + " Locutor: SIN ASIGNAR");
         this.programasComboBoxModel.addElement(programaNuevo.getNombre());
         
-        
+        this.programasGeneroInput.setText("");
+        this.programaDuracionInput.setText("");
+        this.programaHorarioInput.setText("");
+        this.programaNombreInput.setText("");
         
         JOptionPane.showMessageDialog(this, "Programa creado...", "Exito", JOptionPane.INFORMATION_MESSAGE);
     }//GEN-LAST:event_botonCrearNuevoProgramaActionPerformed
