@@ -6,7 +6,9 @@
 package View;
 
 import Model.Locutor.Locutor;
+import Model.Programa.Programa;
 import Model.Radioemisora.RadioEmisora;
+import java.util.ArrayList;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.DefaultListModel;
 import javax.swing.JFrame;
@@ -24,17 +26,20 @@ public class InformacionLocutor extends javax.swing.JFrame {
     private DefaultListModel locutoresListModel;
     private DefaultComboBoxModel locutoresComboBoxModel;
     private DefaultComboBoxModel locutoresProgramasComboBoxModel;
+    private DefaultListModel programasListModel;
     /**
      * Creates new form InformacionLocutor
      */
     public InformacionLocutor(Locutor pLocutor, RadioEmisora pEmisora,
             DefaultListModel pLocutoresListModel, DefaultComboBoxModel pLocutoresComboBoxModel,
-            DefaultComboBoxModel pLocutoresProgramasComboBoxModel) {
+            DefaultComboBoxModel pLocutoresProgramasComboBoxModel,
+            DefaultListModel pProgramasListModel) {
         this.locutor = pLocutor;
         this.emisora = pEmisora;
         this.locutoresListModel = pLocutoresListModel;
         this.locutoresComboBoxModel = pLocutoresComboBoxModel;
         this.locutoresProgramasComboBoxModel = pLocutoresProgramasComboBoxModel;
+        this.programasListModel = pProgramasListModel;
         initComponents();
     }
 
@@ -290,7 +295,6 @@ public class InformacionLocutor extends javax.swing.JFrame {
         
         if (idOriginal.equals(this.locutor.getId())){
             this.locutor.setId(id);
-            System.out.println("MISMA CEDULA QUE ANTES");
         } else if(this.emisora.verificarCedulaRepetida(id)) {
             JOptionPane.showMessageDialog(this, "ID repetido...", "ERROR", JOptionPane.ERROR_MESSAGE);
             return;
@@ -311,6 +315,8 @@ public class InformacionLocutor extends javax.swing.JFrame {
         this.locutoresComboBoxModel.addElement(this.locutor.getId());
         this.locutoresProgramasComboBoxModel.addElement(this.locutor.getId());
         
+        // Actualiza al locutor si está asignado a algún programa
+        actualizarProgramas(this.locutor.getNombre());
         // Cierra la ventanilla sin cerrar la principal
         this.dispose();
     }//GEN-LAST:event_botonActualizarInfoActionPerformed
@@ -327,13 +333,34 @@ public class InformacionLocutor extends javax.swing.JFrame {
         this.locutoresComboBoxModel.removeElement(this.locutor.getId());
         this.locutoresProgramasComboBoxModel.removeElement(this.locutor.getId());
         
+        // Actualiza al locutor si está asignado a algún programa
+        actualizarProgramas("SIN ASIGNAR");
         // Remueva al locutor del sistema
         this.emisora.removerLocutor(this.locutor);
-        
         // Cierra la ventanilla sin cerrar la ventana principal
         this.dispose();
     }//GEN-LAST:event_botonEliminarLocutorActionPerformed
-
+    
+    /**
+     * Actualiza la lista de programas con el locutor asignado
+     * @param mensaje 
+     */
+    public void actualizarProgramas(String mensaje) {
+        ArrayList<Programa> programas = this.emisora.getProgramas();
+        
+        for (Programa programaActual : programas) {
+            if (programaActual.getLocutor() == this.locutor) {
+                programaActual.setLocutor(null);
+                this.programasListModel.removeElement(programaActual.getNombre() + 
+                                " |Genero: " + programaActual.getGenero() + 
+                                " |Locutor: " + this.locutor.getNombre());
+                
+                this.programasListModel.addElement(programaActual.getNombre() + 
+                                " |Genero: " + programaActual.getGenero() + 
+                                " |Locutor: " + mensaje);
+            }
+        }
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton botonActualizarInfo;

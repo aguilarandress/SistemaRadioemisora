@@ -1200,7 +1200,8 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
         // SE TIENE QUE CARGAR OTRA VENTANA
         InformacionLocutor ventanaInformacion = new InformacionLocutor(locutorSeleccionado,
-                this.emisora, this.locutoresListModel, this.locutoresComboBoxModel, this.locutoresProgramasComboBoxModel);
+                this.emisora, this.locutoresListModel, this.locutoresComboBoxModel, 
+                this.locutoresProgramasComboBoxModel, this.programasListModel);
         ventanaInformacion.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         ventanaInformacion.setVisible(true);
     }//GEN-LAST:event_botonVerInfoLocutorActionPerformed
