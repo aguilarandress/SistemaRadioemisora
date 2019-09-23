@@ -67,5 +67,18 @@ public class Disco {
     public void setAño(int año) {
         this.anio = año;
     }
+
+    public String getImagen() {
+        return imagen;
+    }
+
+    public void setImagen(String imagen) {
+        this.imagen = imagen;
+    }
     
+    
+    @Override
+    public String toString(){
+        return (this.nombre + " - " +  this.genero + " - " + this.cantante);
+    }
 }

@@ -65,4 +65,8 @@ public class Programa {
         return this.locutor;
     }
     
+    @Override
+    public String toString(){
+        return (this.nombre + " - " + this.genero);
+    }
 }

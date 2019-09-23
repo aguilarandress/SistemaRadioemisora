@@ -129,10 +129,17 @@ public class RadioEmisora {
         return null;
     }
     
-        /**
-         * Agrega un programa nuevo a la radioemisora
-         * @param programaNuevo Programa nuevo que se desea agregar
-         */
+    public Disco obtenerDisco(String nombre){
+        for(int i = 0; i < discos.size(); i++){
+            if(discos.get(i).getNombre().equals(nombre)) return discos.get(i);
+        }
+        return null;
+    }
+    
+     /**
+     * Agrega un programa nuevo a la radioemisora
+     * @param programaNuevo Programa nuevo que se desea agregar
+     */
     public void agregarPrograma(Programa programaNuevo){
         this.programas.add(programaNuevo);
        
@@ -140,6 +147,10 @@ public class RadioEmisora {
     
     public void agregarDisco(Disco discoNuevo){
         this.discos.add(discoNuevo);
+    }
+    
+    public ArrayList<Disco> getDiscos(){
+        return this.discos;
     }
 }
     
