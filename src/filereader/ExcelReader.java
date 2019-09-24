@@ -2,15 +2,16 @@ package filereader;
 
 import com.gembox.spreadsheet.*;
 import java.util.ArrayList;
+import Model.Cancion.Cancion;
 
 /**
- *
+ * Clase para leer archivos Excel y cargarlos a memoria
  * @author Andres
  */
 public class ExcelReader {
     
     private String path;
-    private ArrayList<ArrayList<String>> fileData;
+    private ArrayList<Cancion> fileData;
     
     /**
      * Constructor que inicializa el path del archivo que se desea leer
@@ -20,7 +21,7 @@ public class ExcelReader {
         // Set license
         SpreadsheetInfo.setLicense("FREE-LIMITED-KEY");
         this.path = path;
-        this.fileData = new ArrayList<ArrayList<String>>();
+        this.fileData = new ArrayList<>();
     }
     
     /**
@@ -36,16 +37,13 @@ public class ExcelReader {
             for(int i = 1; i < numeroFilas; i++) {
                 ExcelRow filaActual = workSheet.getRow(i);
                 
-                // Agregar un array list con la fila del excel
-                this.fileData.add(new ArrayList<String>());
-                
-                int numeroCeldas = filaActual.getAllocatedCells().size();
-                for(int j = 0; j < numeroCeldas; j++) {
-                    ExcelCell celdaActual = filaActual.getCell(j);
-                    // Obtener valor de la celda y guardar
-                    String valorCelda = celdaActual.getStringValue();
-                    this.fileData.get(i).add(valorCelda);
-                }
+                String nombre = filaActual.getCell(0).getStringValue();
+                String cantante = filaActual.getCell(1).getStringValue();
+                int duracion = Integer.parseInt(filaActual.getCell(2).getStringValue());
+                String generoMusical = filaActual.getCell(3).getStringValue();
+                // Guardar cancion nueva
+                Cancion cancionNueva = new Cancion(nombre, duracion, cantante, generoMusical);
+                this.fileData.add(cancionNueva);
             }
             return true;
         } catch(Exception e) {
@@ -62,7 +60,7 @@ public class ExcelReader {
         this.path = path;
     }
     
-    public ArrayList<ArrayList<String>> getFileData() {
+    public ArrayList<Cancion> getFileData() {
         return this.fileData;
     }
 }
