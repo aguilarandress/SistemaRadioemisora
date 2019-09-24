@@ -1144,6 +1144,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
         
         if (programaSeleccionado.getLocutor() == null) { // Revisa si el programa tiene locutor asignado
             
+
             this.programasListModel.removeElement(programaSeleccionado.getNombre() + 
                                 " |Genero: " + programaSeleccionado.getGenero() + 
                                 " |Locutor: SIN ASIGNAR");
@@ -1153,6 +1154,47 @@ public class MenuPrincipal extends javax.swing.JFrame {
             this.programasListModel.removeElement(programaSeleccionado.getNombre() + 
                                 " |Genero: " + programaSeleccionado.getGenero() + 
                                 " |Locutor: " + programaSeleccionado.getLocutor().getNombre());
+
+            if(locutor.getId().equals(locutorId)){
+                locutorAsignar = locutor;
+                
+                for(Programa programa : programas){ //Itera por cada programa hasta encontrar al correcto
+                    
+                    if(programa.getNombre().equals(programaNombre)){
+                        
+                        if (programa.getLocutor() == null) { //Revisa si el locutor existe
+                            
+                            programa.setLocutor(locutorAsignar);
+                            
+                            this.programasListModel.removeElement (programa.getNombre() + 
+                                " |Genero: " + programa.getGenero() + " |Locutor: SIN ASIGNAR");
+                            
+                        } else if (programa.getLocutor() != locutor) { // Revisa si el locutor asignado es diferente al nuevo por asignar
+                            
+                            this.programasListModel.removeElement(programa.getNombre() + 
+                                " |Genero: " + programa.getGenero() + 
+                                " |Locutor: " + programa.getLocutor().getNombre());
+                            
+                        }
+                        else if(programa.getLocutor() == locutor){
+                            JOptionPane.showMessageDialog(this, "Este locutor ya esta asignado a este programa", 
+                                "Advertencia", JOptionPane.INFORMATION_MESSAGE);
+                            return;
+                        }
+                        
+                        // Asigna al locutor
+                        
+                        this.programasListModel.addElement(programa.getNombre() + 
+                                " |Genero: " + programa.getGenero() + 
+                                " |Locutor: " + locutor.getNombre());
+         
+                        JOptionPane.showMessageDialog(this, "Se asigno correctamente el locutor...", 
+                                "Exito", JOptionPane.INFORMATION_MESSAGE);
+                        
+                        return;
+                    }
+                }
+            }
         }
         
             programaSeleccionado.setLocutor(locutorSeleccionado);
