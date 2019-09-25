@@ -1307,11 +1307,12 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
     /**
      * Abre la ventana de informacion sobre el programa seleccionado
+     *
      * @param evt El evento ejecutado al presionar el boton
      */
     private void verInformacionProgramaBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_verInformacionProgramaBtnActionPerformed
         // Verificar que existan programas
-        if(this.emisora.getProgramas().isEmpty()) {
+        if (this.emisora.getProgramas().isEmpty()) {
             JOptionPane.showMessageDialog(this, "No hay programas crados.", "ERROR", JOptionPane.ERROR_MESSAGE);
             return;
         }
@@ -1319,7 +1320,8 @@ public class MenuPrincipal extends javax.swing.JFrame {
         String nombrePrograma = this.programasComboBoxModel.getSelectedItem().toString();
         Programa programaSeleccionado = this.emisora.obtenerProgramaPorNombre(nombrePrograma);
         // Abrir informacion para el programa
-        InformacionPrograma ventanaInformacion = new InformacionPrograma();
+        InformacionPrograma ventanaInformacion = new InformacionPrograma(this.emisora, programaSeleccionado,
+                this.programasListModel, this.programasComboBoxModel);
         ventanaInformacion.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         ventanaInformacion.setVisible(true);
     }//GEN-LAST:event_verInformacionProgramaBtnActionPerformed

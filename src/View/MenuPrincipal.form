@@ -1061,43 +1061,37 @@
                                   <Group type="102" attributes="0">
                                       <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
                                       <Component id="programasListaLabel" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace pref="252" max="32767" attributes="0"/>
                                   </Group>
                                   <Group type="102" alignment="0" attributes="0">
                                       <EmptySpace max="-2" attributes="0"/>
                                       <Component id="jScrollPane2" min="-2" pref="364" max="-2" attributes="0"/>
-                                      <EmptySpace max="32767" attributes="0"/>
                                   </Group>
                               </Group>
                           </Group>
-                          <Group type="102" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                                              <Component id="jSeparator4" alignment="0" max="32767" attributes="0"/>
-                                              <Component id="botonAsignarLocutor" alignment="0" pref="326" max="32767" attributes="0"/>
-                                              <Component id="programasLocutoresCombo" alignment="0" max="32767" attributes="0"/>
-                                              <Component id="programasListaCombo" max="32767" attributes="0"/>
-                                          </Group>
-                                          <Component id="programaAsignarLocutorLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="actualizarProgramasComboBox" min="-2" pref="327" max="-2" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                                          <Component id="programasPlaylistsCombo" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="programaAsignarPlaylistLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jSeparator6" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="programasListaCombo2" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="verInformacionProgramaBtn" alignment="0" pref="373" max="32767" attributes="0"/>
-                                          <Component id="botonAsignarPlaylist" max="32767" attributes="0"/>
-                                      </Group>
+                                  <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                                      <Component id="jSeparator4" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="botonAsignarLocutor" alignment="0" pref="326" max="32767" attributes="0"/>
+                                      <Component id="programasLocutoresCombo" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="programasListaCombo" max="32767" attributes="0"/>
                                   </Group>
-                                  <Component id="jSeparator11" min="-2" pref="335" max="-2" attributes="0"/>
+                                  <Component id="programaAsignarLocutorLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="actualizarProgramasComboBox" min="-2" pref="327" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace max="32767" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                                  <Component id="programasPlaylistsCombo" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="programaAsignarPlaylistLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jSeparator6" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="programasListaCombo2" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="verInformacionProgramaBtn" alignment="0" pref="373" max="32767" attributes="0"/>
+                                  <Component id="botonAsignarPlaylist" max="32767" attributes="0"/>
+                              </Group>
                           </Group>
+                          <Component id="jSeparator11" min="-2" pref="335" max="-2" attributes="0"/>
                       </Group>
+                      <EmptySpace max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>

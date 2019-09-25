@@ -67,6 +67,8 @@ public class Programa {
     
     @Override
     public String toString(){
-        return (this.nombre + " - " + this.genero);
+        return this.getNombre()
+                + " |Genero: " + this.getGenero() + 
+                (this.locutor != null ? " |Locutor: " + this.getLocutor().getNombre() : " |Locutor: SIN ASIGNAR");
     }
 }
