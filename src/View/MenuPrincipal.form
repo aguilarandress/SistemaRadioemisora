@@ -1351,6 +1351,9 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="Ver informacion"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="verInformacionProgramaBtnActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JSeparator" name="jSeparator11">
             </Component>

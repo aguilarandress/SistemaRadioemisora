@@ -45,6 +45,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
         this.programasListaCombo.setModel(this.programasComboBoxModel);
         this.listaDiscoComboBox.setModel(this.discoComboBoxModel);
         this.discosListaBox.setModel(this.discosListModel);
+        this.actualizarProgramasComboBox.setModel(this.programasComboBoxModel);
 
         // Desabiliatr tabs
         this.toggleWindowTabs(false);
@@ -813,6 +814,11 @@ public class MenuPrincipal extends javax.swing.JFrame {
         actualizarProgramaLabel.setText("Actualizar programa");
 
         verInformacionProgramaBtn.setText("Ver informacion");
+        verInformacionProgramaBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                verInformacionProgramaBtnActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout programasTabLayout = new javax.swing.GroupLayout(programasTab);
         programasTab.setLayout(programasTabLayout);
@@ -1298,6 +1304,21 @@ public class MenuPrincipal extends javax.swing.JFrame {
         ventanaInformacion.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         ventanaInformacion.setVisible(true);
     }//GEN-LAST:event_botonVerDiscoActionPerformed
+
+    /**
+     * Abre la ventana de informacion sobre el programa seleccionado
+     * @param evt El evento ejecutado al presionar el boton
+     */
+    private void verInformacionProgramaBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_verInformacionProgramaBtnActionPerformed
+        // Verificar que existan programas
+        if(this.emisora.getProgramas().isEmpty()) {
+            JOptionPane.showMessageDialog(this, "No hay programas crados.", "ERROR", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        // Obtener programa seleccionado del modelo
+        String nombrePrograma = this.programasComboBoxModel.getSelectedItem().toString();
+        System.out.println(nombrePrograma.length());
+    }//GEN-LAST:event_verInformacionProgramaBtnActionPerformed
 
     /**
      * @param args the command line arguments
