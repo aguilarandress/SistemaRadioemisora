@@ -1317,7 +1317,11 @@ public class MenuPrincipal extends javax.swing.JFrame {
         }
         // Obtener programa seleccionado del modelo
         String nombrePrograma = this.programasComboBoxModel.getSelectedItem().toString();
-        System.out.println(nombrePrograma.length());
+        Programa programaSeleccionado = this.emisora.obtenerProgramaPorNombre(nombrePrograma);
+        // Abrir informacion para el programa
+        InformacionPrograma ventanaInformacion = new InformacionPrograma();
+        ventanaInformacion.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        ventanaInformacion.setVisible(true);
     }//GEN-LAST:event_verInformacionProgramaBtnActionPerformed
 
     /**

@@ -183,15 +183,16 @@ public class RadioEmisora {
     public void agregarDisco(Disco discoNuevo) {
         this.discos.add(discoNuevo);
     }
-    
+
     /**
      * Obtiene un programa de acuerdo a su nombre
+     *
      * @param nombre Un string con el nombre del programa
      * @return El objeto del programa o un valor null en caso de no encontrarlo
      */
     public Programa obtenerProgramaPorNombre(String nombre) {
-        for(int i = 0; i < this.programas.size(); i++) {
-            if(this.programas.get(i).getNombre().equals(nombre)) {
+        for (int i = 0; i < this.programas.size(); i++) {
+            if (this.programas.get(i).getNombre().equals(nombre)) {
                 return this.programas.get(i);
             }
         }
