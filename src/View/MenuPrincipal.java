@@ -131,27 +131,6 @@ public class MenuPrincipal extends javax.swing.JFrame {
         playlistsListaCancionesBox = new javax.swing.JList<String>();
         cancionesTab = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
-        discosTab = new javax.swing.JPanel();
-        discoNombreLabel = new javax.swing.JLabel();
-        nombreDiscoTextField = new javax.swing.JTextField();
-        cantanteDiscoTextField = new javax.swing.JTextField();
-        cantanteDiscoLabel = new javax.swing.JLabel();
-        generoDiscoLabel = new javax.swing.JLabel();
-        generoDiscoTextField = new javax.swing.JTextField();
-        anioDiscoLabel = new javax.swing.JLabel();
-        anioDiscoTextField = new javax.swing.JTextField();
-        ubicacionDiscoLabel = new javax.swing.JLabel();
-        ubicacionDiscoTextField = new javax.swing.JTextField();
-        imagenDiscoTextField = new javax.swing.JTextField();
-        imagenDiscoLabel = new javax.swing.JLabel();
-        jScrollPane5 = new javax.swing.JScrollPane();
-        discosListaBox = new javax.swing.JList<String>();
-        listaDiscoComboBox = new javax.swing.JComboBox<String>();
-        botonCrearDisco = new javax.swing.JButton();
-        botonVerDisco = new javax.swing.JButton();
-        listaDiscosLabel = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jSeparator9 = new javax.swing.JSeparator();
         programasTab = new javax.swing.JPanel();
         nuevoProgramaLabel = new javax.swing.JLabel();
         jSeparator3 = new javax.swing.JSeparator();
@@ -182,6 +161,27 @@ public class MenuPrincipal extends javax.swing.JFrame {
         actualizarProgramasComboBox = new javax.swing.JComboBox();
         verInformacionProgramaBtn = new javax.swing.JButton();
         jSeparator11 = new javax.swing.JSeparator();
+        discosTab = new javax.swing.JPanel();
+        discoNombreLabel = new javax.swing.JLabel();
+        nombreDiscoTextField = new javax.swing.JTextField();
+        cantanteDiscoTextField = new javax.swing.JTextField();
+        cantanteDiscoLabel = new javax.swing.JLabel();
+        generoDiscoLabel = new javax.swing.JLabel();
+        generoDiscoTextField = new javax.swing.JTextField();
+        anioDiscoLabel = new javax.swing.JLabel();
+        anioDiscoTextField = new javax.swing.JTextField();
+        ubicacionDiscoLabel = new javax.swing.JLabel();
+        ubicacionDiscoTextField = new javax.swing.JTextField();
+        imagenDiscoTextField = new javax.swing.JTextField();
+        imagenDiscoLabel = new javax.swing.JLabel();
+        jScrollPane5 = new javax.swing.JScrollPane();
+        discosListaBox = new javax.swing.JList<String>();
+        listaDiscoComboBox = new javax.swing.JComboBox<String>();
+        botonCrearDisco = new javax.swing.JButton();
+        botonVerDisco = new javax.swing.JButton();
+        listaDiscosLabel = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jSeparator12 = new javax.swing.JSeparator();
 
         menu1.setLabel("File");
         menuBar1.add(menu1);
@@ -267,7 +267,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
                             .addComponent(urlEmisoraShow)
                             .addComponent(frecuenciaEmisoraShow)
                             .addComponent(nombreEmisoraShow))
-                        .addGap(0, 512, Short.MAX_VALUE))
+                        .addGap(0, 530, Short.MAX_VALUE))
                     .addGroup(radioEmisoraTabLayout.createSequentialGroup()
                         .addGroup(radioEmisoraTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(nuevaDireccionFisicaLabel)
@@ -320,8 +320,8 @@ public class MenuPrincipal extends javax.swing.JFrame {
                     .addComponent(nuevaDireccionFisicaLabel)
                     .addComponent(direccionFisicaInput, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(btnActualizarEmisora)
-                .addContainerGap(221, Short.MAX_VALUE))
+                .addComponent(btnActualizarEmisora, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(212, Short.MAX_VALUE))
         );
 
         windowTabs.addTab("RadioEmisora", radioEmisoraTab);
@@ -401,8 +401,22 @@ public class MenuPrincipal extends javax.swing.JFrame {
             .addGroup(locutoresTabLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(locutoresTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(locutoresTabLayout.createSequentialGroup()
+                        .addComponent(nuevoLocutorLabel)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(listaLocutoresLabel)
+                        .addGap(183, 183, 183))
+                    .addGroup(locutoresTabLayout.createSequentialGroup()
+                        .addGroup(locutoresTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(actualizarLocutorLabel)
+                            .addComponent(jLabel3))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, locutoresTabLayout.createSequentialGroup()
                         .addGroup(locutoresTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(locutoresTabLayout.createSequentialGroup()
+                                .addComponent(locutoresActualizarCombo, javax.swing.GroupLayout.PREFERRED_SIZE, 235, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(botonVerInfoLocutor, javax.swing.GroupLayout.DEFAULT_SIZE, 193, Short.MAX_VALUE))
                             .addComponent(jSeparator8, javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jSeparator2, javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(locutoresTabLayout.createSequentialGroup()
@@ -415,32 +429,18 @@ public class MenuPrincipal extends javax.swing.JFrame {
                                     .addComponent(sexoLocutorLabel)
                                     .addComponent(fechaLocutorLabel))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addGroup(locutoresTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(locutorNombreInput)
-                                    .addComponent(locutorIdInput)
-                                    .addComponent(locutorCorreoInput)
-                                    .addComponent(locutorTelefonoInput)
-                                    .addComponent(locutorDireccionInput)
-                                    .addComponent(locutorSexoInput)
-                                    .addComponent(locutorFechaInput, javax.swing.GroupLayout.DEFAULT_SIZE, 362, Short.MAX_VALUE)))
-                            .addComponent(botonAgregarLocutor, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 494, Short.MAX_VALUE)
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, locutoresTabLayout.createSequentialGroup()
-                                .addComponent(nuevoLocutorLabel)
-                                .addGap(0, 0, Short.MAX_VALUE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, locutoresTabLayout.createSequentialGroup()
-                                .addComponent(locutoresActualizarCombo, javax.swing.GroupLayout.PREFERRED_SIZE, 235, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(botonVerInfoLocutor, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(locutoresTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(listaLocutoresLabel)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(locutoresTabLayout.createSequentialGroup()
-                        .addGroup(locutoresTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(actualizarLocutorLabel)
-                            .addComponent(jLabel3))
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addContainerGap())
+                                .addGroup(locutoresTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addComponent(locutorSexoInput, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 296, Short.MAX_VALUE)
+                                    .addComponent(locutorDireccionInput, javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(locutorTelefonoInput, javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(locutorCorreoInput, javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(locutorIdInput, javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(locutorNombreInput, javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(locutorFechaInput)))
+                            .addComponent(botonAgregarLocutor, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(18, 18, 18)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 282, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap())))
         );
         locutoresTabLayout.setVerticalGroup(
             locutoresTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -450,7 +450,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
                     .addComponent(nuevoLocutorLabel)
                     .addComponent(listaLocutoresLabel))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(locutoresTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(locutoresTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(locutoresTabLayout.createSequentialGroup()
                         .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(2, 2, 2)
@@ -480,21 +480,21 @@ public class MenuPrincipal extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(locutoresTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(fechaLocutorLabel)
-                            .addComponent(locutorFechaInput, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addComponent(botonAgregarLocutor, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(locutorFechaInput, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 257, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
+                .addComponent(botonAgregarLocutor)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(actualizarLocutorLabel)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator8, javax.swing.GroupLayout.PREFERRED_SIZE, 11, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(1, 1, 1)
                 .addComponent(jLabel3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(locutoresTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(botonVerInfoLocutor)
-                    .addComponent(locutoresActualizarCombo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(116, Short.MAX_VALUE))
+                .addGroup(locutoresTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(locutoresActualizarCombo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(botonVerInfoLocutor))
+                .addContainerGap(108, Short.MAX_VALUE))
         );
 
         windowTabs.addTab("Locutores", locutoresTab);
@@ -556,7 +556,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
                     .addComponent(jScrollPane3)
                     .addGroup(playlistsTabLayout.createSequentialGroup()
                         .addComponent(listaPlaylistsLabel)
-                        .addGap(0, 316, Short.MAX_VALUE)))
+                        .addGap(0, 334, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         playlistsTabLayout.setVerticalGroup(
@@ -603,7 +603,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
             .addGroup(cancionesTabLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel2)
-                .addContainerGap(693, Short.MAX_VALUE))
+                .addContainerGap(711, Short.MAX_VALUE))
         );
         cancionesTabLayout.setVerticalGroup(
             cancionesTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -614,139 +614,6 @@ public class MenuPrincipal extends javax.swing.JFrame {
         );
 
         windowTabs.addTab("Canciones", cancionesTab);
-
-        discoNombreLabel.setText("Nombre:");
-
-        cantanteDiscoLabel.setText("Cantante: ");
-
-        generoDiscoLabel.setText("Genero: ");
-
-        anioDiscoLabel.setText("Año: ");
-
-        anioDiscoTextField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                anioDiscoTextFieldActionPerformed(evt);
-            }
-        });
-        anioDiscoTextField.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                anioDiscoTextFieldKeyTyped(evt);
-            }
-        });
-
-        ubicacionDiscoLabel.setText("Ubicacion: ");
-
-        imagenDiscoLabel.setText("Imagen: ");
-
-        jScrollPane5.setViewportView(discosListaBox);
-
-        botonCrearDisco.setText("Crear disco");
-        botonCrearDisco.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botonCrearDiscoActionPerformed(evt);
-            }
-        });
-
-        botonVerDisco.setText("Ver informacion");
-        botonVerDisco.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botonVerDiscoActionPerformed(evt);
-            }
-        });
-
-        listaDiscosLabel.setText("Lista de discos:");
-
-        jLabel4.setText("Actualizar disco:");
-
-        javax.swing.GroupLayout discosTabLayout = new javax.swing.GroupLayout(discosTab);
-        discosTab.setLayout(discosTabLayout);
-        discosTabLayout.setHorizontalGroup(
-            discosTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(discosTabLayout.createSequentialGroup()
-                .addGap(46, 46, 46)
-                .addGroup(discosTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(discosTabLayout.createSequentialGroup()
-                        .addComponent(jSeparator9, javax.swing.GroupLayout.PREFERRED_SIZE, 351, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, discosTabLayout.createSequentialGroup()
-                        .addGroup(discosTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(discosTabLayout.createSequentialGroup()
-                                .addGroup(discosTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(discosTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(ubicacionDiscoLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(generoDiscoLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(discoNombreLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(cantanteDiscoLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(anioDiscoLabel))
-                                    .addComponent(imagenDiscoLabel))
-                                .addGap(27, 27, 27)
-                                .addGroup(discosTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(imagenDiscoTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 191, Short.MAX_VALUE)
-                                    .addComponent(cantanteDiscoTextField)
-                                    .addComponent(nombreDiscoTextField)
-                                    .addComponent(generoDiscoTextField)
-                                    .addComponent(anioDiscoTextField)
-                                    .addComponent(ubicacionDiscoTextField)))
-                            .addComponent(botonCrearDisco))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 130, Short.MAX_VALUE)
-                        .addGroup(discosTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 225, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(listaDiscosLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(59, 59, 59))
-                    .addGroup(discosTabLayout.createSequentialGroup()
-                        .addGroup(discosTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 165, Short.MAX_VALUE)
-                            .addComponent(listaDiscoComboBox, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(18, 18, 18)
-                        .addComponent(botonVerDisco)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-        );
-        discosTabLayout.setVerticalGroup(
-            discosTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(discosTabLayout.createSequentialGroup()
-                .addGap(15, 15, 15)
-                .addComponent(listaDiscosLabel)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(discosTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(discosTabLayout.createSequentialGroup()
-                        .addGroup(discosTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(discoNombreLabel)
-                            .addComponent(nombreDiscoTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(discosTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(cantanteDiscoTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(cantanteDiscoLabel))
-                        .addGap(18, 18, 18)
-                        .addGroup(discosTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(generoDiscoLabel)
-                            .addComponent(generoDiscoTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(discosTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(anioDiscoLabel)
-                            .addComponent(anioDiscoTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(22, 22, 22)
-                        .addGroup(discosTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(ubicacionDiscoLabel)
-                            .addComponent(ubicacionDiscoTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(discosTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(imagenDiscoTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(imagenDiscoLabel)))
-                    .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 237, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(32, 32, 32)
-                .addComponent(botonCrearDisco)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 101, Short.MAX_VALUE)
-                .addComponent(jLabel4)
-                .addGap(8, 8, 8)
-                .addComponent(jSeparator9, javax.swing.GroupLayout.PREFERRED_SIZE, 5, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(discosTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(listaDiscoComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(botonVerDisco))
-                .addGap(24, 24, 24))
-        );
-
-        windowTabs.addTab("Disco", discosTab);
 
         nuevoProgramaLabel.setText("Agregar Nuevo Programa:");
 
@@ -854,33 +721,29 @@ public class MenuPrincipal extends javax.swing.JFrame {
                         .addGroup(programasTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(programasTabLayout.createSequentialGroup()
                                 .addGap(18, 18, 18)
-                                .addComponent(programasListaLabel)
-                                .addContainerGap(252, Short.MAX_VALUE))
+                                .addComponent(programasListaLabel))
                             .addGroup(programasTabLayout.createSequentialGroup()
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 364, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 364, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(programasTabLayout.createSequentialGroup()
                         .addGroup(programasTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(programasTabLayout.createSequentialGroup()
-                                .addGroup(programasTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(programasTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                        .addComponent(jSeparator4, javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(botonAsignarLocutor, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 326, Short.MAX_VALUE)
-                                        .addComponent(programasLocutoresCombo, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(programasListaCombo, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                    .addComponent(programaAsignarLocutorLabel)
-                                    .addComponent(actualizarProgramasComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 327, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(18, 18, 18)
-                                .addGroup(programasTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addComponent(programasPlaylistsCombo, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(programaAsignarPlaylistLabel, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jSeparator6, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(programasListaCombo2, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(verInformacionProgramaBtn, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 373, Short.MAX_VALUE)
-                                    .addComponent(botonAsignarPlaylist, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                            .addComponent(jSeparator11, javax.swing.GroupLayout.PREFERRED_SIZE, 335, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                            .addGroup(programasTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addComponent(jSeparator4, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(botonAsignarLocutor, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 326, Short.MAX_VALUE)
+                                .addComponent(programasLocutoresCombo, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(programasListaCombo, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(programaAsignarLocutorLabel)
+                            .addComponent(actualizarProgramasComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 327, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(programasTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(programasPlaylistsCombo, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(programaAsignarPlaylistLabel, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jSeparator6, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(programasListaCombo2, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(verInformacionProgramaBtn, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 373, Short.MAX_VALUE)
+                            .addComponent(botonAsignarPlaylist, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addComponent(jSeparator11, javax.swing.GroupLayout.PREFERRED_SIZE, 335, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         programasTabLayout.setVerticalGroup(
             programasTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -947,6 +810,139 @@ public class MenuPrincipal extends javax.swing.JFrame {
         );
 
         windowTabs.addTab("Programas", programasTab);
+
+        discoNombreLabel.setText("Nombre:");
+
+        cantanteDiscoLabel.setText("Cantante: ");
+
+        generoDiscoLabel.setText("Genero: ");
+
+        anioDiscoLabel.setText("Año: ");
+
+        anioDiscoTextField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                anioDiscoTextFieldActionPerformed(evt);
+            }
+        });
+        anioDiscoTextField.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                anioDiscoTextFieldKeyTyped(evt);
+            }
+        });
+
+        ubicacionDiscoLabel.setText("Ubicacion: ");
+
+        imagenDiscoLabel.setText("Imagen: ");
+
+        jScrollPane5.setViewportView(discosListaBox);
+
+        botonCrearDisco.setText("Crear disco");
+        botonCrearDisco.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonCrearDiscoActionPerformed(evt);
+            }
+        });
+
+        botonVerDisco.setText("Ver informacion");
+        botonVerDisco.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonVerDiscoActionPerformed(evt);
+            }
+        });
+
+        listaDiscosLabel.setText("Lista de discos:");
+
+        jLabel4.setText("Actualizar disco:");
+
+        javax.swing.GroupLayout discosTabLayout = new javax.swing.GroupLayout(discosTab);
+        discosTab.setLayout(discosTabLayout);
+        discosTabLayout.setHorizontalGroup(
+            discosTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(discosTabLayout.createSequentialGroup()
+                .addGap(46, 46, 46)
+                .addGroup(discosTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(discosTabLayout.createSequentialGroup()
+                        .addComponent(listaDiscoComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(botonVerDisco)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(discosTabLayout.createSequentialGroup()
+                        .addGroup(discosTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(jSeparator12, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, discosTabLayout.createSequentialGroup()
+                                .addGroup(discosTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(discosTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addComponent(ubicacionDiscoLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(generoDiscoLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(discoNombreLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(cantanteDiscoLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(anioDiscoLabel))
+                                    .addComponent(imagenDiscoLabel))
+                                .addGap(27, 27, 27)
+                                .addGroup(discosTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(imagenDiscoTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 191, Short.MAX_VALUE)
+                                    .addComponent(cantanteDiscoTextField)
+                                    .addComponent(nombreDiscoTextField)
+                                    .addComponent(generoDiscoTextField)
+                                    .addComponent(anioDiscoTextField)
+                                    .addComponent(ubicacionDiscoTextField)))
+                            .addComponent(botonCrearDisco, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(18, 18, 18)
+                        .addGroup(discosTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(discosTabLayout.createSequentialGroup()
+                                .addComponent(listaDiscosLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addGroup(discosTabLayout.createSequentialGroup()
+                                .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 355, Short.MAX_VALUE)
+                                .addGap(59, 59, 59))))))
+        );
+        discosTabLayout.setVerticalGroup(
+            discosTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(discosTabLayout.createSequentialGroup()
+                .addGap(15, 15, 15)
+                .addComponent(listaDiscosLabel)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(discosTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(discosTabLayout.createSequentialGroup()
+                        .addGroup(discosTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(discoNombreLabel)
+                            .addComponent(nombreDiscoTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(discosTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(cantanteDiscoTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(cantanteDiscoLabel))
+                        .addGap(18, 18, 18)
+                        .addGroup(discosTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(generoDiscoLabel)
+                            .addComponent(generoDiscoTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(discosTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(anioDiscoLabel)
+                            .addComponent(anioDiscoTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(22, 22, 22)
+                        .addGroup(discosTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(ubicacionDiscoLabel)
+                            .addComponent(ubicacionDiscoTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(discosTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(imagenDiscoTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(imagenDiscoLabel)))
+                    .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 237, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(32, 32, 32)
+                .addComponent(botonCrearDisco)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel4)
+                .addGap(3, 3, 3)
+                .addComponent(jSeparator12, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(5, 5, 5)
+                .addGroup(discosTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(listaDiscoComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(botonVerDisco))
+                .addContainerGap(120, Short.MAX_VALUE))
+        );
+
+        windowTabs.addTab("Disco", discosTab);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -1377,6 +1373,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator10;
     private javax.swing.JSeparator jSeparator11;
+    private javax.swing.JSeparator jSeparator12;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
     private javax.swing.JSeparator jSeparator4;
@@ -1384,7 +1381,6 @@ public class MenuPrincipal extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator6;
     private javax.swing.JSeparator jSeparator7;
     private javax.swing.JSeparator jSeparator8;
-    private javax.swing.JSeparator jSeparator9;
     private javax.swing.JComboBox<String> listaDiscoComboBox;
     private javax.swing.JLabel listaDiscosLabel;
     private javax.swing.JList<String> listaLocutoresBox;
