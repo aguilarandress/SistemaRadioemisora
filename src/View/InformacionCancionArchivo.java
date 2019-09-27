@@ -5,16 +5,32 @@
  */
 package View;
 
+import Model.Cancion.CancionArchivo;
+import Model.Radioemisora.RadioEmisora;
+import javax.swing.DefaultComboBoxModel;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author kenne
  */
 public class InformacionCancionArchivo extends javax.swing.JFrame {
 
+    CancionArchivo cancion;
+    RadioEmisora emisora;
+    
+    DefaultComboBoxModel cancionArchivoComboBoxModel;
+    
+    
     /**
      * Creates new form InformacionCancion
      */
-    public InformacionCancionArchivo() {
+    public InformacionCancionArchivo(CancionArchivo pCancion,
+            DefaultComboBoxModel pCancionArchivoComboBoxModel,
+            RadioEmisora pEmisora) {
+        this.cancion = pCancion;
+        this.cancionArchivoComboBoxModel = pCancionArchivoComboBoxModel;
+        this.emisora = pEmisora;
         initComponents();
     }
 
@@ -38,7 +54,13 @@ public class InformacionCancionArchivo extends javax.swing.JFrame {
         nombreCancionShowLabel = new javax.swing.JLabel();
         cancionAlbumLabel = new javax.swing.JLabel();
         cancionPathLabel = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        duracionCancionInput = new javax.swing.JTextField();
+        cantanteCancionInput = new javax.swing.JTextField();
+        generoCancionInput = new javax.swing.JTextField();
+        albumCancionInput = new javax.swing.JTextField();
+        pathCancionInput = new javax.swing.JTextField();
+        botonActualizarCancion = new javax.swing.JButton();
+        botonEliminarCancion = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -52,13 +74,40 @@ public class InformacionCancionArchivo extends javax.swing.JFrame {
 
         cancionGeneroLabel.setText("Género:");
 
-        nombreCancionShowLabel.setText("jLabel1");
+        nombreCancionShowLabel.setText(this.cancion.getNombre());
 
         cancionAlbumLabel.setText("Album:");
 
         cancionPathLabel.setText("PATH:");
 
-        jTextField1.setText("jTextField1");
+        duracionCancionInput.setText(String.valueOf(this.cancion.getDuracion()));
+        duracionCancionInput.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                duracionCancionInputKeyTyped(evt);
+            }
+        });
+
+        cantanteCancionInput.setText(this.cancion.getCantante());
+
+        generoCancionInput.setText(this.cancion.getGenero());
+
+        albumCancionInput.setText(this.cancion.getAlbum());
+
+        pathCancionInput.setText(this.cancion.getPath());
+
+        botonActualizarCancion.setText("Actualizar Datos");
+        botonActualizarCancion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonActualizarCancionActionPerformed(evt);
+            }
+        });
+
+        botonEliminarCancion.setText("Eliminar Canción");
+        botonEliminarCancion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonEliminarCancionActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -74,21 +123,30 @@ public class InformacionCancionArchivo extends javax.swing.JFrame {
                             .addComponent(cancionPathLabel))
                         .addGap(280, 295, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jSeparator1)
-                        .addContainerGap())
-                    .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(cancionNombreLabel)
-                            .addComponent(cancionDuracionLabel)
-                            .addComponent(cancionCantanteLabel)
-                            .addComponent(cancionGeneroLabel)
-                            .addComponent(cancionAlbumLabel))
-                        .addGap(49, 49, 49)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(nombreCancionShowLabel)
+                            .addComponent(jSeparator1)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jTextField1)
-                                .addContainerGap())))))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(cancionNombreLabel)
+                                    .addComponent(cancionDuracionLabel)
+                                    .addComponent(cancionCantanteLabel)
+                                    .addComponent(cancionGeneroLabel)
+                                    .addComponent(cancionAlbumLabel))
+                                .addGap(49, 49, 49)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(duracionCancionInput)
+                                    .addComponent(cantanteCancionInput, javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(generoCancionInput, javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(albumCancionInput)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(nombreCancionShowLabel)
+                                        .addGap(0, 0, Short.MAX_VALUE))
+                                    .addComponent(pathCancionInput, javax.swing.GroupLayout.Alignment.TRAILING)))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(botonActualizarCancion, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(33, 33, 33)
+                                .addComponent(botonEliminarCancion, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addContainerGap())))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -104,59 +162,91 @@ public class InformacionCancionArchivo extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(cancionDuracionLabel)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(duracionCancionInput, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(cancionCantanteLabel)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(cancionCantanteLabel)
+                    .addComponent(cantanteCancionInput, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(cancionGeneroLabel)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(cancionGeneroLabel)
+                    .addComponent(generoCancionInput, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(cancionAlbumLabel)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(cancionAlbumLabel)
+                    .addComponent(albumCancionInput, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(cancionPathLabel)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 55, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(cancionPathLabel)
+                    .addComponent(pathCancionInput, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(botonActualizarCancion)
+                    .addComponent(botonEliminarCancion))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 22, Short.MAX_VALUE)
                 .addComponent(cancionDiscoLabel))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    
     /**
-     * @param args the command line arguments
+     * Actualiza los datos de la cancion
+     * @param evt 
      */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(InformacionCancionArchivo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(InformacionCancionArchivo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(InformacionCancionArchivo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(InformacionCancionArchivo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+    private void botonActualizarCancionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonActualizarCancionActionPerformed
+        String album = this.albumCancionInput.getText();
+        String genero = this.generoCancionInput.getText();
+        String cantante = this.cantanteCancionInput.getText();
+        String duracion = this.duracionCancionInput.getText();
+        String path = this.pathCancionInput.getText();
+        
+        // Validaciones 
+        if (album.isEmpty() || cantante.isEmpty() || duracion.isEmpty() || 
+                genero.isEmpty() || path.isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Datos Invalidos...", "ERROR", JOptionPane.ERROR_MESSAGE);
+            return;
         }
-        //</editor-fold>
-        //</editor-fold>
+        
+        int duracionInt = Integer.parseInt(duracion);
+        
+        // Cambia la información de la cancion
+        this.cancion.setAlbum(album);
+        this.cancion.setGenero(genero);
+        this.cancion.setCantante(cantante);
+        this.cancion.setDuracion(duracionInt);
+        this.cancion.setPath(path);
+        
+        // Cierra la ventana
+        this.dispose();
+    }//GEN-LAST:event_botonActualizarCancionActionPerformed
+    
+    /**
+     * Solo permite que se digiten digitos
+     * @param evt 
+     */
+    private void duracionCancionInputKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_duracionCancionInputKeyTyped
+        char c = evt.getKeyChar();
+        if (c < '0' || c > '9') {
+            evt.consume();
+        }
+    }//GEN-LAST:event_duracionCancionInputKeyTyped
 
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new InformacionCancionArchivo().setVisible(true);
-            }
-        });
-    }
+    private void botonEliminarCancionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonEliminarCancionActionPerformed
+        
+        String nombre = this.cancion.getNombre();
+        
+        this.cancionArchivoComboBoxModel.removeElement(nombre);
+        this.emisora.getCancionesArchivo().remove(nombre);
+        
+        this.dispose();
+    }//GEN-LAST:event_botonEliminarCancionActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField albumCancionInput;
+    private javax.swing.JButton botonActualizarCancion;
+    private javax.swing.JButton botonEliminarCancion;
     private javax.swing.JLabel cancionAlbumLabel;
     private javax.swing.JLabel cancionCantanteLabel;
     private javax.swing.JLabel cancionDiscoLabel;
@@ -164,10 +254,13 @@ public class InformacionCancionArchivo extends javax.swing.JFrame {
     private javax.swing.JLabel cancionGeneroLabel;
     private javax.swing.JLabel cancionNombreLabel;
     private javax.swing.JLabel cancionPathLabel;
+    private javax.swing.JTextField cantanteCancionInput;
+    private javax.swing.JTextField duracionCancionInput;
+    private javax.swing.JTextField generoCancionInput;
     private javax.swing.JLabel informacionCancionLabel;
     private javax.swing.JPopupMenu jPopupMenu1;
     private javax.swing.JSeparator jSeparator1;
-    private javax.swing.JTextField jTextField1;
     private javax.swing.JLabel nombreCancionShowLabel;
+    private javax.swing.JTextField pathCancionInput;
     // End of variables declaration//GEN-END:variables
 }

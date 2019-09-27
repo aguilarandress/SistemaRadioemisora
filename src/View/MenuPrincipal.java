@@ -1517,9 +1517,12 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
         // Consigue la informacion de la cancion
         String cancionSeleccionada = (String) this.actualizarCancionArchivoComboBox.getSelectedItem();
+        CancionArchivo cancionActual = this.emisora.obtenerCancionArchivo(cancionSeleccionada);
         
-        
-        
+        InformacionCancionArchivo ventanaInformacion = new InformacionCancionArchivo(cancionActual,
+                                                                    cancionesArchivoBoxModel, this.emisora);
+        ventanaInformacion.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        ventanaInformacion.setVisible(true);
     }//GEN-LAST:event_verInformacionCancionArchivoBtnActionPerformed
 
     
@@ -1543,7 +1546,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
             return;
         }
         
-        if (this.emisora.verificarNombreProgramaRepetido(nombre)) {
+        if (this.emisora.verificarCancionArchivoRepetida(nombre)) {
             JOptionPane.showMessageDialog(this, "Ya existe una cancion con ese nombre...", "ERROR", JOptionPane.ERROR_MESSAGE);
             return;
         }

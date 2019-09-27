@@ -43,25 +43,36 @@
                       <EmptySpace min="280" pref="295" max="32767" attributes="0"/>
                   </Group>
                   <Group type="102" attributes="0">
-                      <Component id="jSeparator1" max="32767" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="0" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="cancionNombreLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="cancionDuracionLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="cancionCantanteLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="cancionGeneroLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="cancionAlbumLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace min="-2" pref="49" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="nombreCancionShowLabel" min="-2" max="-2" attributes="0"/>
-                          <Group type="102" attributes="0">
-                              <Component id="jTextField1" max="32767" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
+                          <Component id="jSeparator1" max="32767" attributes="0"/>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="cancionNombreLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="cancionDuracionLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="cancionCantanteLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="cancionGeneroLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="cancionAlbumLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace min="-2" pref="49" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="duracionCancionInput" max="32767" attributes="0"/>
+                                  <Component id="cantanteCancionInput" alignment="1" max="32767" attributes="0"/>
+                                  <Component id="generoCancionInput" alignment="1" max="32767" attributes="0"/>
+                                  <Component id="albumCancionInput" max="32767" attributes="0"/>
+                                  <Group type="102" attributes="0">
+                                      <Component id="nombreCancionShowLabel" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                  </Group>
+                                  <Component id="pathCancionInput" alignment="1" max="32767" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="botonActualizarCancion" min="-2" pref="179" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
+                              <Component id="botonEliminarCancion" max="32767" attributes="0"/>
                           </Group>
                       </Group>
+                      <EmptySpace max="-2" attributes="0"/>
                   </Group>
               </Group>
           </Group>
@@ -82,17 +93,34 @@
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="cancionDuracionLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jTextField1" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="duracionCancionInput" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
-              <Component id="cancionCantanteLabel" min="-2" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="cancionCantanteLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="cantanteCancionInput" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
-              <Component id="cancionGeneroLabel" min="-2" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="cancionGeneroLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="generoCancionInput" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
-              <Component id="cancionAlbumLabel" min="-2" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="cancionAlbumLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="albumCancionInput" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
-              <Component id="cancionPathLabel" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="55" max="32767" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="cancionPathLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="pathCancionInput" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="botonActualizarCancion" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="botonEliminarCancion" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace pref="22" max="32767" attributes="0"/>
               <Component id="cancionDiscoLabel" min="-2" max="-2" attributes="0"/>
           </Group>
       </Group>
@@ -130,7 +158,9 @@
     </Component>
     <Component class="javax.swing.JLabel" name="nombreCancionShowLabel">
       <Properties>
-        <Property name="text" type="java.lang.String" value="jLabel1"/>
+        <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+          <Connection code="this.cancion.getNombre()" type="code"/>
+        </Property>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="cancionAlbumLabel">
@@ -143,10 +173,59 @@
         <Property name="text" type="java.lang.String" value="PATH:"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="jTextField1">
+    <Component class="javax.swing.JTextField" name="duracionCancionInput">
       <Properties>
-        <Property name="text" type="java.lang.String" value="jTextField1"/>
+        <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+          <Connection code="String.valueOf(this.cancion.getDuracion())" type="code"/>
+        </Property>
       </Properties>
+      <Events>
+        <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="duracionCancionInputKeyTyped"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JTextField" name="cantanteCancionInput">
+      <Properties>
+        <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+          <Connection code="this.cancion.getCantante()" type="code"/>
+        </Property>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="generoCancionInput">
+      <Properties>
+        <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+          <Connection code="this.cancion.getGenero()" type="code"/>
+        </Property>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="albumCancionInput">
+      <Properties>
+        <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+          <Connection code="this.cancion.getAlbum()" type="code"/>
+        </Property>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="pathCancionInput">
+      <Properties>
+        <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+          <Connection code="this.cancion.getPath()" type="code"/>
+        </Property>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="botonActualizarCancion">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Actualizar Datos"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botonActualizarCancionActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="botonEliminarCancion">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Eliminar Canci&#xf3;n"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botonEliminarCancionActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>

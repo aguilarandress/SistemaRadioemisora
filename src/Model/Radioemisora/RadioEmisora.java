@@ -183,7 +183,21 @@ public class RadioEmisora {
         }
         return null;
     }
-
+    
+    /**
+     * 
+     * @param pNombre
+     * @return La cancion de archivo encontrada, null si no lo encuentra
+     */
+    public CancionArchivo obtenerCancionArchivo(String pNombre) {
+        for(CancionArchivo cancionActual : this.cancionesArchivo) {
+            if (cancionActual.getNombre().equals(pNombre)) {
+                return cancionActual;
+            }
+        }
+        return null;
+    }
+    
     /**
      * Agrega un programa nuevo a la radioemisora
      *

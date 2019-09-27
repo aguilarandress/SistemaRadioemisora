@@ -802,7 +802,7 @@
                                           <Component id="ubicacionDiscoTextField" max="32767" attributes="0"/>
                                       </Group>
                                   </Group>
-                                  <Component id="botonCrearDisco" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="botonCrearDisco" alignment="0" pref="270" max="32767" attributes="0"/>
                                   <Component id="jLabel4" alignment="0" max="32767" attributes="0"/>
                               </Group>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
