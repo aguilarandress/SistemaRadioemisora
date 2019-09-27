@@ -1667,12 +1667,12 @@ public class MenuPrincipal extends javax.swing.JFrame {
         }
         // Obtener canciones
         ArrayList<CancionArchivo> cancionesCargadas = cancionesExcelData.getFileData();
-        
+        // Cargar canciones al modelo
+        for(int i = 0; i < cancionesCargadas.size(); i++) {
+          // TODO: Agregar canciones al modelo
+        }
     }//GEN-LAST:event_cargarCancionesArchivoBtnActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel IdLocutorLabel;
     private javax.swing.JComboBox actualizarCancionArchivoComboBox;

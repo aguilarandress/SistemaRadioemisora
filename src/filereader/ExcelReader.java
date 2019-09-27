@@ -35,22 +35,27 @@ public class ExcelReader {
             ExcelWorksheet workSheet = workBook.getWorksheet(0);
             int numeroFilas = workSheet.getRows().size();
             for(int i = 1; i < numeroFilas; i++) {
+                System.out.println(i);
                 ExcelRow filaActual = workSheet.getRow(i);
                 
-                String album = filaActual.getCell(0).getStringValue();
+                String album = (String) filaActual.getCell(0).getValue();
+                
                 String nombre = filaActual.getCell(1).getStringValue();
                 String cantante = filaActual.getCell(2).getStringValue();
-                int duracion = Integer.parseInt(filaActual.getCell(3).getStringValue());
+                int duracion = filaActual.getCell(3).getIntValue();
                 String genero = filaActual.getCell(4).getStringValue();
                 String path = filaActual.getCell(5).getStringValue();
+
                 // Guardar cancion nueva
                 CancionArchivo cancionNueva = new CancionArchivo(nombre, duracion, cantante, genero, album, path);
                 this.fileData.add(cancionNueva);
             }
-            return true;
         } catch(Exception e) {
+            System.out.println(e.toString());
             return false;
         }
+        
+        return true;
     }
     
     public String getPath() {
