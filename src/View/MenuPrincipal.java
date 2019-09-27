@@ -1657,6 +1657,16 @@ public class MenuPrincipal extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "Por favor ingrese un path...", "ERROR", JOptionPane.ERROR_MESSAGE);
             return;
         }
+        // Cargar path del archivo
+        String filePath = this.cargarCancionesArchivoPathInput.getText();
+        ExcelReader cancionesExcelData = new ExcelReader(filePath);
+        // Verificar si el archivo se carga correctamente
+        if(!cancionesExcelData.cargarArchivoExcel()) {
+            JOptionPane.showMessageDialog(this, "Path de archivo invalido...", "ERROR", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        // Obtener canciones
+        ArrayList<CancionArchivo> cancionesCargadas = cancionesExcelData.getFileData();
         
     }//GEN-LAST:event_cargarCancionesArchivoBtnActionPerformed
 

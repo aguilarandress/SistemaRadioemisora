@@ -2,7 +2,7 @@ package filereader;
 
 import com.gembox.spreadsheet.*;
 import java.util.ArrayList;
-import Model.Cancion.Cancion;
+import Model.Cancion.CancionArchivo;
 
 /**
  * Clase para leer archivos Excel y cargarlos a memoria
@@ -11,7 +11,7 @@ import Model.Cancion.Cancion;
 public class ExcelReader {
     
     private String path;
-    private ArrayList<Cancion> fileData;
+    private ArrayList<CancionArchivo> fileData;
     
     /**
      * Constructor que inicializa el path del archivo que se desea leer
@@ -37,17 +37,18 @@ public class ExcelReader {
             for(int i = 1; i < numeroFilas; i++) {
                 ExcelRow filaActual = workSheet.getRow(i);
                 
-                String nombre = filaActual.getCell(0).getStringValue();
-                String cantante = filaActual.getCell(1).getStringValue();
-                int duracion = Integer.parseInt(filaActual.getCell(2).getStringValue());
-                String generoMusical = filaActual.getCell(3).getStringValue();
+                String album = filaActual.getCell(0).getStringValue();
+                String nombre = filaActual.getCell(1).getStringValue();
+                String cantante = filaActual.getCell(2).getStringValue();
+                int duracion = Integer.parseInt(filaActual.getCell(3).getStringValue());
+                String genero = filaActual.getCell(4).getStringValue();
+                String path = filaActual.getCell(5).getStringValue();
                 // Guardar cancion nueva
-                Cancion cancionNueva = new Cancion(nombre, duracion, cantante, generoMusical);
+                CancionArchivo cancionNueva = new CancionArchivo(nombre, duracion, cantante, genero, album, path);
                 this.fileData.add(cancionNueva);
             }
             return true;
         } catch(Exception e) {
-            System.out.println("Error de path...");
             return false;
         }
     }
@@ -60,7 +61,7 @@ public class ExcelReader {
         this.path = path;
     }
     
-    public ArrayList<Cancion> getFileData() {
+    public ArrayList<CancionArchivo> getFileData() {
         return this.fileData;
     }
 }
