@@ -55,11 +55,7 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" alignment="0" attributes="0">
-              <EmptySpace max="-2" attributes="0"/>
-              <Component id="windowTabs" max="32767" attributes="0"/>
-              <EmptySpace max="-2" attributes="0"/>
-          </Group>
+          <Component id="windowTabs" alignment="1" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
@@ -108,7 +104,7 @@
                                   <Component id="frecuenciaEmisoraShow" min="-2" max="-2" attributes="0"/>
                                   <Component id="nombreEmisoraShow" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace min="0" pref="608" max="32767" attributes="0"/>
+                              <EmptySpace min="0" pref="627" max="32767" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
@@ -352,7 +348,7 @@
                                               </Group>
                                           </Group>
                                       </Group>
-                                      <EmptySpace min="0" pref="28" max="32767" attributes="0"/>
+                                      <EmptySpace min="0" pref="47" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
@@ -610,7 +606,7 @@
                           <Component id="jScrollPane3" max="32767" attributes="0"/>
                           <Group type="102" attributes="0">
                               <Component id="listaPlaylistsLabel" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="0" pref="412" max="32767" attributes="0"/>
+                              <EmptySpace min="0" pref="431" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
@@ -825,7 +821,7 @@
                               <Component id="actualizarCancionArchivoComboBox" alignment="0" max="32767" attributes="0"/>
                           </Group>
                       </Group>
-                      <EmptySpace pref="105" max="32767" attributes="0"/>
+                      <EmptySpace pref="124" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -977,6 +973,9 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="Cargar canciones"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cargarCancionesArchivoBtnActionPerformed"/>
+              </Events>
             </Component>
           </SubComponents>
         </Container>
@@ -1035,7 +1034,7 @@
                                       <EmptySpace max="32767" attributes="0"/>
                                   </Group>
                                   <Group type="102" attributes="0">
-                                      <Component id="jScrollPane5" pref="433" max="32767" attributes="0"/>
+                                      <Component id="jScrollPane5" pref="451" max="32767" attributes="0"/>
                                       <EmptySpace min="-2" pref="59" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
@@ -1246,7 +1245,7 @@
                           </Group>
                           <Component id="botonAgregarCancion" alignment="0" min="-2" pref="188" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="147" max="32767" attributes="0"/>
+                      <EmptySpace pref="159" max="32767" attributes="0"/>
                       <Component id="jPanel2" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="70" max="-2" attributes="0"/>
                   </Group>
@@ -1425,7 +1424,7 @@
                                   </Group>
                                   <Group type="102" attributes="0">
                                       <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="jScrollPane2" pref="469" max="32767" attributes="0"/>
+                                      <Component id="jScrollPane2" pref="488" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
                           </Group>
