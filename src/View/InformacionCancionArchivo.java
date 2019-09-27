@@ -36,9 +36,9 @@ public class InformacionCancionArchivo extends javax.swing.JFrame {
         cancionGeneroLabel = new javax.swing.JLabel();
         cancionDiscoLabel = new javax.swing.JLabel();
         nombreCancionShowLabel = new javax.swing.JLabel();
-        duracionCancionShowLabel = new javax.swing.JLabel();
-        cantanteCancionShowLabel = new javax.swing.JLabel();
-        generoCancionShowLabel = new javax.swing.JLabel();
+        cancionAlbumLabel = new javax.swing.JLabel();
+        cancionPathLabel = new javax.swing.JLabel();
+        jTextField1 = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -54,11 +54,11 @@ public class InformacionCancionArchivo extends javax.swing.JFrame {
 
         nombreCancionShowLabel.setText("jLabel1");
 
-        duracionCancionShowLabel.setText("jLabel1");
+        cancionAlbumLabel.setText("Album:");
 
-        cantanteCancionShowLabel.setText("jLabel1");
+        cancionPathLabel.setText("PATH:");
 
-        generoCancionShowLabel.setText("jLabel1");
+        jTextField1.setText("jTextField1");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -67,51 +67,53 @@ public class InformacionCancionArchivo extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jSeparator1)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(informacionCancionLabel)
                             .addComponent(cancionDiscoLabel)
+                            .addComponent(cancionPathLabel))
+                        .addGap(280, 295, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jSeparator1)
+                        .addContainerGap())
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(cancionNombreLabel)
+                            .addComponent(cancionDuracionLabel)
+                            .addComponent(cancionCantanteLabel)
+                            .addComponent(cancionGeneroLabel)
+                            .addComponent(cancionAlbumLabel))
+                        .addGap(49, 49, 49)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(nombreCancionShowLabel)
                             .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(cancionNombreLabel)
-                                    .addComponent(cancionDuracionLabel)
-                                    .addComponent(cancionCantanteLabel)
-                                    .addComponent(cancionGeneroLabel))
-                                .addGap(49, 49, 49)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(generoCancionShowLabel)
-                                    .addComponent(cantanteCancionShowLabel)
-                                    .addComponent(duracionCancionShowLabel)
-                                    .addComponent(nombreCancionShowLabel))))
-                        .addGap(0, 270, Short.MAX_VALUE)))
-                .addContainerGap())
+                                .addComponent(jTextField1)
+                                .addContainerGap())))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(informacionCancionLabel)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(cancionNombreLabel)
-                            .addComponent(nombreCancionShowLabel))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(cancionDuracionLabel)
-                            .addComponent(duracionCancionShowLabel))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(cancionCantanteLabel)
-                            .addComponent(cantanteCancionShowLabel))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(cancionGeneroLabel))
-                    .addComponent(generoCancionShowLabel, javax.swing.GroupLayout.Alignment.TRAILING))
+                .addContainerGap()
+                .addComponent(informacionCancionLabel)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(cancionNombreLabel)
+                    .addComponent(nombreCancionShowLabel))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(cancionDuracionLabel)
+                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(cancionCantanteLabel)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(cancionGeneroLabel)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(cancionAlbumLabel)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(cancionPathLabel)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 55, Short.MAX_VALUE)
                 .addComponent(cancionDiscoLabel))
         );
 
@@ -155,17 +157,17 @@ public class InformacionCancionArchivo extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel cancionAlbumLabel;
     private javax.swing.JLabel cancionCantanteLabel;
     private javax.swing.JLabel cancionDiscoLabel;
     private javax.swing.JLabel cancionDuracionLabel;
     private javax.swing.JLabel cancionGeneroLabel;
     private javax.swing.JLabel cancionNombreLabel;
-    private javax.swing.JLabel cantanteCancionShowLabel;
-    private javax.swing.JLabel duracionCancionShowLabel;
-    private javax.swing.JLabel generoCancionShowLabel;
+    private javax.swing.JLabel cancionPathLabel;
     private javax.swing.JLabel informacionCancionLabel;
     private javax.swing.JPopupMenu jPopupMenu1;
     private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JTextField jTextField1;
     private javax.swing.JLabel nombreCancionShowLabel;
     // End of variables declaration//GEN-END:variables
 }

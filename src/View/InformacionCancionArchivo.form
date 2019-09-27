@@ -34,64 +34,65 @@
           <Group type="102" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="jSeparator1" max="32767" attributes="0"/>
                   <Group type="102" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="informacionCancionLabel" min="-2" max="-2" attributes="0"/>
                           <Component id="cancionDiscoLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Group type="102" alignment="0" attributes="0">
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="cancionNombreLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="cancionDuracionLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="cancionCantanteLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="cancionGeneroLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace min="-2" pref="49" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="generoCancionShowLabel" min="-2" max="-2" attributes="0"/>
-                                  <Component id="cantanteCancionShowLabel" min="-2" max="-2" attributes="0"/>
-                                  <Component id="duracionCancionShowLabel" min="-2" max="-2" attributes="0"/>
-                                  <Component id="nombreCancionShowLabel" min="-2" max="-2" attributes="0"/>
-                              </Group>
+                          <Component id="cancionPathLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="280" pref="295" max="32767" attributes="0"/>
+                  </Group>
+                  <Group type="102" attributes="0">
+                      <Component id="jSeparator1" max="32767" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="cancionNombreLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="cancionDuracionLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="cancionCantanteLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="cancionGeneroLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="cancionAlbumLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="49" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="nombreCancionShowLabel" min="-2" max="-2" attributes="0"/>
+                          <Group type="102" attributes="0">
+                              <Component id="jTextField1" max="32767" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
                           </Group>
                       </Group>
-                      <EmptySpace min="0" pref="270" max="32767" attributes="0"/>
                   </Group>
               </Group>
-              <EmptySpace max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
-              <EmptySpace max="32767" attributes="0"/>
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="1" attributes="0">
-                      <Component id="informacionCancionLabel" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jSeparator1" min="-2" pref="10" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="cancionNombreLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="nombreCancionShowLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="cancionDuracionLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="duracionCancionShowLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="cancionCantanteLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="cantanteCancionShowLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="cancionGeneroLabel" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <Component id="generoCancionShowLabel" alignment="1" min="-2" max="-2" attributes="0"/>
-              </Group>
               <EmptySpace max="-2" attributes="0"/>
+              <Component id="informacionCancionLabel" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="jSeparator1" min="-2" pref="10" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="cancionNombreLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="nombreCancionShowLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="cancionDuracionLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jTextField1" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <Component id="cancionCantanteLabel" min="-2" max="-2" attributes="0"/>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <Component id="cancionGeneroLabel" min="-2" max="-2" attributes="0"/>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <Component id="cancionAlbumLabel" min="-2" max="-2" attributes="0"/>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <Component id="cancionPathLabel" min="-2" max="-2" attributes="0"/>
+              <EmptySpace pref="55" max="32767" attributes="0"/>
               <Component id="cancionDiscoLabel" min="-2" max="-2" attributes="0"/>
           </Group>
       </Group>
@@ -132,19 +133,19 @@
         <Property name="text" type="java.lang.String" value="jLabel1"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="duracionCancionShowLabel">
+    <Component class="javax.swing.JLabel" name="cancionAlbumLabel">
       <Properties>
-        <Property name="text" type="java.lang.String" value="jLabel1"/>
+        <Property name="text" type="java.lang.String" value="Album:"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="cantanteCancionShowLabel">
+    <Component class="javax.swing.JLabel" name="cancionPathLabel">
       <Properties>
-        <Property name="text" type="java.lang.String" value="jLabel1"/>
+        <Property name="text" type="java.lang.String" value="PATH:"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="generoCancionShowLabel">
+    <Component class="javax.swing.JTextField" name="jTextField1">
       <Properties>
-        <Property name="text" type="java.lang.String" value="jLabel1"/>
+        <Property name="text" type="java.lang.String" value="jTextField1"/>
       </Properties>
     </Component>
   </SubComponents>
