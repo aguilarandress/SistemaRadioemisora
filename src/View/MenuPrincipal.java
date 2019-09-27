@@ -5,6 +5,7 @@
  */
 package View;
 
+import Model.Cancion.Cancion;
 import Model.Radioemisora.RadioEmisora;
 import Model.Locutor.Locutor;
 import Model.Programa.Programa;
@@ -90,7 +91,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
         btnActualizarEmisora = new javax.swing.JButton();
         locutoresTab = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        listaLocutoresBox = new javax.swing.JList<String>();
+        listaLocutoresBox = new javax.swing.JList<>();
         nuevoLocutorLabel = new javax.swing.JLabel();
         listaLocutoresLabel = new javax.swing.JLabel();
         IdLocutorLabel = new javax.swing.JLabel();
@@ -111,7 +112,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
         botonAgregarLocutor = new javax.swing.JButton();
         actualizarLocutorLabel = new javax.swing.JLabel();
         jSeparator8 = new javax.swing.JSeparator();
-        locutoresActualizarCombo = new javax.swing.JComboBox<String>();
+        locutoresActualizarCombo = new javax.swing.JComboBox<>();
         botonVerInfoLocutor = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
         playlistsTab = new javax.swing.JPanel();
@@ -123,13 +124,13 @@ public class MenuPrincipal extends javax.swing.JFrame {
         playlistGeneroInput = new javax.swing.JTextField();
         botonAgregarPlaylist = new javax.swing.JButton();
         jScrollPane3 = new javax.swing.JScrollPane();
-        playlistsListaPlaylistsBox = new javax.swing.JList<String>();
+        playlistsListaPlaylistsBox = new javax.swing.JList<>();
         listaPlaylistsLabel = new javax.swing.JLabel();
         verCancionesPlaylistLabel = new javax.swing.JLabel();
         jSeparator7 = new javax.swing.JSeparator();
-        playlistsCombo = new javax.swing.JComboBox<String>();
+        playlistsCombo = new javax.swing.JComboBox<>();
         jScrollPane4 = new javax.swing.JScrollPane();
-        playlistsListaCancionesBox = new javax.swing.JList<String>();
+        playlistsListaCancionesBox = new javax.swing.JList<>();
         cancionesTab = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
         jSeparator9 = new javax.swing.JSeparator();
@@ -168,8 +169,8 @@ public class MenuPrincipal extends javax.swing.JFrame {
         imagenDiscoTextField = new javax.swing.JTextField();
         imagenDiscoLabel = new javax.swing.JLabel();
         jScrollPane5 = new javax.swing.JScrollPane();
-        discosListaBox = new javax.swing.JList<String>();
-        listaDiscoComboBox = new javax.swing.JComboBox<String>();
+        discosListaBox = new javax.swing.JList<>();
+        listaDiscoComboBox = new javax.swing.JComboBox<>();
         botonCrearDisco = new javax.swing.JButton();
         botonVerDisco = new javax.swing.JButton();
         listaDiscosLabel = new javax.swing.JLabel();
@@ -188,18 +189,18 @@ public class MenuPrincipal extends javax.swing.JFrame {
         programaDuracionInput = new javax.swing.JTextField();
         programasGeneroInput = new javax.swing.JTextField();
         botonCrearNuevoPrograma = new javax.swing.JButton();
-        programasListaCombo = new javax.swing.JComboBox<String>();
+        programasListaCombo = new javax.swing.JComboBox<>();
         jSeparator4 = new javax.swing.JSeparator();
         programaAsignarLocutorLabel = new javax.swing.JLabel();
-        programasLocutoresCombo = new javax.swing.JComboBox<String>();
+        programasLocutoresCombo = new javax.swing.JComboBox<>();
         botonAsignarLocutor = new javax.swing.JButton();
         programasListaLabel = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
-        programasListaProgramasBox = new javax.swing.JList<String>();
+        programasListaProgramasBox = new javax.swing.JList<>();
         programaAsignarPlaylistLabel = new javax.swing.JLabel();
         jSeparator6 = new javax.swing.JSeparator();
-        programasListaCombo2 = new javax.swing.JComboBox<String>();
-        programasPlaylistsCombo = new javax.swing.JComboBox<String>();
+        programasListaCombo2 = new javax.swing.JComboBox<>();
+        programasPlaylistsCombo = new javax.swing.JComboBox<>();
         botonAsignarPlaylist = new javax.swing.JButton();
         actualizarProgramaLabel = new javax.swing.JLabel();
         jSeparator10 = new javax.swing.JSeparator();
@@ -552,7 +553,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
         verCancionesPlaylistLabel.setText("Ver Canciones:");
 
-        playlistsCombo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        playlistsCombo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         jScrollPane4.setViewportView(playlistsListaCancionesBox);
 
@@ -645,6 +646,11 @@ public class MenuPrincipal extends javax.swing.JFrame {
         actualizarCancionArchivoLabel.setText("Actualizar cancion");
 
         verInformacionCancionArchivoBtn.setText("Ver Informacion");
+        verInformacionCancionArchivoBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                verInformacionCancionArchivoBtnActionPerformed(evt);
+            }
+        });
 
         agregarCancionArchivoBtn.setText("Agregar Cancion");
 
@@ -741,9 +747,9 @@ public class MenuPrincipal extends javax.swing.JFrame {
                     .addComponent(cargarCancionesArchivoPathInput, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(actualizarCancionArchivoComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(cancionesTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(verInformacionCancionArchivoBtn)
-                    .addComponent(cargarCancionesArchivoBtn))
+                .addGroup(cancionesTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(cargarCancionesArchivoBtn)
+                    .addComponent(verInformacionCancionArchivoBtn))
                 .addContainerGap(48, Short.MAX_VALUE))
         );
 
@@ -1310,45 +1316,43 @@ public class MenuPrincipal extends javax.swing.JFrame {
      * @param evt
      */
     private void botonAsignarLocutorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonAsignarLocutorActionPerformed
-        ArrayList<Locutor> locutores;
-        ArrayList<Programa> programas;
-
-        programas = emisora.getProgramas();
-        locutores = emisora.getLocutores();
-        Locutor locutorAsignar;
-        String locutorId = (String) locutoresProgramasComboBoxModel.getSelectedItem();
-        String programaNombre = (String) this.programasComboBoxModel.getSelectedItem();
-        // Itera por cada locutor hasta encontrar al correcto
-        for (Locutor locutor : locutores) {
-            if (locutor.getId().equals(locutorId)) {
-                locutorAsignar = locutor;
-                // Itera por cada programa hasta encontrar al correcto
-                for (Programa programa : programas) {
-                    if (programa.getNombre().equals(programaNombre)) {
-                        // Revisa si el locutor existe
-                        if (programa.getLocutor() == null) {
-                            programa.setLocutor(locutorAsignar);
-
-                            this.programasListModel.removeElement(programa.getNombre()
-                                    + " |Genero: " + programa.getGenero() + " |Locutor: SIN ASIGNAR");
-                            // Revisa si el locutor asignado es diferente al nuevo por asignar    
-                        } else if (programa.getLocutor() != locutor) {
-                            this.programasListModel.removeElement(programa.getNombre()
-                                    + " |Genero: " + programa.getGenero()
-                                    + " |Locutor: " + programa.getLocutor().getNombre());
-                        }
-                        // Asigna al locutor
-                        this.programasListModel.addElement(programa.getNombre()
-                                + " |Genero: " + programa.getGenero()
-                                + " |Locutor: " + locutor.getNombre());
-                        JOptionPane.showMessageDialog(this, "Se asigno correctamente el locutor...",
-                                "Exito", JOptionPane.INFORMATION_MESSAGE);
-
-                        return;
-                    }
-                }
-            }
+        
+        if (this.emisora.getLocutores().isEmpty()) {
+            JOptionPane.showMessageDialog(this, "No hay locutores creados...", "Error...", JOptionPane.ERROR_MESSAGE);
+            return;
+        } 
+        
+        if (this.emisora.getProgramas().isEmpty()) {
+            JOptionPane.showMessageDialog(this, "No hay locutores creados...", "Error...", JOptionPane.ERROR_MESSAGE);
+            return;
         }
+       
+        String idLocutor = (String) programasLocutoresCombo.getSelectedItem();
+        Locutor locutorSeleccionado = this.emisora.obtenerPorId(idLocutor);
+        
+        String nombrePrograma = (String) programasListaCombo.getSelectedItem();
+        Programa programaSeleccionado = this.emisora.obtenerProgramaPorNombre(nombrePrograma);
+        
+        if (programaSeleccionado.getLocutor() == null) { // Revisa si el programa tiene locutor asignado
+            
+
+            this.programasListModel.removeElement(programaSeleccionado.getNombre() + 
+                                " |Genero: " + programaSeleccionado.getGenero() + 
+                                " |Locutor: SIN ASIGNAR");
+            
+        } else { // El id del locutor existe
+            
+            this.programasListModel.removeElement(programaSeleccionado.getNombre() + 
+                                " |Genero: " + programaSeleccionado.getGenero() + 
+                                " |Locutor: " + programaSeleccionado.getLocutor().getNombre());
+        }
+        
+            programaSeleccionado.setLocutor(locutorSeleccionado);
+        
+            this.programasListModel.addElement(programaSeleccionado.getNombre() + 
+                                " |Genero: " + programaSeleccionado.getGenero() + 
+                                " |Locutor: " + locutorSeleccionado.getNombre());
+
     }//GEN-LAST:event_botonAsignarLocutorActionPerformed
 
     private void programasLocutoresComboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_programasLocutoresComboActionPerformed
@@ -1368,6 +1372,11 @@ public class MenuPrincipal extends javax.swing.JFrame {
      * @param evt Evento para el click del boton
      */
     private void botonVerInfoLocutorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonVerInfoLocutorActionPerformed
+        
+        // Desabilita el boton de ver info temporalmente
+           this.botonVerInfoLocutor.setEnabled(false);
+        
+        // Validacion
         if (this.emisora.getLocutores().isEmpty()) {
             JOptionPane.showMessageDialog(this, "No hay locutores creados...", "Error...", JOptionPane.ERROR_MESSAGE);
             return;
@@ -1376,8 +1385,10 @@ public class MenuPrincipal extends javax.swing.JFrame {
         Locutor locutorSeleccionado = this.emisora.obtenerPorId(idLocutor);
 
         // SE TIENE QUE CARGAR OTRA VENTANA
-        InformacionLocutor ventanaInformacion = new InformacionLocutor(locutorSeleccionado,
-                this.emisora, this.locutoresListModel, this.locutoresComboBoxModel, this.locutoresProgramasComboBoxModel);
+        InformacionLocutor ventanaInformacion = new InformacionLocutor(this.botonVerInfoLocutor, 
+                locutorSeleccionado, this.emisora, this.locutoresListModel, 
+                this.locutoresComboBoxModel, this.locutoresProgramasComboBoxModel, 
+                this.programasListModel);
         ventanaInformacion.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         ventanaInformacion.setVisible(true);
     }//GEN-LAST:event_botonVerInfoLocutorActionPerformed
@@ -1479,6 +1490,21 @@ public class MenuPrincipal extends javax.swing.JFrame {
     private void cancionArchivoNombreInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancionArchivoNombreInputActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_cancionArchivoNombreInputActionPerformed
+    
+    /**
+     * Permite ver la información de la canción
+     * @param evt 
+     */
+    private void verInformacionCancionArchivoBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_verInformacionCancionArchivoBtnActionPerformed
+        // Validaciones 
+
+
+        // Consigue la informacion de la cancion
+        String cancionSeleccionada = (String) this.actualizarCancionArchivoComboBox.getSelectedItem();
+        
+        
+        
+    }//GEN-LAST:event_verInformacionCancionArchivoBtnActionPerformed
 
     /**
      * @param args the command line arguments
