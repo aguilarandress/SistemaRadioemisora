@@ -757,229 +757,6 @@
             </Container>
           </SubComponents>
         </Container>
-        <Container class="javax.swing.JPanel" name="cancionesTab">
-          <Constraints>
-            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
-              <JTabbedPaneConstraints tabName="Canciones Archivos">
-                <Property name="tabTitle" type="java.lang.String" value="Canciones Archivos"/>
-              </JTabbedPaneConstraints>
-            </Constraint>
-          </Constraints>
-
-          <Layout>
-            <DimensionLayout dim="0">
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" attributes="0">
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="actualizarCancionArchivoLabel" min="-2" pref="146" max="-2" attributes="0"/>
-                          <Group type="102" attributes="0">
-                              <Group type="103" groupAlignment="1" attributes="0">
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="cancionArchivoAlbumLabel" alignment="0" min="-2" pref="52" max="-2" attributes="0"/>
-                                      <Component id="cancionArchivoNombreLabel" alignment="0" min="-2" pref="52" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Component id="cancionArchivoCantanteLabel" min="-2" pref="52" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" attributes="0">
-                                      <Component id="cancionArchivoAlbumInput" min="-2" pref="251" max="-2" attributes="0"/>
-                                      <EmptySpace min="-2" pref="83" max="-2" attributes="0"/>
-                                      <Component id="cancionArchivoDuracionLabel" min="-2" pref="52" max="-2" attributes="0"/>
-                                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                                      <Component id="cancionArchivoAlbumInput1" min="-2" pref="251" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="cancionArchivoNombreInput" alignment="0" min="-2" pref="251" max="-2" attributes="0"/>
-                                          <Component id="cancionArchivoCantanteInput" alignment="0" min="-2" pref="251" max="-2" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace min="-2" pref="83" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                          <Component id="cargarCancionesArchivoLabel" min="-2" max="-2" attributes="0"/>
-                                          <Group type="102" attributes="0">
-                                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                                  <Component id="cancionArchivoGeneroLabel" pref="52" max="32767" attributes="0"/>
-                                                  <Component id="cancionArchivoPathLabel" max="32767" attributes="0"/>
-                                              </Group>
-                                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                                  <Component id="cancionArchivoAlbumInput2" pref="251" max="32767" attributes="0"/>
-                                                  <Component id="cancionArchivoPathInput" max="32767" attributes="0"/>
-                                              </Group>
-                                          </Group>
-                                          <Component id="jSeparator14" alignment="0" min="-2" pref="146" max="-2" attributes="0"/>
-                                          <Component id="cargarCancionesArchivoPathInput" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="cargarCancionesArchivoBtn" alignment="0" pref="321" max="32767" attributes="0"/>
-                                      </Group>
-                                  </Group>
-                              </Group>
-                          </Group>
-                          <Component id="jLabel5" alignment="0" min="-2" pref="213" max="-2" attributes="0"/>
-                          <Component id="jSeparator9" alignment="0" min="-2" pref="213" max="-2" attributes="0"/>
-                          <Component id="jSeparator13" alignment="0" min="-2" pref="155" max="-2" attributes="0"/>
-                          <Component id="agregarCancionArchivoBtn" alignment="0" min="-2" pref="321" max="-2" attributes="0"/>
-                          <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
-                              <Component id="verInformacionCancionArchivoBtn" alignment="0" pref="321" max="32767" attributes="0"/>
-                              <Component id="actualizarCancionArchivoComboBox" alignment="0" max="32767" attributes="0"/>
-                          </Group>
-                      </Group>
-                      <EmptySpace pref="105" max="32767" attributes="0"/>
-                  </Group>
-              </Group>
-            </DimensionLayout>
-            <DimensionLayout dim="1">
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jLabel5" min="-2" pref="29" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jSeparator9" min="-2" pref="10" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="149" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="cancionArchivoAlbumLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="cancionArchivoAlbumInput" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="cancionArchivoDuracionLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="cancionArchivoAlbumInput1" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="cancionArchivoNombreInput" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="cancionArchivoNombreLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="cancionArchivoGeneroLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="cancionArchivoAlbumInput2" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="cancionArchivoCantanteInput" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="cancionArchivoCantanteLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="cancionArchivoPathLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="cancionArchivoPathInput" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
-                      <Component id="agregarCancionArchivoBtn" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="actualizarCancionArchivoLabel" alignment="3" min="-2" pref="22" max="-2" attributes="0"/>
-                          <Component id="cargarCancionesArchivoLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jSeparator13" min="-2" pref="10" max="-2" attributes="0"/>
-                          <Component id="jSeparator14" min="-2" pref="10" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="cargarCancionesArchivoPathInput" min="-2" pref="30" max="-2" attributes="0"/>
-                          <Component id="actualizarCancionArchivoComboBox" min="-2" pref="32" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="cargarCancionesArchivoBtn" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="verInformacionCancionArchivoBtn" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace pref="48" max="32767" attributes="0"/>
-                  </Group>
-              </Group>
-            </DimensionLayout>
-          </Layout>
-          <SubComponents>
-            <Component class="javax.swing.JLabel" name="jLabel5">
-              <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Dialog" size="14" style="1"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="Canciones de archivos"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JSeparator" name="jSeparator9">
-            </Component>
-            <Component class="javax.swing.JLabel" name="cancionArchivoAlbumLabel">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Album"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JTextField" name="cancionArchivoAlbumInput">
-            </Component>
-            <Component class="javax.swing.JLabel" name="cancionArchivoNombreLabel">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Nombre"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JTextField" name="cancionArchivoNombreInput">
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cancionArchivoNombreInputActionPerformed"/>
-              </Events>
-            </Component>
-            <Component class="javax.swing.JLabel" name="cancionArchivoCantanteLabel">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Cantante"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JTextField" name="cancionArchivoCantanteInput">
-            </Component>
-            <Component class="javax.swing.JLabel" name="cancionArchivoDuracionLabel">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Duracion"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JTextField" name="cancionArchivoAlbumInput1">
-            </Component>
-            <Component class="javax.swing.JLabel" name="cancionArchivoGeneroLabel">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Genero"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JTextField" name="cancionArchivoAlbumInput2">
-            </Component>
-            <Component class="javax.swing.JLabel" name="cancionArchivoPathLabel">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Path"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JTextField" name="cancionArchivoPathInput">
-            </Component>
-            <Component class="javax.swing.JLabel" name="actualizarCancionArchivoLabel">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Actualizar cancion"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JSeparator" name="jSeparator13">
-            </Component>
-            <Component class="javax.swing.JComboBox" name="actualizarCancionArchivoComboBox">
-              <Properties>
-                <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                  <StringArray count="0"/>
-                </Property>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JButton" name="verInformacionCancionArchivoBtn">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Ver Informacion"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JButton" name="agregarCancionArchivoBtn">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Agregar Cancion"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JLabel" name="cargarCancionesArchivoLabel">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Cargar canciones"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JSeparator" name="jSeparator14">
-            </Component>
-            <Component class="javax.swing.JTextField" name="cargarCancionesArchivoPathInput">
-            </Component>
-            <Component class="javax.swing.JButton" name="cargarCancionesArchivoBtn">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Cargar canciones"/>
-              </Properties>
-            </Component>
-          </SubComponents>
-        </Container>
         <Container class="javax.swing.JPanel" name="discosTab">
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
@@ -1025,7 +802,7 @@
                                           <Component id="ubicacionDiscoTextField" max="32767" attributes="0"/>
                                       </Group>
                                   </Group>
-                                  <Component id="botonCrearDisco" alignment="0" pref="281" max="32767" attributes="0"/>
+                                  <Component id="botonCrearDisco" alignment="0" pref="270" max="32767" attributes="0"/>
                                   <Component id="jLabel4" alignment="0" max="32767" attributes="0"/>
                               </Group>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
@@ -1711,6 +1488,238 @@
               </Events>
             </Component>
             <Component class="javax.swing.JSeparator" name="jSeparator11">
+            </Component>
+          </SubComponents>
+        </Container>
+        <Container class="javax.swing.JPanel" name="cancionesTab">
+          <Constraints>
+            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
+              <JTabbedPaneConstraints tabName="Canciones Archivos">
+                <Property name="tabTitle" type="java.lang.String" value="Canciones Archivos"/>
+              </JTabbedPaneConstraints>
+            </Constraint>
+          </Constraints>
+
+          <Layout>
+            <DimensionLayout dim="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="actualizarCancionArchivoLabel" min="-2" pref="146" max="-2" attributes="0"/>
+                          <Group type="102" attributes="0">
+                              <Group type="103" groupAlignment="1" attributes="0">
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="cancionArchivoAlbumLabel" alignment="0" min="-2" pref="52" max="-2" attributes="0"/>
+                                      <Component id="cancionArchivoNombreLabel" alignment="0" min="-2" pref="52" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Component id="cancionArchivoCantanteLabel" min="-2" pref="52" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="102" attributes="0">
+                                      <Component id="cancionArchivoAlbumInput" min="-2" pref="251" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="83" max="-2" attributes="0"/>
+                                      <Component id="cancionArchivoDuracionLabel" min="-2" pref="52" max="-2" attributes="0"/>
+                                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                                      <Component id="cancionArchivoDuracionInput" min="-2" pref="251" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="cancionArchivoNombreInput" alignment="0" min="-2" pref="251" max="-2" attributes="0"/>
+                                          <Component id="cancionArchivoCantanteInput" alignment="0" min="-2" pref="251" max="-2" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace min="-2" pref="83" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                          <Component id="cargarCancionesArchivoLabel" min="-2" max="-2" attributes="0"/>
+                                          <Group type="102" attributes="0">
+                                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                                  <Component id="cancionArchivoGeneroLabel" pref="52" max="32767" attributes="0"/>
+                                                  <Component id="cancionArchivoPathLabel" max="32767" attributes="0"/>
+                                              </Group>
+                                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                                  <Component id="cancionArchivoGeneroInput" pref="251" max="32767" attributes="0"/>
+                                                  <Component id="cancionArchivoPathInput" max="32767" attributes="0"/>
+                                              </Group>
+                                          </Group>
+                                          <Component id="jSeparator14" alignment="0" min="-2" pref="146" max="-2" attributes="0"/>
+                                          <Component id="cargarCancionesArchivoPathInput" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="cargarCancionesArchivoBtn" alignment="0" pref="321" max="32767" attributes="0"/>
+                                      </Group>
+                                  </Group>
+                              </Group>
+                          </Group>
+                          <Component id="jLabel5" alignment="0" min="-2" pref="213" max="-2" attributes="0"/>
+                          <Component id="jSeparator9" alignment="0" min="-2" pref="213" max="-2" attributes="0"/>
+                          <Component id="jSeparator13" alignment="0" min="-2" pref="155" max="-2" attributes="0"/>
+                          <Component id="agregarCancionArchivoBtn" alignment="0" min="-2" pref="321" max="-2" attributes="0"/>
+                          <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
+                              <Component id="verInformacionCancionArchivoBtn" alignment="0" pref="321" max="32767" attributes="0"/>
+                              <Component id="actualizarCancionArchivoComboBox" alignment="0" max="32767" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <EmptySpace pref="105" max="32767" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+            <DimensionLayout dim="1">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="jLabel5" min="-2" pref="29" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="jSeparator9" min="-2" pref="10" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="149" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="cancionArchivoAlbumLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="cancionArchivoAlbumInput" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="cancionArchivoDuracionLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="cancionArchivoDuracionInput" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="cancionArchivoNombreInput" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="cancionArchivoNombreLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="cancionArchivoGeneroLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="cancionArchivoGeneroInput" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="cancionArchivoCantanteInput" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="cancionArchivoCantanteLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="cancionArchivoPathLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="cancionArchivoPathInput" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
+                      <Component id="agregarCancionArchivoBtn" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="actualizarCancionArchivoLabel" alignment="3" min="-2" pref="22" max="-2" attributes="0"/>
+                          <Component id="cargarCancionesArchivoLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="jSeparator13" min="-2" pref="10" max="-2" attributes="0"/>
+                          <Component id="jSeparator14" min="-2" pref="10" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="cargarCancionesArchivoPathInput" min="-2" pref="30" max="-2" attributes="0"/>
+                          <Component id="actualizarCancionArchivoComboBox" min="-2" pref="32" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="cargarCancionesArchivoBtn" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="verInformacionCancionArchivoBtn" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace pref="48" max="32767" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+          </Layout>
+          <SubComponents>
+            <Component class="javax.swing.JLabel" name="jLabel5">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Dialog" size="14" style="1"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Canciones de archivos"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JSeparator" name="jSeparator9">
+            </Component>
+            <Component class="javax.swing.JLabel" name="cancionArchivoAlbumLabel">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Album"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="cancionArchivoAlbumInput">
+            </Component>
+            <Component class="javax.swing.JLabel" name="cancionArchivoNombreLabel">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Nombre"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="cancionArchivoNombreInput">
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cancionArchivoNombreInputActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JLabel" name="cancionArchivoCantanteLabel">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Cantante"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="cancionArchivoCantanteInput">
+            </Component>
+            <Component class="javax.swing.JLabel" name="cancionArchivoDuracionLabel">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Duracion"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="cancionArchivoDuracionInput">
+              <Events>
+                <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="cancionArchivoDuracionInputKeyTyped"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JLabel" name="cancionArchivoGeneroLabel">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Genero"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="cancionArchivoGeneroInput">
+            </Component>
+            <Component class="javax.swing.JLabel" name="cancionArchivoPathLabel">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Path"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="cancionArchivoPathInput">
+            </Component>
+            <Component class="javax.swing.JLabel" name="actualizarCancionArchivoLabel">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Actualizar cancion"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JSeparator" name="jSeparator13">
+            </Component>
+            <Component class="javax.swing.JComboBox" name="actualizarCancionArchivoComboBox">
+              <Properties>
+                <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                  <StringArray count="0"/>
+                </Property>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JButton" name="verInformacionCancionArchivoBtn">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Ver Informacion"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="verInformacionCancionArchivoBtnActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JButton" name="agregarCancionArchivoBtn">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Agregar Cancion"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="agregarCancionArchivoBtnActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JLabel" name="cargarCancionesArchivoLabel">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Cargar canciones"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JSeparator" name="jSeparator14">
+            </Component>
+            <Component class="javax.swing.JTextField" name="cargarCancionesArchivoPathInput">
+            </Component>
+            <Component class="javax.swing.JButton" name="cargarCancionesArchivoBtn">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Cargar canciones"/>
+              </Properties>
             </Component>
           </SubComponents>
         </Container>
