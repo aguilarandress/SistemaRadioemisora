@@ -24,10 +24,11 @@ public class InformacionLocutor extends javax.swing.JFrame {
     private DefaultListModel locutoresListModel;
     private DefaultComboBoxModel locutoresComboBoxModel;
     private DefaultComboBoxModel locutoresProgramasComboBoxModel;
+    MenuPrincipal main;
     /**
      * Creates new form InformacionLocutor
      */
-    public InformacionLocutor(Locutor pLocutor, RadioEmisora pEmisora,
+    public InformacionLocutor(MenuPrincipal main,Locutor pLocutor, RadioEmisora pEmisora,
             DefaultListModel pLocutoresListModel, DefaultComboBoxModel pLocutoresComboBoxModel,
             DefaultComboBoxModel pLocutoresProgramasComboBoxModel) {
         this.locutor = pLocutor;
@@ -35,6 +36,7 @@ public class InformacionLocutor extends javax.swing.JFrame {
         this.locutoresListModel = pLocutoresListModel;
         this.locutoresComboBoxModel = pLocutoresComboBoxModel;
         this.locutoresProgramasComboBoxModel = pLocutoresProgramasComboBoxModel;
+        this.main = main;
         initComponents();
     }
 
@@ -310,6 +312,7 @@ public class InformacionLocutor extends javax.swing.JFrame {
                                            +"-ID: "+ this.locutor.getId());
         this.locutoresComboBoxModel.addElement(this.locutor.getId());
         this.locutoresProgramasComboBoxModel.addElement(this.locutor.getId());
+        main.setVisible(true);
         
         // Cierra la ventanilla sin cerrar la principal
         this.dispose();
@@ -331,6 +334,7 @@ public class InformacionLocutor extends javax.swing.JFrame {
         this.emisora.removerLocutor(this.locutor);
         
         // Cierra la ventanilla sin cerrar la ventana principal
+        main.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_botonEliminarLocutorActionPerformed
 

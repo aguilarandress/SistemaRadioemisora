@@ -11,6 +11,7 @@ import Model.Programa.Programa;
 import Model.Disco.Disco;
 import Model.Cancion.CancionArchivo;
 import Model.Cancion.Cancion;
+import java.awt.Dialog;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.DefaultListModel;
 import javax.swing.JFrame;
@@ -49,6 +50,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
         this.discosListaBox.setModel(this.discosListModel);
         this.actualizarProgramasComboBox.setModel(this.programasComboBoxModel);
         this.discoCancionCombo.setModel(this.discoComboBoxModel);
+        this.setLocationRelativeTo(null);
         
         // Desabiliatr tabs
         this.toggleWindowTabs(false);
@@ -1489,9 +1491,11 @@ public class MenuPrincipal extends javax.swing.JFrame {
         Locutor locutorSeleccionado = this.emisora.obtenerPorId(idLocutor);
 
         // SE TIENE QUE CARGAR OTRA VENTANA
-        InformacionLocutor ventanaInformacion = new InformacionLocutor(locutorSeleccionado,
+        InformacionLocutor ventanaInformacion = new InformacionLocutor(this,locutorSeleccionado,
                 this.emisora, this.locutoresListModel, this.locutoresComboBoxModel, this.locutoresProgramasComboBoxModel);
         ventanaInformacion.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        this.setVisible(false);
+        ventanaInformacion.setLocationRelativeTo(null);
         ventanaInformacion.setVisible(true);
     }//GEN-LAST:event_botonVerInfoLocutorActionPerformed
 
@@ -1505,7 +1509,11 @@ public class MenuPrincipal extends javax.swing.JFrame {
             evt.consume();
         }
     }//GEN-LAST:event_programaDuracionInputKeyTyped
-
+    
+        /**
+         * Permite al usuario crear un disco
+         * @param evt 
+         */
     private void botonCrearDiscoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonCrearDiscoActionPerformed
         String nombre = this.nombreDiscoTextField.getText().trim();
         String cantante = this.cantanteDiscoTextField.getText().trim();
@@ -1513,11 +1521,19 @@ public class MenuPrincipal extends javax.swing.JFrame {
         String anioStr = this.anioDiscoTextField.getText().trim();
         String ubicacion = this.ubicacionDiscoTextField.getText().trim();
         String imagen = this.imagenDiscoTextField.getText().trim();
+        ArrayList<Disco> discos = this.emisora.getDiscos();
+        
 
         if (nombre.isEmpty() || cantante.isEmpty() || genero.isEmpty() || anioStr.isEmpty()
                 || ubicacion.isEmpty() || imagen.isEmpty()) {
             JOptionPane.showMessageDialog(this, "Datos incorrectos...", "ERROR", JOptionPane.ERROR_MESSAGE);
             return;
+        }
+        for(Disco discoComprobar: discos){
+            if(discoComprobar.getNombre().equals(nombre)){
+                JOptionPane.showMessageDialog(this, "No se permiten nombres repetidos.", "ERROR", JOptionPane.ERROR_MESSAGE);
+                return;
+            }
         }
         int anio = Integer.parseInt(anioStr);
         Disco discoNuevo = new Disco(nombre, cantante, genero, anio, ubicacion, imagen);
@@ -1563,9 +1579,11 @@ public class MenuPrincipal extends javax.swing.JFrame {
             nombreDisco += infoDisco.charAt(c);
         }
         Disco disco = this.emisora.obtenerDisco(nombreDisco);
-        InformacionDisc ventanaInformacion = new InformacionDisc(disco, this.discoComboBoxModel, this.discosListModel, this.emisora);
+        InformacionDisc ventanaInformacion = new InformacionDisc(this, disco, this.discoComboBoxModel, this.discosListModel, this.emisora);
 
         ventanaInformacion.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        this.setVisible(false);
+        ventanaInformacion.setLocationRelativeTo(null);
         ventanaInformacion.setVisible(true);
     }//GEN-LAST:event_botonVerDiscoActionPerformed
 
@@ -1584,10 +1602,14 @@ public class MenuPrincipal extends javax.swing.JFrame {
         String nombrePrograma = this.programasComboBoxModel.getSelectedItem().toString();
         Programa programaSeleccionado = this.emisora.obtenerProgramaPorNombre(nombrePrograma);
         // Abrir informacion para el programa
-        InformacionPrograma ventanaInformacion = new InformacionPrograma(this.emisora, programaSeleccionado,
+
+        InformacionPrograma ventanaInformacion = new InformacionPrograma(this, this.emisora, programaSeleccionado,
                 this.programasListModel, this.programasComboBoxModel);
         ventanaInformacion.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        ventanaInformacion.setLocationRelativeTo(null);
         ventanaInformacion.setVisible(true);
+        this.setVisible(false);
+        
     }//GEN-LAST:event_verInformacionProgramaBtnActionPerformed
 
     private void cancionArchivoNombreInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancionArchivoNombreInputActionPerformed
@@ -1612,7 +1634,10 @@ public class MenuPrincipal extends javax.swing.JFrame {
     private void listaDiscoComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_listaDiscoComboBoxActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_listaDiscoComboBoxActionPerformed
-
+        /**
+         * Agrega la cancion al disco seleccionado
+         * @param evt 
+         */
     private void botonAgregarCancionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonAgregarCancionActionPerformed
         if(emisora.getDiscos().isEmpty()){
             JOptionPane.showMessageDialog(this, "No hay discos donde agregar la cancion.", "ERROR", JOptionPane.ERROR_MESSAGE);
@@ -1629,6 +1654,8 @@ public class MenuPrincipal extends javax.swing.JFrame {
         
         Disco disco = this.emisora.obtenerDisco(nombreDisco);
         
+
+        
         String nombreCancion = this.nombreCancionInput.getText();
         String nombreCantante = this.cantanteCancionInput.getText();
         String generoCancion = this.generoCancionInput.getText();
@@ -1637,6 +1664,14 @@ public class MenuPrincipal extends javax.swing.JFrame {
         if(nombreCancion.isEmpty() || nombreCantante.isEmpty() || generoCancion.isEmpty() || duracionCancionStr.isEmpty()){
             JOptionPane.showMessageDialog(this, "Datos incorrectos...", "ERROR", JOptionPane.ERROR_MESSAGE);
             return;
+        }
+        
+        ArrayList<Cancion> canciones = disco.getCanciones();
+        for(Cancion cancionVerificar : canciones){
+          if(cancionVerificar.getNombre().equals(nombreCancion)){
+              JOptionPane.showMessageDialog(this, "Ya existe una cancion con este nombre.", "ERROR", JOptionPane.ERROR_MESSAGE);
+              return;
+          }  
         }
         int duracionCancion = Integer.parseInt(duracionCancionStr);
         Cancion cancionNueva = new Cancion(nombreCancion, duracionCancion, nombreCantante, generoCancion);
