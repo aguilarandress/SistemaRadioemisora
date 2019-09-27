@@ -1265,7 +1265,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
         // Validacion
         if (nombre.isEmpty() || url.isEmpty()
                 || frecuencia.isEmpty() || direccion.isEmpty()) {
-            JOptionPane.showMessageDialog(this, "Datos invalidos...", "ERROR", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(this, "Datos incompletos...", "ERROR", JOptionPane.ERROR_MESSAGE);
         } else { // Crea la emisora
             emisora.setNombre(nombre);
             emisora.setFrecuencia(frecuencia);
@@ -1319,7 +1319,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
         if (id.isEmpty() || nombre.isEmpty() || correo.isEmpty()
                 || telefono.isEmpty() || direccion.isEmpty() || sexo.isEmpty()
                 || fecha.isEmpty()) {
-            JOptionPane.showMessageDialog(this, "Datos invalidos...", "ERROR", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(this, "Datos incompletos...", "ERROR", JOptionPane.ERROR_MESSAGE);
             return;
         }
 
@@ -1386,7 +1386,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
         // Verificaciones
         if (nombre.isEmpty() || horario.isEmpty() || duracionStr.isEmpty()
                 || genero.isEmpty()) {
-            JOptionPane.showMessageDialog(this, "Datos invalidos...", "ERROR", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(this, "Datos incompletos...", "ERROR", JOptionPane.ERROR_MESSAGE);
             return;
         }
 
@@ -1526,7 +1526,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
         if (nombre.isEmpty() || cantante.isEmpty() || genero.isEmpty() || anioStr.isEmpty()
                 || ubicacion.isEmpty() || imagen.isEmpty()) {
-            JOptionPane.showMessageDialog(this, "Datos incorrectos...", "ERROR", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(this, "Datos incompletos...", "ERROR", JOptionPane.ERROR_MESSAGE);
             return;
         }
         for(Disco discoComprobar: discos){
@@ -1662,7 +1662,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
         String duracionCancionStr = this.duracionCancionInput.getText();
         
         if(nombreCancion.isEmpty() || nombreCantante.isEmpty() || generoCancion.isEmpty() || duracionCancionStr.isEmpty()){
-            JOptionPane.showMessageDialog(this, "Datos incorrectos...", "ERROR", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(this, "Datos incompletos...", "ERROR", JOptionPane.ERROR_MESSAGE);
             return;
         }
         
