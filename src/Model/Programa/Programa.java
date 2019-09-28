@@ -72,4 +72,6 @@ public class Programa {
                 + " |Genero: " + this.getGenero() + 
                 (this.locutor != null ? " |Locutor: " + this.getLocutor().getNombre() : " |Locutor: SIN ASIGNAR");
     }
+    
+    
 }

@@ -31,16 +31,22 @@
               <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
-                      <Component id="botonActualizarInfo" min="-2" pref="178" max="-2" attributes="0"/>
-                      <EmptySpace max="32767" attributes="0"/>
-                      <Component id="botonEliminarLocutor" min="-2" pref="184" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="jSeparator1" min="-2" pref="590" max="-2" attributes="0"/>
+                          <Component id="informacionLocutorLabel" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                   </Group>
                   <Group type="102" attributes="0">
                       <Group type="103" groupAlignment="1" attributes="0">
                           <Group type="102" attributes="0">
+                              <Component id="botonActualizarInfo" min="-2" pref="178" max="-2" attributes="0"/>
+                              <EmptySpace max="32767" attributes="0"/>
+                              <Component id="botonEliminarLocutor" min="-2" pref="184" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" attributes="0">
                               <Component id="fechaLocutorLabel" min="-2" pref="64" max="-2" attributes="0"/>
-                              <EmptySpace pref="73" max="32767" attributes="0"/>
+                              <EmptySpace pref="72" max="32767" attributes="0"/>
                               <Component id="fechaLocutorInput" min="-2" pref="526" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" attributes="0">
@@ -59,20 +65,13 @@
                                   <Component id="telefonoLocutorInput" alignment="0" pref="526" max="32767" attributes="0"/>
                                   <Component id="direccionLocutorInput" alignment="0" max="32767" attributes="0"/>
                                   <Component id="correoLocutorInput" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="idLocutorInput" alignment="0" max="32767" attributes="0"/>
                                   <Component id="nombreLocutorInput" alignment="0" max="32767" attributes="0"/>
                                   <Component id="sexoLocutorInput" max="32767" attributes="0"/>
+                                  <Component id="idLocutorActualLabel" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
-                      <EmptySpace pref="9" max="32767" attributes="0"/>
-                  </Group>
-                  <Group type="102" attributes="0">
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jSeparator1" min="-2" pref="590" max="-2" attributes="0"/>
-                          <Component id="informacionLocutorLabel" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                      <EmptySpace pref="20" max="32767" attributes="0"/>
                   </Group>
               </Group>
           </Group>
@@ -92,39 +91,37 @@
               </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="idLocutorInput" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
                   <Component id="idLocutorLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="idLocutorActualLabel" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="correoLocutorLabel" min="-2" max="-2" attributes="0"/>
-                  <Component id="correoLocutorInput" min="-2" pref="30" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="correoLocutorInput" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
+                  <Component id="correoLocutorLabel" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" attributes="0">
-                      <Component id="telefonoLocutorLabel" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="direccionLocutorLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="direccionLocutorInput" alignment="3" min="-2" pref="33" max="-2" attributes="0"/>
-                      </Group>
-                  </Group>
-                  <Component id="telefonoLocutorInput" min="-2" pref="27" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="telefonoLocutorLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="telefonoLocutorInput" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace min="0" pref="13" max="32767" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="direccionLocutorInput" alignment="3" min="-2" pref="29" max="-2" attributes="0"/>
+                  <Component id="direccionLocutorLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="separate" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="sexoLocutorLabel" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="sexoLocutorInput" alignment="3" pref="29" max="32767" attributes="0"/>
               </Group>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
-                      <EmptySpace pref="21" max="32767" attributes="0"/>
+                      <EmptySpace pref="39" max="32767" attributes="0"/>
                       <Component id="fechaLocutorLabel" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="18" max="32767" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="1" attributes="0">
-                      <EmptySpace pref="16" max="32767" attributes="0"/>
+                      <EmptySpace pref="21" max="32767" attributes="0"/>
                       <Component id="fechaLocutorInput" min="-2" pref="27" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   </Group>
@@ -133,7 +130,7 @@
                   <Component id="botonEliminarLocutor" min="-2" max="-2" attributes="0"/>
                   <Component id="botonActualizarInfo" alignment="0" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace min="-2" pref="48" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="57" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -207,13 +204,6 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="nombreLocutorInputActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JTextField" name="idLocutorInput">
-      <Properties>
-        <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-          <Connection code="this.locutor.getId()" type="code"/>
-        </Property>
-      </Properties>
-    </Component>
     <Component class="javax.swing.JTextField" name="correoLocutorInput">
       <Properties>
         <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
@@ -254,6 +244,13 @@
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="fechaLocutorInputActionPerformed"/>
       </Events>
+    </Component>
+    <Component class="javax.swing.JLabel" name="idLocutorActualLabel">
+      <Properties>
+        <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+          <Connection code="this.locutor.getId()" type="code"/>
+        </Property>
+      </Properties>
     </Component>
   </SubComponents>
 </Form>
