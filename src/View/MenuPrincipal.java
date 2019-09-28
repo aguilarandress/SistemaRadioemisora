@@ -1458,7 +1458,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
         }
        
         String idLocutor = (String) programasLocutoresCombo.getSelectedItem();
-        Locutor locutorSeleccionado = this.emisora.obtenerPorId(idLocutor);
+        Locutor locutorSeleccionado = this.emisora.getLocutorPorId(idLocutor);
         
         String nombrePrograma = (String) programasListaCombo.getSelectedItem();
         Programa programaSeleccionado = this.emisora.obtenerProgramaPorNombre(nombrePrograma);
