@@ -17,8 +17,8 @@ public class Disco {
     private String genero;
     private String ubicacionFisica;
     private int anio;
-   private String imagen;
-   private ArrayList<Cancion> canciones;
+    private String imagen;
+    private ArrayList<Cancion> canciones;
     
     public Disco(String nombre, String cantante, String genero, int anio,
             String ubicacionFisica, String imagen){
