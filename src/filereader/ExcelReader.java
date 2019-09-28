@@ -2,7 +2,7 @@ package filereader;
 
 import com.gembox.spreadsheet.*;
 import java.util.ArrayList;
-import Model.Cancion.CancionArchivo;
+import Model.Cancion.Cancion;
 
 /**
  * Clase para leer archivos Excel y cargarlos a memoria
@@ -11,7 +11,7 @@ import Model.Cancion.CancionArchivo;
 public class ExcelReader {
     
     private String path;
-    private ArrayList<CancionArchivo> fileData;
+    private ArrayList<Cancion> fileData;
     
     /**
      * Constructor que inicializa el path del archivo que se desea leer
@@ -37,22 +37,19 @@ public class ExcelReader {
             for(int i = 1; i < numeroFilas; i++) {
                 ExcelRow filaActual = workSheet.getRow(i);
                 
-                String album = (String) filaActual.getCell(0).getValue();
-                
-                String nombre = filaActual.getCell(1).getStringValue();
-                String cantante = filaActual.getCell(2).getStringValue();
-                int duracion = filaActual.getCell(3).getIntValue();
-                String genero = filaActual.getCell(4).getStringValue();
-                String path = filaActual.getCell(5).getStringValue();
-
+                String nombre = filaActual.getCell(0).getStringValue();
+                String cantante = filaActual.getCell(1).getStringValue();
+                int duracion = Integer.parseInt(filaActual.getCell(2).getStringValue());
+                String generoMusical = filaActual.getCell(3).getStringValue();
                 // Guardar cancion nueva
-                CancionArchivo cancionNueva = new CancionArchivo(nombre, duracion, cantante, genero, album, path);
+                Cancion cancionNueva = new Cancion(nombre, duracion, cantante, generoMusical);
                 this.fileData.add(cancionNueva);
             }
+            return true;
         } catch(Exception e) {
+            System.out.println("Error de path...");
             return false;
         }
-        return true;
     }
     
     public String getPath() {
@@ -63,7 +60,7 @@ public class ExcelReader {
         this.path = path;
     }
     
-    public ArrayList<CancionArchivo> getFileData() {
+    public ArrayList<Cancion> getFileData() {
         return this.fileData;
     }
 }

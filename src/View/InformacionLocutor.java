@@ -6,12 +6,9 @@
 package View;
 
 import Model.Locutor.Locutor;
-import Model.Programa.Programa;
 import Model.Radioemisora.RadioEmisora;
-import java.util.ArrayList;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.DefaultListModel;
-import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
@@ -22,27 +19,26 @@ import javax.swing.JOptionPane;
  * @author Fabian Vargas
  */
 public class InformacionLocutor extends javax.swing.JFrame {
-    private JButton botonVerInfoLocutor;
     private Locutor locutor;
     private RadioEmisora emisora;
     private DefaultListModel locutoresListModel;
     private DefaultComboBoxModel locutoresComboBoxModel;
     private DefaultComboBoxModel locutoresProgramasComboBoxModel;
     private DefaultListModel programasListModel;
+    MenuPrincipal main;
     /**
      * Creates new form InformacionLocutor
      */
-    public InformacionLocutor(JButton pVerInfoLocutor, Locutor pLocutor, RadioEmisora pEmisora,
+    public InformacionLocutor(MenuPrincipal main, JButton pVerInfoLocutor, Locutor pLocutor, RadioEmisora pEmisora,
             DefaultListModel pLocutoresListModel, DefaultComboBoxModel pLocutoresComboBoxModel,
-            DefaultComboBoxModel pLocutoresProgramasComboBoxModel, 
-            DefaultListModel pProgramasListModel) {
-        this.botonVerInfoLocutor = pVerInfoLocutor;
+            DefaultComboBoxModel pLocutoresProgramasComboBoxModel) {
         this.locutor = pLocutor;
         this.emisora = pEmisora;
         this.locutoresListModel = pLocutoresListModel;
         this.locutoresComboBoxModel = pLocutoresComboBoxModel;
         this.locutoresProgramasComboBoxModel = pLocutoresProgramasComboBoxModel;
         this.programasListModel = pProgramasListModel;
+        this.main = main;
         initComponents();
     }
 
@@ -67,12 +63,12 @@ public class InformacionLocutor extends javax.swing.JFrame {
         botonActualizarInfo = new javax.swing.JButton();
         botonEliminarLocutor = new javax.swing.JButton();
         nombreLocutorInput = new javax.swing.JTextField();
+        idLocutorInput = new javax.swing.JTextField();
         correoLocutorInput = new javax.swing.JTextField();
         telefonoLocutorInput = new javax.swing.JTextField();
         direccionLocutorInput = new javax.swing.JTextField();
         sexoLocutorInput = new javax.swing.JTextField();
         fechaLocutorInput = new javax.swing.JTextField();
-        idLocutorActualLabel = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         addWindowListener(new java.awt.event.WindowAdapter() {
@@ -121,6 +117,8 @@ public class InformacionLocutor extends javax.swing.JFrame {
             }
         });
 
+        idLocutorInput.setText(this.locutor.getId());
+
         correoLocutorInput.setText(this.locutor.getCorreo());
         correoLocutorInput.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -141,8 +139,6 @@ public class InformacionLocutor extends javax.swing.JFrame {
             }
         });
 
-        idLocutorActualLabel.setText(this.locutor.getId());
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -151,19 +147,15 @@ public class InformacionLocutor extends javax.swing.JFrame {
                 .addGap(23, 23, 23)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 590, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(informacionLocutorLabel))
-                        .addGap(0, 0, Short.MAX_VALUE))
+                        .addComponent(botonActualizarInfo, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(botonEliminarLocutor, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(37, 37, 37))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(botonActualizarInfo, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(botonEliminarLocutor, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
                                 .addComponent(fechaLocutorLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 72, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 73, Short.MAX_VALUE)
                                 .addComponent(fechaLocutorInput, javax.swing.GroupLayout.PREFERRED_SIZE, 526, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -179,10 +171,15 @@ public class InformacionLocutor extends javax.swing.JFrame {
                                     .addComponent(telefonoLocutorInput, javax.swing.GroupLayout.DEFAULT_SIZE, 526, Short.MAX_VALUE)
                                     .addComponent(direccionLocutorInput)
                                     .addComponent(correoLocutorInput)
+                                    .addComponent(idLocutorInput)
                                     .addComponent(nombreLocutorInput)
-                                    .addComponent(sexoLocutorInput)
-                                    .addComponent(idLocutorActualLabel))))
-                        .addContainerGap(20, Short.MAX_VALUE))))
+                                    .addComponent(sexoLocutorInput))))
+                        .addContainerGap(9, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 590, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(informacionLocutorLabel))
+                        .addGap(0, 0, Short.MAX_VALUE))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -197,37 +194,38 @@ public class InformacionLocutor extends javax.swing.JFrame {
                     .addComponent(nombreLocutorLabel))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(idLocutorLabel)
-                    .addComponent(idLocutorActualLabel))
+                    .addComponent(idLocutorInput, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(idLocutorLabel))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(correoLocutorInput, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(correoLocutorLabel))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(correoLocutorLabel)
+                    .addComponent(correoLocutorInput, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(telefonoLocutorLabel)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(telefonoLocutorLabel)
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(direccionLocutorLabel)
+                            .addComponent(direccionLocutorInput, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addComponent(telefonoLocutorInput, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(direccionLocutorInput, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(direccionLocutorLabel))
-                .addGap(18, 18, Short.MAX_VALUE)
+                .addGap(0, 13, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(sexoLocutorLabel)
                     .addComponent(sexoLocutorInput, javax.swing.GroupLayout.DEFAULT_SIZE, 29, Short.MAX_VALUE))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 39, Short.MAX_VALUE)
-                        .addComponent(fechaLocutorLabel)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 21, Short.MAX_VALUE)
+                        .addComponent(fechaLocutorLabel)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 16, Short.MAX_VALUE)
                         .addComponent(fechaLocutorInput, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(botonEliminarLocutor)
                     .addComponent(botonActualizarInfo))
-                .addGap(57, 57, 57))
+                .addGap(48, 48, 48))
         );
 
         pack();
@@ -248,13 +246,9 @@ public class InformacionLocutor extends javax.swing.JFrame {
     private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
         // TODO add your handling code here:
     }//GEN-LAST:event_formWindowClosing
-    
-    /**
-     * Rehabilita el menu principal si se cierra la ventana
-     * @param evt 
-     */
+
     private void formWindowClosed(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosed
-        botonVerInfoLocutor.setEnabled(true);
+        // TODO add your handling code here:
     }//GEN-LAST:event_formWindowClosed
 
     /**
@@ -262,9 +256,7 @@ public class InformacionLocutor extends javax.swing.JFrame {
      * @param evt 
      */
     private void botonActualizarInfoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonActualizarInfoActionPerformed
-        // Reactiva el boton de actualizar informacion
-        botonVerInfoLocutor.setEnabled(true);
-        
+        String id = this.idLocutorInput.getText().trim();
         String nombre = this.nombreLocutorInput.getText().trim();
         String correo = this.correoLocutorInput.getText().trim();
         String telefono = this.telefonoLocutorInput.getText().trim();
@@ -272,10 +264,10 @@ public class InformacionLocutor extends javax.swing.JFrame {
         String sexo = this.sexoLocutorInput.getText().trim();
         String fecha = this.fechaLocutorInput.getText().trim();
         
-        String nombreOriginal = this.locutor.getNombre();
+        String idOriginal = id;
         
         // Verificaciones
-        if (nombre.isEmpty() || correo.isEmpty() ||
+        if (id.isEmpty() || nombre.isEmpty() || correo.isEmpty() ||
             telefono.isEmpty() || direccion.isEmpty() || sexo.isEmpty() ||
             fecha.isEmpty()){
             JOptionPane.showMessageDialog(this, "Datos invalidos...", "ERROR", JOptionPane.ERROR_MESSAGE);
@@ -300,6 +292,16 @@ public class InformacionLocutor extends javax.swing.JFrame {
             return;
         }
         
+        if (idOriginal.equals(this.locutor.getId())){
+            this.locutor.setId(id);
+            System.out.println("MISMA CEDULA QUE ANTES");
+        } else if(this.emisora.verificarCedulaRepetida(id)) {
+            JOptionPane.showMessageDialog(this, "ID repetido...", "ERROR", JOptionPane.ERROR_MESSAGE);
+            return;
+        } else {
+            this.locutor.setId(id);
+        }
+        
         this.locutor.setNombre(nombre);
         this.locutor.setCorreo(correo);
         this.locutor.setDireccion(direccion);
@@ -313,9 +315,6 @@ public class InformacionLocutor extends javax.swing.JFrame {
         this.locutoresComboBoxModel.addElement(this.locutor.getId());
         this.locutoresProgramasComboBoxModel.addElement(this.locutor.getId());
         
-        // Actualiza al locutor si está asignado a algún programa
-        actualizarProgramas(nombre, nombreOriginal);
-        
         // Cierra la ventanilla sin cerrar la principal
         this.dispose();
     }//GEN-LAST:event_botonActualizarInfoActionPerformed
@@ -325,70 +324,21 @@ public class InformacionLocutor extends javax.swing.JFrame {
      * @param evt 
      */
     private void botonEliminarLocutorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonEliminarLocutorActionPerformed
-        // Reactiva el boton de actualizar informacion
-        botonVerInfoLocutor.setEnabled(true);
-        
         // Remueve el string con la informacion del locutor a desecha de los lugares respectivos 
-        
-        actualizarProgramas("SIN ASIGNAR");
         this.locutoresListModel.removeElement("-Nombre: " + this.locutor.getNombre() + "  " 
                                            +"-ID: "+ this.locutor.getId());
         
         this.locutoresComboBoxModel.removeElement(this.locutor.getId());
         this.locutoresProgramasComboBoxModel.removeElement(this.locutor.getId());
         
-        // Actualiza al locutor si está asignado a algún programa
         // Remueva al locutor del sistema
         this.emisora.removerLocutor(this.locutor);
+        
         // Cierra la ventanilla sin cerrar la ventana principal
         this.dispose();
     }//GEN-LAST:event_botonEliminarLocutorActionPerformed
-    
-    /**
-     * Actualiza la lista de programas si se elimina el locutor
-     * @param mensaje 
-     */
-    public void actualizarProgramas(String mensaje) {
-        ArrayList<Programa> programas = this.emisora.getProgramas();
-        
-        for (Programa programaActual : programas) {
-            if (programaActual.getLocutor() == this.locutor) {
-                if (mensaje.equals("SIN ASIGNAR")) {
-                    programaActual.setLocutor(null);
-                }
-                this.programasListModel.removeElement(programaActual.getNombre() + 
-                                " |Genero: " + programaActual.getGenero() + 
-                                " |Locutor: " + this.locutor.getNombre());
-                
-                this.programasListModel.addElement(programaActual.getNombre() + 
-                                " |Genero: " + programaActual.getGenero() + 
-                                " |Locutor: " + mensaje);
-            }
-        }
-    }
 
-    
-    /**
-     * Actualzia la lista de programas si se cambia el nombre del locutor
-     * @param nombreNuevo
-     * @param nombreOriginal 
-     */
-    public void actualizarProgramas(String nombreNuevo, String nombreOriginal) {
-        ArrayList<Programa> programas = this.emisora.getProgramas();
-        
-        for (Programa programaActual : programas) {
-            if (programaActual.getLocutor() == this.locutor) {
-                this.programasListModel.removeElement(programaActual.getNombre() + 
-                                " |Genero: " + programaActual.getGenero() + 
-                                " |Locutor: " + nombreOriginal);
-                
-                this.programasListModel.addElement(programaActual.getNombre() + 
-                                " |Genero: " + programaActual.getGenero() + 
-                                " |Locutor: " + nombreNuevo);
-            }
-        }
-    }
-    
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton botonActualizarInfo;
     private javax.swing.JButton botonEliminarLocutor;
@@ -398,7 +348,7 @@ public class InformacionLocutor extends javax.swing.JFrame {
     private javax.swing.JLabel direccionLocutorLabel;
     private javax.swing.JTextField fechaLocutorInput;
     private javax.swing.JLabel fechaLocutorLabel;
-    private javax.swing.JLabel idLocutorActualLabel;
+    private javax.swing.JTextField idLocutorInput;
     private javax.swing.JLabel idLocutorLabel;
     private javax.swing.JLabel informacionLocutorLabel;
     private javax.swing.JSeparator jSeparator1;

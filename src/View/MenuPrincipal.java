@@ -5,7 +5,6 @@
  */
 package View;
 
-import Model.Cancion.Cancion;
 import Model.Radioemisora.RadioEmisora;
 import Model.Locutor.Locutor;
 import Model.Programa.Programa;
@@ -17,8 +16,6 @@ import javax.swing.DefaultListModel;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import java.util.ArrayList;
-
-import filereader.ExcelReader;
 
 /**
  *
@@ -37,7 +34,8 @@ public class MenuPrincipal extends javax.swing.JFrame {
     private DefaultComboBoxModel programasComboBoxModel = new DefaultComboBoxModel();
     private DefaultComboBoxModel discoComboBoxModel = new DefaultComboBoxModel();
     private DefaultComboBoxModel cancionesArchivoBoxModel = new DefaultComboBoxModel();
-
+    private DefaultComboBoxModel cancionesActComboBoxModel = new DefaultComboBoxModel();
+    private DefaultComboBoxModel discoCancionComboBoxModel = new DefaultComboBoxModel();
     /**
      * Creates new form MenuPrincipal
      */
@@ -54,6 +52,10 @@ public class MenuPrincipal extends javax.swing.JFrame {
         this.actualizarProgramasComboBox.setModel(this.programasComboBoxModel);
         this.discoCancionCombo.setModel(this.discoComboBoxModel);
         this.actualizarCancionArchivoComboBox.setModel(this.cancionesArchivoBoxModel);
+        this.seleccionarDiscoComboBox.setModel(discoCancionComboBoxModel);
+        this.seleccionarCancionComboBox.setModel(cancionesActComboBoxModel);
+        this.listaCanciones.setModel(cancionesListModel);
+        this.setLocationRelativeTo(null);
         
         // Desabiliatr tabs
         this.toggleWindowTabs(false);
@@ -97,7 +99,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
         btnActualizarEmisora = new javax.swing.JButton();
         locutoresTab = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        listaLocutoresBox = new javax.swing.JList<String>();
+        listaLocutoresBox = new javax.swing.JList<>();
         nuevoLocutorLabel = new javax.swing.JLabel();
         listaLocutoresLabel = new javax.swing.JLabel();
         IdLocutorLabel = new javax.swing.JLabel();
@@ -118,7 +120,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
         botonAgregarLocutor = new javax.swing.JButton();
         actualizarLocutorLabel = new javax.swing.JLabel();
         jSeparator8 = new javax.swing.JSeparator();
-        locutoresActualizarCombo = new javax.swing.JComboBox<String>();
+        locutoresActualizarCombo = new javax.swing.JComboBox<>();
         botonVerInfoLocutor = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
         playlistsTab = new javax.swing.JPanel();
@@ -130,13 +132,37 @@ public class MenuPrincipal extends javax.swing.JFrame {
         playlistGeneroInput = new javax.swing.JTextField();
         botonAgregarPlaylist = new javax.swing.JButton();
         jScrollPane3 = new javax.swing.JScrollPane();
-        playlistsListaPlaylistsBox = new javax.swing.JList<String>();
+        playlistsListaPlaylistsBox = new javax.swing.JList<>();
         listaPlaylistsLabel = new javax.swing.JLabel();
         verCancionesPlaylistLabel = new javax.swing.JLabel();
         jSeparator7 = new javax.swing.JSeparator();
-        playlistsCombo = new javax.swing.JComboBox<String>();
+        playlistsCombo = new javax.swing.JComboBox<>();
         jScrollPane4 = new javax.swing.JScrollPane();
-        playlistsListaCancionesBox = new javax.swing.JList<String>();
+        playlistsListaCancionesBox = new javax.swing.JList<>();
+        cancionesTab = new javax.swing.JPanel();
+        jLabel5 = new javax.swing.JLabel();
+        jSeparator9 = new javax.swing.JSeparator();
+        cancionArchivoAlbumLabel = new javax.swing.JLabel();
+        cancionArchivoAlbumInput = new javax.swing.JTextField();
+        cancionArchivoNombreLabel = new javax.swing.JLabel();
+        cancionArchivoNombreInput = new javax.swing.JTextField();
+        cancionArchivoCantanteLabel = new javax.swing.JLabel();
+        cancionArchivoCantanteInput = new javax.swing.JTextField();
+        cancionArchivoDuracionLabel = new javax.swing.JLabel();
+        cancionArchivoAlbumInput1 = new javax.swing.JTextField();
+        cancionArchivoGeneroLabel = new javax.swing.JLabel();
+        cancionArchivoAlbumInput2 = new javax.swing.JTextField();
+        cancionArchivoPathLabel = new javax.swing.JLabel();
+        cancionArchivoPathInput = new javax.swing.JTextField();
+        actualizarCancionArchivoLabel = new javax.swing.JLabel();
+        jSeparator13 = new javax.swing.JSeparator();
+        actualizarCancionArchivoComboBox = new javax.swing.JComboBox();
+        verInformacionCancionArchivoBtn = new javax.swing.JButton();
+        agregarCancionArchivoBtn = new javax.swing.JButton();
+        cargarCancionesArchivoLabel = new javax.swing.JLabel();
+        jSeparator14 = new javax.swing.JSeparator();
+        cargarCancionesArchivoPathInput = new javax.swing.JTextField();
+        cargarCancionesArchivoBtn = new javax.swing.JButton();
         discosTab = new javax.swing.JPanel();
         discoNombreLabel = new javax.swing.JLabel();
         nombreDiscoTextField = new javax.swing.JTextField();
@@ -151,8 +177,8 @@ public class MenuPrincipal extends javax.swing.JFrame {
         imagenDiscoTextField = new javax.swing.JTextField();
         imagenDiscoLabel = new javax.swing.JLabel();
         jScrollPane5 = new javax.swing.JScrollPane();
-        discosListaBox = new javax.swing.JList<String>();
-        listaDiscoComboBox = new javax.swing.JComboBox<String>();
+        discosListaBox = new javax.swing.JList<>();
+        listaDiscoComboBox = new javax.swing.JComboBox<>();
         botonCrearDisco = new javax.swing.JButton();
         botonVerDisco = new javax.swing.JButton();
         listaDiscosLabel = new javax.swing.JLabel();
@@ -167,7 +193,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
         generoCancionInput = new javax.swing.JTextField();
         duracionCancionInput = new javax.swing.JTextField();
         cantanteCancionInput = new javax.swing.JTextField();
-        discoCancionCombo = new javax.swing.JComboBox<String>();
+        discoCancionCombo = new javax.swing.JComboBox<>();
         discoCancionLabel = new javax.swing.JLabel();
         botonAgregarCancion = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
@@ -183,48 +209,24 @@ public class MenuPrincipal extends javax.swing.JFrame {
         programaDuracionInput = new javax.swing.JTextField();
         programasGeneroInput = new javax.swing.JTextField();
         botonCrearNuevoPrograma = new javax.swing.JButton();
-        programasListaCombo = new javax.swing.JComboBox<String>();
+        programasListaCombo = new javax.swing.JComboBox<>();
         jSeparator4 = new javax.swing.JSeparator();
         programaAsignarLocutorLabel = new javax.swing.JLabel();
-        programasLocutoresCombo = new javax.swing.JComboBox<String>();
+        programasLocutoresCombo = new javax.swing.JComboBox<>();
         botonAsignarLocutor = new javax.swing.JButton();
         programasListaLabel = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
-        programasListaProgramasBox = new javax.swing.JList<String>();
+        programasListaProgramasBox = new javax.swing.JList<>();
         programaAsignarPlaylistLabel = new javax.swing.JLabel();
         jSeparator6 = new javax.swing.JSeparator();
-        programasListaCombo2 = new javax.swing.JComboBox<String>();
-        programasPlaylistsCombo = new javax.swing.JComboBox<String>();
+        programasListaCombo2 = new javax.swing.JComboBox<>();
+        programasPlaylistsCombo = new javax.swing.JComboBox<>();
         botonAsignarPlaylist = new javax.swing.JButton();
         actualizarProgramaLabel = new javax.swing.JLabel();
         jSeparator10 = new javax.swing.JSeparator();
         actualizarProgramasComboBox = new javax.swing.JComboBox();
         verInformacionProgramaBtn = new javax.swing.JButton();
         jSeparator11 = new javax.swing.JSeparator();
-        cancionesTab = new javax.swing.JPanel();
-        jLabel5 = new javax.swing.JLabel();
-        jSeparator9 = new javax.swing.JSeparator();
-        cancionArchivoAlbumLabel = new javax.swing.JLabel();
-        cancionArchivoAlbumInput = new javax.swing.JTextField();
-        cancionArchivoNombreLabel = new javax.swing.JLabel();
-        cancionArchivoNombreInput = new javax.swing.JTextField();
-        cancionArchivoCantanteLabel = new javax.swing.JLabel();
-        cancionArchivoCantanteInput = new javax.swing.JTextField();
-        cancionArchivoDuracionLabel = new javax.swing.JLabel();
-        cancionArchivoDuracionInput = new javax.swing.JTextField();
-        cancionArchivoGeneroLabel = new javax.swing.JLabel();
-        cancionArchivoGeneroInput = new javax.swing.JTextField();
-        cancionArchivoPathLabel = new javax.swing.JLabel();
-        cancionArchivoPathInput = new javax.swing.JTextField();
-        actualizarCancionArchivoLabel = new javax.swing.JLabel();
-        jSeparator13 = new javax.swing.JSeparator();
-        actualizarCancionArchivoComboBox = new javax.swing.JComboBox();
-        verInformacionCancionArchivoBtn = new javax.swing.JButton();
-        agregarCancionArchivoBtn = new javax.swing.JButton();
-        cargarCancionesArchivoLabel = new javax.swing.JLabel();
-        jSeparator14 = new javax.swing.JSeparator();
-        cargarCancionesArchivoPathInput = new javax.swing.JTextField();
-        cargarCancionesArchivoBtn = new javax.swing.JButton();
 
         menu1.setLabel("File");
         menuBar1.add(menu1);
@@ -310,7 +312,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
                             .addComponent(urlEmisoraShow)
                             .addComponent(frecuenciaEmisoraShow)
                             .addComponent(nombreEmisoraShow))
-                        .addGap(0, 627, Short.MAX_VALUE))
+                        .addGap(0, 608, Short.MAX_VALUE))
                     .addGroup(radioEmisoraTabLayout.createSequentialGroup()
                         .addGroup(radioEmisoraTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(nuevaDireccionFisicaLabel)
@@ -478,7 +480,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
                                             .addComponent(locutorDireccionInput, javax.swing.GroupLayout.PREFERRED_SIZE, 296, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addComponent(locutorSexoInput, javax.swing.GroupLayout.PREFERRED_SIZE, 296, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addComponent(locutorFechaInput, javax.swing.GroupLayout.PREFERRED_SIZE, 296, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                                .addGap(0, 47, Short.MAX_VALUE)))
+                                .addGap(0, 28, Short.MAX_VALUE)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 362, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(21, 21, 21))
@@ -571,7 +573,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
         verCancionesPlaylistLabel.setText("Ver Canciones:");
 
-        playlistsCombo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        playlistsCombo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         jScrollPane4.setViewportView(playlistsListaCancionesBox);
 
@@ -602,7 +604,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
                     .addComponent(jScrollPane3)
                     .addGroup(playlistsTabLayout.createSequentialGroup()
                         .addComponent(listaPlaylistsLabel)
-                        .addGap(0, 431, Short.MAX_VALUE)))
+                        .addGap(0, 412, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         playlistsTabLayout.setVerticalGroup(
@@ -639,6 +641,134 @@ public class MenuPrincipal extends javax.swing.JFrame {
         );
 
         windowTabs.addTab("Playlists", playlistsTab);
+
+        jLabel5.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jLabel5.setText("Canciones de archivos");
+
+        cancionArchivoAlbumLabel.setText("Album");
+
+        cancionArchivoNombreLabel.setText("Nombre");
+
+        cancionArchivoNombreInput.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cancionArchivoNombreInputActionPerformed(evt);
+            }
+        });
+
+        cancionArchivoCantanteLabel.setText("Cantante");
+
+        cancionArchivoDuracionLabel.setText("Duracion");
+
+        cancionArchivoGeneroLabel.setText("Genero");
+
+        cancionArchivoPathLabel.setText("Path");
+
+        actualizarCancionArchivoLabel.setText("Actualizar cancion");
+
+        verInformacionCancionArchivoBtn.setText("Ver Informacion");
+
+        agregarCancionArchivoBtn.setText("Agregar Cancion");
+
+        cargarCancionesArchivoLabel.setText("Cargar canciones");
+
+        cargarCancionesArchivoBtn.setText("Cargar canciones");
+
+        javax.swing.GroupLayout cancionesTabLayout = new javax.swing.GroupLayout(cancionesTab);
+        cancionesTab.setLayout(cancionesTabLayout);
+        cancionesTabLayout.setHorizontalGroup(
+            cancionesTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(cancionesTabLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(cancionesTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(actualizarCancionArchivoLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(cancionesTabLayout.createSequentialGroup()
+                        .addGroup(cancionesTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(cancionesTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(cancionArchivoAlbumLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(cancionArchivoNombreLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(cancionArchivoCantanteLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(cancionesTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(cancionesTabLayout.createSequentialGroup()
+                                .addComponent(cancionArchivoAlbumInput, javax.swing.GroupLayout.PREFERRED_SIZE, 251, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(83, 83, 83)
+                                .addComponent(cancionArchivoDuracionLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(cancionArchivoAlbumInput1, javax.swing.GroupLayout.PREFERRED_SIZE, 251, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(cancionesTabLayout.createSequentialGroup()
+                                .addGroup(cancionesTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(cancionArchivoNombreInput, javax.swing.GroupLayout.PREFERRED_SIZE, 251, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(cancionArchivoCantanteInput, javax.swing.GroupLayout.PREFERRED_SIZE, 251, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(83, 83, 83)
+                                .addGroup(cancionesTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(cargarCancionesArchivoLabel)
+                                    .addGroup(cancionesTabLayout.createSequentialGroup()
+                                        .addGroup(cancionesTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                            .addComponent(cancionArchivoGeneroLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 52, Short.MAX_VALUE)
+                                            .addComponent(cancionArchivoPathLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                        .addGap(18, 18, 18)
+                                        .addGroup(cancionesTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                            .addComponent(cancionArchivoAlbumInput2, javax.swing.GroupLayout.DEFAULT_SIZE, 251, Short.MAX_VALUE)
+                                            .addComponent(cancionArchivoPathInput)))
+                                    .addComponent(jSeparator14, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(cargarCancionesArchivoPathInput)
+                                    .addComponent(cargarCancionesArchivoBtn, javax.swing.GroupLayout.DEFAULT_SIZE, 321, Short.MAX_VALUE)))))
+                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 213, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jSeparator9, javax.swing.GroupLayout.PREFERRED_SIZE, 213, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jSeparator13, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(agregarCancionArchivoBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 321, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(cancionesTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addComponent(verInformacionCancionArchivoBtn, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 321, Short.MAX_VALUE)
+                        .addComponent(actualizarCancionArchivoComboBox, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addContainerGap(105, Short.MAX_VALUE))
+        );
+        cancionesTabLayout.setVerticalGroup(
+            cancionesTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(cancionesTabLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jSeparator9, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(149, 149, 149)
+                .addGroup(cancionesTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(cancionArchivoAlbumLabel)
+                    .addComponent(cancionArchivoAlbumInput, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cancionArchivoDuracionLabel)
+                    .addComponent(cancionArchivoAlbumInput1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(cancionesTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(cancionArchivoNombreInput, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cancionArchivoNombreLabel)
+                    .addComponent(cancionArchivoGeneroLabel)
+                    .addComponent(cancionArchivoAlbumInput2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(cancionesTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(cancionArchivoCantanteInput, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cancionArchivoCantanteLabel)
+                    .addComponent(cancionArchivoPathLabel)
+                    .addComponent(cancionArchivoPathInput, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(12, 12, 12)
+                .addComponent(agregarCancionArchivoBtn)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(cancionesTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(actualizarCancionArchivoLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cargarCancionesArchivoLabel))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(cancionesTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jSeparator13, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jSeparator14, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(cancionesTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(cargarCancionesArchivoPathInput, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(actualizarCancionArchivoComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(cancionesTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(cargarCancionesArchivoBtn)
+                    .addComponent(verInformacionCancionArchivoBtn))
+                .addContainerGap(48, Short.MAX_VALUE))
+        );
+
+        windowTabs.addTab("Canciones Archivos", cancionesTab);
 
         discoNombreLabel.setText("Nombre:");
 
@@ -721,7 +851,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
                                     .addComponent(generoDiscoTextField)
                                     .addComponent(anioDiscoTextField)
                                     .addComponent(ubicacionDiscoTextField)))
-                            .addComponent(botonCrearDisco, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 270, Short.MAX_VALUE)
+                            .addComponent(botonCrearDisco, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 281, Short.MAX_VALUE)
                             .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(18, 18, 18)
                         .addGroup(discosTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -729,7 +859,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
                                 .addComponent(listaDiscosLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                             .addGroup(discosTabLayout.createSequentialGroup()
-                                .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 451, Short.MAX_VALUE)
+                                .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 433, Short.MAX_VALUE)
                                 .addGap(59, 59, 59))))))
         );
         discosTabLayout.setVerticalGroup(
@@ -838,17 +968,28 @@ public class MenuPrincipal extends javax.swing.JFrame {
                             .addComponent(duracionCancionLabel)
                             .addComponent(cantanteCancionLabel)
                             .addComponent(discoCancionLabel))
-                        .addGap(62, 62, 62)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(discoCancionCombo, 0, 197, Short.MAX_VALUE)
-                            .addComponent(nombreCancionInput)
-                            .addComponent(generoCancionInput)
-                            .addComponent(duracionCancionInput)
-                            .addComponent(cantanteCancionInput)))
-                    .addComponent(botonAgregarCancion, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 159, Short.MAX_VALUE)
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(70, 70, 70))
+                        .addGap(38, 38, 38)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(cantanteCancionInput, javax.swing.GroupLayout.PREFERRED_SIZE, 197, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(discoCancionCombo, javax.swing.GroupLayout.PREFERRED_SIZE, 197, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(duracionCancionInput, javax.swing.GroupLayout.PREFERRED_SIZE, 197, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(generoCancionInput, javax.swing.GroupLayout.PREFERRED_SIZE, 197, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(nombreCancionInput, javax.swing.GroupLayout.PREFERRED_SIZE, 197, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(31, 31, 31)
+                        .addComponent(botonAgregarCancion, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 93, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(cancion)
+                    .addComponent(disco)
+                    .addComponent(seleccionarDiscoComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 247, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(listaCancion)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(seleccionarCancionComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(53, 53, 53)
+                        .addComponent(editarCancionBtn)))
+                .addGap(102, 102, 102))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -995,7 +1136,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
                                 .addGap(0, 0, Short.MAX_VALUE))
                             .addGroup(programasTabLayout.createSequentialGroup()
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 488, Short.MAX_VALUE))))
+                                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 469, Short.MAX_VALUE))))
                     .addGroup(programasTabLayout.createSequentialGroup()
                         .addGroup(programasTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(programasTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
@@ -1082,160 +1223,14 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
         windowTabs.addTab("Programas", programasTab);
 
-        jLabel5.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jLabel5.setText("Canciones de archivos");
-
-        cancionArchivoAlbumLabel.setText("Album");
-
-        cancionArchivoNombreLabel.setText("Nombre");
-
-        cancionArchivoNombreInput.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cancionArchivoNombreInputActionPerformed(evt);
-            }
-        });
-
-        cancionArchivoCantanteLabel.setText("Cantante");
-
-        cancionArchivoDuracionLabel.setText("Duracion");
-
-        cancionArchivoDuracionInput.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                cancionArchivoDuracionInputKeyTyped(evt);
-            }
-        });
-
-        cancionArchivoGeneroLabel.setText("Genero");
-
-        cancionArchivoPathLabel.setText("Path");
-
-        actualizarCancionArchivoLabel.setText("Actualizar cancion");
-
-        verInformacionCancionArchivoBtn.setText("Ver Informacion");
-        verInformacionCancionArchivoBtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                verInformacionCancionArchivoBtnActionPerformed(evt);
-            }
-        });
-
-        agregarCancionArchivoBtn.setText("Agregar Cancion");
-        agregarCancionArchivoBtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                agregarCancionArchivoBtnActionPerformed(evt);
-            }
-        });
-
-        cargarCancionesArchivoLabel.setText("Cargar canciones");
-
-        cargarCancionesArchivoBtn.setText("Cargar canciones");
-        cargarCancionesArchivoBtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cargarCancionesArchivoBtnActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout cancionesTabLayout = new javax.swing.GroupLayout(cancionesTab);
-        cancionesTab.setLayout(cancionesTabLayout);
-        cancionesTabLayout.setHorizontalGroup(
-            cancionesTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(cancionesTabLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(cancionesTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(actualizarCancionArchivoLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(cancionesTabLayout.createSequentialGroup()
-                        .addGroup(cancionesTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(cancionesTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(cancionArchivoAlbumLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(cancionArchivoNombreLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(cancionArchivoCantanteLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(cancionesTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(cancionesTabLayout.createSequentialGroup()
-                                .addComponent(cancionArchivoAlbumInput, javax.swing.GroupLayout.PREFERRED_SIZE, 251, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(83, 83, 83)
-                                .addComponent(cancionArchivoDuracionLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(cancionArchivoDuracionInput, javax.swing.GroupLayout.PREFERRED_SIZE, 251, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(cancionesTabLayout.createSequentialGroup()
-                                .addGroup(cancionesTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(cancionArchivoNombreInput, javax.swing.GroupLayout.PREFERRED_SIZE, 251, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(cancionArchivoCantanteInput, javax.swing.GroupLayout.PREFERRED_SIZE, 251, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(83, 83, 83)
-                                .addGroup(cancionesTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(cargarCancionesArchivoLabel)
-                                    .addGroup(cancionesTabLayout.createSequentialGroup()
-                                        .addGroup(cancionesTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                            .addComponent(cancionArchivoGeneroLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 52, Short.MAX_VALUE)
-                                            .addComponent(cancionArchivoPathLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                        .addGap(18, 18, 18)
-                                        .addGroup(cancionesTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                            .addComponent(cancionArchivoGeneroInput, javax.swing.GroupLayout.DEFAULT_SIZE, 251, Short.MAX_VALUE)
-                                            .addComponent(cancionArchivoPathInput)))
-                                    .addComponent(jSeparator14, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(cargarCancionesArchivoPathInput)
-                                    .addComponent(cargarCancionesArchivoBtn, javax.swing.GroupLayout.DEFAULT_SIZE, 321, Short.MAX_VALUE)))))
-                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 213, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jSeparator9, javax.swing.GroupLayout.PREFERRED_SIZE, 213, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jSeparator13, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(agregarCancionArchivoBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 321, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(cancionesTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addComponent(verInformacionCancionArchivoBtn, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 321, Short.MAX_VALUE)
-                        .addComponent(actualizarCancionArchivoComboBox, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                .addContainerGap(105, Short.MAX_VALUE))
-        );
-        cancionesTabLayout.setVerticalGroup(
-            cancionesTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(cancionesTabLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jSeparator9, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(149, 149, 149)
-                .addGroup(cancionesTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(cancionArchivoAlbumLabel)
-                    .addComponent(cancionArchivoAlbumInput, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(cancionArchivoDuracionLabel)
-                    .addComponent(cancionArchivoDuracionInput, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(cancionesTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(cancionArchivoNombreInput, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(cancionArchivoNombreLabel)
-                    .addComponent(cancionArchivoGeneroLabel)
-                    .addComponent(cancionArchivoGeneroInput, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(cancionesTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(cancionArchivoCantanteInput, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(cancionArchivoCantanteLabel)
-                    .addComponent(cancionArchivoPathLabel)
-                    .addComponent(cancionArchivoPathInput, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(12, 12, 12)
-                .addComponent(agregarCancionArchivoBtn)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(cancionesTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(actualizarCancionArchivoLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(cargarCancionesArchivoLabel))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(cancionesTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jSeparator13, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jSeparator14, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(cancionesTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(cargarCancionesArchivoPathInput, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(actualizarCancionArchivoComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(cancionesTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(cargarCancionesArchivoBtn)
-                    .addComponent(verInformacionCancionArchivoBtn))
-                .addContainerGap(48, Short.MAX_VALUE))
-        );
-
-        windowTabs.addTab("Canciones Archivos", cancionesTab);
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(windowTabs, javax.swing.GroupLayout.Alignment.TRAILING)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(windowTabs)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1446,43 +1441,45 @@ public class MenuPrincipal extends javax.swing.JFrame {
      * @param evt
      */
     private void botonAsignarLocutorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonAsignarLocutorActionPerformed
-        
-        if (this.emisora.getLocutores().isEmpty()) {
-            JOptionPane.showMessageDialog(this, "No hay locutores creados...", "Error...", JOptionPane.ERROR_MESSAGE);
-            return;
-        } 
-        
-        if (this.emisora.getProgramas().isEmpty()) {
-            JOptionPane.showMessageDialog(this, "No hay locutores creados...", "Error...", JOptionPane.ERROR_MESSAGE);
-            return;
-        }
-       
-        String idLocutor = (String) programasLocutoresCombo.getSelectedItem();
-        Locutor locutorSeleccionado = this.emisora.obtenerPorId(idLocutor);
-        
-        String nombrePrograma = (String) programasListaCombo.getSelectedItem();
-        Programa programaSeleccionado = this.emisora.obtenerProgramaPorNombre(nombrePrograma);
-        
-        if (programaSeleccionado.getLocutor() == null) { // Revisa si el programa tiene locutor asignado
-            
+        ArrayList<Locutor> locutores;
+        ArrayList<Programa> programas;
 
-            this.programasListModel.removeElement(programaSeleccionado.getNombre() + 
-                                " |Genero: " + programaSeleccionado.getGenero() + 
-                                " |Locutor: SIN ASIGNAR");
-            
-        } else { // El id del locutor existe
-            
-            this.programasListModel.removeElement(programaSeleccionado.getNombre() + 
-                                " |Genero: " + programaSeleccionado.getGenero() + 
-                                " |Locutor: " + programaSeleccionado.getLocutor().getNombre());
-        }
-        
-            programaSeleccionado.setLocutor(locutorSeleccionado);
-        
-            this.programasListModel.addElement(programaSeleccionado.getNombre() + 
-                                " |Genero: " + programaSeleccionado.getGenero() + 
-                                " |Locutor: " + locutorSeleccionado.getNombre());
+        programas = emisora.getProgramas();
+        locutores = emisora.getLocutores();
+        Locutor locutorAsignar;
+        String locutorId = (String) locutoresProgramasComboBoxModel.getSelectedItem();
+        String programaNombre = (String) this.programasComboBoxModel.getSelectedItem();
+        // Itera por cada locutor hasta encontrar al correcto
+        for (Locutor locutor : locutores) {
+            if (locutor.getId().equals(locutorId)) {
+                locutorAsignar = locutor;
+                // Itera por cada programa hasta encontrar al correcto
+                for (Programa programa : programas) {
+                    if (programa.getNombre().equals(programaNombre)) {
+                        // Revisa si el locutor existe
+                        if (programa.getLocutor() == null) {
+                            programa.setLocutor(locutorAsignar);
 
+                            this.programasListModel.removeElement(programa.getNombre()
+                                    + " |Genero: " + programa.getGenero() + " |Locutor: SIN ASIGNAR");
+                            // Revisa si el locutor asignado es diferente al nuevo por asignar    
+                        } else if (programa.getLocutor() != locutor) {
+                            this.programasListModel.removeElement(programa.getNombre()
+                                    + " |Genero: " + programa.getGenero()
+                                    + " |Locutor: " + programa.getLocutor().getNombre());
+                        }
+                        // Asigna al locutor
+                        this.programasListModel.addElement(programa.getNombre()
+                                + " |Genero: " + programa.getGenero()
+                                + " |Locutor: " + locutor.getNombre());
+                        JOptionPane.showMessageDialog(this, "Se asigno correctamente el locutor...",
+                                "Exito", JOptionPane.INFORMATION_MESSAGE);
+
+                        return;
+                    }
+                }
+            }
+        }
     }//GEN-LAST:event_botonAsignarLocutorActionPerformed
 
     private void programasLocutoresComboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_programasLocutoresComboActionPerformed
@@ -1502,11 +1499,6 @@ public class MenuPrincipal extends javax.swing.JFrame {
      * @param evt Evento para el click del boton
      */
     private void botonVerInfoLocutorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonVerInfoLocutorActionPerformed
-        
-        // Desabilita el boton de ver info temporalmente
-           this.botonVerInfoLocutor.setEnabled(false);
-        
-        // Validacion
         if (this.emisora.getLocutores().isEmpty()) {
             JOptionPane.showMessageDialog(this, "No hay locutores creados...", "Error...", JOptionPane.ERROR_MESSAGE);
             return;
@@ -1515,10 +1507,12 @@ public class MenuPrincipal extends javax.swing.JFrame {
         Locutor locutorSeleccionado = this.emisora.obtenerPorId(idLocutor);
 
         // SE TIENE QUE CARGAR OTRA VENTANA
-        InformacionLocutor ventanaInformacion = new InformacionLocutor(this.botonVerInfoLocutor, 
+        InformacionLocutor ventanaInformacion = new InformacionLocutor(this,this.botonVerInfoLocutor, 
                 locutorSeleccionado, this.emisora, this.locutoresListModel, 
                 this.locutoresComboBoxModel, this.locutoresProgramasComboBoxModel, 
                 this.programasListModel);
+
+
         ventanaInformacion.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         ventanaInformacion.setVisible(true);
     }//GEN-LAST:event_botonVerInfoLocutorActionPerformed
@@ -1577,6 +1571,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
      * @param evt
      */
     private void botonVerDiscoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonVerDiscoActionPerformed
+
         if (this.emisora.getDiscos().isEmpty()) {
             JOptionPane.showMessageDialog(this, "No hay discos creados.", "ERROR", JOptionPane.ERROR_MESSAGE);
             return;
@@ -1604,7 +1599,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
     private void verInformacionProgramaBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_verInformacionProgramaBtnActionPerformed
         // Verificar que existan programas
         if (this.emisora.getProgramas().isEmpty()) {
-            JOptionPane.showMessageDialog(this, "No hay programas creados.", "ERROR", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(this, "No hay programas crados.", "ERROR", JOptionPane.ERROR_MESSAGE);
             return;
         }
         // Obtener programa seleccionado del modelo
@@ -1620,81 +1615,6 @@ public class MenuPrincipal extends javax.swing.JFrame {
     private void cancionArchivoNombreInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancionArchivoNombreInputActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_cancionArchivoNombreInputActionPerformed
-    
-    /**
-     * Permite ver la información de la canción
-     * @param evt 
-     */
-    private void verInformacionCancionArchivoBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_verInformacionCancionArchivoBtnActionPerformed
-        // Validaciones 
-        if (this.emisora.getCancionesArchivo().isEmpty()) {
-            JOptionPane.showMessageDialog(this, "No hay canciones registradas...", "ERROR", JOptionPane.ERROR_MESSAGE);
-            return;
-        }
-
-        // Consigue la informacion de la cancion
-        String cancionSeleccionada = (String) this.actualizarCancionArchivoComboBox.getSelectedItem();
-        CancionArchivo cancionActual = this.emisora.obtenerCancionArchivo(cancionSeleccionada);
-        
-        InformacionCancionArchivo ventanaInformacion = new InformacionCancionArchivo(cancionActual,
-                                                                    cancionesArchivoBoxModel, this.emisora);
-        ventanaInformacion.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-        ventanaInformacion.setVisible(true);
-    }//GEN-LAST:event_verInformacionCancionArchivoBtnActionPerformed
-
-    
-    /**
-     * Agrega una cancion a la emisora
-     * @param evt 
-     */
-    private void agregarCancionArchivoBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_agregarCancionArchivoBtnActionPerformed
-        
-        String album = this.cancionArchivoAlbumInput.getText().trim();
-        String nombre = this.cancionArchivoNombreInput.getText().trim();
-        String cantante = this.cancionArchivoCantanteInput.getText().trim();
-        String duracion = this.cancionArchivoDuracionInput.getText().trim();
-        String genero = this.cancionArchivoGeneroInput.getText().trim();
-        String path = this.cancionArchivoPathInput.getText().trim();
-        
-        // Validaciones
-        if (album.isEmpty() || nombre.isEmpty() || cantante.isEmpty() ||
-            duracion.isEmpty() || genero.isEmpty() || path.isEmpty()) {
-            JOptionPane.showMessageDialog(this, "Datos Invalidos...", "ERROR", JOptionPane.ERROR_MESSAGE);
-            return;
-        }
-        
-        if (this.emisora.verificarCancionArchivoRepetida(nombre)) {
-            JOptionPane.showMessageDialog(this, "Ya existe una cancion con ese nombre...", "ERROR", JOptionPane.ERROR_MESSAGE);
-            return;
-        }
-        
-        int duracionInt = Integer.parseInt(duracion);
-        
-        CancionArchivo nuevaCancion = new CancionArchivo(nombre, duracionInt, cantante,
-                genero, album, path);
-        
-        this.emisora.agregarCancionArchivo(nuevaCancion);
-        this.cancionesArchivoBoxModel.addElement(nuevaCancion.getNombre());
-        
-        this.cancionArchivoAlbumInput.setText("");
-        this.cancionArchivoNombreInput.setText("");
-        this.cancionArchivoCantanteInput.setText("");
-        this.cancionArchivoDuracionInput.setText("");
-        this.cancionArchivoGeneroInput.setText("");
-        this.cancionArchivoPathInput.setText("");
-        
-    }//GEN-LAST:event_agregarCancionArchivoBtnActionPerformed
-    
-    /**
-     * Solo permite digitar digitos
-     * @param evt 
-     */
-    private void cancionArchivoDuracionInputKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_cancionArchivoDuracionInputKeyTyped
-        char c = evt.getKeyChar();
-        if (c < '0' || c > '9') {
-            evt.consume();
-        }
-    }//GEN-LAST:event_cancionArchivoDuracionInputKeyTyped
 
     private void nombreCancionInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nombreCancionInputActionPerformed
         // TODO add your handling code here:
@@ -1745,33 +1665,90 @@ public class MenuPrincipal extends javax.swing.JFrame {
         disco.agregarCancion(cancionNueva);
         JOptionPane.showMessageDialog(this, "Cancion Agregada...", "Exito", JOptionPane.INFORMATION_MESSAGE);
     }//GEN-LAST:event_botonAgregarCancionActionPerformed
+
     
     /**
-     * Carga las canciones de dicho archivo en el modelo
-     * @param evt El evento generado cuando el boton es presionado
+     * Actualiza el ComboBox y la lista de canciones
+     * @param evt 
      */
-    private void cargarCancionesArchivoBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cargarCancionesArchivoBtnActionPerformed
-        // Validar input del path
-        if(this.cargarCancionesArchivoPathInput.getText().isEmpty()) {
-            JOptionPane.showMessageDialog(this, "Por favor ingrese un path...", "ERROR", JOptionPane.ERROR_MESSAGE);
-            return;
+    private void seleccionarDiscoComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_seleccionarDiscoComboBoxActionPerformed
+        // Obtener el disco seleccionado por medio de su nombre
+        String infoDisco = (String) this.seleccionarDiscoComboBox.getSelectedItem(); 
+        String nombreDisco = "";
+        for (int c = 0; c < infoDisco.length(); c++) {
+            if (' ' == infoDisco.charAt(c)) {
+                break;
+            }   
+            nombreDisco += infoDisco.charAt(c);
         }
-        // Cargar path del archivo
-        String filePath = this.cargarCancionesArchivoPathInput.getText();
-        ExcelReader cancionesExcelData = new ExcelReader(filePath);
-        // Verificar si el archivo se carga correctamente
-        if(!cancionesExcelData.cargarArchivoExcel()) {
-            JOptionPane.showMessageDialog(this, "Path de archivo invalido...", "ERROR", JOptionPane.ERROR_MESSAGE);
-            return;
+        
+        Disco disco = this.emisora.obtenerDisco(nombreDisco);
+        
+        // Actualizar segun el disco las canciones en el combo y la lista
+        ArrayList<Cancion> canciones = disco.getCanciones();
+        if(this.cancionesActComboBoxModel.getSize() > 0){
+            this.cancionesActComboBoxModel.removeAllElements();  
+            this.cancionesListModel.removeAllElements();
+            
         }
-        // Obtener canciones
-        ArrayList<CancionArchivo> cancionesCargadas = cancionesExcelData.getFileData();
-        // Cargar canciones al modelo
-        for (CancionArchivo cancionCargada : cancionesCargadas) {
-            this.emisora.agregarCancionArchivo(cancionCargada);
+        for(Cancion cancionAgregar : canciones){
+            this.cancionesActComboBoxModel.addElement(cancionAgregar.getNombre());
+            this.cancionesListModel.addElement(cancionAgregar.getNombre() + " - " 
+            + cancionAgregar.getGenero() + " - " +  cancionAgregar.getCantante());
         }
-    }//GEN-LAST:event_cargarCancionesArchivoBtnActionPerformed
+        
+        
+    }//GEN-LAST:event_seleccionarDiscoComboBoxActionPerformed
 
+    private void seleccionarCancionComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_seleccionarCancionComboBoxActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_seleccionarCancionComboBoxActionPerformed
+    /**
+     * Abre la ventana donde se actualiza la cancion seleccionada en el disco seleccionado
+     * @param evt 
+     */
+    private void editarCancionBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editarCancionBtnActionPerformed
+        // Verificar que haya discos creados para actualizar sus canciones
+        if(this.discoCancionComboBoxModel.getSize() <= 0){
+            JOptionPane.showMessageDialog(this, "No hay discos creados.","ERROR", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        // Obtener el disco seleccionado en el combo
+        String infoDisco = (String) this.seleccionarDiscoComboBox.getSelectedItem();
+        String nombreDisco = "";
+        for (int c = 0; c < infoDisco.length(); c++) {
+            if (' ' == infoDisco.charAt(c)) {
+                break;
+            }   
+            nombreDisco += infoDisco.charAt(c);
+        }
+        
+        Disco disco = this.emisora.obtenerDisco(nombreDisco);
+        // Verificar que el disco contenga canciones
+        if(disco.getCanciones().isEmpty()){
+            JOptionPane.showMessageDialog(this,"El disco no contiene canciones.", "ERROR", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        
+        // Obtener la cancion seleccionada y llamar a su ventana de informacion.
+        ArrayList<Cancion> canciones = disco.getCanciones();
+        Cancion cancionAct;
+        for(Cancion cancion : canciones){
+            if( cancion.getNombre().equals( this.cancionesActComboBoxModel.getSelectedItem() ) ){
+                cancionAct = cancion;
+                InformacionCancionDisco ventanaInformacion = new InformacionCancionDisco(this, cancionesActComboBoxModel, cancionesListModel, cancion);
+                ventanaInformacion.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+                this.setVisible(false);
+                ventanaInformacion.setLocationRelativeTo(null);
+                ventanaInformacion.setVisible(true);
+                break;
+            }
+        }
+    }//GEN-LAST:event_editarCancionBtnActionPerformed
+
+    /**
+     * @param args the command line arguments
+     */
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel IdLocutorLabel;
     private javax.swing.JComboBox actualizarCancionArchivoComboBox;
@@ -1793,12 +1770,12 @@ public class MenuPrincipal extends javax.swing.JFrame {
     private javax.swing.JButton botonVerInfoLocutor;
     private javax.swing.JButton btnActualizarEmisora;
     private javax.swing.JTextField cancionArchivoAlbumInput;
+    private javax.swing.JTextField cancionArchivoAlbumInput1;
+    private javax.swing.JTextField cancionArchivoAlbumInput2;
     private javax.swing.JLabel cancionArchivoAlbumLabel;
     private javax.swing.JTextField cancionArchivoCantanteInput;
     private javax.swing.JLabel cancionArchivoCantanteLabel;
-    private javax.swing.JTextField cancionArchivoDuracionInput;
     private javax.swing.JLabel cancionArchivoDuracionLabel;
-    private javax.swing.JTextField cancionArchivoGeneroInput;
     private javax.swing.JLabel cancionArchivoGeneroLabel;
     private javax.swing.JTextField cancionArchivoNombreInput;
     private javax.swing.JLabel cancionArchivoNombreLabel;
