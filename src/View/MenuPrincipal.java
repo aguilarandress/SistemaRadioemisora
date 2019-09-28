@@ -1730,9 +1730,13 @@ public class MenuPrincipal extends javax.swing.JFrame {
         seleccionarDiscoComboBoxActionPerformed(evt);
         JOptionPane.showMessageDialog(this, "Cancion Agregada...", "Exito", JOptionPane.INFORMATION_MESSAGE);
     }//GEN-LAST:event_botonAgregarCancionActionPerformed
-
+    /**
+     * Actualiza el ComboBox y la lista de canciones
+     * @param evt 
+     */
     private void seleccionarDiscoComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_seleccionarDiscoComboBoxActionPerformed
-        String infoDisco = (String) this.seleccionarDiscoComboBox.getSelectedItem();
+        // Obtener el disco seleccionado por medio de su nombre
+        String infoDisco = (String) this.seleccionarDiscoComboBox.getSelectedItem(); 
         String nombreDisco = "";
         for (int c = 0; c < infoDisco.length(); c++) {
             if (' ' == infoDisco.charAt(c)) {
@@ -1743,6 +1747,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
         
         Disco disco = this.emisora.obtenerDisco(nombreDisco);
         
+        // Actualizar segun el disco las canciones en el combo y la lista
         ArrayList<Cancion> canciones = disco.getCanciones();
         if(this.cancionesActComboBoxModel.getSize() > 0){
             this.cancionesActComboBoxModel.removeAllElements();  
@@ -1761,9 +1766,47 @@ public class MenuPrincipal extends javax.swing.JFrame {
     private void seleccionarCancionComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_seleccionarCancionComboBoxActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_seleccionarCancionComboBoxActionPerformed
-
+    /**
+     * Abre la ventana donde se actualiza la cancion seleccionada en el disco seleccionado
+     * @param evt 
+     */
     private void editarCancionBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editarCancionBtnActionPerformed
-        // TODO add your handling code here:
+        // Verificar que haya discos creados para actualizar sus canciones
+        if(this.discoCancionComboBoxModel.getSize() <= 0){
+            JOptionPane.showMessageDialog(this, "No hay discos creados.","ERROR", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        // Obtener el disco seleccionado en el combo
+        String infoDisco = (String) this.seleccionarDiscoComboBox.getSelectedItem();
+        String nombreDisco = "";
+        for (int c = 0; c < infoDisco.length(); c++) {
+            if (' ' == infoDisco.charAt(c)) {
+                break;
+            }   
+            nombreDisco += infoDisco.charAt(c);
+        }
+        
+        Disco disco = this.emisora.obtenerDisco(nombreDisco);
+        // Verificar que el disco contenga canciones
+        if(disco.getCanciones().isEmpty()){
+            JOptionPane.showMessageDialog(this,"El disco no contiene canciones.", "ERROR", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        
+        // Obtener la cancion seleccionada y llamar a su ventana de informacion.
+        ArrayList<Cancion> canciones = disco.getCanciones();
+        Cancion cancionAct;
+        for(Cancion cancion : canciones){
+            if( cancion.getNombre().equals( this.cancionesActComboBoxModel.getSelectedItem() ) ){
+                cancionAct = cancion;
+                InformacionCancionDisco ventanaInformacion = new InformacionCancionDisco(this, cancionesActComboBoxModel, cancionesListModel, cancion);
+                ventanaInformacion.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+                this.setVisible(false);
+                ventanaInformacion.setLocationRelativeTo(null);
+                ventanaInformacion.setVisible(true);
+                break;
+            }
+        }
     }//GEN-LAST:event_editarCancionBtnActionPerformed
 
     /**
