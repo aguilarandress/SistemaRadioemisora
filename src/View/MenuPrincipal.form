@@ -55,12 +55,16 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="windowTabs" alignment="0" max="32767" attributes="0"/>
+          <Component id="windowTabs" alignment="1" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="windowTabs" alignment="0" max="32767" attributes="0"/>
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="windowTabs" max="32767" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+          </Group>
       </Group>
     </DimensionLayout>
   </Layout>
@@ -100,7 +104,7 @@
                                   <Component id="frecuenciaEmisoraShow" min="-2" max="-2" attributes="0"/>
                                   <Component id="nombreEmisoraShow" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace min="0" pref="455" max="32767" attributes="0"/>
+                              <EmptySpace min="0" pref="627" max="32767" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
@@ -168,8 +172,8 @@
                           <Component id="direccionFisicaInput" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="btnActualizarEmisora" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="155" max="32767" attributes="0"/>
+                      <Component id="btnActualizarEmisora" min="-2" pref="41" max="-2" attributes="0"/>
+                      <EmptySpace pref="207" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -303,70 +307,74 @@
                   <Group type="102" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="1" attributes="0">
-                              <Group type="103" groupAlignment="1" attributes="0">
-                                  <Component id="jSeparator8" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="jSeparator2" alignment="0" max="32767" attributes="0"/>
-                                  <Group type="102" alignment="1" attributes="0">
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="nombreLocutorLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="IdLocutorLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="correoLocutorLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="telefonoLocutorLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="direccionLocutorLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="sexoLocutorLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="fechaLocutorLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace max="32767" attributes="0"/>
-                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                          <Component id="locutorNombreInput" max="32767" attributes="0"/>
-                                          <Component id="locutorIdInput" max="32767" attributes="0"/>
-                                          <Component id="locutorCorreoInput" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="locutorTelefonoInput" max="32767" attributes="0"/>
-                                          <Component id="locutorDireccionInput" max="32767" attributes="0"/>
-                                          <Component id="locutorSexoInput" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="locutorFechaInput" pref="362" max="32767" attributes="0"/>
-                                      </Group>
-                                  </Group>
-                                  <Component id="botonAgregarLocutor" alignment="0" pref="421" max="32767" attributes="0"/>
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <Component id="nuevoLocutorLabel" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                                  </Group>
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <Component id="locutoresActualizarCombo" min="-2" pref="235" max="-2" attributes="0"/>
-                                      <EmptySpace max="32767" attributes="0"/>
-                                      <Component id="botonVerInfoLocutor" min="-2" pref="142" max="-2" attributes="0"/>
-                                  </Group>
-                              </Group>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="listaLocutoresLabel" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jScrollPane1" min="-2" pref="228" max="-2" attributes="0"/>
-                              </Group>
-                          </Group>
                           <Group type="102" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Component id="actualizarLocutorLabel" min="-2" max="-2" attributes="0"/>
                                   <Component id="jLabel3" alignment="0" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                              <EmptySpace max="32767" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="1" attributes="0">
+                              <Group type="103" groupAlignment="1" attributes="0">
+                                  <Group type="102" alignment="1" attributes="0">
+                                      <Component id="locutoresActualizarCombo" min="-2" pref="235" max="-2" attributes="0"/>
+                                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                                      <Component id="botonVerInfoLocutor" max="32767" attributes="0"/>
+                                  </Group>
+                                  <Component id="jSeparator8" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="jSeparator2" alignment="0" max="32767" attributes="0"/>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                                          <Component id="botonAgregarLocutor" alignment="0" max="32767" attributes="0"/>
+                                          <Group type="102" alignment="1" attributes="0">
+                                              <Group type="103" groupAlignment="0" attributes="0">
+                                                  <Component id="nombreLocutorLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="IdLocutorLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="correoLocutorLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="telefonoLocutorLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="direccionLocutorLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="sexoLocutorLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="fechaLocutorLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                                              </Group>
+                                              <EmptySpace min="-2" pref="60" max="-2" attributes="0"/>
+                                              <Group type="103" groupAlignment="0" attributes="0">
+                                                  <Component id="locutorIdInput" min="-2" pref="296" max="-2" attributes="0"/>
+                                                  <Component id="locutorNombreInput" min="-2" pref="296" max="-2" attributes="0"/>
+                                                  <Component id="locutorCorreoInput" alignment="0" min="-2" pref="296" max="-2" attributes="0"/>
+                                                  <Component id="locutorTelefonoInput" alignment="0" min="-2" pref="296" max="-2" attributes="0"/>
+                                                  <Component id="locutorDireccionInput" alignment="0" min="-2" pref="296" max="-2" attributes="0"/>
+                                                  <Component id="locutorSexoInput" alignment="0" min="-2" pref="296" max="-2" attributes="0"/>
+                                                  <Component id="locutorFechaInput" min="-2" pref="296" max="-2" attributes="0"/>
+                                              </Group>
+                                          </Group>
+                                      </Group>
+                                      <EmptySpace min="0" pref="47" max="32767" attributes="0"/>
+                                  </Group>
+                              </Group>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="jScrollPane1" min="-2" pref="362" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="nuevoLocutorLabel" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="32767" attributes="0"/>
+                              <Component id="listaLocutoresLabel" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="278" max="-2" attributes="0"/>
                           </Group>
                       </Group>
-                      <EmptySpace max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace max="-2" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="nuevoLocutorLabel" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="listaLocutoresLabel" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="1" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" attributes="0">
                               <Component id="jSeparator2" min="-2" pref="10" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="2" max="-2" attributes="0"/>
@@ -404,23 +412,23 @@
                                   <Component id="fechaLocutorLabel" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="locutorFechaInput" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="botonAgregarLocutor" min="-2" pref="23" max="-2" attributes="0"/>
                           </Group>
                           <Component id="jScrollPane1" min="-2" pref="257" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="botonAgregarLocutor" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
                       <Component id="actualizarLocutorLabel" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="jSeparator8" min="-2" pref="11" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="1" max="-2" attributes="0"/>
                       <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="botonVerInfoLocutor" min="-2" max="-2" attributes="0"/>
-                          <Component id="locutoresActualizarCombo" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="locutoresActualizarCombo" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="botonVerInfoLocutor" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="78" max="32767" attributes="0"/>
+                      <EmptySpace pref="103" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -559,6 +567,583 @@
             </Component>
           </SubComponents>
         </Container>
+        <Container class="javax.swing.JPanel" name="playlistsTab">
+          <Constraints>
+            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
+              <JTabbedPaneConstraints tabName="Playlists">
+                <Property name="tabTitle" type="java.lang.String" value="Playlists"/>
+              </JTabbedPaneConstraints>
+            </Constraint>
+          </Constraints>
+
+          <Layout>
+            <DimensionLayout dim="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="nuevaPlaylistLabel" min="-2" max="-2" attributes="0"/>
+                          <Component id="jSeparator5" max="32767" attributes="0"/>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="playlistNombre" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="playlistsGeneroLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="playlistGeneroInput" max="32767" attributes="0"/>
+                                  <Component id="playlistNombreInput" max="32767" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <Component id="botonAgregarPlaylist" pref="295" max="32767" attributes="0"/>
+                          <Component id="verCancionesPlaylistLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="jSeparator7" alignment="0" max="32767" attributes="0"/>
+                          <Component id="playlistsCombo" max="32767" attributes="0"/>
+                          <Component id="jScrollPane4" max="32767" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="jScrollPane3" max="32767" attributes="0"/>
+                          <Group type="102" attributes="0">
+                              <Component id="listaPlaylistsLabel" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="0" pref="431" max="32767" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+            <DimensionLayout dim="1">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="nuevaPlaylistLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="listaPlaylistsLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" attributes="0">
+                              <Component id="jSeparator5" min="-2" pref="10" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="playlistNombre" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="playlistNombreInput" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="playlistsGeneroLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="playlistGeneroInput" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Component id="botonAgregarPlaylist" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
+                              <Component id="verCancionesPlaylistLabel" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="jSeparator7" min="-2" pref="10" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="playlistsCombo" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="jScrollPane4" pref="275" max="32767" attributes="0"/>
+                          </Group>
+                          <Component id="jScrollPane3" max="32767" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+          </Layout>
+          <SubComponents>
+            <Component class="javax.swing.JLabel" name="nuevaPlaylistLabel">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Agregar Nueva Playlist"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JSeparator" name="jSeparator5">
+            </Component>
+            <Component class="javax.swing.JLabel" name="playlistNombre">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Nombre:"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="playlistsGeneroLabel">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Genero:"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="playlistNombreInput">
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="playlistNombreInputActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JTextField" name="playlistGeneroInput">
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="playlistGeneroInputActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JButton" name="botonAgregarPlaylist">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Agregar Playlist"/>
+              </Properties>
+            </Component>
+            <Container class="javax.swing.JScrollPane" name="jScrollPane3">
+              <AuxValues>
+                <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+              </AuxValues>
+
+              <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+              <SubComponents>
+                <Component class="javax.swing.JList" name="playlistsListaPlaylistsBox">
+                  <Properties>
+                    <Property name="model" type="javax.swing.ListModel" editor="org.netbeans.modules.form.editors2.ListModelEditor">
+                      <StringArray count="0"/>
+                    </Property>
+                  </Properties>
+                  <AuxValues>
+                    <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+                  </AuxValues>
+                </Component>
+              </SubComponents>
+            </Container>
+            <Component class="javax.swing.JLabel" name="listaPlaylistsLabel">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Lista de Playlists:"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="verCancionesPlaylistLabel">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Ver Canciones:"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JSeparator" name="jSeparator7">
+            </Component>
+            <Component class="javax.swing.JComboBox" name="playlistsCombo">
+              <Properties>
+                <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                  <StringArray count="4">
+                    <StringItem index="0" value="Item 1"/>
+                    <StringItem index="1" value="Item 2"/>
+                    <StringItem index="2" value="Item 3"/>
+                    <StringItem index="3" value="Item 4"/>
+                  </StringArray>
+                </Property>
+              </Properties>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+              </AuxValues>
+            </Component>
+            <Container class="javax.swing.JScrollPane" name="jScrollPane4">
+              <AuxValues>
+                <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+              </AuxValues>
+
+              <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+              <SubComponents>
+                <Component class="javax.swing.JList" name="playlistsListaCancionesBox">
+                  <Properties>
+                    <Property name="model" type="javax.swing.ListModel" editor="org.netbeans.modules.form.editors2.ListModelEditor">
+                      <StringArray count="0"/>
+                    </Property>
+                  </Properties>
+                  <AuxValues>
+                    <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+                  </AuxValues>
+                </Component>
+              </SubComponents>
+            </Container>
+          </SubComponents>
+        </Container>
+        <Container class="javax.swing.JPanel" name="discosTab">
+          <Constraints>
+            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
+              <JTabbedPaneConstraints tabName="Disco">
+                <Property name="tabTitle" type="java.lang.String" value="Disco"/>
+              </JTabbedPaneConstraints>
+            </Constraint>
+          </Constraints>
+
+          <Layout>
+            <DimensionLayout dim="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="46" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" attributes="0">
+                              <Component id="listaDiscoComboBox" min="-2" pref="165" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="botonVerDisco" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                                  <Component id="jSeparator12" alignment="0" max="32767" attributes="0"/>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                              <Component id="ubicacionDiscoLabel" max="32767" attributes="0"/>
+                                              <Component id="generoDiscoLabel" max="32767" attributes="0"/>
+                                              <Component id="discoNombreLabel" max="32767" attributes="0"/>
+                                              <Component id="cantanteDiscoLabel" max="32767" attributes="0"/>
+                                              <Component id="anioDiscoLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                          <Component id="imagenDiscoLabel" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                          <Component id="imagenDiscoTextField" pref="191" max="32767" attributes="0"/>
+                                          <Component id="cantanteDiscoTextField" max="32767" attributes="0"/>
+                                          <Component id="nombreDiscoTextField" max="32767" attributes="0"/>
+                                          <Component id="generoDiscoTextField" max="32767" attributes="0"/>
+                                          <Component id="anioDiscoTextField" max="32767" attributes="0"/>
+                                          <Component id="ubicacionDiscoTextField" max="32767" attributes="0"/>
+                                      </Group>
+                                  </Group>
+                                  <Component id="botonCrearDisco" alignment="0" pref="270" max="32767" attributes="0"/>
+                                  <Component id="jLabel4" alignment="0" max="32767" attributes="0"/>
+                              </Group>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="102" attributes="0">
+                                      <Component id="listaDiscosLabel" min="-2" pref="111" max="-2" attributes="0"/>
+                                      <EmptySpace max="32767" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" attributes="0">
+                                      <Component id="jScrollPane5" pref="451" max="32767" attributes="0"/>
+                                      <EmptySpace min="-2" pref="59" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                          </Group>
+                      </Group>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+            <DimensionLayout dim="1">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
+                      <Component id="listaDiscosLabel" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" attributes="0">
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="discoNombreLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="nombreDiscoTextField" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="cantanteDiscoTextField" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="cantanteDiscoLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="generoDiscoLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="generoDiscoTextField" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="anioDiscoLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="anioDiscoTextField" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="ubicacionDiscoLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="ubicacionDiscoTextField" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="1" attributes="0">
+                                  <Component id="imagenDiscoTextField" min="-2" max="-2" attributes="0"/>
+                                  <Component id="imagenDiscoLabel" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <Component id="jScrollPane5" alignment="0" min="-2" pref="237" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
+                      <Component id="botonCrearDisco" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="3" max="-2" attributes="0"/>
+                      <Component id="jSeparator12" min="-2" pref="10" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="5" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="listaDiscoComboBox" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="botonVerDisco" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace pref="115" max="32767" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+          </Layout>
+          <SubComponents>
+            <Component class="javax.swing.JLabel" name="discoNombreLabel">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Nombre:"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="nombreDiscoTextField">
+            </Component>
+            <Component class="javax.swing.JTextField" name="cantanteDiscoTextField">
+            </Component>
+            <Component class="javax.swing.JLabel" name="cantanteDiscoLabel">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Cantante: "/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="generoDiscoLabel">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Genero: "/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="generoDiscoTextField">
+            </Component>
+            <Component class="javax.swing.JLabel" name="anioDiscoLabel">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="A&#xf1;o: "/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="anioDiscoTextField">
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="anioDiscoTextFieldActionPerformed"/>
+                <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="anioDiscoTextFieldKeyTyped"/>
+              </Events>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+              </AuxValues>
+            </Component>
+            <Component class="javax.swing.JLabel" name="ubicacionDiscoLabel">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Ubicacion: "/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="ubicacionDiscoTextField">
+            </Component>
+            <Component class="javax.swing.JTextField" name="imagenDiscoTextField">
+            </Component>
+            <Component class="javax.swing.JLabel" name="imagenDiscoLabel">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Imagen: "/>
+              </Properties>
+            </Component>
+            <Container class="javax.swing.JScrollPane" name="jScrollPane5">
+              <AuxValues>
+                <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+              </AuxValues>
+
+              <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+              <SubComponents>
+                <Component class="javax.swing.JList" name="discosListaBox">
+                  <Properties>
+                    <Property name="model" type="javax.swing.ListModel" editor="org.netbeans.modules.form.editors2.ListModelEditor">
+                      <StringArray count="0"/>
+                    </Property>
+                  </Properties>
+                  <AuxValues>
+                    <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+                  </AuxValues>
+                </Component>
+              </SubComponents>
+            </Container>
+            <Component class="javax.swing.JComboBox" name="listaDiscoComboBox">
+              <Properties>
+                <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                  <StringArray count="0"/>
+                </Property>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="listaDiscoComboBoxActionPerformed"/>
+              </Events>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+              </AuxValues>
+            </Component>
+            <Component class="javax.swing.JButton" name="botonCrearDisco">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Crear disco"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botonCrearDiscoActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JButton" name="botonVerDisco">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Ver informacion"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botonVerDiscoActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JLabel" name="listaDiscosLabel">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Lista de discos:"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel4">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Actualizar disco:"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JSeparator" name="jSeparator12">
+            </Component>
+          </SubComponents>
+        </Container>
+        <Container class="javax.swing.JPanel" name="jPanel1">
+          <Constraints>
+            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
+              <JTabbedPaneConstraints tabName="Canciones disco">
+                <Property name="tabTitle" type="java.lang.String" value="Canciones disco"/>
+              </JTabbedPaneConstraints>
+            </Constraint>
+          </Constraints>
+
+          <Layout>
+            <DimensionLayout dim="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" attributes="0">
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="nombreCancionLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="generoCancionLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="duracionCancionLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="cantanteCancionLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="discoCancionLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace min="-2" pref="62" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                  <Component id="discoCancionCombo" pref="197" max="32767" attributes="0"/>
+                                  <Component id="nombreCancionInput" max="32767" attributes="0"/>
+                                  <Component id="generoCancionInput" max="32767" attributes="0"/>
+                                  <Component id="duracionCancionInput" max="32767" attributes="0"/>
+                                  <Component id="cantanteCancionInput" max="32767" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <Component id="botonAgregarCancion" alignment="0" min="-2" pref="188" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace pref="159" max="32767" attributes="0"/>
+                      <Component id="jPanel2" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="70" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+            <DimensionLayout dim="1">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" attributes="0">
+                              <EmptySpace min="59" pref="59" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="nombreCancionLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="nombreCancionInput" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="generoCancionLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="generoCancionInput" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="duracionCancionLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="duracionCancionInput" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="cantanteCancionLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="cantanteCancionInput" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="discoCancionLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="discoCancionCombo" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
+                              <Component id="botonAgregarCancion" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
+                              <Component id="jPanel2" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <EmptySpace pref="230" max="32767" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+          </Layout>
+          <SubComponents>
+            <Component class="javax.swing.JLabel" name="nombreCancionLabel">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Nombre: "/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="generoCancionLabel">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Genero: "/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="duracionCancionLabel">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Duraci&#xf3;n: "/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="cantanteCancionLabel">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Cantante: "/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="nombreCancionInput">
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="nombreCancionInputActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JTextField" name="generoCancionInput">
+            </Component>
+            <Component class="javax.swing.JTextField" name="duracionCancionInput">
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="duracionCancionInputActionPerformed"/>
+                <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="duracionCancionInputKeyTyped"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JTextField" name="cantanteCancionInput">
+            </Component>
+            <Component class="javax.swing.JComboBox" name="discoCancionCombo">
+              <Properties>
+                <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                  <StringArray count="0"/>
+                </Property>
+              </Properties>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+              </AuxValues>
+            </Component>
+            <Component class="javax.swing.JLabel" name="discoCancionLabel">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Disco:"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JButton" name="botonAgregarCancion">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Agregar Cancion"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botonAgregarCancionActionPerformed"/>
+              </Events>
+            </Component>
+            <Container class="javax.swing.JPanel" name="jPanel2">
+
+              <Layout>
+                <DimensionLayout dim="0">
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <EmptySpace min="0" pref="304" max="32767" attributes="0"/>
+                  </Group>
+                </DimensionLayout>
+                <DimensionLayout dim="1">
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <EmptySpace min="0" pref="265" max="32767" attributes="0"/>
+                  </Group>
+                </DimensionLayout>
+              </Layout>
+            </Container>
+          </SubComponents>
+        </Container>
         <Container class="javax.swing.JPanel" name="programasTab">
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
@@ -573,71 +1158,74 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
-                              <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                                  <Component id="jSeparator4" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="botonAsignarLocutor" alignment="0" pref="326" max="32767" attributes="0"/>
-                                  <Component id="programasLocutoresCombo" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="programasListaCombo" alignment="0" max="32767" attributes="0"/>
-                              </Group>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="jSeparator6" max="32767" attributes="0"/>
-                                  <Component id="programasListaCombo2" max="32767" attributes="0"/>
-                                  <Component id="programasPlaylistsCombo" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="botonAsignarPlaylist" alignment="0" max="32767" attributes="0"/>
-                              </Group>
-                          </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                      <Component id="jSeparator3" alignment="1" max="32767" attributes="0"/>
-                                      <Group type="103" alignment="1" groupAlignment="0" attributes="0">
-                                          <Component id="nuevoProgramaLabel" min="-2" max="-2" attributes="0"/>
-                                          <Group type="103" alignment="0" groupAlignment="1" attributes="0">
-                                              <Component id="botonCrearNuevoPrograma" min="-2" pref="335" max="-2" attributes="0"/>
-                                              <Group type="102" attributes="0">
-                                                  <Group type="103" groupAlignment="1" attributes="0">
-                                                      <Group type="102" attributes="0">
-                                                          <Group type="103" groupAlignment="0" attributes="0">
-                                                              <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
-                                                              <Component id="programaHorarioLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                                                          </Group>
-                                                          <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
-                                                      </Group>
-                                                      <Group type="102" alignment="0" attributes="0">
-                                                          <Component id="programaNombreLabel" min="-2" max="-2" attributes="0"/>
-                                                          <EmptySpace max="-2" attributes="0"/>
-                                                      </Group>
-                                                  </Group>
-                                                  <Group type="103" groupAlignment="0" attributes="0">
-                                                      <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                                                          <Component id="programaHorarioInput" alignment="0" pref="270" max="32767" attributes="0"/>
-                                                          <Component id="programasGeneroInput" max="32767" attributes="0"/>
-                                                      </Group>
-                                                      <Component id="programaNombreInput" min="-2" pref="270" max="-2" attributes="0"/>
-                                                  </Group>
-                                              </Group>
-                                          </Group>
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                  <Component id="jSeparator3" alignment="1" max="32767" attributes="0"/>
+                                  <Component id="nuevoProgramaLabel" min="-2" max="-2" attributes="0"/>
+                                  <Group type="102" alignment="1" attributes="0">
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="programaNombreLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="programaHorarioLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jLabel1" alignment="0" min="-2" max="-2" attributes="0"/>
                                       </Group>
+                                      <EmptySpace max="32767" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                                              <Component id="programaHorarioInput" alignment="0" pref="270" max="32767" attributes="0"/>
+                                              <Component id="programasGeneroInput" max="32767" attributes="0"/>
+                                          </Group>
+                                          <Component id="programaNombreInput" min="-2" pref="270" max="-2" attributes="0"/>
+                                      </Group>
+                                  </Group>
+                                  <Group type="102" alignment="1" attributes="0">
+                                      <Component id="actualizarProgramaLabel" min="-2" pref="342" max="-2" attributes="0"/>
+                                      <EmptySpace max="32767" attributes="0"/>
+                                      <Component id="jSeparator10" pref="1" max="32767" attributes="0"/>
                                   </Group>
                                   <Group type="102" attributes="0">
                                       <Component id="programasDuracionLabel" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                                      <EmptySpace max="32767" attributes="0"/>
                                       <Component id="programaDuracionInput" min="-2" pref="270" max="-2" attributes="0"/>
                                   </Group>
-                                  <Component id="programaAsignarLocutorLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="botonCrearNuevoPrograma" alignment="0" max="32767" attributes="0"/>
                               </Group>
-                              <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="programaAsignarPlaylistLabel" min="-2" max="-2" attributes="0"/>
-                                  <Component id="programasListaLabel" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jScrollPane2" min="-2" pref="302" max="-2" attributes="0"/>
+                                  <Group type="102" attributes="0">
+                                      <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
+                                      <Component id="programasListaLabel" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" attributes="0">
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="jScrollPane2" pref="488" max="32767" attributes="0"/>
+                                  </Group>
                               </Group>
                           </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                                      <Component id="jSeparator4" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="botonAsignarLocutor" alignment="0" pref="326" max="32767" attributes="0"/>
+                                      <Component id="programasLocutoresCombo" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="programasListaCombo" max="32767" attributes="0"/>
+                                  </Group>
+                                  <Component id="programaAsignarLocutorLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="actualizarProgramasComboBox" min="-2" pref="327" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                                  <Component id="programasPlaylistsCombo" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="programaAsignarPlaylistLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jSeparator6" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="programasListaCombo2" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="botonAsignarPlaylist" pref="479" max="32767" attributes="0"/>
+                                  <Component id="verInformacionProgramaBtn" alignment="0" max="32767" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <Component id="jSeparator11" min="-2" pref="335" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace max="32767" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -650,8 +1238,7 @@
                           <Component id="programasListaLabel" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="jScrollPane2" min="-2" pref="216" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" attributes="0">
                               <Component id="jSeparator3" min="-2" pref="10" max="-2" attributes="0"/>
                               <EmptySpace max="32767" attributes="0"/>
@@ -670,40 +1257,55 @@
                                   <Component id="programaDuracionInput" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="programasGeneroInput" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="programasGeneroInput" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
                               <Component id="botonCrearNuevoPrograma" min="-2" max="-2" attributes="0"/>
                           </Group>
+                          <Component id="jScrollPane2" max="32767" attributes="0"/>
                       </Group>
-                      <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="1" attributes="0">
+                          <Component id="jSeparator10" min="-2" pref="10" max="-2" attributes="0"/>
+                          <Component id="actualizarProgramaLabel" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="4" max="-2" attributes="0"/>
+                      <Component id="jSeparator11" min="-2" pref="10" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="4" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="programaAsignarLocutorLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="programaAsignarPlaylistLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="actualizarProgramasComboBox" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="verInformacionProgramaBtn" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="programaAsignarPlaylistLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="programaAsignarLocutorLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jSeparator4" min="-2" pref="10" max="-2" attributes="0"/>
+                          <Group type="102" attributes="0">
+                              <Component id="jSeparator4" min="-2" pref="10" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="programasListaCombo" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="programasListaCombo2" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="programasPlaylistsCombo" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="programasLocutoresCombo" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="botonAsignarLocutor" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="botonAsignarPlaylist" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
                           <Component id="jSeparator6" min="-2" pref="10" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="programasListaCombo2" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="programasListaCombo" min="-2" pref="20" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace min="-2" pref="5" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="programasLocutoresCombo" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="programasPlaylistsCombo" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace min="-2" pref="11" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="botonAsignarLocutor" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="botonAsignarPlaylist" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace max="32767" attributes="0"/>
+                      <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -859,457 +1461,264 @@
                 <Property name="text" type="java.lang.String" value="Asignar Playlist"/>
               </Properties>
             </Component>
-          </SubComponents>
-        </Container>
-        <Container class="javax.swing.JPanel" name="playlistsTab">
-          <Constraints>
-            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
-              <JTabbedPaneConstraints tabName="Playlists">
-                <Property name="tabTitle" type="java.lang.String" value="Playlists"/>
-              </JTabbedPaneConstraints>
-            </Constraint>
-          </Constraints>
-
-          <Layout>
-            <DimensionLayout dim="0">
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" attributes="0">
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="nuevaPlaylistLabel" min="-2" max="-2" attributes="0"/>
-                          <Component id="jSeparator5" max="32767" attributes="0"/>
-                          <Group type="102" alignment="0" attributes="0">
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="playlistNombre" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="playlistsGeneroLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="playlistGeneroInput" max="32767" attributes="0"/>
-                                  <Component id="playlistNombreInput" max="32767" attributes="0"/>
-                              </Group>
-                          </Group>
-                          <Component id="botonAgregarPlaylist" pref="295" max="32767" attributes="0"/>
-                          <Component id="verCancionesPlaylistLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="jSeparator7" alignment="0" max="32767" attributes="0"/>
-                          <Component id="playlistsCombo" max="32767" attributes="0"/>
-                          <Component id="jScrollPane4" max="32767" attributes="0"/>
-                      </Group>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jScrollPane3" max="32767" attributes="0"/>
-                          <Group type="102" attributes="0">
-                              <Component id="listaPlaylistsLabel" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="0" pref="257" max="32767" attributes="0"/>
-                          </Group>
-                      </Group>
-                      <EmptySpace max="-2" attributes="0"/>
-                  </Group>
-              </Group>
-            </DimensionLayout>
-            <DimensionLayout dim="1">
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="nuevaPlaylistLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="listaPlaylistsLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" attributes="0">
-                              <Component id="jSeparator5" min="-2" pref="10" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="playlistNombre" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="playlistNombreInput" alignment="3" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="playlistsGeneroLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="playlistGeneroInput" alignment="3" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                              <Component id="botonAgregarPlaylist" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
-                              <Component id="verCancionesPlaylistLabel" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="jSeparator7" min="-2" pref="10" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="playlistsCombo" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="jScrollPane4" pref="207" max="32767" attributes="0"/>
-                          </Group>
-                          <Component id="jScrollPane3" max="32767" attributes="0"/>
-                      </Group>
-                      <EmptySpace max="-2" attributes="0"/>
-                  </Group>
-              </Group>
-            </DimensionLayout>
-          </Layout>
-          <SubComponents>
-            <Component class="javax.swing.JLabel" name="nuevaPlaylistLabel">
+            <Component class="javax.swing.JLabel" name="actualizarProgramaLabel">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Agregar Nueva Playlist"/>
+                <Property name="text" type="java.lang.String" value="Actualizar programa"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JSeparator" name="jSeparator5">
+            <Component class="javax.swing.JSeparator" name="jSeparator10">
             </Component>
-            <Component class="javax.swing.JLabel" name="playlistNombre">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Nombre:"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JLabel" name="playlistsGeneroLabel">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Genero:"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JTextField" name="playlistNombreInput">
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="playlistNombreInputActionPerformed"/>
-              </Events>
-            </Component>
-            <Component class="javax.swing.JTextField" name="playlistGeneroInput">
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="playlistGeneroInputActionPerformed"/>
-              </Events>
-            </Component>
-            <Component class="javax.swing.JButton" name="botonAgregarPlaylist">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Agregar Playlist"/>
-              </Properties>
-            </Component>
-            <Container class="javax.swing.JScrollPane" name="jScrollPane3">
-              <AuxValues>
-                <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
-              </AuxValues>
-
-              <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
-              <SubComponents>
-                <Component class="javax.swing.JList" name="playlistsListaPlaylistsBox">
-                  <Properties>
-                    <Property name="model" type="javax.swing.ListModel" editor="org.netbeans.modules.form.editors2.ListModelEditor">
-                      <StringArray count="0"/>
-                    </Property>
-                  </Properties>
-                  <AuxValues>
-                    <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
-                  </AuxValues>
-                </Component>
-              </SubComponents>
-            </Container>
-            <Component class="javax.swing.JLabel" name="listaPlaylistsLabel">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Lista de Playlists:"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JLabel" name="verCancionesPlaylistLabel">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Ver Canciones:"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JSeparator" name="jSeparator7">
-            </Component>
-            <Component class="javax.swing.JComboBox" name="playlistsCombo">
-              <Properties>
-                <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                  <StringArray count="4">
-                    <StringItem index="0" value="Item 1"/>
-                    <StringItem index="1" value="Item 2"/>
-                    <StringItem index="2" value="Item 3"/>
-                    <StringItem index="3" value="Item 4"/>
-                  </StringArray>
-                </Property>
-              </Properties>
-              <AuxValues>
-                <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
-              </AuxValues>
-            </Component>
-            <Container class="javax.swing.JScrollPane" name="jScrollPane4">
-              <AuxValues>
-                <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
-              </AuxValues>
-
-              <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
-              <SubComponents>
-                <Component class="javax.swing.JList" name="playlistsListaCancionesBox">
-                  <Properties>
-                    <Property name="model" type="javax.swing.ListModel" editor="org.netbeans.modules.form.editors2.ListModelEditor">
-                      <StringArray count="0"/>
-                    </Property>
-                  </Properties>
-                  <AuxValues>
-                    <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
-                  </AuxValues>
-                </Component>
-              </SubComponents>
-            </Container>
-          </SubComponents>
-        </Container>
-        <Container class="javax.swing.JPanel" name="cancionesTab">
-          <Constraints>
-            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
-              <JTabbedPaneConstraints tabName="Canciones">
-                <Property name="tabTitle" type="java.lang.String" value="Canciones"/>
-              </JTabbedPaneConstraints>
-            </Constraint>
-          </Constraints>
-
-          <Layout>
-            <DimensionLayout dim="0">
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="630" max="32767" attributes="0"/>
-                  </Group>
-              </Group>
-            </DimensionLayout>
-            <DimensionLayout dim="1">
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="447" max="32767" attributes="0"/>
-                  </Group>
-              </Group>
-            </DimensionLayout>
-          </Layout>
-          <SubComponents>
-            <Component class="javax.swing.JLabel" name="jLabel2">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="jLabel2"/>
-              </Properties>
-            </Component>
-          </SubComponents>
-        </Container>
-        <Container class="javax.swing.JPanel" name="discosTab">
-          <Constraints>
-            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
-              <JTabbedPaneConstraints tabName="Disco">
-                <Property name="tabTitle" type="java.lang.String" value="Disco"/>
-              </JTabbedPaneConstraints>
-            </Constraint>
-          </Constraints>
-
-          <Layout>
-            <DimensionLayout dim="0">
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="46" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" attributes="0">
-                              <Component id="jSeparator9" min="-2" pref="351" max="-2" attributes="0"/>
-                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                          </Group>
-                          <Group type="102" alignment="1" attributes="0">
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" attributes="0">
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                              <Component id="ubicacionDiscoLabel" max="32767" attributes="0"/>
-                                              <Component id="generoDiscoLabel" max="32767" attributes="0"/>
-                                              <Component id="discoNombreLabel" max="32767" attributes="0"/>
-                                              <Component id="cantanteDiscoLabel" max="32767" attributes="0"/>
-                                              <Component id="anioDiscoLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          </Group>
-                                          <Component id="imagenDiscoLabel" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                          <Component id="imagenDiscoTextField" pref="191" max="32767" attributes="0"/>
-                                          <Component id="cantanteDiscoTextField" max="32767" attributes="0"/>
-                                          <Component id="nombreDiscoTextField" max="32767" attributes="0"/>
-                                          <Component id="generoDiscoTextField" max="32767" attributes="0"/>
-                                          <Component id="anioDiscoTextField" max="32767" attributes="0"/>
-                                          <Component id="ubicacionDiscoTextField" max="32767" attributes="0"/>
-                                      </Group>
-                                  </Group>
-                                  <Component id="botonCrearDisco" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace pref="73" max="32767" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="jScrollPane5" min="-2" pref="225" max="-2" attributes="0"/>
-                                  <Component id="listaDiscosLabel" min="-2" pref="111" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace min="-2" pref="59" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                                  <Component id="jLabel4" alignment="0" pref="165" max="32767" attributes="0"/>
-                                  <Component id="listaDiscoComboBox" alignment="0" max="32767" attributes="0"/>
-                              </Group>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="botonVerDisco" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="32767" attributes="0"/>
-                          </Group>
-                      </Group>
-                  </Group>
-              </Group>
-            </DimensionLayout>
-            <DimensionLayout dim="1">
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" attributes="0">
-                      <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
-                      <Component id="listaDiscosLabel" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" attributes="0">
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="discoNombreLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="nombreDiscoTextField" alignment="3" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="cantanteDiscoTextField" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="cantanteDiscoLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="generoDiscoLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="generoDiscoTextField" alignment="3" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="anioDiscoLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="anioDiscoTextField" alignment="3" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="ubicacionDiscoLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="ubicacionDiscoTextField" alignment="3" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="1" attributes="0">
-                                  <Component id="imagenDiscoTextField" min="-2" max="-2" attributes="0"/>
-                                  <Component id="imagenDiscoLabel" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                          </Group>
-                          <Component id="jScrollPane5" alignment="0" min="-2" pref="237" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
-                      <Component id="botonCrearDisco" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="71" max="32767" attributes="0"/>
-                      <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
-                      <Component id="jSeparator9" min="-2" pref="5" max="-2" attributes="0"/>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="listaDiscoComboBox" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="botonVerDisco" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
-                  </Group>
-              </Group>
-            </DimensionLayout>
-          </Layout>
-          <SubComponents>
-            <Component class="javax.swing.JLabel" name="discoNombreLabel">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Nombre:"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JTextField" name="nombreDiscoTextField">
-            </Component>
-            <Component class="javax.swing.JTextField" name="cantanteDiscoTextField">
-            </Component>
-            <Component class="javax.swing.JLabel" name="cantanteDiscoLabel">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Cantante: "/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JLabel" name="generoDiscoLabel">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Genero: "/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JTextField" name="generoDiscoTextField">
-            </Component>
-            <Component class="javax.swing.JLabel" name="anioDiscoLabel">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="A&#xf1;o: "/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JTextField" name="anioDiscoTextField">
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="anioDiscoTextFieldActionPerformed"/>
-                <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="anioDiscoTextFieldKeyTyped"/>
-              </Events>
-              <AuxValues>
-                <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
-              </AuxValues>
-            </Component>
-            <Component class="javax.swing.JLabel" name="ubicacionDiscoLabel">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Ubicacion: "/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JTextField" name="ubicacionDiscoTextField">
-            </Component>
-            <Component class="javax.swing.JTextField" name="imagenDiscoTextField">
-            </Component>
-            <Component class="javax.swing.JLabel" name="imagenDiscoLabel">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Imagen: "/>
-              </Properties>
-            </Component>
-            <Container class="javax.swing.JScrollPane" name="jScrollPane5">
-              <AuxValues>
-                <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
-              </AuxValues>
-
-              <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
-              <SubComponents>
-                <Component class="javax.swing.JList" name="discosListaBox">
-                  <Properties>
-                    <Property name="model" type="javax.swing.ListModel" editor="org.netbeans.modules.form.editors2.ListModelEditor">
-                      <StringArray count="0"/>
-                    </Property>
-                  </Properties>
-                  <AuxValues>
-                    <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
-                  </AuxValues>
-                </Component>
-              </SubComponents>
-            </Container>
-            <Component class="javax.swing.JComboBox" name="listaDiscoComboBox">
+            <Component class="javax.swing.JComboBox" name="actualizarProgramasComboBox">
               <Properties>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                   <StringArray count="0"/>
                 </Property>
               </Properties>
-              <AuxValues>
-                <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
-              </AuxValues>
             </Component>
-            <Component class="javax.swing.JButton" name="botonCrearDisco">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Crear disco"/>
-              </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botonCrearDiscoActionPerformed"/>
-              </Events>
-            </Component>
-            <Component class="javax.swing.JButton" name="botonVerDisco">
+            <Component class="javax.swing.JButton" name="verInformacionProgramaBtn">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Ver informacion"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botonVerDiscoActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="verInformacionProgramaBtnActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JLabel" name="listaDiscosLabel">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Lista de discos:"/>
-              </Properties>
+            <Component class="javax.swing.JSeparator" name="jSeparator11">
             </Component>
-            <Component class="javax.swing.JLabel" name="jLabel4">
+          </SubComponents>
+        </Container>
+        <Container class="javax.swing.JPanel" name="cancionesTab">
+          <Constraints>
+            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
+              <JTabbedPaneConstraints tabName="Canciones Archivos">
+                <Property name="tabTitle" type="java.lang.String" value="Canciones Archivos"/>
+              </JTabbedPaneConstraints>
+            </Constraint>
+          </Constraints>
+
+          <Layout>
+            <DimensionLayout dim="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="actualizarCancionArchivoLabel" min="-2" pref="146" max="-2" attributes="0"/>
+                          <Group type="102" attributes="0">
+                              <Group type="103" groupAlignment="1" attributes="0">
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="cancionArchivoAlbumLabel" alignment="0" min="-2" pref="52" max="-2" attributes="0"/>
+                                      <Component id="cancionArchivoNombreLabel" alignment="0" min="-2" pref="52" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Component id="cancionArchivoCantanteLabel" min="-2" pref="52" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="102" attributes="0">
+                                      <Component id="cancionArchivoAlbumInput" min="-2" pref="251" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="83" max="-2" attributes="0"/>
+                                      <Component id="cancionArchivoDuracionLabel" min="-2" pref="52" max="-2" attributes="0"/>
+                                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                                      <Component id="cancionArchivoDuracionInput" min="-2" pref="251" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="cancionArchivoNombreInput" alignment="0" min="-2" pref="251" max="-2" attributes="0"/>
+                                          <Component id="cancionArchivoCantanteInput" alignment="0" min="-2" pref="251" max="-2" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace min="-2" pref="83" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                          <Component id="cargarCancionesArchivoLabel" min="-2" max="-2" attributes="0"/>
+                                          <Group type="102" attributes="0">
+                                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                                  <Component id="cancionArchivoGeneroLabel" pref="52" max="32767" attributes="0"/>
+                                                  <Component id="cancionArchivoPathLabel" max="32767" attributes="0"/>
+                                              </Group>
+                                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                                  <Component id="cancionArchivoGeneroInput" pref="251" max="32767" attributes="0"/>
+                                                  <Component id="cancionArchivoPathInput" max="32767" attributes="0"/>
+                                              </Group>
+                                          </Group>
+                                          <Component id="jSeparator14" alignment="0" min="-2" pref="146" max="-2" attributes="0"/>
+                                          <Component id="cargarCancionesArchivoPathInput" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="cargarCancionesArchivoBtn" alignment="0" pref="321" max="32767" attributes="0"/>
+                                      </Group>
+                                  </Group>
+                              </Group>
+                          </Group>
+                          <Component id="jLabel5" alignment="0" min="-2" pref="213" max="-2" attributes="0"/>
+                          <Component id="jSeparator9" alignment="0" min="-2" pref="213" max="-2" attributes="0"/>
+                          <Component id="jSeparator13" alignment="0" min="-2" pref="155" max="-2" attributes="0"/>
+                          <Component id="agregarCancionArchivoBtn" alignment="0" min="-2" pref="321" max="-2" attributes="0"/>
+                          <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
+                              <Component id="verInformacionCancionArchivoBtn" alignment="0" pref="321" max="32767" attributes="0"/>
+                              <Component id="actualizarCancionArchivoComboBox" alignment="0" max="32767" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <EmptySpace pref="105" max="32767" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+            <DimensionLayout dim="1">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="jLabel5" min="-2" pref="29" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="jSeparator9" min="-2" pref="10" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="149" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="cancionArchivoAlbumLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="cancionArchivoAlbumInput" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="cancionArchivoDuracionLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="cancionArchivoDuracionInput" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="cancionArchivoNombreInput" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="cancionArchivoNombreLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="cancionArchivoGeneroLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="cancionArchivoGeneroInput" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="cancionArchivoCantanteInput" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="cancionArchivoCantanteLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="cancionArchivoPathLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="cancionArchivoPathInput" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
+                      <Component id="agregarCancionArchivoBtn" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="actualizarCancionArchivoLabel" alignment="3" min="-2" pref="22" max="-2" attributes="0"/>
+                          <Component id="cargarCancionesArchivoLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="jSeparator13" min="-2" pref="10" max="-2" attributes="0"/>
+                          <Component id="jSeparator14" min="-2" pref="10" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="cargarCancionesArchivoPathInput" min="-2" pref="30" max="-2" attributes="0"/>
+                          <Component id="actualizarCancionArchivoComboBox" min="-2" pref="32" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="cargarCancionesArchivoBtn" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="verInformacionCancionArchivoBtn" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace pref="48" max="32767" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+          </Layout>
+          <SubComponents>
+            <Component class="javax.swing.JLabel" name="jLabel5">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Actualizar disco:"/>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Dialog" size="14" style="1"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Canciones de archivos"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JSeparator" name="jSeparator9">
+            </Component>
+            <Component class="javax.swing.JLabel" name="cancionArchivoAlbumLabel">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Album"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="cancionArchivoAlbumInput">
+            </Component>
+            <Component class="javax.swing.JLabel" name="cancionArchivoNombreLabel">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Nombre"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="cancionArchivoNombreInput">
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cancionArchivoNombreInputActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JLabel" name="cancionArchivoCantanteLabel">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Cantante"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="cancionArchivoCantanteInput">
+            </Component>
+            <Component class="javax.swing.JLabel" name="cancionArchivoDuracionLabel">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Duracion"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="cancionArchivoDuracionInput">
+              <Events>
+                <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="cancionArchivoDuracionInputKeyTyped"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JLabel" name="cancionArchivoGeneroLabel">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Genero"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="cancionArchivoGeneroInput">
+            </Component>
+            <Component class="javax.swing.JLabel" name="cancionArchivoPathLabel">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Path"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="cancionArchivoPathInput">
+            </Component>
+            <Component class="javax.swing.JLabel" name="actualizarCancionArchivoLabel">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Actualizar cancion"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JSeparator" name="jSeparator13">
+            </Component>
+            <Component class="javax.swing.JComboBox" name="actualizarCancionArchivoComboBox">
+              <Properties>
+                <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                  <StringArray count="0"/>
+                </Property>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JButton" name="verInformacionCancionArchivoBtn">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Ver Informacion"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="verInformacionCancionArchivoBtnActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JButton" name="agregarCancionArchivoBtn">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Agregar Cancion"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="agregarCancionArchivoBtnActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JLabel" name="cargarCancionesArchivoLabel">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Cargar canciones"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JSeparator" name="jSeparator14">
+            </Component>
+            <Component class="javax.swing.JTextField" name="cargarCancionesArchivoPathInput">
+            </Component>
+            <Component class="javax.swing.JButton" name="cargarCancionesArchivoBtn">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Cargar canciones"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cargarCancionesArchivoBtnActionPerformed"/>
+              </Events>
             </Component>
           </SubComponents>
         </Container>

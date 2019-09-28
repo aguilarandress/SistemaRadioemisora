@@ -4,6 +4,8 @@
  * and open the template in the editor.
  */
 package Model.Disco;
+import Model.Cancion.Cancion;
+import java.util.ArrayList;
 
 /**
  *
@@ -16,6 +18,7 @@ public class Disco {
     private String ubicacionFisica;
     private int anio;
    private String imagen;
+   private ArrayList<Cancion> canciones;
     
     public Disco(String nombre, String cantante, String genero, int anio,
             String ubicacionFisica, String imagen){
@@ -26,6 +29,8 @@ public class Disco {
         this.anio = anio;
         this.ubicacionFisica = ubicacionFisica;
         this.imagen = imagen;
+        this.canciones = new ArrayList<Cancion>();
+        
     }
 
     public String getNombre() {
@@ -75,7 +80,14 @@ public class Disco {
     public void setImagen(String imagen) {
         this.imagen = imagen;
     }
+
+    public ArrayList<Cancion> getCanciones() {
+        return canciones;
+    }
     
+    public void agregarCancion(Cancion cancionNueva){
+        this.canciones.add(cancionNueva);
+    }
     
     @Override
     public String toString(){

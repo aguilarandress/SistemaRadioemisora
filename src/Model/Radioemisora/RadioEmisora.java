@@ -1,36 +1,34 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Model.Radioemisora;
 
+import Model.Cancion.CancionArchivo;
 import Model.Locutor.Locutor;
 import Model.Programa.Programa;
 import Model.Disco.Disco;
 import java.util.ArrayList;
 
 /**
- * 
+ *
  * @author Fabian Vargas
  * @author Andres Aguilar
  * @author Kenneth Sanchez
  */
 public class RadioEmisora {
-    
+
     private String nombre;
     private String direccionFisica;
     private String frecuencia;
     private String urlSitioWeb;
-    
+
     private ArrayList<Locutor> locutores;
-    
+
     private ArrayList<Programa> programas;
-    
+
     private ArrayList<Disco> discos;
     
+    private ArrayList<CancionArchivo> cancionesArchivo;
+
     public RadioEmisora(String nombre, String direccionFisica,
-            String frecuencia, String urlSitioWeb){
+            String frecuencia, String urlSitioWeb) {
         this.nombre = nombre;
         this.direccionFisica = direccionFisica;
         this.frecuencia = frecuencia;
@@ -38,8 +36,9 @@ public class RadioEmisora {
         this.locutores = new ArrayList<Locutor>();
         this.programas = new ArrayList<Programa>();
         this.discos = new ArrayList<Disco>();
+        this.cancionesArchivo = new ArrayList<CancionArchivo>();
     }
-
+    
     public String getNombre() {
         return nombre;
     }
@@ -71,55 +70,79 @@ public class RadioEmisora {
     public void setUrlSitioWeb(String urlSitioWeb) {
         this.urlSitioWeb = urlSitioWeb;
     }
-    
-    /**
-     * Se obtiene la lista de locutores
-     * @return la lista de locutores
-     */
-    public ArrayList getLocutores(){
+
+    public ArrayList getLocutores() {
         return locutores;
     }
-    
-    public ArrayList getProgramas(){
+
+    public ArrayList getProgramas() {
         return programas;
     }
+
+    public ArrayList<Disco> getDiscos() {
+        return this.discos;
+    }
+    
+    public ArrayList<CancionArchivo> getCancionesArchivo() {
+        return this.cancionesArchivo;
+    }
+
     /**
      * Agrega un nuevo locutor a la radio emisora
+     *
      * @param locutorNuevo El nuevo locutor que se desea agregar
      */
     public void agregarLocutor(Locutor locutorNuevo) {
-        if(locutorNuevo != null) {
+        if (locutorNuevo != null) {
             locutores.add(locutorNuevo);
         }
     }
-    
+
     /**
      * Remueve a un locutor de la emisora
-     * @param locutorQuitar 
+     *
+     * @param locutorQuitar El objeto del locutor que se desea eliminar
      */
     public void removerLocutor(Locutor locutorQuitar) {
         locutores.remove(locutorQuitar);
     }
-    
+
+    /**
+     * Verifica si el nombre del programa se encuentra repetido
+     *
+     * @param nombrePrograma El nombre del programa que se desea verificar
+     * @return Un valor booleano que determina si el programa se encontro o no
+     */
     public boolean verificarNombreProgramaRepetido(String nombrePrograma) {
-        if (this.programas.isEmpty()) {
-            return false;
-        } 
+        if (this.programas.isEmpty()) return false;
         for (Programa programaActual : programas) {
-            if (programaActual.getNombre().equals(nombrePrograma)) {
-                return true;
-            }
+            if (programaActual.getNombre().equals(nombrePrograma)) return true;
+        }
+        return false;
+    }
+    
+    /**
+     * Verifica si el nombre del programa se encuentra repetido
+     * 
+     * @param nombreCancion El nombre de la cancion que se deasea verificar
+     * @return 
+     */
+    public boolean verificarCancionArchivoRepetida(String nombreCancion) {
+        if (this.cancionesArchivo.isEmpty()) return false;
+        for (CancionArchivo cancionActual : cancionesArchivo) {
+            if (cancionActual.getNombre().equals(nombreCancion)) return true;
         }
         return false;
     }
     
     /**
      * Verfica si ya existe un locutor con dicha cedula
+     *
      * @param cedula Cedula del locutor que se desea ingresar
      * @return true si ya existe un locutor con ese ID, false de lo contrario
      */
     public boolean verificarCedulaRepetida(String cedula) {
-        if(this.locutores.isEmpty()) {
+        if (this.locutores.isEmpty()) {
             return false;
         }
         for (int i = 0; i < this.locutores.size(); i++) {
@@ -129,11 +152,13 @@ public class RadioEmisora {
         }
         return false;
     }
-        
+
     /**
      * Obtiene el locutor que se busca por su Id
-     * @param pId
-     * @return 
+     *
+     * @param pId Un string con el ID del locutor
+     * @return El locutor encontrado con el ID o un valor null en caso de no
+     * encontrarlo
      */
     public Locutor getLocutorPorId(String pId) {
         for (int i = 0; i < locutores.size(); i++) {
@@ -143,43 +168,76 @@ public class RadioEmisora {
         }
         return null;
     }
-    
+
     /**
-     * Obtiene el programa que se busca por su nombre
-     * @param pNombre
-     * @return 
+     * Obtiene un disco nuevo de acuerdo a su nombre
+     *
+     * @param nombre Un string con el nombre del disco
+     * @return El disco encontrado o un valor null en caso de no encontrarlo
      */
-    public Programa getProgramaPorNombre(String pNombre) {
-        for (int i = 0; i < programas.size(); i++) {
-            if (programas.get(i).getNombre().equals(pNombre)) {
-                return programas.get(i);
+    public Disco obtenerDisco(String nombre) {
+        for (int i = 0; i < discos.size(); i++) {
+            if (discos.get(i).getNombre().equals(nombre)) {
+                return discos.get(i);
             }
         }
         return null;
     }
     
-    public Disco obtenerDisco(String nombre){
-        for(int i = 0; i < discos.size(); i++){
-            if(discos.get(i).getNombre().equals(nombre)) return discos.get(i);
+    /**
+     * 
+     * @param pNombre
+     * @return La cancion de archivo encontrada, null si no lo encuentra
+     */
+    public CancionArchivo obtenerCancionArchivo(String pNombre) {
+        for(CancionArchivo cancionActual : this.cancionesArchivo) {
+            if (cancionActual.getNombre().equals(pNombre)) {
+                return cancionActual;
+            }
         }
         return null;
     }
     
-     /**
+    /**
      * Agrega un programa nuevo a la radioemisora
+     *
      * @param programaNuevo Programa nuevo que se desea agregar
      */
-    public void agregarPrograma(Programa programaNuevo){
+    public void agregarPrograma(Programa programaNuevo) {
         this.programas.add(programaNuevo);
-       
     }
     
-    public void agregarDisco(Disco discoNuevo){
+    /**
+     * Agrega una cancion a la radioemisora
+     * 
+     * @param pCancion 
+     */
+    public void agregarCancionArchivo(CancionArchivo pCancion) {
+        this.cancionesArchivo.add(pCancion);
+    }
+    
+    
+    /**
+     * Agrega un nuevo disco a la lista de discos
+     *
+     * @param discoNuevo El disco nuevo que se desea agregar
+     */
+    public void agregarDisco(Disco discoNuevo) {
         this.discos.add(discoNuevo);
     }
-    
-    public ArrayList<Disco> getDiscos(){
-        return this.discos;
+
+    /**
+     * Obtiene un programa de acuerdo a su nombre
+     *
+     * @param nombre Un string con el nombre del programa
+     * @return El objeto del programa o un valor null en caso de no encontrarlo
+     */
+    public Programa obtenerProgramaPorNombre(String nombre) {
+        for (int i = 0; i < this.programas.size(); i++) {
+            if (this.programas.get(i).getNombre().equals(nombre)) {
+                return this.programas.get(i);
+            }
+        }
+        return null;
     }
 }
-    
