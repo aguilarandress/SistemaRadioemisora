@@ -6,9 +6,8 @@
 package Model.Cancion;
 
 /**
- * @author Fabian Vargas
- * @author Andres Aguilar
- * @author Kenneth Sanchez
+ *
+ * @author fabia
  */
 public class Cancion {
     protected String nombre;

@@ -7,9 +7,8 @@ package Model.Programa;
 import Model.Locutor.Locutor;
 
 /**
- * @author Fabian Vargas
- * @author Andres Aguilar
- * @author Kenneth Sanchez
+ *
+ * @author fabia
  */
 public class Programa {
     private String nombre;

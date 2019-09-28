@@ -8,9 +8,8 @@ import Model.Cancion.Cancion;
 import java.util.ArrayList;
 
 /**
- * @author Fabian Vargas
- * @author Andres Aguilar
- * @author Kenneth Sanchez
+ *
+ * @author fabia
  */
 public class Disco {
     private String nombre;
