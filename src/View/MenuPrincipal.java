@@ -736,7 +736,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
                                     .addComponent(generoDiscoTextField)
                                     .addComponent(anioDiscoTextField)
                                     .addComponent(ubicacionDiscoTextField)))
-                            .addComponent(botonCrearDisco, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 270, Short.MAX_VALUE)
+                            .addComponent(botonCrearDisco, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 281, Short.MAX_VALUE)
                             .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(18, 18, 18)
                         .addGroup(discosTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1181,18 +1181,11 @@ public class MenuPrincipal extends javax.swing.JFrame {
             }
         });
 
-        listaCanciones.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
-            public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
-        });
         jScrollPane6.setViewportView(listaCanciones);
 
         seleccionarDiscoLabel.setText("Seleccionar Disco para ver canciones:");
 
         agregarCancionLabel.setText("Agregar Canción:");
-
-        seleccionarCancionComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         editarCancionBtn.setText("Ver Información");
         editarCancionBtn.addActionListener(new java.awt.event.ActionListener() {
@@ -1616,8 +1609,10 @@ public class MenuPrincipal extends javax.swing.JFrame {
         Disco discoNuevo = new Disco(nombre, cantante, genero, anio, ubicacion, imagen);
 
         this.emisora.agregarDisco(discoNuevo);
-        this.discosListModel.addElement(discoNuevo.toString());
-        this.discoComboBoxModel.addElement(discoNuevo.toString());
+        this.discosListModel.addElement(discoNuevo.getNombre() + " - " + discoNuevo.getGenero() +
+                " - " + discoNuevo.getCantante());
+        this.discoComboBoxModel.addElement(discoNuevo.getNombre());
+        this.discoCancionComboBoxModel.addElement(discoNuevo.getNombre());
         
         this.nombreDiscoTextField.setText("");
         this.cantanteDiscoTextField.setText("");
@@ -1792,14 +1787,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "No hay discos donde agregar la cancion.", "ERROR", JOptionPane.ERROR_MESSAGE);
             return;
         }
-        String infoDisco = (String) this.discoCancionCombo.getSelectedItem();
-        String nombreDisco = "";
-        for (int c = 0; c < infoDisco.length(); c++) {
-            if (' ' == infoDisco.charAt(c)) {
-                break;
-            }
-            nombreDisco += infoDisco.charAt(c);
-        }
+        String nombreDisco = (String) this.discoCancionCombo.getSelectedItem();
         
         Disco disco = this.emisora.obtenerDisco(nombreDisco);
         
@@ -1824,6 +1812,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
         int duracionCancion = Integer.parseInt(duracionCancionStr);
         Cancion cancionNueva = new Cancion(nombreCancion, duracionCancion, nombreCantante, generoCancion);
         disco.agregarCancion(cancionNueva);
+        seleccionarDiscoComboBoxActionPerformed(evt);
         JOptionPane.showMessageDialog(this, "Cancion Agregada...", "Exito", JOptionPane.INFORMATION_MESSAGE);
     }//GEN-LAST:event_botonAgregarCancionActionPerformed
     
@@ -1854,18 +1843,10 @@ public class MenuPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_cargarCancionesArchivoBtnActionPerformed
 
     private void seleccionarDiscoComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_seleccionarDiscoComboBoxActionPerformed
-        String infoDisco = (String) this.seleccionarDiscoComboBox.getSelectedItem();
-        String nombreDisco = "";
-        
-        for (int c = 0; c < infoDisco.length(); c++) {
-            if ('-' == infoDisco.charAt(c)) {
-                break;
-            }
-            nombreDisco += infoDisco.charAt(c);
-        }
-        
+        String nombreDisco = (String) this.seleccionarDiscoComboBox.getSelectedItem();
+
+              
         Disco disco = this.emisora.obtenerDisco(nombreDisco.trim());
-        
         ArrayList<Cancion> canciones = disco.getCanciones();
         if (this.cancionesActComboBoxModel.getSize() > 0) {
             this.cancionesActComboBoxModel.removeAllElements();
@@ -1885,15 +1866,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
             return;
         }
         
-        String infoDisco = (String) this.seleccionarDiscoComboBox.getSelectedItem();
-        String nombreDisco = "";
-        for (int c = 0; c < infoDisco.length(); c++) {
-            if ('-' == infoDisco.charAt(c)) {
-                break;
-            }
-            nombreDisco += infoDisco.charAt(c);
-        }
-        
+        String nombreDisco = (String) this.seleccionarDiscoComboBox.getSelectedItem();        
         Disco disco = this.emisora.obtenerDisco(nombreDisco);
         
         if(disco.getCanciones().isEmpty()) {

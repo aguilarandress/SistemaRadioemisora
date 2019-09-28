@@ -89,8 +89,4 @@ public class Disco {
         this.canciones.add(cancionNueva);
     }
     
-    @Override
-    public String toString(){
-        return (this.nombre + " - " +  this.genero + " - " + this.cantante);
-    }
 }
