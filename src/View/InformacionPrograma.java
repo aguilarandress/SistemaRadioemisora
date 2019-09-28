@@ -16,15 +16,14 @@ public class InformacionPrograma extends javax.swing.JFrame {
     private Programa programaSeleccionado;
     private DefaultListModel programasListModel;
     private DefaultComboBoxModel programasComboBoxModel;
-    private MenuPrincipal main;
     
-    public InformacionPrograma(MenuPrincipal main,RadioEmisora emisora, Programa programaSeleccionado, 
+    public InformacionPrograma(RadioEmisora emisora, Programa programaSeleccionado, 
             DefaultListModel programasListModel, DefaultComboBoxModel programasComboBoxModel) {        
         this.emisora = emisora;
         this.programaSeleccionado = programaSeleccionado;
         this.programasListModel = programasListModel;
         this.programasComboBoxModel = programasComboBoxModel;
-        this.main = main;
+        
         initComponents();
     }
 
@@ -165,7 +164,6 @@ public class InformacionPrograma extends javax.swing.JFrame {
         // Agregar elementos al UI
         this.programasListModel.addElement(this.programaSeleccionado.toString());
         this.programasComboBoxModel.addElement(this.programaSeleccionado.getNombre());
-        this.main.setVisible(true);
         
         this.dispose();
     }//GEN-LAST:event_actualizarProgramaBtnActionPerformed
