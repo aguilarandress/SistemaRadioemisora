@@ -196,6 +196,7 @@ public class InformacionDisc extends javax.swing.JFrame {
 
         this.comboBoxModel.addElement(disco.toString());
         this.listaDiscosModel.addElement(disco.toString());
+        main.setVisible(true);
         this.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_actualizarBotonDiscoActionPerformed
