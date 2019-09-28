@@ -6,8 +6,9 @@
 package Model.Cancion;
 
 /**
- *
- * @author fabia
+ * @author Fabian Vargas
+ * @author Andres Aguilar
+ * @author Kenneth Sanchez
  */
 public class CancionArchivo extends Cancion {
     private String album;

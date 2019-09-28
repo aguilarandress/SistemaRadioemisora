@@ -28,11 +28,12 @@ public class InformacionLocutor extends javax.swing.JFrame {
     private DefaultListModel locutoresListModel;
     private DefaultComboBoxModel locutoresComboBoxModel;
     private DefaultComboBoxModel locutoresProgramasComboBoxModel;
+    MenuPrincipal main;
     private DefaultListModel programasListModel;
     /**
      * Creates new form InformacionLocutor
      */
-    public InformacionLocutor(JButton pVerInfoLocutor, Locutor pLocutor, RadioEmisora pEmisora,
+    public InformacionLocutor(MenuPrincipal main, JButton pVerInfoLocutor, Locutor pLocutor, RadioEmisora pEmisora,
             DefaultListModel pLocutoresListModel, DefaultComboBoxModel pLocutoresComboBoxModel,
             DefaultComboBoxModel pLocutoresProgramasComboBoxModel, 
             DefaultListModel pProgramasListModel) {
@@ -42,6 +43,7 @@ public class InformacionLocutor extends javax.swing.JFrame {
         this.locutoresListModel = pLocutoresListModel;
         this.locutoresComboBoxModel = pLocutoresComboBoxModel;
         this.locutoresProgramasComboBoxModel = pLocutoresProgramasComboBoxModel;
+        this.main = main;
         this.programasListModel = pProgramasListModel;
         initComponents();
     }
@@ -312,6 +314,7 @@ public class InformacionLocutor extends javax.swing.JFrame {
                                            +"-ID: "+ this.locutor.getId());
         this.locutoresComboBoxModel.addElement(this.locutor.getId());
         this.locutoresProgramasComboBoxModel.addElement(this.locutor.getId());
+        main.setVisible(true);
         
         // Actualiza al locutor si está asignado a algún programa
         actualizarProgramas(nombre, nombreOriginal);
@@ -341,6 +344,7 @@ public class InformacionLocutor extends javax.swing.JFrame {
         // Remueva al locutor del sistema
         this.emisora.removerLocutor(this.locutor);
         // Cierra la ventanilla sin cerrar la ventana principal
+        main.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_botonEliminarLocutorActionPerformed
     
