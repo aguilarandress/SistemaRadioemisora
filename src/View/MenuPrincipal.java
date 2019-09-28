@@ -136,7 +136,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
         jSeparator7 = new javax.swing.JSeparator();
         playlistsCombo = new javax.swing.JComboBox<String>();
         jScrollPane4 = new javax.swing.JScrollPane();
-        playlistsListaCancionesBox = new javax.swing.JList<>();
+        playlistsListaCancionesBox = new javax.swing.JList<String>();
         discosTab = new javax.swing.JPanel();
         discoNombreLabel = new javax.swing.JLabel();
         nombreDiscoTextField = new javax.swing.JTextField();
@@ -721,7 +721,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
                                     .addComponent(generoDiscoTextField)
                                     .addComponent(anioDiscoTextField)
                                     .addComponent(ubicacionDiscoTextField)))
-                            .addComponent(botonCrearDisco, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 281, Short.MAX_VALUE)
+                            .addComponent(botonCrearDisco, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 270, Short.MAX_VALUE)
                             .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(18, 18, 18)
                         .addGroup(discosTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1128,6 +1128,11 @@ public class MenuPrincipal extends javax.swing.JFrame {
         cargarCancionesArchivoLabel.setText("Cargar canciones");
 
         cargarCancionesArchivoBtn.setText("Cargar canciones");
+        cargarCancionesArchivoBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cargarCancionesArchivoBtnActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout cancionesTabLayout = new javax.swing.GroupLayout(cancionesTab);
         cancionesTab.setLayout(cancionesTabLayout);
@@ -1762,8 +1767,8 @@ public class MenuPrincipal extends javax.swing.JFrame {
         // Obtener canciones
         ArrayList<CancionArchivo> cancionesCargadas = cancionesExcelData.getFileData();
         // Cargar canciones al modelo
-        for(int i = 0; i < cancionesCargadas.size(); i++) {
-          // TODO: Agregar canciones al modelo
+        for (CancionArchivo cancionCargada : cancionesCargadas) {
+            this.emisora.agregarCancionArchivo(cancionCargada);
         }
     }//GEN-LAST:event_cargarCancionesArchivoBtnActionPerformed
 

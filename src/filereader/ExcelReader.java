@@ -35,7 +35,6 @@ public class ExcelReader {
             ExcelWorksheet workSheet = workBook.getWorksheet(0);
             int numeroFilas = workSheet.getRows().size();
             for(int i = 1; i < numeroFilas; i++) {
-                System.out.println(i);
                 ExcelRow filaActual = workSheet.getRow(i);
                 
                 String album = (String) filaActual.getCell(0).getValue();
@@ -51,10 +50,8 @@ public class ExcelReader {
                 this.fileData.add(cancionNueva);
             }
         } catch(Exception e) {
-            System.out.println(e.toString());
             return false;
         }
-        
         return true;
     }
     
