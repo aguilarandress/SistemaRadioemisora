@@ -1,5 +1,6 @@
 package Model.Radioemisora;
 
+import Model.Cancion.CancionArchivo;
 import Model.Locutor.Locutor;
 import Model.Programa.Programa;
 import Model.Disco.Disco;
@@ -23,6 +24,8 @@ public class RadioEmisora {
     private ArrayList<Programa> programas;
 
     private ArrayList<Disco> discos;
+    
+    private ArrayList<CancionArchivo> cancionesArchivo;
 
     public RadioEmisora(String nombre, String direccionFisica,
             String frecuencia, String urlSitioWeb) {
@@ -33,8 +36,9 @@ public class RadioEmisora {
         this.locutores = new ArrayList<Locutor>();
         this.programas = new ArrayList<Programa>();
         this.discos = new ArrayList<Disco>();
+        this.cancionesArchivo = new ArrayList<CancionArchivo>();
     }
-
+    
     public String getNombre() {
         return nombre;
     }
@@ -78,6 +82,10 @@ public class RadioEmisora {
     public ArrayList<Disco> getDiscos() {
         return this.discos;
     }
+    
+    public ArrayList<CancionArchivo> getCancionesArchivo() {
+        return this.cancionesArchivo;
+    }
 
     /**
      * Agrega un nuevo locutor a la radio emisora
@@ -106,17 +114,27 @@ public class RadioEmisora {
      * @return Un valor booleano que determina si el programa se encontro o no
      */
     public boolean verificarNombreProgramaRepetido(String nombrePrograma) {
-        if (this.programas.isEmpty()) {
-            return false;
-        }
+        if (this.programas.isEmpty()) return false;
         for (Programa programaActual : programas) {
-            if (programaActual.getNombre().equals(nombrePrograma)) {
-                return true;
-            }
+            if (programaActual.getNombre().equals(nombrePrograma)) return true;
         }
         return false;
     }
-
+    
+    /**
+     * Verifica si el nombre del programa se encuentra repetido
+     * 
+     * @param nombreCancion El nombre de la cancion que se deasea verificar
+     * @return 
+     */
+    public boolean verificarCancionArchivoRepetida(String nombreCancion) {
+        if (this.cancionesArchivo.isEmpty()) return false;
+        for (CancionArchivo cancionActual : cancionesArchivo) {
+            if (cancionActual.getNombre().equals(nombreCancion)) return true;
+        }
+        return false;
+    }
+    
     /**
      * Verfica si ya existe un locutor con dicha cedula
      *
@@ -165,7 +183,21 @@ public class RadioEmisora {
         }
         return null;
     }
-
+    
+    /**
+     * 
+     * @param pNombre
+     * @return La cancion de archivo encontrada, null si no lo encuentra
+     */
+    public CancionArchivo obtenerCancionArchivo(String pNombre) {
+        for(CancionArchivo cancionActual : this.cancionesArchivo) {
+            if (cancionActual.getNombre().equals(pNombre)) {
+                return cancionActual;
+            }
+        }
+        return null;
+    }
+    
     /**
      * Agrega un programa nuevo a la radioemisora
      *
@@ -174,7 +206,17 @@ public class RadioEmisora {
     public void agregarPrograma(Programa programaNuevo) {
         this.programas.add(programaNuevo);
     }
-
+    
+    /**
+     * Agrega una cancion a la radioemisora
+     * 
+     * @param pCancion 
+     */
+    public void agregarCancionArchivo(CancionArchivo pCancion) {
+        this.cancionesArchivo.add(pCancion);
+    }
+    
+    
     /**
      * Agrega un nuevo disco a la lista de discos
      *
