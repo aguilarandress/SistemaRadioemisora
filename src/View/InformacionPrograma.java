@@ -161,8 +161,7 @@ public class InformacionPrograma extends javax.swing.JFrame {
         }
         // Eliminar de los modelos del UI
         this.programasListModel.removeElement(this.programaSeleccionado.toString());
-        this.programasComboBoxModel.addElement(programaSeleccionado.getNombre() + 
-                " Genero: " + programaSeleccionado.getGenero());
+        this.programasComboBoxModel.removeElement(programaSeleccionado.getNombre());
         this.programasDeEmisoraListModel.removeElement("Nombre: " + programaSeleccionado.getNombre() + 
                 " | Horario: " + programaSeleccionado.getHorario() + 
                 " | Duracion: "  + programaSeleccionado.getDuracion() + 
