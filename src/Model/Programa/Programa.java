@@ -44,9 +44,12 @@ public class Programa {
         // Agregar informacion de la cancion
         for (Cancion cancion : this.playlist.getCanciones()) {
             String cancionInfo = "<li>" + cancion.getNombre() + " de " + cancion.getCantante() + "</l1>";
-            emailBody.concat(cancionInfo);
+            emailBody += cancionInfo;
         }
-        emailBody.concat("</ul>");
+        emailBody += "</ul>";
+        
+        System.out.println(emailBody);
+        
         // Enviar correo
         Correo correoPlayList = new Correo("Playlist para programa " + this.nombre, emailBody);
         correoPlayList.enviarCorreo(this.locutor.getCorreo());

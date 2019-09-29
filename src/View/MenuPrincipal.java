@@ -2290,6 +2290,9 @@ public class MenuPrincipal extends javax.swing.JFrame {
         JOptionPane.showMessageDialog(this, "Playlist creada...", "Exito", JOptionPane.ERROR_MESSAGE);
 
         this.playlistComboBoxModel.addElement(nuevaPlaylist.getNombre());
+        
+        // Enviar correo
+        programaSeleccionado.enviarCorreoPlayList();
     }//GEN-LAST:event_botonAgregarPlaylistActionPerformed
     /**
      * Muesta las canciones de la Playlist seleccionada

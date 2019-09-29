@@ -71,7 +71,6 @@ public class Correo {
             newMessage.setSubject(this.subject);
             newMessage.setContent(this.emailBody, "text/html");
             Transport.send(newMessage);
-            System.out.println("Mensaje enviado");
             return true;
         } catch (MessagingException e) {
             return false;
