@@ -56,7 +56,6 @@ public class InformacionDisc extends javax.swing.JFrame {
     private void initComponents() {
 
         actualizarBoton = new javax.swing.JButton();
-        nombreDiscoInput = new javax.swing.JTextField();
         cantanteDiscoInput = new javax.swing.JTextField();
         generoDiscoInput = new javax.swing.JTextField();
         anioDiscoInput = new javax.swing.JTextField();
@@ -70,6 +69,7 @@ public class InformacionDisc extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         imageLabel = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -77,13 +77,6 @@ public class InformacionDisc extends javax.swing.JFrame {
         actualizarBoton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 actualizarBotonActionPerformed(evt);
-            }
-        });
-
-        nombreDiscoInput.setText(this.disco.getNombre());
-        nombreDiscoInput.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                nombreDiscoInputActionPerformed(evt);
             }
         });
 
@@ -119,6 +112,8 @@ public class InformacionDisc extends javax.swing.JFrame {
 
         imageLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Default Image.png"))); // NOI18N
 
+        jLabel8.setText(this.disco.getNombre());
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -126,13 +121,13 @@ public class InformacionDisc extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(nombreDiscoInput))
                     .addComponent(actualizarBoton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                             .addComponent(jLabel7)
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -162,10 +157,10 @@ public class InformacionDisc extends javax.swing.JFrame {
                         .addComponent(imageLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 255, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGap(22, 22, 22)
+                        .addGap(25, 25, 25)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel1)
-                            .addComponent(nombreDiscoInput, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jLabel8))
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel2)
@@ -195,36 +190,34 @@ public class InformacionDisc extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void actualizarBotonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_actualizarBotonActionPerformed
-        String nombre = this.nombreDiscoInput.getText();
+
         String cantante = this.cantanteDiscoInput.getText();
         String genero = this.generoDiscoInput.getText();
         String anioStr = this.anioDiscoInput.getText();
         String ubicacion = this.ubicacionDiscoInput.getText();
         String imagen = this.imagenDiscoInput.getText();
         
-        if(nombre.isEmpty() || cantante.isEmpty() || genero.isEmpty() || anioStr.isEmpty() ||
+        if( cantante.isEmpty() || genero.isEmpty() || anioStr.isEmpty() ||
                 ubicacion.isEmpty() || imagen.isEmpty()){
             JOptionPane.showMessageDialog(this, "Datos incorrectos...", "ERROR", JOptionPane.ERROR_MESSAGE);
             return; 
         }
-        this.comboBoxModel.removeElement(disco.toString());
-        this.listaDiscosModel.removeElement(disco.toString());
+        this.comboBoxModel.removeElement(disco.getNombre());
+        this.listaDiscosModel.removeElement(disco.getNombre() + " - " + disco.getGenero() +
+                " - " + disco.getCantante());
         int anio = Integer.parseInt(anioStr);
-        this.disco.setNombre(nombre);
         this.disco.setCantante(cantante);
         this.disco.setGenero(genero);
         this.disco.setAño(anio);
         this.disco.setUbicacionFisica(ubicacion);
         this.disco.setImagen(imagen);
-            
-        this.comboBoxModel.addElement(disco.toString());
-        this.listaDiscosModel.addElement(disco.toString());
+        
+        this.comboBoxModel.addElement(disco.getNombre());
+        this.listaDiscosModel.addElement(disco.getNombre() + " - " + disco.getGenero() +
+                " - " + disco.getCantante());
+        JOptionPane.showMessageDialog(this, "Se ha actualizado el disco.", "Exito", JOptionPane.INFORMATION_MESSAGE);
         this.dispose();
     }//GEN-LAST:event_actualizarBotonActionPerformed
-
-    private void nombreDiscoInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nombreDiscoInputActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_nombreDiscoInputActionPerformed
 
     private void anioDiscoInputKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_anioDiscoInputKeyTyped
         char c = evt.getKeyChar();
@@ -258,7 +251,7 @@ public class InformacionDisc extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
-    private javax.swing.JTextField nombreDiscoInput;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JTextField ubicacionDiscoInput;
     // End of variables declaration//GEN-END:variables
 }

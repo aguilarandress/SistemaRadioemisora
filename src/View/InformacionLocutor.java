@@ -333,7 +333,7 @@ public class InformacionLocutor extends javax.swing.JFrame {
         
         // Actualiza al locutor si está asignado a algún programa
         actualizarProgramas(nombre, nombreOriginal);
-        
+        JOptionPane.showMessageDialog(this, "Se ha actualizado el locutor.", "Exito", JOptionPane.INFORMATION_MESSAGE);
         // Cierra la ventanilla sin cerrar la principal
         this.dispose();
     }//GEN-LAST:event_botonActualizarInfoActionPerformed

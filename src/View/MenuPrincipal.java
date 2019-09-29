@@ -1794,7 +1794,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
         this.anioDiscoTextField.setText("");
         this.ubicacionDiscoTextField.setText("");
         this.imagenDiscoTextField.setText("");
-        
+        JOptionPane.showMessageDialog(this, "Se ha creado el disco.", "Exito", JOptionPane.INFORMATION_MESSAGE);
     }//GEN-LAST:event_botonCrearDiscoActionPerformed
 
     private void anioDiscoTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_anioDiscoTextFieldActionPerformed
@@ -1822,14 +1822,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "No hay discos creados.", "ERROR", JOptionPane.ERROR_MESSAGE);
             return;
         }
-        String infoDisco = (String) this.discoComboBoxModel.getSelectedItem();
-        String nombreDisco = "";
-        for (int c = 0; c < infoDisco.length(); c++) {
-            if (' ' == infoDisco.charAt(c)) {
-                break;
-            }
-            nombreDisco += infoDisco.charAt(c);
-        }
+        String nombreDisco = (String) this.discoComboBoxModel.getSelectedItem();
         Disco disco = this.emisora.obtenerDisco(nombreDisco);
         InformacionDisc ventanaInformacion;
         
