@@ -14,15 +14,20 @@ public class InformacionPrograma extends javax.swing.JFrame {
     
     private RadioEmisora emisora;
     private Programa programaSeleccionado;
+    
     private DefaultListModel programasListModel;
+    private DefaultListModel programasDeEmisoraListModel;
+    
     private DefaultComboBoxModel programasComboBoxModel;
     
     public InformacionPrograma(RadioEmisora emisora, Programa programaSeleccionado, 
-            DefaultListModel programasListModel, DefaultComboBoxModel programasComboBoxModel) {        
+            DefaultListModel programasListModel, DefaultComboBoxModel programasComboBoxModel,
+            DefaultListModel pProgramasDeEmisoraListModel) {        
         this.emisora = emisora;
         this.programaSeleccionado = programaSeleccionado;
         this.programasListModel = programasListModel;
         this.programasComboBoxModel = programasComboBoxModel;
+        this.programasDeEmisoraListModel = pProgramasDeEmisoraListModel; 
         
         initComponents();
     }
@@ -155,13 +160,23 @@ public class InformacionPrograma extends javax.swing.JFrame {
         // Eliminar de los modelos del UI
         this.programasListModel.removeElement(this.programaSeleccionado.toString());
         this.programasComboBoxModel.removeElement(this.programaSeleccionado.getNombre());
+        this.programasDeEmisoraListModel.removeElement("Nombre: " + programaSeleccionado.getNombre() + 
+                " | Horario: " + programaSeleccionado.getHorario() + 
+                " | Duracion: "  + programaSeleccionado.getDuracion() + 
+                " | Genero: " + programaSeleccionado.getGenero());
+        
         // Asignar nuevos valores
         this.programaSeleccionado.setHorario(horario);
         this.programaSeleccionado.setDuracion(Integer.parseInt(duracionStr));
         this.programaSeleccionado.setGenero(genero);
+        
         // Agregar elementos al UI
         this.programasListModel.addElement(this.programaSeleccionado.toString());
         this.programasComboBoxModel.addElement(this.programaSeleccionado.getNombre());
+        this.programasDeEmisoraListModel.addElement("Nombre: " + programaSeleccionado.getNombre() + 
+                " | Horario: " + programaSeleccionado.getHorario() + 
+                " | Duracion: "  + programaSeleccionado.getDuracion() + 
+                " | Genero: " + programaSeleccionado.getGenero());
         
         this.dispose();
     }//GEN-LAST:event_actualizarProgramaBtnActionPerformed

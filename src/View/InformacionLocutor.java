@@ -29,13 +29,14 @@ public class InformacionLocutor extends javax.swing.JFrame {
     private DefaultComboBoxModel locutoresComboBoxModel;
     private DefaultComboBoxModel locutoresProgramasComboBoxModel;
     private DefaultListModel programasListModel;
+    private DefaultListModel locutoresDeEmisoraListModel;
     /**
      * Creates new form InformacionLocutor
      */
     public InformacionLocutor(JButton pVerInfoLocutor, Locutor pLocutor, RadioEmisora pEmisora,
             DefaultListModel pLocutoresListModel, DefaultComboBoxModel pLocutoresComboBoxModel,
             DefaultComboBoxModel pLocutoresProgramasComboBoxModel, 
-            DefaultListModel pProgramasListModel) {
+            DefaultListModel pProgramasListModel, DefaultListModel pLocutoresDeEmisoraListModel) {
         this.botonVerInfoLocutor = pVerInfoLocutor;
         this.locutor = pLocutor;
         this.emisora = pEmisora;
@@ -43,6 +44,7 @@ public class InformacionLocutor extends javax.swing.JFrame {
         this.locutoresComboBoxModel = pLocutoresComboBoxModel;
         this.locutoresProgramasComboBoxModel = pLocutoresProgramasComboBoxModel;
         this.programasListModel = pProgramasListModel;
+        this.locutoresDeEmisoraListModel = pLocutoresDeEmisoraListModel;
         initComponents();
     }
 
@@ -289,6 +291,14 @@ public class InformacionLocutor extends javax.swing.JFrame {
         this.locutoresComboBoxModel.removeElement(this.locutor.getId());
         this.locutoresProgramasComboBoxModel.removeElement(this.locutor.getId());
         
+        this.locutoresDeEmisoraListModel.removeElement("Nombre: " + locutor.getNombre() +
+                " | ID: " + locutor.getId() +
+                " | Correo: " + locutor.getCorreo() +
+                " | Telefono: " + locutor.getTelefono() +
+                " | Direccion: " + locutor.getDireccion() +
+                " | Sexo: " + locutor.getSexo() + 
+                " | Fecha de Nacimiento: " + locutor.getFecha());
+        
         // Validaciones
         if (!this.locutor.telefonoValido()) {
             System.out.println("Telefono: " + this.locutor.getTelefono());
@@ -313,6 +323,14 @@ public class InformacionLocutor extends javax.swing.JFrame {
         this.locutoresComboBoxModel.addElement(this.locutor.getId());
         this.locutoresProgramasComboBoxModel.addElement(this.locutor.getId());
         
+        this.locutoresDeEmisoraListModel.addElement("Nombre: " + locutor.getNombre() +
+                " | ID: " + locutor.getId() +
+                " | Correo: " + locutor.getCorreo() +
+                " | Telefono: " + locutor.getTelefono() +
+                " | Direccion: " + locutor.getDireccion() +
+                " | Sexo: " + locutor.getSexo() + 
+                " | Fecha de Nacimiento: " + locutor.getFecha());
+        
         // Actualiza al locutor si está asignado a algún programa
         actualizarProgramas(nombre, nombreOriginal);
         
@@ -336,6 +354,14 @@ public class InformacionLocutor extends javax.swing.JFrame {
         
         this.locutoresComboBoxModel.removeElement(this.locutor.getId());
         this.locutoresProgramasComboBoxModel.removeElement(this.locutor.getId());
+        
+        this.locutoresDeEmisoraListModel.removeElement("Nombre: " + locutor.getNombre() +
+                " | ID: " + locutor.getId() +
+                " | Correo: " + locutor.getCorreo() +
+                " | Telefono: " + locutor.getTelefono() +
+                " | Direccion: " + locutor.getDireccion() +
+                " | Sexo: " + locutor.getSexo() + 
+                " | Fecha de Nacimiento: " + locutor.getFecha());
         
         // Actualiza al locutor si está asignado a algún programa
         // Remueva al locutor del sistema

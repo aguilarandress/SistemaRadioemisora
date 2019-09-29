@@ -173,7 +173,7 @@
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="btnActualizarEmisora" min="-2" pref="41" max="-2" attributes="0"/>
-                      <EmptySpace pref="253" max="32767" attributes="0"/>
+                      <EmptySpace pref="321" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -348,7 +348,7 @@
                                               </Group>
                                           </Group>
                                       </Group>
-                                      <EmptySpace min="0" pref="66" max="32767" attributes="0"/>
+                                      <EmptySpace min="0" pref="10" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
@@ -428,7 +428,7 @@
                           <Component id="locutoresActualizarCombo" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="botonVerInfoLocutor" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="144" max="32767" attributes="0"/>
+                      <EmptySpace pref="212" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -495,7 +495,7 @@
             </Component>
             <Component class="javax.swing.JLabel" name="fechaLocutorLabel">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Fecha:"/>
+                <Property name="text" type="java.lang.String" value="Fecha de nacimiento:"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JSeparator" name="jSeparator2">
@@ -644,7 +644,7 @@
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="playlistsCombo" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="jScrollPane4" pref="315" max="32767" attributes="0"/>
+                              <Component id="jScrollPane4" pref="383" max="32767" attributes="0"/>
                           </Group>
                           <Component id="jScrollPane3" max="32767" attributes="0"/>
                       </Group>
@@ -868,7 +868,7 @@
                           <Component id="listaDiscoComboBox" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="botonVerDisco" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="159" max="32767" attributes="0"/>
+                      <EmptySpace pref="227" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -1450,7 +1450,7 @@
                           <Component id="cargarCancionesArchivoBtn" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Component id="verInformacionCancionArchivoBtn" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="95" max="32767" attributes="0"/>
+                      <EmptySpace pref="163" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -1836,7 +1836,7 @@
                           </Group>
                           <Component id="jSeparator18" max="32767" attributes="0"/>
                           <Group type="102" attributes="0">
-                              <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
+                              <Component id="cancionesPorCantanteLabel" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                           </Group>
                       </Group>
@@ -1850,7 +1850,7 @@
                       <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="cancionesPorGeneroLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="cancionesPorCantanteLabel" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
@@ -1869,7 +1869,7 @@
                           <Component id="jScrollPane7" pref="207" max="32767" attributes="0"/>
                           <Component id="jScrollPane8" max="32767" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="268" max="32767" attributes="0"/>
+                      <EmptySpace pref="336" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -1884,7 +1884,7 @@
             </Component>
             <Component class="javax.swing.JSeparator" name="jSeparator18">
             </Component>
-            <Component class="javax.swing.JLabel" name="jLabel2">
+            <Component class="javax.swing.JLabel" name="cancionesPorCantanteLabel">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Consultar Canciones por Cantante:"/>
               </Properties>
@@ -1950,6 +1950,113 @@
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botonConsultarCancionesGeneroActionPerformed"/>
               </Events>
             </Component>
+          </SubComponents>
+        </Container>
+        <Container class="javax.swing.JPanel" name="listadosTab">
+          <Constraints>
+            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
+              <JTabbedPaneConstraints tabName="Listados">
+                <Property name="tabTitle" type="java.lang.String" value="Listados"/>
+              </JTabbedPaneConstraints>
+            </Constraint>
+          </Constraints>
+
+          <Layout>
+            <DimensionLayout dim="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="jScrollPane9" pref="365" max="32767" attributes="0"/>
+                          <Component id="locutoresDeEmisoraLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="jSeparator19" alignment="0" max="32767" attributes="0"/>
+                      </Group>
+                      <EmptySpace pref="64" max="32767" attributes="0"/>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="programasDeEmisoraLabel" min="-2" max="-2" attributes="0"/>
+                          <Component id="jSeparator20" max="32767" attributes="0"/>
+                          <Component id="jScrollPane10" pref="421" max="32767" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+            <DimensionLayout dim="1">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="locutoresDeEmisoraLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="programasDeEmisoraLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="jSeparator19" min="-2" pref="10" max="-2" attributes="0"/>
+                          <Component id="jSeparator20" min="-2" pref="10" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="jScrollPane9" pref="569" max="32767" attributes="0"/>
+                          <Component id="jScrollPane10" max="32767" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="32767" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+          </Layout>
+          <SubComponents>
+            <Component class="javax.swing.JLabel" name="locutoresDeEmisoraLabel">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Locutores de la emisora:"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JSeparator" name="jSeparator19">
+            </Component>
+            <Component class="javax.swing.JLabel" name="programasDeEmisoraLabel">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Programas de la emisora:"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JSeparator" name="jSeparator20">
+            </Component>
+            <Container class="javax.swing.JScrollPane" name="jScrollPane9">
+              <AuxValues>
+                <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+              </AuxValues>
+
+              <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+              <SubComponents>
+                <Component class="javax.swing.JList" name="locutoresDeEmisoraList">
+                  <Properties>
+                    <Property name="model" type="javax.swing.ListModel" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+                      <Connection code="this.locutoresDeEmisoraListModel" type="code"/>
+                    </Property>
+                  </Properties>
+                  <AuxValues>
+                    <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+                  </AuxValues>
+                </Component>
+              </SubComponents>
+            </Container>
+            <Container class="javax.swing.JScrollPane" name="jScrollPane10">
+              <AuxValues>
+                <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+              </AuxValues>
+
+              <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+              <SubComponents>
+                <Component class="javax.swing.JList" name="programasDeEmisoraList">
+                  <Properties>
+                    <Property name="model" type="javax.swing.ListModel" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+                      <Connection code="this.programasDeEmisoraListModel&#xa;    " type="code"/>
+                    </Property>
+                  </Properties>
+                  <AuxValues>
+                    <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+                  </AuxValues>
+                </Component>
+              </SubComponents>
+            </Container>
           </SubComponents>
         </Container>
       </SubComponents>
