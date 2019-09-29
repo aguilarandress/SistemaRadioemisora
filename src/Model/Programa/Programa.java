@@ -7,7 +7,9 @@ import mailer.Correo;
 
 /**
  *
- * @author fabia
+ * @author Fabian Vargas
+ * @author Andres Aguilar
+ * @author Kenneth Sanchez
  */
 public class Programa {
 

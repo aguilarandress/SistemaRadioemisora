@@ -19,7 +19,9 @@ import javax.swing.JOptionPane;
 
 /**
  *
- * @author fabia
+ * @author Fabian Vargas
+ * @author Andres Aguilar
+ * @author Kenneth Sanchez
  */
 public class InformacionDisc extends javax.swing.JFrame {
     Disco disco;
@@ -218,12 +220,18 @@ public class InformacionDisc extends javax.swing.JFrame {
         JOptionPane.showMessageDialog(this, "Se ha actualizado el disco.", "Exito", JOptionPane.INFORMATION_MESSAGE);
         this.dispose();
     }//GEN-LAST:event_actualizarBotonActionPerformed
-
+        /**
+         * Permite unicamente digitar numeros en el input de año.
+         * @param evt 
+         */
     private void anioDiscoInputKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_anioDiscoInputKeyTyped
         char c = evt.getKeyChar();
         if(c<'0' || c > '9') evt.consume();
     }//GEN-LAST:event_anioDiscoInputKeyTyped
-
+    /**
+     * Verificar que exista una imagen en el path dado.
+     * @return 
+     */
     public boolean verificarImagen() {
         String filepath = this.disco.getImagen();
         try {

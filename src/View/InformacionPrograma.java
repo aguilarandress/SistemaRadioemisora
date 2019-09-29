@@ -8,7 +8,9 @@ import javax.swing.JOptionPane;
 
 /**
  *
- * @author Andres
+ * @author Fabian Vargas
+ * @author Andres Aguilar
+ * @author Kenneth Sanchez
  */
 public class InformacionPrograma extends javax.swing.JFrame {
     
