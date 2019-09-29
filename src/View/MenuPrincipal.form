@@ -1606,45 +1606,58 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="1" attributes="0">
+                  <Group type="102" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Group type="102" alignment="0" attributes="0">
+                          <Group type="102" attributes="0">
+                              <Component id="jSeparator21" min="-2" pref="208" max="-2" attributes="0"/>
+                              <EmptySpace max="32767" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                                  <Component id="cargarCancionesDiscoBtn" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="cargarCancionesDiscoInput" alignment="0" max="32767" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="generoCancionLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="duracionCancionLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="cantanteCancionLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="discoCancionLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="nombreCancionLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                                  <EmptySpace min="-2" pref="62" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                      <Component id="discoCancionCombo" pref="197" max="32767" attributes="0"/>
-                                      <Component id="nombreCancionInput" max="32767" attributes="0"/>
-                                      <Component id="generoCancionInput" max="32767" attributes="0"/>
-                                      <Component id="duracionCancionInput" max="32767" attributes="0"/>
-                                      <Component id="cantanteCancionInput" max="32767" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                          <Group type="102" alignment="0" attributes="0">
+                                              <Group type="103" groupAlignment="0" attributes="0">
+                                                  <Component id="generoCancionLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="duracionCancionLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="cantanteCancionLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="discoCancionLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="nombreCancionLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                                              </Group>
+                                              <EmptySpace min="-2" pref="62" max="-2" attributes="0"/>
+                                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                                  <Component id="discoCancionCombo" pref="197" max="32767" attributes="0"/>
+                                                  <Component id="nombreCancionInput" max="32767" attributes="0"/>
+                                                  <Component id="generoCancionInput" max="32767" attributes="0"/>
+                                                  <Component id="duracionCancionInput" max="32767" attributes="0"/>
+                                                  <Component id="cantanteCancionInput" max="32767" attributes="0"/>
+                                              </Group>
+                                          </Group>
+                                          <Component id="jSeparator15" alignment="1" max="32767" attributes="0"/>
+                                          <Component id="botonAgregarCancion" max="32767" attributes="0"/>
+                                      </Group>
+                                      <Component id="agregarCancionLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="cargarCancionesDiscoLabel" alignment="0" min="-2" pref="208" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
-                              <Component id="jSeparator15" alignment="1" max="32767" attributes="0"/>
-                              <Component id="botonAgregarCancion" max="32767" attributes="0"/>
-                          </Group>
-                          <Component id="agregarCancionLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace pref="150" max="32767" attributes="0"/>
-                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="seleccionarDiscoLabel" min="-2" max="-2" attributes="0"/>
-                          <Component id="jScrollPane6" max="32767" attributes="0"/>
-                          <Component id="seleccionarDiscoComboBox" max="32767" attributes="0"/>
-                          <Component id="jSeparator16" max="32767" attributes="0"/>
-                          <Group type="102" alignment="0" attributes="0">
-                              <Component id="seleccionarCancionComboBox" min="-2" pref="229" max="-2" attributes="0"/>
-                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                              <Component id="editarCancionBtn" pref="194" max="32767" attributes="0"/>
+                              <EmptySpace pref="150" max="32767" attributes="0"/>
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                  <Component id="seleccionarDiscoLabel" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jScrollPane6" max="32767" attributes="0"/>
+                                  <Component id="seleccionarDiscoComboBox" max="32767" attributes="0"/>
+                                  <Component id="jSeparator16" max="32767" attributes="0"/>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Component id="seleccionarCancionComboBox" min="-2" pref="229" max="-2" attributes="0"/>
+                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                      <Component id="editarCancionBtn" pref="194" max="32767" attributes="0"/>
+                                  </Group>
+                              </Group>
+                              <EmptySpace min="-2" pref="49" max="-2" attributes="0"/>
                           </Group>
                       </Group>
-                      <EmptySpace min="-2" pref="49" max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -1662,8 +1675,8 @@
                           <Component id="jSeparator16" min="-2" pref="10" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                          <Group type="102" alignment="1" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="nombreCancionInput" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="nombreCancionLabel" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -1690,7 +1703,7 @@
                               </Group>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Component id="botonAgregarCancion" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="32767" attributes="0"/>
+                              <EmptySpace min="-2" pref="80" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="1" attributes="0">
                               <Component id="seleccionarDiscoComboBox" min="-2" max="-2" attributes="0"/>
@@ -1700,10 +1713,17 @@
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="seleccionarCancionComboBox" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="editarCancionBtn" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="cargarCancionesDiscoLabel" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace min="-2" pref="198" max="-2" attributes="0"/>
                           </Group>
                       </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="jSeparator21" min="-2" pref="10" max="-2" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Component id="cargarCancionesDiscoInput" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="cargarCancionesDiscoBtn" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace pref="191" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -1830,6 +1850,20 @@
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="editarCancionBtnActionPerformed"/>
               </Events>
+            </Component>
+            <Component class="javax.swing.JLabel" name="cargarCancionesDiscoLabel">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Cargar canciones para el disco"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JSeparator" name="jSeparator21">
+            </Component>
+            <Component class="javax.swing.JTextField" name="cargarCancionesDiscoInput">
+            </Component>
+            <Component class="javax.swing.JButton" name="cargarCancionesDiscoBtn">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Cargar canciones"/>
+              </Properties>
             </Component>
           </SubComponents>
         </Container>
