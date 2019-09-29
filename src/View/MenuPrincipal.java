@@ -1725,14 +1725,14 @@ public class MenuPrincipal extends javax.swing.JFrame {
      */
     private void botonVerInfoLocutorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonVerInfoLocutorActionPerformed
         
-        // Desabilita el boton de ver info temporalmente
-           this.botonVerInfoLocutor.setEnabled(false);
-        
         // Validacion
         if (this.emisora.getLocutores().isEmpty()) {
             JOptionPane.showMessageDialog(this, "No hay locutores creados...", "Error...", JOptionPane.ERROR_MESSAGE);
             return;
         }
+        
+        // Desabilita el boton de ver info temporalmente
+           this.botonVerInfoLocutor.setEnabled(false);
         String idLocutor = (String) locutoresActualizarCombo.getSelectedItem();
         Locutor locutorSeleccionado = this.emisora.getLocutorPorId(idLocutor);
 
