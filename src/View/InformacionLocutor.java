@@ -275,7 +275,7 @@ public class InformacionLocutor extends javax.swing.JFrame {
         String fecha = this.fechaLocutorInput.getText().trim();
         
         String nombreOriginal = this.locutor.getNombre();
-        
+        Locutor locutorPrueba = new Locutor(nombre,this.locutor.getId(),correo, telefono, direccion, sexo, fecha);
         // Verificaciones
         if (nombre.isEmpty() || correo.isEmpty() ||
             telefono.isEmpty() || direccion.isEmpty() || sexo.isEmpty() ||
@@ -300,12 +300,12 @@ public class InformacionLocutor extends javax.swing.JFrame {
                 " | Fecha de Nacimiento: " + locutor.getFecha());
         
         // Validaciones
-        if (!this.locutor.telefonoValido()) {
+        if (!locutorPrueba.telefonoValido()) {
             System.out.println("Telefono: " + this.locutor.getTelefono());
             JOptionPane.showMessageDialog(this, "Telefono invalido...", "ERROR", JOptionPane.ERROR_MESSAGE);
             return;
         }
-        if(!this.locutor.correoValido()) {
+        if(!locutorPrueba.correoValido()) {
             JOptionPane.showMessageDialog(this, "Correo invalido...", "ERROR", JOptionPane.ERROR_MESSAGE);
             return;
         }
