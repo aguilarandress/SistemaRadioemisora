@@ -4,6 +4,7 @@ import Model.Cancion.CancionArchivo;
 import Model.Locutor.Locutor;
 import Model.Programa.Programa;
 import Model.Disco.Disco;
+import Model.Playlist.PlayList;
 import java.util.ArrayList;
 
 /**
@@ -181,6 +182,23 @@ public class RadioEmisora {
                 return discos.get(i);
             }
         }
+        return null;
+    }
+    
+    /**
+     * Obtiene una playlist buscandola por nombre
+     * 
+     * @param pNombre
+     * @return 
+     */
+    public PlayList obtenerPlaylist(String pNombre) {
+        
+        for (Programa programaActual : this.programas) {
+            if (programaActual.getPlaylist().getNombre().equals(pNombre)) {
+                return programaActual.getPlaylist();
+            }
+        }
+        
         return null;
     }
     

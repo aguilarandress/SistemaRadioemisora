@@ -5,6 +5,9 @@
  */
 package Model.Playlist;
 
+import Model.Cancion.Cancion;
+import java.util.ArrayList;
+
 /**
  *
  * @author fabia
@@ -12,10 +15,30 @@ package Model.Playlist;
 public class PlayList {
     private int duracion;
     private String genero;
+    private String nombre;
+    private ArrayList<Cancion> canciones;
     
-    public PlayList(int duracion, String genero){
-        this.duracion = duracion;
-        this.genero = genero;
+    public PlayList(String pNombre, String pGenero){
+        this.nombre = pNombre;
+        this.genero = pGenero;
+        this.canciones = new ArrayList<Cancion>();
+        this.duracion = 0;
+    }
+    
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public ArrayList<Cancion> getCanciones() {
+        return canciones;
+    }
+
+    public void setCanciones(ArrayList<Cancion> canciones) {
+        this.canciones = canciones;
     }
 
     public int getDuracion() {
@@ -34,4 +57,7 @@ public class PlayList {
         this.genero = genero;
     }
     
+    public void addCancion(Cancion pCancion) {
+        this.canciones.add(pCancion);
+    }
 }
