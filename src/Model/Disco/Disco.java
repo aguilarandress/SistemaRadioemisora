@@ -9,7 +9,9 @@ import java.util.ArrayList;
 
 /**
  *
- * @author fabia
+ * @author Fabian Vargas
+ * @author Andres Aguilar
+ * @author Kenneth Sanchez
  */
 public class Disco {
     private String nombre;
@@ -99,6 +101,10 @@ public class Disco {
         return canciones;
     }
     
+    /**
+     * Añade una cancion al disco.
+     * @param cancionNueva es la cancion que se añadira
+     */
     public void agregarCancion(Cancion cancionNueva){
         this.canciones.add(cancionNueva);
     }

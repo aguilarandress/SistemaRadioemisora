@@ -8,9 +8,12 @@ import Model.Cancion.Cancion;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.DefaultListModel;
 import javax.swing.JOptionPane;
+
 /**
  *
- * @author fabia
+ * @author Fabian Vargas
+ * @author Andres Aguilar
+ * @author Kenneth Sanchez
  */
 public class InformacionCancionDisco extends javax.swing.JFrame {
     
@@ -87,6 +90,11 @@ public class InformacionCancionDisco extends javax.swing.JFrame {
         });
 
         duracionInput.setText(Integer.toString(this.cancion.getDuracion()));
+        duracionInput.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                duracionInputKeyTyped(evt);
+            }
+        });
 
         notaLabel.setText("Nota: No se puede actualizar el nombre de la cancion.");
 
@@ -184,6 +192,14 @@ public class InformacionCancionDisco extends javax.swing.JFrame {
     private void generoInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_generoInputActionPerformed
         // TODO add your handlinnombreLabelhere:
     }//GEN-LAST:event_generoInputActionPerformed
+    /**
+     * Unicamente permite digitar numeros en el input de  duracion
+     * @param evt 
+     */
+    private void duracionInputKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_duracionInputKeyTyped
+        char c = evt.getKeyChar();
+        if(c < '0' || c > '9') evt.consume();
+    }//GEN-LAST:event_duracionInputKeyTyped
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

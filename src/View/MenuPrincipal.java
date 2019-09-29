@@ -1802,14 +1802,20 @@ public class MenuPrincipal extends javax.swing.JFrame {
     private void botonVerInfoLocutorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonVerInfoLocutorMouseClicked
         // TODO add your handling code here:
     }//GEN-LAST:event_botonVerInfoLocutorMouseClicked
-
+        /**
+         * Permite unicamente digitar numeros en el input de la duración del programa.
+         * @param evt 
+         */
     private void programaDuracionInputKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_programaDuracionInputKeyTyped
         char c = evt.getKeyChar();
         if (c < '0' || c > '9') {
             evt.consume();
         }
     }//GEN-LAST:event_programaDuracionInputKeyTyped
-
+        /**
+         * Crea un disco nuevo con los datos indicados por el usuario
+         * @param evt 
+         */
     private void botonCrearDiscoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonCrearDiscoActionPerformed
         String nombre = this.nombreDiscoTextField.getText().trim();
         String cantante = this.cantanteDiscoTextField.getText().trim();
@@ -2012,7 +2018,11 @@ public class MenuPrincipal extends javax.swing.JFrame {
     private void listaDiscoComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_listaDiscoComboBoxActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_listaDiscoComboBoxActionPerformed
-
+        /**
+         * Añade una cancion a un disco seleccionado si es que existe alguno, de lo contrario emite un 
+         * mensaje de error
+         * @param evt 
+         */
     private void botonAgregarCancionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonAgregarCancionActionPerformed
         if (emisora.getDiscos().isEmpty()) {
             JOptionPane.showMessageDialog(this, "No hay discos donde agregar la cancion.", "ERROR", JOptionPane.ERROR_MESSAGE);
@@ -2079,7 +2089,11 @@ public class MenuPrincipal extends javax.swing.JFrame {
         this.cargarCancionesArchivoPathInput.setText("");
         JOptionPane.showMessageDialog(this, "Canciones Cargadas...", "Exito", JOptionPane.INFORMATION_MESSAGE);
     }//GEN-LAST:event_cargarCancionesArchivoBtnActionPerformed
-
+        /**
+         * Actualiza la lista de canciones y el comboBox de canciones al seleccionar un disco
+         * o agregar una cancion nueva.
+         * @param evt 
+         */
     private void seleccionarDiscoComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_seleccionarDiscoComboBoxActionPerformed
         String nombreDisco = (String) this.seleccionarDiscoComboBox.getSelectedItem();
 
@@ -2096,7 +2110,11 @@ public class MenuPrincipal extends javax.swing.JFrame {
                     + cancionAgregar.getGenero() + " - " + cancionAgregar.getCantante());
         }
     }//GEN-LAST:event_seleccionarDiscoComboBoxActionPerformed
-
+        /**
+         * Verifica que existan canciones en el disco seleccionado, de haber, llama una nueva ventana
+         * en la cual se edita la cancion
+         * @param evt 
+         */
     private void editarCancionBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editarCancionBtnActionPerformed
         if (this.discoCancionComboBoxModel.getSize() <= 0) {
             JOptionPane.showMessageDialog(this, "El disco no contiene canciones.", "ERROR", JOptionPane.ERROR_MESSAGE);

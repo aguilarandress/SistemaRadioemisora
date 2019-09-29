@@ -150,6 +150,9 @@
           <Connection code="Integer.toString(this.cancion.getDuracion())" type="code"/>
         </Property>
       </Properties>
+      <Events>
+        <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="duracionInputKeyTyped"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="notaLabel">
       <Properties>
