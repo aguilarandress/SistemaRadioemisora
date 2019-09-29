@@ -5,6 +5,7 @@
  */
 package Model.Programa;
 import Model.Locutor.Locutor;
+import Model.Playlist.PlayList;
 
 /**
  *
@@ -15,14 +16,24 @@ public class Programa {
     private String horario;
     private int duracion;
     private String genero;
-    Locutor locutor;
+    private Locutor locutor;
+    private PlayList playlist;
     
     public Programa(String nombre, String horario, int duracion, String genero){
         this.nombre = nombre;
         this.horario = horario;
         this.duracion = duracion;
         this.genero = genero;
+        this.playlist = null;
         locutor = null;
+    }
+
+    public PlayList getPlaylist() {
+        return playlist;
+    }
+
+    public void setPlaylist(PlayList playlist) {
+        this.playlist = playlist;
     }
 
     public String getNombre() {

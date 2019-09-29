@@ -18,6 +18,13 @@ public class PlayList {
     private String nombre;
     private ArrayList<Cancion> canciones;
     
+    public PlayList(String pNombre, String pGenero){
+        this.nombre = pNombre;
+        this.genero = pGenero;
+        this.canciones = new ArrayList<Cancion>();
+        this.duracion = 0;
+    }
+    
     public String getNombre() {
         return nombre;
     }
@@ -32,11 +39,6 @@ public class PlayList {
 
     public void setCanciones(ArrayList<Cancion> canciones) {
         this.canciones = canciones;
-    }
-    
-    public PlayList(String pNombre, String pGenero){
-        this.nombre = pNombre;
-        this.genero = pGenero;
     }
 
     public int getDuracion() {

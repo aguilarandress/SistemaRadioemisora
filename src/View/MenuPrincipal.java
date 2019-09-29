@@ -43,6 +43,8 @@ public class MenuPrincipal extends javax.swing.JFrame {
     private DefaultListModel cancionesPorCantante = new DefaultListModel();
     private DefaultListModel locutoresDeEmisoraListModel = new DefaultListModel();
     private DefaultListModel programasDeEmisoraListModel = new DefaultListModel();
+    private DefaultListModel playlistListModel = new DefaultListModel();
+    private DefaultListModel cancionesEnPlaylistListModel = new DefaultListModel();
     
     private DefaultComboBoxModel locutoresComboBoxModel = new DefaultComboBoxModel();
     private DefaultComboBoxModel locutoresProgramasComboBoxModel = new DefaultComboBoxModel();
@@ -51,6 +53,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
     private DefaultComboBoxModel cancionesArchivoBoxModel = new DefaultComboBoxModel();
     private DefaultComboBoxModel cancionesActComboBoxModel = new DefaultComboBoxModel();
     private DefaultComboBoxModel discoCancionComboBoxModel = new DefaultComboBoxModel();
+    private DefaultComboBoxModel playlistComboBoxModel = new DefaultComboBoxModel();
     
     /**
      * Creates new form MenuPrincipal
@@ -610,14 +613,21 @@ public class MenuPrincipal extends javax.swing.JFrame {
             }
         });
 
+        playlistsListaPlaylistsBox.setModel(this.playlistListModel);
         jScrollPane3.setViewportView(playlistsListaPlaylistsBox);
 
         listaPlaylistsLabel.setText("Lista de Playlists:");
 
         verCancionesPlaylistLabel.setText("Ver Canciones:");
 
-        playlistsCombo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        playlistsCombo.setModel(this.playlistComboBoxModel);
+        playlistsCombo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                playlistsComboActionPerformed(evt);
+            }
+        });
 
+        playlistsListaCancionesBox.setModel(this.cancionesEnPlaylistListModel);
         jScrollPane4.setViewportView(playlistsListaCancionesBox);
 
         playlistsProgramaLabel.setText("Programa:");
@@ -682,7 +692,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(playlistsCombo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 391, Short.MAX_VALUE))
+                        .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 389, Short.MAX_VALUE))
                     .addComponent(jScrollPane3))
                 .addContainerGap())
         );
@@ -1390,9 +1400,9 @@ public class MenuPrincipal extends javax.swing.JFrame {
                     .addComponent(botonConsultarCancionesGenero))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(consultasTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jScrollPane7, javax.swing.GroupLayout.DEFAULT_SIZE, 207, Short.MAX_VALUE)
-                    .addComponent(jScrollPane8))
-                .addContainerGap(336, Short.MAX_VALUE))
+                    .addComponent(jScrollPane8, javax.swing.GroupLayout.DEFAULT_SIZE, 497, Short.MAX_VALUE)
+                    .addComponent(jScrollPane7))
+                .addContainerGap(46, Short.MAX_VALUE))
         );
 
         windowTabs.addTab("Consultas", consultasTab);
@@ -1438,9 +1448,9 @@ public class MenuPrincipal extends javax.swing.JFrame {
                     .addComponent(jSeparator20, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(listadosTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jScrollPane9, javax.swing.GroupLayout.DEFAULT_SIZE, 569, Short.MAX_VALUE)
-                    .addComponent(jScrollPane10))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jScrollPane10, javax.swing.GroupLayout.DEFAULT_SIZE, 528, Short.MAX_VALUE)
+                    .addComponent(jScrollPane9))
+                .addContainerGap(52, Short.MAX_VALUE))
         );
 
         windowTabs.addTab("Listados", listadosTab);
@@ -2154,18 +2164,33 @@ public class MenuPrincipal extends javax.swing.JFrame {
         String nombre = this.playlistNombreInput.getText().trim();
         Programa programaSeleccionado = this.emisora.obtenerProgramaPorNombre((String) this.playlistProgramaComboBox.getSelectedItem());
         
-        //if programa has playlist return;
+        // Validaciones
+        if (this.emisora.getProgramas().isEmpty()) {
+            JOptionPane.showMessageDialog(this, "No hay programas registrados...", "ERROR", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        
+        ArrayList<Programa> programas = this.emisora.getProgramas();
+        
+        for (Programa programaActual: programas) {
+            if (programaActual.getPlaylist() == null) {
+                ;
+            } else if (programaActual.getPlaylist().getNombre().equals(nombre)) {
+                JOptionPane.showMessageDialog(this, "Ya existe una playlist con ese nombre...", "ERROR", JOptionPane.ERROR_MESSAGE);
+                return;
+            }
+        }
         
         PlayList nuevaPlaylist = new PlayList(nombre, programaSeleccionado.getGenero());
         
         ArrayList<Cancion> allCanciones = new ArrayList<Cancion>();
         
         // Revisa todas las canciones para agregar las del mismo genero
-//        for (CancionArchivo cancionActual : this.emisora.getCancionesArchivo()) {
-//            if (cancionActual.getGenero().equals(programaSeleccionado.getGenero())) {
-//                allCanciones.add((Cancion) cancionActual);
-//            }
-//        }
+        for (CancionArchivo cancionActual : this.emisora.getCancionesArchivo()) {
+            if (cancionActual.getGenero().equals(programaSeleccionado.getGenero())) {
+                allCanciones.add((Cancion) cancionActual);
+            }
+        }
         
         // Revisa todos los discos agregar las del mismo genero 
         for (Disco discoActual: this.emisora.getDiscos()) {
@@ -2193,18 +2218,41 @@ public class MenuPrincipal extends javax.swing.JFrame {
             nuevaPlaylist.addCancion(cancionActual);
             allCanciones.remove(cancionActual);
             
-            if (nuevaPlaylist.getDuracion() + cancionActual.getDuracion() > programaSeleccionado.getDuracion()) {
-                break;
-            }
-            
             nuevaPlaylist.setDuracion(nuevaPlaylist.getDuracion() + cancionActual.getDuracion());
-            System.out.println(nuevaPlaylist.getDuracion());
-            if (allCanciones.isEmpty()) {
-                break;
-            }
         }
         
+        // Agrega la playlist al programa
+        programaSeleccionado.setPlaylist(nuevaPlaylist);
+        
+        // Muesta la playlist en el GUI
+        
+        this.playlistListModel.addElement("Nombre: " + nuevaPlaylist.getNombre() +
+                " | Genero: " + nuevaPlaylist.getGenero() +
+                " | Duracion: " + nuevaPlaylist.getDuracion());
+        
+        JOptionPane.showMessageDialog(this, "Playlist creada...", "Exito", JOptionPane.ERROR_MESSAGE);
+        
+        this.playlistComboBoxModel.addElement(nuevaPlaylist.getNombre());
+        
+        
     }//GEN-LAST:event_botonAgregarPlaylistActionPerformed
+    /**
+     * Muesta las canciones de la Playlist seleccionada
+     * @param evt 
+     */
+    private void playlistsComboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_playlistsComboActionPerformed
+        this.cancionesEnPlaylistListModel.removeAllElements();
+        
+        PlayList programaSeleccionado = this.emisora.obtenerPlaylist((
+                String) playlistsCombo.getSelectedItem());
+        
+        for (Cancion cancionActual : programaSeleccionado.getCanciones()) {
+            this.cancionesEnPlaylistListModel.addElement("Nombre: " + cancionActual.getNombre() +
+                    " | Cantante: " + cancionActual.getCantante() + 
+                    " | Genero: " + cancionActual.getGenero() + 
+                    " | Duracion: " + cancionActual.getDuracion());
+        }
+    }//GEN-LAST:event_playlistsComboActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel IdLocutorLabel;
