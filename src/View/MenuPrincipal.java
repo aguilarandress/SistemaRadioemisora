@@ -19,6 +19,9 @@ import javax.swing.JOptionPane;
 import java.util.ArrayList;
 
 import filereader.ExcelReader;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -1657,10 +1660,17 @@ public class MenuPrincipal extends javax.swing.JFrame {
             nombreDisco += infoDisco.charAt(c);
         }
         Disco disco = this.emisora.obtenerDisco(nombreDisco);
-        InformacionDisc ventanaInformacion = new InformacionDisc(disco, this.discoComboBoxModel, this.discosListModel, this.emisora);
+        InformacionDisc ventanaInformacion;
+        
+        try {
+            ventanaInformacion = new InformacionDisc(disco, this.discoComboBoxModel, this.discosListModel, this.emisora);
+            ventanaInformacion.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+            ventanaInformacion.setVisible(true);
+        } catch (IOException ex) {
+            Logger.getLogger(MenuPrincipal.class.getName()).log(Level.SEVERE, null, ex);
+        }
 
-        ventanaInformacion.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-        ventanaInformacion.setVisible(true);
+        
     }//GEN-LAST:event_botonVerDiscoActionPerformed
 
     /**
