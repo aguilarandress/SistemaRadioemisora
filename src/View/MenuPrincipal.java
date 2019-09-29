@@ -1257,6 +1257,11 @@ public class MenuPrincipal extends javax.swing.JFrame {
         cargarCancionesDiscoLabel.setText("Cargar canciones para el disco");
 
         cargarCancionesDiscoBtn.setText("Cargar canciones");
+        cargarCancionesDiscoBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cargarCancionesDiscoBtnActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -2013,10 +2018,10 @@ public class MenuPrincipal extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "No hay discos donde agregar la cancion.", "ERROR", JOptionPane.ERROR_MESSAGE);
             return;
         }
-        String nombreDisco = (String) this.discoCancionCombo.getSelectedItem();
-
+        String nombreDisco = (String) this.discoCancionCombo.getSelectedItem().toString();
+        
         Disco disco = this.emisora.obtenerDisco(nombreDisco);
-
+        
         String nombreCancion = this.nombreCancionInput.getText();
         String nombreCantante = this.cantanteCancionInput.getText();
         String generoCancion = this.generoCancionInput.getText();
@@ -2195,7 +2200,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
         }
 
     }//GEN-LAST:event_botonConsultarCancionesCantanteActionPerformed
-
+    
     private void botonAgregarPlaylistActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonAgregarPlaylistActionPerformed
 
         String nombre = this.playlistNombreInput.getText().trim();
@@ -2227,7 +2232,6 @@ public class MenuPrincipal extends javax.swing.JFrame {
                 allCanciones.add((Cancion) cancionActual);
             }
         }
-
         // Revisa todos los discos agregar las del mismo genero 
         for (Disco discoActual : this.emisora.getDiscos()) {
             if (discoActual.getGenero().equals(programaSeleccionado.getGenero())) {
@@ -2268,13 +2272,11 @@ public class MenuPrincipal extends javax.swing.JFrame {
         JOptionPane.showMessageDialog(this, "Playlist creada...", "Exito", JOptionPane.ERROR_MESSAGE);
 
         this.playlistComboBoxModel.addElement(nuevaPlaylist.getNombre());
-
-
     }//GEN-LAST:event_botonAgregarPlaylistActionPerformed
     /**
      * Muesta las canciones de la Playlist seleccionada
      *
-     * @param evt
+     * @param evt El evento generado al utilizar el combo box
      */
     private void playlistsComboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_playlistsComboActionPerformed
         this.cancionesEnPlaylistListModel.removeAllElements();
@@ -2288,6 +2290,44 @@ public class MenuPrincipal extends javax.swing.JFrame {
                     + " | Duracion: " + cancionActual.getDuracion());
         }
     }//GEN-LAST:event_playlistsComboActionPerformed
+    /**
+     * Carga las canciones del archivo excel en el path
+     * @param evt Evento generado al presionar el boton
+     */
+    private void cargarCancionesDiscoBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cargarCancionesDiscoBtnActionPerformed
+        // Validar que existan discos
+        if (this.emisora.getDiscos().isEmpty()) {
+            JOptionPane.showMessageDialog(this, "No se han agregado discos...", "ERROR", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        // Validar input del path
+        if (this.cargarCancionesDiscoInput.getText().isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Por favor ingrese un path...", "ERROR", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        // Cargar path del archivo
+        String filePath = this.cargarCancionesDiscoInput.getText();
+        ExcelReader cancionesExcelData = new ExcelReader(filePath);
+        // Verificar si el archivo se carga correctamente
+        if (!cancionesExcelData.cargarArchivoExcelDisco()) {
+            JOptionPane.showMessageDialog(this, "Path de archivo invalido...", "ERROR", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        // Obtener disco
+        String nombreDisco = this.discoComboBoxModel.getSelectedItem().toString();
+        ArrayList<Cancion> cancionesCargadas = cancionesExcelData.getCancionesDiscoCargadas();
+        // Agregar canciones a los modelos
+        for(Cancion cancionCargada : cancionesCargadas) {
+            // Revisar que la cancion no exista en el disco
+            if(this.emisora.obtenerDisco(nombreDisco).obtenerCancionPorNombre(cancionCargada.getNombre()) == null) {
+                this.cancionesListModel.addElement(cancionCargada.getNombre());
+                this.cancionesActComboBoxModel.addElement(cancionCargada.getNombre());
+                this.emisora.obtenerDisco(nombreDisco).agregarCancion(cancionCargada);
+            }
+        }
+        this.cargarCancionesDiscoInput.setText("");
+        JOptionPane.showMessageDialog(this, "Canciones Cargadas...", "Exito", JOptionPane.INFORMATION_MESSAGE);
+    }//GEN-LAST:event_cargarCancionesDiscoBtnActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel IdLocutorLabel;

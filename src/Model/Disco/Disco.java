@@ -32,6 +32,20 @@ public class Disco {
         this.canciones = new ArrayList<Cancion>();
         
     }
+    
+    /**
+     * Busca una cancion del disco de acuerdo a su nombre
+     * @param nombre El nombre de la cancion que se desea buscar
+     * @return La cancion que se desea buscar
+     */
+    public Cancion obtenerCancionPorNombre(String nombre) {
+        for(Cancion cancion : this.canciones) {
+            if(cancion.getNombre().equals(nombre)) {
+                return cancion;
+            }
+        }
+        return null;
+    }
 
     public String getNombre() {
         return nombre;
