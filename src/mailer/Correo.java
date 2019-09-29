@@ -69,7 +69,7 @@ public class Correo {
                     InternetAddress.parse(toAddress)
             );
             newMessage.setSubject(this.subject);
-            newMessage.setText(this.emailBody);
+            newMessage.setContent(this.emailBody, "text/html");
             Transport.send(newMessage);
             System.out.println("Mensaje enviado");
             return true;
