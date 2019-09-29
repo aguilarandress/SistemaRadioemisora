@@ -34,7 +34,6 @@ public class InformacionPrograma extends javax.swing.JFrame {
         tituloLabel = new javax.swing.JLabel();
         tituloSeparator = new javax.swing.JSeparator();
         nombreLabel = new javax.swing.JLabel();
-        nombreInput = new javax.swing.JTextField();
         horarioLabel = new javax.swing.JLabel();
         horarioInput = new javax.swing.JTextField();
         duracionLabel = new javax.swing.JLabel();
@@ -42,6 +41,7 @@ public class InformacionPrograma extends javax.swing.JFrame {
         generoLabel = new javax.swing.JLabel();
         generoInput = new javax.swing.JTextField();
         actualizarProgramaBtn = new javax.swing.JButton();
+        nombreProgramaLabelShow = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Informacion Programa");
@@ -50,8 +50,6 @@ public class InformacionPrograma extends javax.swing.JFrame {
         tituloLabel.setText("Informacion del programa");
 
         nombreLabel.setText("Nombre:");
-
-        nombreInput.setText(this.programaSeleccionado.getNombre());
 
         horarioLabel.setText("Horario:");
 
@@ -79,6 +77,8 @@ public class InformacionPrograma extends javax.swing.JFrame {
             }
         });
 
+        nombreProgramaLabelShow.setText(this.programaSeleccionado.getNombre());
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -91,7 +91,7 @@ public class InformacionPrograma extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(nombreLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(nombreInput, javax.swing.GroupLayout.PREFERRED_SIZE, 310, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(nombreProgramaLabelShow))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(horarioLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -117,7 +117,7 @@ public class InformacionPrograma extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(nombreLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(nombreInput, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(nombreProgramaLabelShow))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(horarioInput, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -132,7 +132,7 @@ public class InformacionPrograma extends javax.swing.JFrame {
                     .addComponent(generoLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(actualizarProgramaBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(36, Short.MAX_VALUE))
+                .addContainerGap(44, Short.MAX_VALUE))
         );
 
         pack();
@@ -144,12 +144,11 @@ public class InformacionPrograma extends javax.swing.JFrame {
      */
     private void actualizarProgramaBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_actualizarProgramaBtnActionPerformed
         // Obtener datos
-        String nombre = this.nombreInput.getText();
         String horario = this.horarioInput.getText();
         String duracionStr = this.duracionInput.getText();
         String genero = this.generoInput.getText();
         // Validar campos vacios
-        if(nombre.isEmpty() || horario.isEmpty() || duracionStr.isEmpty() || genero.isEmpty()) {
+        if(horario.isEmpty() || duracionStr.isEmpty() || genero.isEmpty()) {
             JOptionPane.showMessageDialog(this, "No hay discos creados.", "ERROR", JOptionPane.ERROR_MESSAGE);
             return;
         }
@@ -157,7 +156,6 @@ public class InformacionPrograma extends javax.swing.JFrame {
         this.programasListModel.removeElement(this.programaSeleccionado.toString());
         this.programasComboBoxModel.removeElement(this.programaSeleccionado.getNombre());
         // Asignar nuevos valores
-        this.programaSeleccionado.setNombre(nombre);
         this.programaSeleccionado.setHorario(horario);
         this.programaSeleccionado.setDuracion(Integer.parseInt(duracionStr));
         this.programaSeleccionado.setGenero(genero);
@@ -188,8 +186,8 @@ public class InformacionPrograma extends javax.swing.JFrame {
     private javax.swing.JLabel generoLabel;
     private javax.swing.JTextField horarioInput;
     private javax.swing.JLabel horarioLabel;
-    private javax.swing.JTextField nombreInput;
     private javax.swing.JLabel nombreLabel;
+    private javax.swing.JLabel nombreProgramaLabelShow;
     private javax.swing.JLabel tituloLabel;
     private javax.swing.JSeparator tituloSeparator;
     // End of variables declaration//GEN-END:variables
