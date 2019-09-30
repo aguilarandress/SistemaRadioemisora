@@ -190,7 +190,7 @@ public class InformacionPrograma extends javax.swing.JFrame {
                 " | Horario: " + programaSeleccionado.getHorario() + 
                 " | Duracion: "  + programaSeleccionado.getDuracion() + 
                 " | Genero: " + programaSeleccionado.getGenero());
-        
+        JOptionPane.showMessageDialog(this, "Programa actualizado.", "Exito", JOptionPane.INFORMATION_MESSAGE);
         this.dispose();
     }//GEN-LAST:event_actualizarProgramaBtnActionPerformed
     

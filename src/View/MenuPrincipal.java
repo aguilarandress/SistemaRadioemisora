@@ -1770,6 +1770,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
         this.programasListModel.addElement(programaSeleccionado.getNombre()
                 + " |Genero: " + programaSeleccionado.getGenero()
                 + " |Locutor: " + locutorSeleccionado.getNombre());
+        JOptionPane.showMessageDialog(this, "Se ha asignado el locutor al programa.", "Exito", JOptionPane.INFORMATION_MESSAGE);
     }//GEN-LAST:event_botonAsignarLocutorActionPerformed
 
     private void programasLocutoresComboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_programasLocutoresComboActionPerformed
@@ -2294,7 +2295,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
                 + " | Genero: " + nuevaPlaylist.getGenero()
                 + " | Duracion: " + nuevaPlaylist.getDuracion());
 
-        JOptionPane.showMessageDialog(this, "Playlist creada...", "Exito", JOptionPane.ERROR_MESSAGE);
+        JOptionPane.showMessageDialog(this, "Playlist creada...", "Exito", JOptionPane.INFORMATION_MESSAGE);
 
         this.playlistComboBoxModel.addElement(nuevaPlaylist.getNombre());
         
