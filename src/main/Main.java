@@ -5,8 +5,11 @@ import View.MenuPrincipal;
 import javax.swing.UIManager;
 
 /**
- *
- * @author Andres
+ * Corre el programa
+ * 
+ * @author Andres Aguilar
+ * @author Kenneth Sanchez
+ * @author Fabian Vargas
  */
 public class Main {
 

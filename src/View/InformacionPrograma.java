@@ -7,10 +7,13 @@ import javax.swing.DefaultComboBoxModel;
 import javax.swing.JOptionPane;
 
 /**
- *
+ * Ventanilla que surge de Menu Principal para mostrar informacion de un Programa
+ * 
+ * @since 1.0
  * @author Fabian Vargas
  * @author Andres Aguilar
  * @author Kenneth Sanchez
+ * @version 1.0
  */
 public class InformacionPrograma extends javax.swing.JFrame {
     
@@ -22,13 +25,21 @@ public class InformacionPrograma extends javax.swing.JFrame {
     
     private DefaultComboBoxModel programasComboBoxModel;
     
-    public InformacionPrograma(RadioEmisora emisora, Programa programaSeleccionado, 
-            DefaultListModel programasListModel, DefaultComboBoxModel programasComboBoxModel,
+    /**
+     * Constructor de nueva ventana
+     * @param pEmisora Emisora actual
+     * @param pProgramaSeleccionado Programa del cual se quiere ver la informacion
+     * @param pProgramasListModel Modelo de lista en la cual se vera la informacion en MenuPrincipal
+     * @param pProgramasComboBoxModel Modelo de ComboBox en el cual se vera la informacion en MenuPrincipal
+     * @param pProgramasDeEmisoraListModel Modelo de lista en la cual se vera la informacion en MenuPrincipal
+     */
+    public InformacionPrograma(RadioEmisora pEmisora, Programa pProgramaSeleccionado, 
+            DefaultListModel pProgramasListModel, DefaultComboBoxModel pProgramasComboBoxModel,
             DefaultListModel pProgramasDeEmisoraListModel) {        
-        this.emisora = emisora;
-        this.programaSeleccionado = programaSeleccionado;
-        this.programasListModel = programasListModel;
-        this.programasComboBoxModel = programasComboBoxModel;
+        this.emisora = pEmisora;
+        this.programaSeleccionado = pProgramaSeleccionado;
+        this.programasListModel = pProgramasListModel;
+        this.programasComboBoxModel = pProgramasComboBoxModel;
         this.programasDeEmisoraListModel = pProgramasDeEmisoraListModel; 
         
         initComponents();

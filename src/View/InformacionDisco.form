@@ -137,7 +137,7 @@
     <Component class="javax.swing.JTextField" name="anioDiscoInput">
       <Properties>
         <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-          <Connection code="Integer.toString(this.disco.getA&#xf1;o())&#xd;&#xa;" type="code"/>
+          <Connection code="Integer.toString(this.disco.getAnio())&#xa;    " type="code"/>
         </Property>
       </Properties>
       <Events>

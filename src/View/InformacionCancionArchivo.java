@@ -11,8 +11,14 @@ import javax.swing.DefaultComboBoxModel;
 import javax.swing.JOptionPane;
 
 /**
- *
- * @author kenne
+ * Ventanilla que surge de Menu Principal para mostrar informacion de una cancion
+ * de archivo
+ * 
+ * @since 1.0
+ * @author Kenneth Sanchez
+ * @author Fabian Vargas
+ * @author Andres Aguilar
+ * @version 1.0
  */
 public class InformacionCancionArchivo extends javax.swing.JFrame {
 
@@ -23,7 +29,11 @@ public class InformacionCancionArchivo extends javax.swing.JFrame {
     
     
     /**
-     * Creates new form InformacionCancion
+     * Crea una nueva ventana con la informacion de la cancion
+     * @param pCancion Cancion de la cual se muestra la informacion
+     * @param pCancionArchivoComboBoxModel Modelo de combobox donde se mostrara la informacion
+     * en MenuPrincipal
+     * @param pEmisora Emisora actual
      */
     public InformacionCancionArchivo(CancionArchivo pCancion,
             DefaultComboBoxModel pCancionArchivoComboBoxModel,
@@ -193,7 +203,7 @@ public class InformacionCancionArchivo extends javax.swing.JFrame {
     
     /**
      * Actualiza los datos de la cancion
-     * @param evt 
+     * @param evt Evento que se activa a la hora de presionar el boton
      */
     private void botonActualizarCancionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonActualizarCancionActionPerformed
         String album = this.albumCancionInput.getText();
@@ -224,7 +234,7 @@ public class InformacionCancionArchivo extends javax.swing.JFrame {
     
     /**
      * Solo permite que se digiten digitos
-     * @param evt 
+     * @param evt Evento que se activa a la hora de digitar
      */
     private void duracionCancionInputKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_duracionCancionInputKeyTyped
         char c = evt.getKeyChar();
@@ -233,6 +243,10 @@ public class InformacionCancionArchivo extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_duracionCancionInputKeyTyped
 
+    /**
+     * Elimina la cancion del sistem
+     * @param evt Evento que se activa a la hora de presionar el boton
+     */
     private void botonEliminarCancionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonEliminarCancionActionPerformed
         
         String nombre = this.cancion.getNombre();

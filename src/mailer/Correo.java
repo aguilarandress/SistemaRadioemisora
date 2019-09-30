@@ -8,7 +8,9 @@ import java.util.Properties;
 /**
  * Clase para enviar correos electronicos a otros usuarios
  *
+ * @since 1.0
  * @author Andres
+ * @version 1.0
  */
 public class Correo {
 

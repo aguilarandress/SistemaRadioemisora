@@ -18,24 +18,35 @@ import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
 /**
- *
+ * Ventanilla que surge de Menu Principal para mostrar informacion de un disco
+ * 
+ * @since 1.0
  * @author Fabian Vargas
  * @author Andres Aguilar
  * @author Kenneth Sanchez
+ * @version 1.0
  */
-public class InformacionDisc extends javax.swing.JFrame {
+public class InformacionDisco extends javax.swing.JFrame {
     Disco disco;
     RadioEmisora emisora;
     DefaultComboBoxModel comboBoxModel;
     DefaultListModel listaDiscosModel;
+    
     /**
-     * Creates new form InformacionDisc
+     * Crea una nueva ventana, con una imagen por defecto si no se especifica el
+     * PATH de la imagen del Disco o si el PATH no es valido.
+     * @param pDisco
+     * @param pComboDiscos
+     * @param pListaDiscos
+     * @param pEmisora
+     * @throws IOException 
      */
-    public InformacionDisc(Disco disco, DefaultComboBoxModel comboDiscos, DefaultListModel listaDiscos, RadioEmisora emisora) throws IOException {
-        this.disco = disco;
-        this.emisora = emisora;
-        this.comboBoxModel = comboDiscos;
-        this.listaDiscosModel = listaDiscos;
+    public InformacionDisco(Disco pDisco, DefaultComboBoxModel pComboDiscos, 
+            DefaultListModel pListaDiscos, RadioEmisora pEmisora) throws IOException {
+        this.disco = pDisco;
+        this.emisora = pEmisora;
+        this.comboBoxModel = pComboDiscos;
+        this.listaDiscosModel = pListaDiscos;
         
         initComponents();
         
@@ -86,7 +97,7 @@ public class InformacionDisc extends javax.swing.JFrame {
 
         generoDiscoInput.setText(this.disco.getGenero());
 
-        anioDiscoInput.setText(Integer.toString(this.disco.getAño())
+        anioDiscoInput.setText(Integer.toString(this.disco.getAnio())
         );
         anioDiscoInput.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
@@ -191,6 +202,10 @@ public class InformacionDisc extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    /**
+     * Actualiza la informacion del Disco
+     * @param evt Evento que se activa a la hora de presionar el boton
+     */
     private void actualizarBotonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_actualizarBotonActionPerformed
 
         String cantante = this.cantanteDiscoInput.getText();
@@ -210,7 +225,7 @@ public class InformacionDisc extends javax.swing.JFrame {
         int anio = Integer.parseInt(anioStr);
         this.disco.setCantante(cantante);
         this.disco.setGenero(genero);
-        this.disco.setAño(anio);
+        this.disco.setAnio(anio);
         this.disco.setUbicacionFisica(ubicacion);
         this.disco.setImagen(imagen);
         
@@ -220,6 +235,7 @@ public class InformacionDisc extends javax.swing.JFrame {
         JOptionPane.showMessageDialog(this, "Se ha actualizado el disco.", "Exito", JOptionPane.INFORMATION_MESSAGE);
         this.dispose();
     }//GEN-LAST:event_actualizarBotonActionPerformed
+      
         /**
          * Permite unicamente digitar numeros en el input de año.
          * @param evt 
@@ -228,9 +244,10 @@ public class InformacionDisc extends javax.swing.JFrame {
         char c = evt.getKeyChar();
         if(c<'0' || c > '9') evt.consume();
     }//GEN-LAST:event_anioDiscoInputKeyTyped
+    
     /**
      * Verificar que exista una imagen en el path dado.
-     * @return 
+     * @return true si la imagen existe, false de lo contrario
      */
     public boolean verificarImagen() {
         String filepath = this.disco.getImagen();

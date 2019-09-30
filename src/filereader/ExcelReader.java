@@ -7,7 +7,10 @@ import Model.Cancion.Cancion;
 
 /**
  * Clase para leer archivos Excel y cargarlos a memoria
- * @author Andres
+ * 
+ * @since 1.0
+ * @author Andres Aguilar
+ * @version 1.0
  */
 public class ExcelReader {
     

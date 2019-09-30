@@ -26,10 +26,13 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
- *
+ * Menu principal con el cual el usuario interactua
+ * 
+ * @since 1.0
  * @author Andres Aguilar
  * @author Fabian Vargas
  * @author Kenneth Sanchez
+ * @version 1.0
  */
 public class MenuPrincipal extends javax.swing.JFrame {
 
@@ -1535,6 +1538,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
     private void direccionFisicaInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_direccionFisicaInputActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_direccionFisicaInputActionPerformed
+   
     /**
      * Evento para actualizar la informacion de la radio emisora Las ventanillas
      * se abilitaran hasta que la informacion se ingrese
@@ -1668,7 +1672,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
     /**
      * Crea un programa y lo muestra en pantalla
      *
-     * @param evt
+     * @param evt Evento realizado a la hora de presionar el boton
      */
     private void botonCrearNuevoProgramaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonCrearNuevoProgramaActionPerformed
         String nombre = this.programaNombreInput.getText().trim();
@@ -1725,7 +1729,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
     /**
      * Asiga un locutor seleccionado al programa
      *
-     * @param evt
+     * @param evt Evento realizado a la hora de presionar el boton
      */
     private void botonAsignarLocutorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonAsignarLocutorActionPerformed
 
@@ -1804,17 +1808,14 @@ public class MenuPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_botonVerInfoLocutorMouseClicked
         /**
          * Permite unicamente digitar numeros en el input de la duración del programa.
-         * @param evt 
+         * @param evt Evento realizado a la hora de digitar 
          */
     private void programaDuracionInputKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_programaDuracionInputKeyTyped
-        char c = evt.getKeyChar();
-        if (c < '0' || c > '9') {
-            evt.consume();
-        }
+        this.digitarNumeros(evt);
     }//GEN-LAST:event_programaDuracionInputKeyTyped
         /**
          * Crea un disco nuevo con los datos indicados por el usuario
-         * @param evt 
+         * @param evt Evento que se activa a la hora de presionar el boton
          */
     private void botonCrearDiscoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonCrearDiscoActionPerformed
         String nombre = this.nombreDiscoTextField.getText().trim();
@@ -1863,19 +1864,16 @@ public class MenuPrincipal extends javax.swing.JFrame {
     /**
      * Unicamente se permite digitar numeros en el textField de año;
      *
-     * @param evt
+     * @param evt Evento que se activa a la hora de digitar
      */
     private void anioDiscoTextFieldKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_anioDiscoTextFieldKeyTyped
-        char c = evt.getKeyChar();
-        if (c < '0' || c > '9') {
-            evt.consume();
-        }
+        this.digitarNumeros(evt);
     }//GEN-LAST:event_anioDiscoTextFieldKeyTyped
 
     /**
      * Actualizar la informacion del disco seleccionado en el comboBox
      *
-     * @param evt
+     * @param evt Evento que se activa a la hora de presionar el boton
      */
     private void botonVerDiscoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonVerDiscoActionPerformed
         if (this.emisora.getDiscos().isEmpty()) {
@@ -1884,10 +1882,10 @@ public class MenuPrincipal extends javax.swing.JFrame {
         }
         String nombreDisco = (String) this.discoComboBoxModel.getSelectedItem();
         Disco disco = this.emisora.obtenerDisco(nombreDisco);
-        InformacionDisc ventanaInformacion;
+        InformacionDisco ventanaInformacion;
 
         try {
-            ventanaInformacion = new InformacionDisc(disco, this.discoComboBoxModel, this.discosListModel, this.emisora);
+            ventanaInformacion = new InformacionDisco(disco, this.discoComboBoxModel, this.discosListModel, this.emisora);
             ventanaInformacion.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
             ventanaInformacion.setVisible(true);
         } catch (IOException ex) {
@@ -1925,7 +1923,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
     /**
      * Permite ver la información de la canción
      *
-     * @param evt
+     * @param evt Evento que se activa a la hora de presionar el boton
      */
     private void verInformacionCancionArchivoBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_verInformacionCancionArchivoBtnActionPerformed
         // Validaciones 
@@ -1947,7 +1945,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
     /**
      * Agrega una cancion a la emisora
      *
-     * @param evt
+     * @param evt Evento que se activa a la hora de presionar el boton
      */
     private void agregarCancionArchivoBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_agregarCancionArchivoBtnActionPerformed
 
@@ -1991,13 +1989,10 @@ public class MenuPrincipal extends javax.swing.JFrame {
     /**
      * Solo permite digitar digitos
      *
-     * @param evt
+     * @param evt Evento que se activa a la hora de digitar
      */
     private void cancionArchivoDuracionInputKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_cancionArchivoDuracionInputKeyTyped
-        char c = evt.getKeyChar();
-        if (c < '0' || c > '9') {
-            evt.consume();
-        }
+        this.digitarNumeros(evt);
     }//GEN-LAST:event_cancionArchivoDuracionInputKeyTyped
 
     private void nombreCancionInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nombreCancionInputActionPerformed
@@ -2009,10 +2004,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_duracionCancionInputActionPerformed
 
     private void duracionCancionInputKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_duracionCancionInputKeyTyped
-        char c = evt.getKeyChar();
-        if (c > '9' || c < '0') {
-            evt.consume();
-        }
+        this.digitarNumeros(evt);
     }//GEN-LAST:event_duracionCancionInputKeyTyped
 
     private void listaDiscoComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_listaDiscoComboBoxActionPerformed
@@ -2021,7 +2013,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
         /**
          * Añade una cancion a un disco seleccionado si es que existe alguno, de lo contrario emite un 
          * mensaje de error
-         * @param evt 
+         * @param evt Evento que se activa al presiona un boton
          */
     private void botonAgregarCancionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonAgregarCancionActionPerformed
         if (emisora.getDiscos().isEmpty()) {
@@ -2092,7 +2084,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
         /**
          * Actualiza la lista de canciones y el comboBox de canciones al seleccionar un disco
          * o agregar una cancion nueva.
-         * @param evt 
+         * @param evt Evento que se activa al seleccionar un elemento diferente del ComboBox
          */
     private void seleccionarDiscoComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_seleccionarDiscoComboBoxActionPerformed
         String nombreDisco = (String) this.seleccionarDiscoComboBox.getSelectedItem();
@@ -2113,7 +2105,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
         /**
          * Verifica que existan canciones en el disco seleccionado, de haber, llama una nueva ventana
          * en la cual se edita la cancion
-         * @param evt 
+         * @param evt Evento que se activa a la hora de presionar el boton
          */
     private void editarCancionBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editarCancionBtnActionPerformed
         if (this.discoCancionComboBoxModel.getSize() <= 0) {
@@ -2150,6 +2142,10 @@ public class MenuPrincipal extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_cancionPorGeneroInputActionPerformed
 
+    /**
+     * Muesta las canciones consultadas por genero
+     * @param evt Evento que se activa a la hora de presionar el boton
+     */
     private void botonConsultarCancionesGeneroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonConsultarCancionesGeneroActionPerformed
         // Limpia la lista
         this.cancionesPorGenero.removeAllElements();
@@ -2185,6 +2181,10 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
     }//GEN-LAST:event_botonConsultarCancionesGeneroActionPerformed
 
+    /**
+     * Muesta las canciones consultadas por cantante
+     * @param evt Evento que se activa a la hora de presionar el boton
+     */
     private void botonConsultarCancionesCantanteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonConsultarCancionesCantanteActionPerformed
         // Limpia la lista
         this.cancionesPorCantante.removeAllElements();
@@ -2219,6 +2219,10 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
     }//GEN-LAST:event_botonConsultarCancionesCantanteActionPerformed
     
+    /**
+     * Crea una nueva Playlist
+     * @param evt Evento que se activa a la hora de presionar el boton
+     */
     private void botonAgregarPlaylistActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonAgregarPlaylistActionPerformed
 
         String nombre = this.playlistNombreInput.getText().trim();
@@ -2294,6 +2298,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
         // Enviar correo
         programaSeleccionado.enviarCorreoPlayList();
     }//GEN-LAST:event_botonAgregarPlaylistActionPerformed
+    
     /**
      * Muesta las canciones de la Playlist seleccionada
      *
@@ -2311,6 +2316,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
                     + " | Duracion: " + cancionActual.getDuracion());
         }
     }//GEN-LAST:event_playlistsComboActionPerformed
+   
     /**
      * Carga las canciones del archivo excel en el path
      * @param evt Evento generado al presionar el boton
@@ -2350,6 +2356,17 @@ public class MenuPrincipal extends javax.swing.JFrame {
         JOptionPane.showMessageDialog(this, "Canciones Cargadas...", "Exito", JOptionPane.INFORMATION_MESSAGE);
     }//GEN-LAST:event_cargarCancionesDiscoBtnActionPerformed
 
+    /**
+     * Solo permite le permite al usuario digitar numeros
+     * @param evt Evento que se activa a la hora de digitar
+     */
+    public void digitarNumeros(java.awt.event.KeyEvent evt) {
+        char c = evt.getKeyChar();
+        if (c < '0' || c > '9') {
+            evt.consume();
+        }
+    }
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel IdLocutorLabel;
     private javax.swing.JComboBox actualizarCancionArchivoComboBox;

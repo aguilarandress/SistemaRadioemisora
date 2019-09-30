@@ -16,10 +16,13 @@ import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
 /**
- *
+ * Ventanilla que surge de Menu Principal para mostrar informacion de un Locutor
+ * 
+ * @since 1.0
  * @author Kenneth Sanchez
  * @author Andres Aguilar
  * @author Fabian Vargas
+ * @version 1.0
  */
 public class InformacionLocutor extends javax.swing.JFrame {
     private JButton botonVerInfoLocutor;
@@ -30,8 +33,17 @@ public class InformacionLocutor extends javax.swing.JFrame {
     private DefaultComboBoxModel locutoresProgramasComboBoxModel;
     private DefaultListModel programasListModel;
     private DefaultListModel locutoresDeEmisoraListModel;
+    
     /**
-     * Creates new form InformacionLocutor
+     * Construtor de ventana InformacionLocutor
+     * @param pVerInfoLocutor Boton utilizado para activar la ventana en MenuPrincipal
+     * @param pLocutor Locutor del cual se quiere ver informacion
+     * @param pEmisora Emisora actual
+     * @param pLocutoresListModel Modelo de lista en el cual se mostrara la informacion en MenuPrincipal
+     * @param pLocutoresComboBoxModel Modelo del combobox en el cual se mostrara la informacion en MenuPrincipal
+     * @param pLocutoresProgramasComboBoxModel Modelo del combobox en el cual se mostrara la informacion en MenuPrincipal
+     * @param pProgramasListModel Modelo de lista en el cual se mostrara la informacion en MenuPrincipal
+     * @param pLocutoresDeEmisoraListModel Modelo de lista en el cual se mostrara la informacion en MenuPrincipal
      */
     public InformacionLocutor(JButton pVerInfoLocutor, Locutor pLocutor, RadioEmisora pEmisora,
             DefaultListModel pLocutoresListModel, DefaultComboBoxModel pLocutoresComboBoxModel,
@@ -253,7 +265,7 @@ public class InformacionLocutor extends javax.swing.JFrame {
     
     /**
      * Rehabilita el menu principal si se cierra la ventana
-     * @param evt 
+     * @param evt Evento que se activa a la hora de cerrar la ventana
      */
     private void formWindowClosed(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosed
         botonVerInfoLocutor.setEnabled(true);
@@ -261,7 +273,7 @@ public class InformacionLocutor extends javax.swing.JFrame {
 
     /**
      * Actualiza la información del locutor
-     * @param evt 
+     * @param evt Evento que se activa a la hora de presionar el boton
      */
     private void botonActualizarInfoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonActualizarInfoActionPerformed
         // Reactiva el boton de actualizar informacion
@@ -340,7 +352,7 @@ public class InformacionLocutor extends javax.swing.JFrame {
     
     /**
      * Elimina al locutor del sistema
-     * @param evt 
+     * @param evt Evento que se activa a la hora de presionar el boton
      */
     private void botonEliminarLocutorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonEliminarLocutorActionPerformed
         // Reactiva el boton de actualizar informacion
@@ -372,7 +384,7 @@ public class InformacionLocutor extends javax.swing.JFrame {
     
     /**
      * Actualiza la lista de programas si se elimina el locutor
-     * @param mensaje 
+     * @param mensaje STRING para cambiar el Nombre por un mensaje
      */
     public void actualizarProgramas(String mensaje) {
         ArrayList<Programa> programas = this.emisora.getProgramas();
@@ -396,8 +408,8 @@ public class InformacionLocutor extends javax.swing.JFrame {
     
     /**
      * Actualzia la lista de programas si se cambia el nombre del locutor
-     * @param nombreNuevo
-     * @param nombreOriginal 
+     * @param nombreNuevo Nombre que cambiara
+     * @param nombreOriginal Nombre que tenia antes
      */
     public void actualizarProgramas(String nombreNuevo, String nombreOriginal) {
         ArrayList<Programa> programas = this.emisora.getProgramas();

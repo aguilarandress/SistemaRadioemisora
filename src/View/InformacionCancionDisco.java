@@ -10,10 +10,14 @@ import javax.swing.DefaultListModel;
 import javax.swing.JOptionPane;
 
 /**
+ * Ventanilla que surge de Menu Principal para mostrar informacion de una Cancion
+ * de disco
  *
+ * @since 1.0
  * @author Fabian Vargas
  * @author Andres Aguilar
  * @author Kenneth Sanchez
+ * @version 1.0
  */
 public class InformacionCancionDisco extends javax.swing.JFrame {
     
@@ -23,17 +27,20 @@ public class InformacionCancionDisco extends javax.swing.JFrame {
     private Cancion cancion;
    
     /**
-     * Crea una nueva ventana
-     * @param main
-     * @param cancionesCombo
-     * @param listaCancionesModel
-     * @param cancion 
+     * Crea una nueva ventana en la cual se vera la informacion de la cancion de Disco
+     * @param pMain MenuPrincipal
+     * @param pCancionesCombo Modelo de ComboBox en el cual se mostrara la informacion
+     * en MenuPrincipal
+     * @param pListaCancionesModel Modelo de Lista en el cual se mostrara la informacion
+     * en MenuPrincipal
+     * @param pCancion Cancion de la que se vera la informacion
      */
-    public InformacionCancionDisco(MenuPrincipal main, DefaultComboBoxModel cancionesCombo, DefaultListModel listaCancionesModel, Cancion cancion) {
-        this.main = main;
-        this.cancionesCombo = cancionesCombo;
-        this.listaCanciones = listaCancionesModel;
-        this.cancion = cancion;
+    public InformacionCancionDisco(MenuPrincipal pMain, DefaultComboBoxModel pCancionesCombo, 
+            DefaultListModel pListaCancionesModel, Cancion pCancion) {
+        this.main = pMain;
+        this.cancionesCombo = pCancionesCombo;
+        this.listaCanciones = pListaCancionesModel;
+        this.cancion = pCancion;
         initComponents();
         
     }
@@ -154,9 +161,10 @@ public class InformacionCancionDisco extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+ 
     /**
      * Actualiza la cancion, y la lista de canciones del disco.
-     * @param evt 
+     * @param evt Evento que se activa a la hora de presionar el boton
      */
     private void botonActualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonActualizarActionPerformed
         String cantante = this.cantanteInput.getText(); // Nombre a colocar
@@ -192,9 +200,10 @@ public class InformacionCancionDisco extends javax.swing.JFrame {
     private void generoInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_generoInputActionPerformed
         // TODO add your handlinnombreLabelhere:
     }//GEN-LAST:event_generoInputActionPerformed
+  
     /**
      * Unicamente permite digitar numeros en el input de  duracion
-     * @param evt 
+     * @param evt Evento que se activa a la hora de digitar
      */
     private void duracionInputKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_duracionInputKeyTyped
         char c = evt.getKeyChar();

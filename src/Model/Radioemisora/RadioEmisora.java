@@ -8,10 +8,13 @@ import Model.Playlist.PlayList;
 import java.util.ArrayList;
 
 /**
- *
+ * Clase responsable de crear radioemisoras
+ * 
+ * @since 1.0
  * @author Fabian Vargas
  * @author Andres Aguilar
  * @author Kenneth Sanchez
+ * @version 1.0
  */
 public class RadioEmisora {
 
@@ -28,62 +31,118 @@ public class RadioEmisora {
     
     private ArrayList<CancionArchivo> cancionesArchivo;
 
-    public RadioEmisora(String nombre, String direccionFisica,
-            String frecuencia, String urlSitioWeb) {
-        this.nombre = nombre;
-        this.direccionFisica = direccionFisica;
-        this.frecuencia = frecuencia;
-        this.urlSitioWeb = urlSitioWeb;
+    /**
+     * Constructor de RadioEmisora
+     * @param pNombre Nombre de la RadioEmisora
+     * @param pDireccionFisica Direccion de dónde está ubicada la RadioEmisora
+     * @param pFrecuencia Frecuencia por la cual transimitirá la RadioEmisora
+     * @param pUrlSitioWeb Url del sitio web de la RadioEmisora
+     */
+    public RadioEmisora(String pNombre, String pDireccionFisica,
+            String pFrecuencia, String pUrlSitioWeb) {
+        this.nombre = pNombre;
+        this.direccionFisica = pDireccionFisica;
+        this.frecuencia = pFrecuencia;
+        this.urlSitioWeb = pUrlSitioWeb;
         this.locutores = new ArrayList<Locutor>();
         this.programas = new ArrayList<Programa>();
         this.discos = new ArrayList<Disco>();
         this.cancionesArchivo = new ArrayList<CancionArchivo>();
     }
     
+    /**
+     * Obtiene le nombre de la instancia de RadioEmisora
+     * @return nombre
+     */
     public String getNombre() {
         return nombre;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    /**
+     * Cambia el nombre de la instancia de RadioEmisora
+     * @param pNombre Nuevo nombre de la RadioEmisora
+     */
+    public void setNombre(String pNombre) {
+        this.nombre = pNombre;
     }
 
+    /**
+     * Obtiene la direccion fisica de la instancia de RadioEmisora
+     * @return direccionFisica
+     */
     public String getDireccionFisica() {
         return direccionFisica;
     }
 
-    public void setDireccionFisica(String direccionFisica) {
-        this.direccionFisica = direccionFisica;
+    /**
+     * Cambia la direccion fisica de la instancia de RadioEmisora
+     * @param pDireccionFisica Nueva dirección física de la RadioEmisora
+     */
+    public void setDireccionFisica(String pDireccionFisica) {
+        this.direccionFisica = pDireccionFisica;
     }
 
+    /**
+     * Obtiene la frecuencia de la instancia de RadioEmisora
+     * @return frecuencia
+     */
     public String getFrecuencia() {
         return frecuencia;
     }
 
-    public void setFrecuencia(String frecuencia) {
-        this.frecuencia = frecuencia;
+    /**
+     * Cambia la frecuencia de la instancia de RadioEmisora
+     * @param pFrecuencia Nueva frecuencia de la RadioEmisora
+     */
+    public void setFrecuencia(String pFrecuencia) {
+        this.frecuencia = pFrecuencia;
     }
 
+    /**
+     * Obtiene el url del sitio web de la instancia de RadioEmisora
+     * @return urlSitioWeb
+     */
     public String getUrlSitioWeb() {
         return urlSitioWeb;
     }
 
-    public void setUrlSitioWeb(String urlSitioWeb) {
-        this.urlSitioWeb = urlSitioWeb;
+    /**
+     * Cambia el url del sitio web de la instancia de RadioEmisora
+     * @param pUrlSitioWeb Nuevo url de la RadioEmisora
+     */
+    public void setUrlSitioWeb(String pUrlSitioWeb) {
+        this.urlSitioWeb = pUrlSitioWeb;
     }
-
+    
+    /**
+     * Obtiene los locutores de la instancia de RadioEmisora en forma de ArrayList
+     * @return locutores
+     */
     public ArrayList getLocutores() {
         return locutores;
     }
 
+    /**
+     * Obtiene los programas de la instancia de RadioEmisora en forma de ArrayList
+     * @return programas
+     */
     public ArrayList getProgramas() {
         return programas;
     }
-
+    
+    /**
+     * Obtiene los discos de la instancia de RadioEmisora en forma de ArrayList
+     * @return discos
+     */
     public ArrayList<Disco> getDiscos() {
         return this.discos;
     }
     
+    /**
+     * Obtiene las canciones de archivo de la instancia de RadioEmisora en forma 
+     * de ArrayList
+     * @return cancionesArchivo
+     */
     public ArrayList<CancionArchivo> getCancionesArchivo() {
         return this.cancionesArchivo;
     }
@@ -126,7 +185,7 @@ public class RadioEmisora {
      * Verifica si el nombre del programa se encuentra repetido
      * 
      * @param nombreCancion El nombre de la cancion que se deasea verificar
-     * @return 
+     * @return true si la cancion es repetida, false si no lo es
      */
     public boolean verificarCancionArchivoRepetida(String nombreCancion) {
         if (this.cancionesArchivo.isEmpty()) return false;
@@ -188,8 +247,8 @@ public class RadioEmisora {
     /**
      * Obtiene una playlist buscandola por nombre
      * 
-     * @param pNombre
-     * @return 
+     * @param pNombre Nombre de la playlist que se está buscando
+     * @return PlayList si se encuentra una con el nombre, null de lo contrario
      */
     public PlayList obtenerPlaylist(String pNombre) {
         
@@ -203,7 +262,7 @@ public class RadioEmisora {
     }
     
     /**
-     * 
+     * Obtiene una cancion de archivo por nombre
      * @param pNombre
      * @return La cancion de archivo encontrada, null si no lo encuentra
      */
@@ -219,16 +278,16 @@ public class RadioEmisora {
     /**
      * Agrega un programa nuevo a la radioemisora
      *
-     * @param programaNuevo Programa nuevo que se desea agregar
+     * @param pProgramaNuevo Programa nuevo que se desea agregar
      */
-    public void agregarPrograma(Programa programaNuevo) {
-        this.programas.add(programaNuevo);
+    public void agregarPrograma(Programa pProgramaNuevo) {
+        this.programas.add(pProgramaNuevo);
     }
     
     /**
      * Agrega una cancion a la radioemisora
      * 
-     * @param pCancion 
+     * @param pCancion Cancion que se va a añadir
      */
     public void agregarCancionArchivo(CancionArchivo pCancion) {
         this.cancionesArchivo.add(pCancion);
@@ -238,21 +297,21 @@ public class RadioEmisora {
     /**
      * Agrega un nuevo disco a la lista de discos
      *
-     * @param discoNuevo El disco nuevo que se desea agregar
+     * @param pDiscoNuevo El disco nuevo que se desea agregar
      */
-    public void agregarDisco(Disco discoNuevo) {
-        this.discos.add(discoNuevo);
+    public void agregarDisco(Disco pDiscoNuevo) {
+        this.discos.add(pDiscoNuevo);
     }
 
     /**
      * Obtiene un programa de acuerdo a su nombre
      *
-     * @param nombre Un string con el nombre del programa
+     * @param pNombre Un string con el nombre del programa
      * @return El objeto del programa o un valor null en caso de no encontrarlo
      */
-    public Programa obtenerProgramaPorNombre(String nombre) {
+    public Programa obtenerProgramaPorNombre(String pNombre) {
         for (int i = 0; i < this.programas.size(); i++) {
-            if (this.programas.get(i).getNombre().equals(nombre)) {
+            if (this.programas.get(i).getNombre().equals(pNombre)) {
                 return this.programas.get(i);
             }
         }
