@@ -40,7 +40,7 @@ public class InformacionPrograma extends javax.swing.JFrame {
         this.programaSeleccionado = pProgramaSeleccionado;
         this.programasListModel = pProgramasListModel;
         this.programasComboBoxModel = pProgramasComboBoxModel;
-        this.programasDeEmisoraListModel = pProgramasDeEmisoraListModel; 
+        this.programasDeEmisoraListModel = pProgramasDeEmisoraListModel;
         
         initComponents();
     }
