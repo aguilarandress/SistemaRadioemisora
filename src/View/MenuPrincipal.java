@@ -1551,7 +1551,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
             }
         });
 
-        botonReproducir.setText("jButton1");
+        botonReproducir.setText("Reproducir");
         botonReproducir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botonReproducirActionPerformed(evt);
@@ -2405,7 +2405,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
                 break;
             } else if (allCanciones.isEmpty() && nuevaPlaylist.getDuracion() < 
                     (programaSeleccionado.getDuracion() - 5)) {
-                JOptionPane.showMessageDialog(this, "No sufieciente canciones...", "ERROR", JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(this, "No hay suficientes canciones...", "ERROR", JOptionPane.ERROR_MESSAGE);
                 return;
             } 
         }
@@ -2500,6 +2500,11 @@ public class MenuPrincipal extends javax.swing.JFrame {
         MusicPlayer player = new MusicPlayer();
         String cancionEscogida =(String) this.musicPlayerReproducirCombo.getSelectedItem();
         CancionArchivo cancionSelected = this.emisora.obtenerCancionArchivo(cancionEscogida);
+        
+        if (cancionSelected == null) {
+            JOptionPane.showMessageDialog(this, "Esa cancion no es de archivo", "ERROR", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
         
         player.playMusic(cancionSelected.getPath());
         
