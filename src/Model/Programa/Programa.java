@@ -161,8 +161,6 @@ public class Programa {
         }
         emailBody += "</ul>";
         
-        System.out.println(emailBody);
-        
         // Enviar correo
         Correo correoPlayList = new Correo("Playlist para programa " + this.nombre, emailBody);
         correoPlayList.enviarCorreo(this.locutor.getCorreo());
