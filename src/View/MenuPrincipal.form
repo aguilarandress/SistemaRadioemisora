@@ -348,7 +348,7 @@
                                               </Group>
                                           </Group>
                                       </Group>
-                                      <EmptySpace min="0" pref="85" max="32767" attributes="0"/>
+                                      <EmptySpace min="0" pref="91" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
@@ -603,10 +603,10 @@
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jScrollPane3" pref="617" max="32767" attributes="0"/>
+                          <Component id="jScrollPane3" pref="621" max="32767" attributes="0"/>
                           <Group type="102" attributes="0">
                               <Component id="listaPlaylistsLabel" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="0" pref="518" max="32767" attributes="0"/>
+                              <EmptySpace min="0" pref="523" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
@@ -814,7 +814,7 @@
                                       <EmptySpace max="32767" attributes="0"/>
                                   </Group>
                                   <Group type="102" attributes="0">
-                                      <Component id="jScrollPane5" pref="552" max="32767" attributes="0"/>
+                                      <Component id="jScrollPane5" pref="568" max="32767" attributes="0"/>
                                       <EmptySpace min="-2" pref="59" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
@@ -1007,33 +1007,36 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
-                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="jSeparator3" alignment="1" max="32767" attributes="0"/>
-                                  <Component id="nuevoProgramaLabel" min="-2" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                                  <Group type="102" alignment="1" attributes="0">
+                                      <Component id="programaNombreLabel" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
+                                      <Component id="programaNombreInput" min="-2" pref="270" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Component id="programaHorarioLabel" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="32767" attributes="0"/>
+                                      <Component id="programaHorarioInput" min="-2" pref="270" max="-2" attributes="0"/>
+                                  </Group>
                                   <Group type="102" alignment="1" attributes="0">
                                       <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="programaNombreLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="programaHorarioLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="programasDuracionLabel" min="-2" max="-2" attributes="0"/>
                                           <Component id="jLabel1" alignment="0" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <EmptySpace max="32767" attributes="0"/>
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                                              <Component id="programaHorarioInput" alignment="0" pref="270" max="32767" attributes="0"/>
-                                              <Component id="programasGeneroInput" max="32767" attributes="0"/>
-                                          </Group>
-                                          <Component id="programaNombreInput" min="-2" pref="270" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                          <Component id="programasGeneroInput" alignment="1" max="32767" attributes="0"/>
+                                          <Component id="programaDuracionInput" alignment="1" pref="270" max="32767" attributes="0"/>
                                       </Group>
                                   </Group>
-                                  <Group type="102" alignment="1" attributes="0">
-                                      <Component id="actualizarProgramaLabel" min="-2" pref="342" max="-2" attributes="0"/>
-                                      <EmptySpace max="32767" attributes="0"/>
-                                      <Component id="jSeparator10" pref="1" max="32767" attributes="0"/>
-                                  </Group>
-                                  <Group type="102" attributes="0">
-                                      <Component id="programasDuracionLabel" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace max="32767" attributes="0"/>
-                                      <Component id="programaDuracionInput" min="-2" pref="270" max="-2" attributes="0"/>
+                                  <Group type="103" alignment="1" groupAlignment="0" max="-2" attributes="0">
+                                      <Component id="jSeparator3" alignment="1" max="32767" attributes="0"/>
+                                      <Component id="nuevoProgramaLabel" min="-2" max="-2" attributes="0"/>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <Component id="actualizarProgramaLabel" min="-2" pref="342" max="-2" attributes="0"/>
+                                          <EmptySpace pref="7" max="32767" attributes="0"/>
+                                          <Component id="jSeparator10" pref="1" max="32767" attributes="0"/>
+                                      </Group>
                                   </Group>
                                   <Component id="botonCrearNuevoPrograma" alignment="0" max="32767" attributes="0"/>
                               </Group>
@@ -1045,34 +1048,41 @@
                                   </Group>
                                   <Group type="102" attributes="0">
                                       <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="jScrollPane2" pref="589" max="32767" attributes="0"/>
+                                      <Component id="jScrollPane2" pref="586" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
                           </Group>
-                          <Group type="102" alignment="0" attributes="0">
+                          <Group type="102" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                                      <Component id="jSeparator4" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="botonAsignarLocutor" alignment="0" pref="326" max="32767" attributes="0"/>
-                                      <Component id="programasLocutoresCombo" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="programasListaCombo" max="32767" attributes="0"/>
+                                  <Component id="jSeparator11" min="-2" pref="335" max="-2" attributes="0"/>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Component id="actualizarProgramasComboBox" min="-2" pref="327" max="-2" attributes="0"/>
+                                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                                      <Component id="verInformacionProgramaBtn" min="-2" pref="479" max="-2" attributes="0"/>
                                   </Group>
-                                  <Component id="programaAsignarLocutorLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="actualizarProgramasComboBox" min="-2" pref="327" max="-2" attributes="0"/>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="programasListaCombo" min="-2" pref="326" max="-2" attributes="0"/>
+                                          <Component id="jLabel2" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace min="-2" pref="49" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="programasLocutoresCombo" min="-2" pref="326" max="-2" attributes="0"/>
+                                          <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                  </Group>
+                                  <Component id="botonAsignarLocutor" alignment="0" min="-2" pref="326" max="-2" attributes="0"/>
+                                  <Component id="jSeparator4" alignment="0" min="-2" pref="521" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                                  <Component id="programasPlaylistsCombo" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="programaAsignarPlaylistLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jSeparator6" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="programasListaCombo2" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="botonAsignarPlaylist" pref="479" max="32767" attributes="0"/>
-                                  <Component id="verInformacionProgramaBtn" alignment="0" max="32767" attributes="0"/>
-                              </Group>
+                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                           </Group>
-                          <Component id="jSeparator11" min="-2" pref="335" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="158" max="-2" attributes="0"/>
+                      <Component id="programaAsignarLocutorLabel" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -1088,28 +1098,29 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" attributes="0">
                               <Component id="jSeparator3" min="-2" pref="10" max="-2" attributes="0"/>
-                              <EmptySpace max="32767" attributes="0"/>
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="programaNombreInput" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="programaNombreLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                              </Group>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="programaHorarioInput" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="programaHorarioLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="1" attributes="0">
+                                  <Component id="programaNombreInput" min="-2" max="-2" attributes="0"/>
+                                  <Component id="programaNombreLabel" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="1" attributes="0">
+                                  <Component id="programaHorarioInput" min="-2" max="-2" attributes="0"/>
+                                  <Component id="programaHorarioLabel" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="programasDuracionLabel" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="programaDuracionInput" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="programasGeneroInput" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="1" attributes="0">
+                                  <Component id="programasGeneroInput" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
                               <Component id="botonCrearNuevoPrograma" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="0" pref="68" max="32767" attributes="0"/>
                           </Group>
                           <Component id="jScrollPane2" max="32767" attributes="0"/>
                       </Group>
@@ -1125,34 +1136,23 @@
                           <Component id="actualizarProgramasComboBox" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="verInformacionProgramaBtn" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="programaAsignarPlaylistLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="programaAsignarLocutorLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
                       <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" attributes="0">
-                              <Component id="jSeparator4" min="-2" pref="10" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="programasListaCombo" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="programasListaCombo2" alignment="3" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="programasPlaylistsCombo" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="programasLocutoresCombo" alignment="3" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="botonAsignarLocutor" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="botonAsignarPlaylist" alignment="3" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                          </Group>
-                          <Component id="jSeparator6" min="-2" pref="10" max="-2" attributes="0"/>
+                      <Component id="programaAsignarLocutorLabel" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="jSeparator4" min="-2" pref="10" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabel6" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="programasListaCombo" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="programasLocutoresCombo" alignment="3" min="-2" pref="22" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
+                      <Component id="botonAsignarLocutor" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -1186,6 +1186,9 @@
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="programaNombreInput">
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="programaNombreInputActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JTextField" name="programaHorarioInput">
               <Events>
@@ -1276,38 +1279,6 @@
                 </Component>
               </SubComponents>
             </Container>
-            <Component class="javax.swing.JLabel" name="programaAsignarPlaylistLabel">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Asignar Playlist a Programa:"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JSeparator" name="jSeparator6">
-            </Component>
-            <Component class="javax.swing.JComboBox" name="programasListaCombo2">
-              <Properties>
-                <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                  <StringArray count="0"/>
-                </Property>
-              </Properties>
-              <AuxValues>
-                <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
-              </AuxValues>
-            </Component>
-            <Component class="javax.swing.JComboBox" name="programasPlaylistsCombo">
-              <Properties>
-                <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                  <StringArray count="0"/>
-                </Property>
-              </Properties>
-              <AuxValues>
-                <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
-              </AuxValues>
-            </Component>
-            <Component class="javax.swing.JButton" name="botonAsignarPlaylist">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Asignar Playlist"/>
-              </Properties>
-            </Component>
             <Component class="javax.swing.JLabel" name="actualizarProgramaLabel">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Actualizar programa"/>
@@ -1331,6 +1302,16 @@
               </Events>
             </Component>
             <Component class="javax.swing.JSeparator" name="jSeparator11">
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel2">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Programas:"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel6">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Locutores:"/>
+              </Properties>
             </Component>
           </SubComponents>
         </Container>
@@ -1643,7 +1624,7 @@
                                       <Component id="cargarCancionesDiscoLabel" alignment="0" min="-2" pref="208" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
-                              <EmptySpace pref="150" max="32767" attributes="0"/>
+                              <EmptySpace pref="157" max="32767" attributes="0"/>
                               <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                   <Component id="seleccionarDiscoLabel" min="-2" max="-2" attributes="0"/>
                                   <Component id="jScrollPane6" max="32767" attributes="0"/>
@@ -1900,7 +1881,7 @@
                           <Group type="102" attributes="0">
                               <Component id="cancionPorCantanteInput" min="-2" pref="301" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="botonConsultarCancionesCantante" pref="200" max="32767" attributes="0"/>
+                              <Component id="botonConsultarCancionesCantante" pref="202" max="32767" attributes="0"/>
                           </Group>
                           <Component id="jSeparator18" max="32767" attributes="0"/>
                           <Group type="102" attributes="0">
@@ -2039,7 +2020,7 @@
                           <Component id="locutoresDeEmisoraLabel" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Component id="jSeparator19" alignment="0" max="32767" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="158" max="32767" attributes="0"/>
+                      <EmptySpace pref="162" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
                           <Component id="programasDeEmisoraLabel" min="-2" max="-2" attributes="0"/>
                           <Component id="jSeparator20" max="32767" attributes="0"/>
