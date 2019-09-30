@@ -2230,14 +2230,22 @@ public class MenuPrincipal extends javax.swing.JFrame {
     private void botonAgregarPlaylistActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonAgregarPlaylistActionPerformed
 
         String nombre = this.playlistNombreInput.getText().trim();
-        Programa programaSeleccionado = this.emisora.obtenerProgramaPorNombre((String) this.playlistProgramaComboBox.getSelectedItem());
-
+        
         // Validaciones
         if (this.emisora.getProgramas().isEmpty()) {
             JOptionPane.showMessageDialog(this, "No hay programas registrados...", "ERROR", JOptionPane.ERROR_MESSAGE);
             return;
         }
-
+        
+        if (nombre.isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Por favor ingrese el nombre de la Playlist...", "ERROR", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        
+        Programa programaSeleccionado = this.emisora.obtenerProgramaPorNombre((String) this.playlistProgramaComboBox.getSelectedItem());
+        
+        System.out.println(programaSeleccionado.getNombre());
+        
         ArrayList<Programa> programas = this.emisora.getProgramas();
 
         for (Programa programaActual : programas) {
@@ -2277,7 +2285,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
         }
 
         // Agrega canciones al azar a la playlist
-        while (nuevaPlaylist.getDuracion() < programaSeleccionado.getDuracion() - 5) {
+        while (nuevaPlaylist.getDuracion() <= programaSeleccionado.getDuracion() - 5) {
             Random rand = new Random();
             Cancion cancionActual = allCanciones.get(rand.nextInt(allCanciones.size()));
 
@@ -2285,11 +2293,19 @@ public class MenuPrincipal extends javax.swing.JFrame {
             allCanciones.remove(cancionActual);
 
             nuevaPlaylist.setDuracion(nuevaPlaylist.getDuracion() + cancionActual.getDuracion());
+            
+            if (allCanciones.isEmpty() && nuevaPlaylist.getDuracion() > programaSeleccionado.getDuracion()) {
+                break;
+            } else if (allCanciones.isEmpty() && nuevaPlaylist.getDuracion() < 
+                    (programaSeleccionado.getDuracion() - 5)) {
+                JOptionPane.showMessageDialog(this, "No sufieciente canciones...", "ERROR", JOptionPane.ERROR_MESSAGE);
+                return;
+            } 
         }
 
         // Agrega la playlist al programa
         programaSeleccionado.setPlaylist(nuevaPlaylist);
-
+        
         // Muesta la playlist en el GUI
         this.playlistListModel.addElement("Nombre: " + nuevaPlaylist.getNombre()
                 + " | Genero: " + nuevaPlaylist.getGenero()
@@ -2312,7 +2328,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
         this.cancionesEnPlaylistListModel.removeAllElements();
 
         PlayList programaSeleccionado = this.emisora.obtenerPlaylist((String) playlistsCombo.getSelectedItem());
-
+        
         for (Cancion cancionActual : programaSeleccionado.getCanciones()) {
             this.cancionesEnPlaylistListModel.addElement("Nombre: " + cancionActual.getNombre()
                     + " | Cantante: " + cancionActual.getCantante()
