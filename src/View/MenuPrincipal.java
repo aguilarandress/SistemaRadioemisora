@@ -2310,7 +2310,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
             return;
         }
         
-        player.playMusic(cancionSelected.getPath());
+        this.emisora.reproducirCancion(player, cancionSelected);
         
     }//GEN-LAST:event_botonReproducirActionPerformed
     

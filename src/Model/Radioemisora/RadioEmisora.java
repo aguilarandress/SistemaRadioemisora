@@ -6,6 +6,8 @@ import Model.Programa.Programa;
 import Model.Disco.Disco;
 import Model.Playlist.PlayList;
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
+import musicPlayer.MusicPlayer;
 
 /**
  * Clase responsable de crear radioemisoras
@@ -317,5 +319,15 @@ public class RadioEmisora {
             }
         }
         return null;
+    }
+    
+    /**
+     * Reproduce la cancion seleccionada
+     * @param pPlayer
+     * @param pCancionSelected 
+     */
+    public void reproducirCancion(MusicPlayer pPlayer,CancionArchivo pCancionSelected) {
+        
+        pPlayer.playMusic(pCancionSelected.getPath());
     }
 }
