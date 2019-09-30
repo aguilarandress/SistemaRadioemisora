@@ -52,7 +52,7 @@ public class Programa {
      * @param pPlaylist Nueva PlayList del programa
      */
     public void setPlaylist(PlayList pPlaylist) {
-        this.playlist = playlist;
+        this.playlist = pPlaylist;
     }
     
     /**

@@ -253,6 +253,7 @@ public class RadioEmisora {
     public PlayList obtenerPlaylist(String pNombre) {
         
         for (Programa programaActual : this.programas) {
+            
             if (programaActual.getPlaylist().getNombre().equals(pNombre)) {
                 return programaActual.getPlaylist();
             }
