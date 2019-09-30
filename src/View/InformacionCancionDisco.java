@@ -90,11 +90,6 @@ public class InformacionCancionDisco extends javax.swing.JFrame {
         cantanteInput.setText(this.cancion.getCantante());
 
         generoInput.setText(this.cancion.getGenero());
-        generoInput.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                generoInputActionPerformed(evt);
-            }
-        });
 
         duracionInput.setText(Integer.toString(this.cancion.getDuracion()));
         duracionInput.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -196,10 +191,6 @@ public class InformacionCancionDisco extends javax.swing.JFrame {
         JOptionPane.showMessageDialog(main, "Cancion actualizada con exito", "EXITO", JOptionPane.INFORMATION_MESSAGE);
         this.dispose();
     }//GEN-LAST:event_botonActualizarActionPerformed
-
-    private void generoInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_generoInputActionPerformed
-        // TODO add your handlinnombreLabelhere:
-    }//GEN-LAST:event_generoInputActionPerformed
   
     /**
      * Unicamente permite digitar numeros en el input de  duracion

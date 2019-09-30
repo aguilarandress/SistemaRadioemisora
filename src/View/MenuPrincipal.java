@@ -341,24 +341,6 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
         nuevaDireccionFisicaLabel.setText("Nueva Dirección Física:");
 
-        nombreEmisoraInput.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                nombreEmisoraInputActionPerformed(evt);
-            }
-        });
-
-        urlEmisoraInput.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                urlEmisoraInputActionPerformed(evt);
-            }
-        });
-
-        direccionFisicaInput.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                direccionFisicaInputActionPerformed(evt);
-            }
-        });
-
         btnActualizarEmisora.setText("Actualizar Información");
         btnActualizarEmisora.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -387,7 +369,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
                             .addComponent(urlEmisoraShow)
                             .addComponent(frecuenciaEmisoraShow)
                             .addComponent(nombreEmisoraShow))
-                        .addGap(0, 752, Short.MAX_VALUE))
+                        .addGap(0, 772, Short.MAX_VALUE))
                     .addGroup(radioEmisoraTabLayout.createSequentialGroup()
                         .addGroup(radioEmisoraTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(nuevaDireccionFisicaLabel)
@@ -466,24 +448,6 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
         fechaLocutorLabel.setText("Fecha de nacimiento:");
 
-        locutorNombreInput.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                locutorNombreInputActionPerformed(evt);
-            }
-        });
-
-        locutorCorreoInput.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                locutorCorreoInputActionPerformed(evt);
-            }
-        });
-
-        locutorTelefonoInput.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                locutorTelefonoInputActionPerformed(evt);
-            }
-        });
-
         botonAgregarLocutor.setText("Agregar Nuevo Locutor");
         botonAgregarLocutor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -494,18 +458,8 @@ public class MenuPrincipal extends javax.swing.JFrame {
         actualizarLocutorLabel.setText("Actualizar Locutor:");
 
         locutoresActualizarCombo.setModel(this.locutoresComboBoxModel);
-        locutoresActualizarCombo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                locutoresActualizarComboActionPerformed(evt);
-            }
-        });
 
         botonVerInfoLocutor.setText("Ver Información");
-        botonVerInfoLocutor.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                botonVerInfoLocutorMouseClicked(evt);
-            }
-        });
         botonVerInfoLocutor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botonVerInfoLocutorActionPerformed(evt);
@@ -555,7 +509,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
                                             .addComponent(locutorDireccionInput, javax.swing.GroupLayout.PREFERRED_SIZE, 296, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addComponent(locutorSexoInput, javax.swing.GroupLayout.PREFERRED_SIZE, 296, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addComponent(locutorFechaInput, javax.swing.GroupLayout.PREFERRED_SIZE, 296, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                                .addGap(0, 112, Short.MAX_VALUE)))
+                                .addGap(0, 132, Short.MAX_VALUE)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 362, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(21, 21, 21))
@@ -632,23 +586,6 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
         jLabel1.setText("Genero:");
 
-        programaNombreInput.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                programaNombreInputActionPerformed(evt);
-            }
-        });
-
-        programaHorarioInput.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                programaHorarioInputActionPerformed(evt);
-            }
-        });
-
-        programaDuracionInput.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                programaDuracionInputActionPerformed(evt);
-            }
-        });
         programaDuracionInput.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 programaDuracionInputKeyTyped(evt);
@@ -662,19 +599,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
             }
         });
 
-        programasListaCombo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                programasListaComboActionPerformed(evt);
-            }
-        });
-
         programaAsignarLocutorLabel.setText("Asignar Locutor a Programa:");
-
-        programasLocutoresCombo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                programasLocutoresComboActionPerformed(evt);
-            }
-        });
 
         botonAsignarLocutor.setText("Asignar Locutor");
         botonAsignarLocutor.addActionListener(new java.awt.event.ActionListener() {
@@ -743,7 +668,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
                                     .addGroup(programasTabLayout.createSequentialGroup()
                                         .addComponent(programaAsignarLocutorLabel)
                                         .addGap(0, 0, Short.MAX_VALUE))
-                                    .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 596, Short.MAX_VALUE)))))
+                                    .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 616, Short.MAX_VALUE)))))
                     .addGroup(programasTabLayout.createSequentialGroup()
                         .addComponent(jSeparator11, javax.swing.GroupLayout.PREFERRED_SIZE, 335, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
@@ -836,12 +761,6 @@ public class MenuPrincipal extends javax.swing.JFrame {
         cancionArchivoAlbumLabel.setText("Album");
 
         cancionArchivoNombreLabel.setText("Nombre");
-
-        cancionArchivoNombreInput.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cancionArchivoNombreInputActionPerformed(evt);
-            }
-        });
 
         cancionArchivoCantanteLabel.setText("Cantante");
 
@@ -995,11 +914,6 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
         anioDiscoLabel.setText("Año: ");
 
-        anioDiscoTextField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                anioDiscoTextFieldActionPerformed(evt);
-            }
-        });
         anioDiscoTextField.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 anioDiscoTextFieldKeyTyped(evt);
@@ -1011,12 +925,6 @@ public class MenuPrincipal extends javax.swing.JFrame {
         imagenDiscoLabel.setText("Imagen: ");
 
         jScrollPane5.setViewportView(discosListaBox);
-
-        listaDiscoComboBox.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                listaDiscoComboBoxActionPerformed(evt);
-            }
-        });
 
         botonCrearDisco.setText("Crear disco");
         botonCrearDisco.addActionListener(new java.awt.event.ActionListener() {
@@ -1076,7 +984,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
                                 .addComponent(listaDiscosLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                             .addGroup(discosTabLayout.createSequentialGroup()
-                                .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 568, Short.MAX_VALUE)
+                                .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 588, Short.MAX_VALUE)
                                 .addGap(59, 59, 59))))))
         );
         discosTabLayout.setVerticalGroup(
@@ -1134,17 +1042,6 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
         cantanteCancionLabel.setText("Cantante: ");
 
-        nombreCancionInput.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                nombreCancionInputActionPerformed(evt);
-            }
-        });
-
-        duracionCancionInput.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                duracionCancionInputActionPerformed(evt);
-            }
-        });
         duracionCancionInput.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 duracionCancionInputKeyTyped(evt);
@@ -1223,7 +1120,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
                                     .addComponent(botonAgregarCancion, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                 .addComponent(agregarCancionLabel)
                                 .addComponent(cargarCancionesDiscoLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 169, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 189, Short.MAX_VALUE)
                         .addGroup(cancionesDiscoTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(seleccionarDiscoLabel)
                             .addComponent(jScrollPane6)
@@ -1295,12 +1192,6 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
         playlistNombre.setText("Nombre:");
 
-        playlistNombreInput.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                playlistNombreInputActionPerformed(evt);
-            }
-        });
-
         botonAgregarPlaylist.setText("Agregar Playlist");
         botonAgregarPlaylist.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1353,10 +1244,10 @@ public class MenuPrincipal extends javax.swing.JFrame {
                             .addComponent(playlistProgramaComboBox, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addGap(18, 18, 18)
                 .addGroup(playlistsTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 625, Short.MAX_VALUE)
+                    .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 645, Short.MAX_VALUE)
                     .addGroup(playlistsTabLayout.createSequentialGroup()
                         .addComponent(listaPlaylistsLabel)
-                        .addGap(0, 540, Short.MAX_VALUE)))
+                        .addGap(0, 560, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         playlistsTabLayout.setVerticalGroup(
@@ -1398,12 +1289,6 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
         cancionesPorCantanteLabel.setText("Consultar Canciones por Cantante:");
 
-        cancionPorGeneroInput.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cancionPorGeneroInputActionPerformed(evt);
-            }
-        });
-
         cancionPorGeneroList.setModel(this.cancionesPorGenero);
         jScrollPane7.setViewportView(cancionPorGeneroList);
 
@@ -1444,7 +1329,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
                     .addGroup(consultasTabLayout.createSequentialGroup()
                         .addComponent(cancionPorCantanteInput, javax.swing.GroupLayout.PREFERRED_SIZE, 301, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(botonConsultarCancionesCantante, javax.swing.GroupLayout.DEFAULT_SIZE, 208, Short.MAX_VALUE))
+                        .addComponent(botonConsultarCancionesCantante, javax.swing.GroupLayout.DEFAULT_SIZE, 228, Short.MAX_VALUE))
                     .addComponent(jSeparator18)
                     .addGroup(consultasTabLayout.createSequentialGroup()
                         .addComponent(cancionesPorCantanteLabel)
@@ -1498,7 +1383,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
                     .addComponent(jScrollPane9, javax.swing.GroupLayout.DEFAULT_SIZE, 365, Short.MAX_VALUE)
                     .addComponent(locutoresDeEmisoraLabel)
                     .addComponent(jSeparator19))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 166, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 186, Short.MAX_VALUE)
                 .addGroup(listadosTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(programasDeEmisoraLabel)
                     .addComponent(jSeparator20)
@@ -1545,11 +1430,6 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
         musicPlayerReproducirCombo.setModel(this.musicPlayerCancionesBox
         );
-        musicPlayerReproducirCombo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                musicPlayerReproducirComboActionPerformed(evt);
-            }
-        });
 
         botonReproducir.setText("Reproducir");
         botonReproducir.addActionListener(new java.awt.event.ActionListener() {
@@ -1578,7 +1458,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
                     .addComponent(jSeparator23)
                     .addComponent(musicPlayerReproducirCombo, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(botonReproducir, javax.swing.GroupLayout.DEFAULT_SIZE, 344, Short.MAX_VALUE))
-                .addContainerGap(247, Short.MAX_VALUE))
+                .addContainerGap(267, Short.MAX_VALUE))
         );
         musicPlayerTabLayout.setVerticalGroup(
             musicPlayerTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1614,10 +1494,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(windowTabs)
-                .addContainerGap())
+            .addComponent(windowTabs)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1637,18 +1514,6 @@ public class MenuPrincipal extends javax.swing.JFrame {
             this.windowTabs.setEnabledAt(i, activar);
         }
     }
-
-    private void nombreEmisoraInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nombreEmisoraInputActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_nombreEmisoraInputActionPerformed
-
-    private void urlEmisoraInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_urlEmisoraInputActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_urlEmisoraInputActionPerformed
-
-    private void direccionFisicaInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_direccionFisicaInputActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_direccionFisicaInputActionPerformed
    
     /**
      * Evento para actualizar la informacion de la radio emisora Las ventanillas
@@ -1689,18 +1554,6 @@ public class MenuPrincipal extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "Emisora actualizada...", "Exito", JOptionPane.INFORMATION_MESSAGE);
         }
     }//GEN-LAST:event_btnActualizarEmisoraActionPerformed
-
-    private void locutorNombreInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_locutorNombreInputActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_locutorNombreInputActionPerformed
-
-    private void locutorCorreoInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_locutorCorreoInputActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_locutorCorreoInputActionPerformed
-
-    private void locutorTelefonoInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_locutorTelefonoInputActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_locutorTelefonoInputActionPerformed
 
     /**
      * Realiza la accion para agregar los datos de un locutor nuevo
@@ -1769,16 +1622,6 @@ public class MenuPrincipal extends javax.swing.JFrame {
         JOptionPane.showMessageDialog(this, "Locutor agregado...", "Exito", JOptionPane.INFORMATION_MESSAGE);
     }//GEN-LAST:event_botonAgregarLocutorActionPerformed
 
-    private void locutoresActualizarComboActionPerformed(java.awt.event.ActionEvent evt) {
-    }
-
-    private void programaHorarioInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_programaHorarioInputActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_programaHorarioInputActionPerformed
-
-    private void programaDuracionInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_programaDuracionInputActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_programaDuracionInputActionPerformed
 
     /**
      * Crea un programa y lo muestra en pantalla
@@ -1834,10 +1677,6 @@ public class MenuPrincipal extends javax.swing.JFrame {
         JOptionPane.showMessageDialog(this, "Programa creado...", "Exito", JOptionPane.INFORMATION_MESSAGE);
     }//GEN-LAST:event_botonCrearNuevoProgramaActionPerformed
 
-    private void programasListaComboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_programasListaComboActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_programasListaComboActionPerformed
-
     /**
      * Asiga un locutor seleccionado al programa
      *
@@ -1881,14 +1720,6 @@ public class MenuPrincipal extends javax.swing.JFrame {
                 + " |Locutor: " + locutorSeleccionado.getNombre());
         JOptionPane.showMessageDialog(this, "Se ha asignado el locutor al programa.", "Exito", JOptionPane.INFORMATION_MESSAGE);
     }//GEN-LAST:event_botonAsignarLocutorActionPerformed
-
-    private void programasLocutoresComboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_programasLocutoresComboActionPerformed
-
-    }//GEN-LAST:event_programasLocutoresComboActionPerformed
-
-    private void playlistNombreInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_playlistNombreInputActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_playlistNombreInputActionPerformed
     /**
      * Despliega la información del locutor seleccionado para actualizarla
      *
@@ -1915,10 +1746,6 @@ public class MenuPrincipal extends javax.swing.JFrame {
         ventanaInformacion.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         ventanaInformacion.setVisible(true);
     }//GEN-LAST:event_botonVerInfoLocutorActionPerformed
-
-    private void botonVerInfoLocutorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonVerInfoLocutorMouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_botonVerInfoLocutorMouseClicked
         /**
          * Permite unicamente digitar numeros en el input de la duración del programa.
          * @param evt Evento realizado a la hora de digitar 
@@ -1970,10 +1797,6 @@ public class MenuPrincipal extends javax.swing.JFrame {
         this.imagenDiscoTextField.setText("");
         JOptionPane.showMessageDialog(this, "Se ha creado el disco.", "Exito", JOptionPane.INFORMATION_MESSAGE);
     }//GEN-LAST:event_botonCrearDiscoActionPerformed
-
-    private void anioDiscoTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_anioDiscoTextFieldActionPerformed
-
-    }//GEN-LAST:event_anioDiscoTextFieldActionPerformed
     /**
      * Unicamente se permite digitar numeros en el textField de año;
      *
@@ -2028,10 +1851,6 @@ public class MenuPrincipal extends javax.swing.JFrame {
         ventanaInformacion.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         ventanaInformacion.setVisible(true);
     }//GEN-LAST:event_verInformacionProgramaBtnActionPerformed
-
-    private void cancionArchivoNombreInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancionArchivoNombreInputActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_cancionArchivoNombreInputActionPerformed
 
     /**
      * Permite ver la información de la canción
@@ -2108,21 +1927,9 @@ public class MenuPrincipal extends javax.swing.JFrame {
         this.digitarNumeros(evt);
     }//GEN-LAST:event_cancionArchivoDuracionInputKeyTyped
 
-    private void nombreCancionInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nombreCancionInputActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_nombreCancionInputActionPerformed
-
-    private void duracionCancionInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_duracionCancionInputActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_duracionCancionInputActionPerformed
-
     private void duracionCancionInputKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_duracionCancionInputKeyTyped
         this.digitarNumeros(evt);
     }//GEN-LAST:event_duracionCancionInputKeyTyped
-
-    private void listaDiscoComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_listaDiscoComboBoxActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_listaDiscoComboBoxActionPerformed
         /**
          * Añade una cancion a un disco seleccionado si es que existe alguno, de lo contrario emite un 
          * mensaje de error
@@ -2160,6 +1967,11 @@ public class MenuPrincipal extends javax.swing.JFrame {
         disco.agregarCancion(cancionNueva);
         seleccionarDiscoComboBoxActionPerformed(evt);
         JOptionPane.showMessageDialog(this, "Cancion Agregada...", "Exito", JOptionPane.INFORMATION_MESSAGE);
+        
+        this.nombreCancionInput.setText("");
+        this.generoCancionInput.setText("");
+        this.duracionCancionInput.setText("");
+        this.cantanteCancionInput.setText("");
     }//GEN-LAST:event_botonAgregarCancionActionPerformed
 
     /**
@@ -2250,10 +2062,6 @@ public class MenuPrincipal extends javax.swing.JFrame {
         }
 
     }//GEN-LAST:event_editarCancionBtnActionPerformed
-
-    private void cancionPorGeneroInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancionPorGeneroInputActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_cancionPorGeneroInputActionPerformed
 
     /**
      * Muesta las canciones consultadas por genero
@@ -2487,10 +2295,6 @@ public class MenuPrincipal extends javax.swing.JFrame {
         this.cargarCancionesDiscoInput.setText("");
         JOptionPane.showMessageDialog(this, "Canciones Cargadas...", "Exito", JOptionPane.INFORMATION_MESSAGE);
     }//GEN-LAST:event_cargarCancionesDiscoBtnActionPerformed
-
-    private void programaNombreInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_programaNombreInputActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_programaNombreInputActionPerformed
     
     /**
      * Reproduce la musica al presionar el boton    
@@ -2534,10 +2338,6 @@ public class MenuPrincipal extends javax.swing.JFrame {
         
         
     }//GEN-LAST:event_botonMusicPlayerConfirmarProgramaActionPerformed
-
-    private void musicPlayerReproducirComboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_musicPlayerReproducirComboActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_musicPlayerReproducirComboActionPerformed
 
     /**
      * Solo permite le permite al usuario digitar numeros   
