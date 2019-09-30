@@ -1578,11 +1578,11 @@ public class MenuPrincipal extends javax.swing.JFrame {
         }
 
         Locutor locutorNuevo = new Locutor(id, nombre, correo, telefono, direccion, sexo, fecha);
-        if (!locutorNuevo.telefonoValido()) {
+        if (!locutorNuevo.validarTelefono()) {
             JOptionPane.showMessageDialog(this, "Telefono invalido...", "ERROR", JOptionPane.ERROR_MESSAGE);
             return;
         }
-        if (!locutorNuevo.correoValido()) {
+        if (!locutorNuevo.validarCorreo()) {
             JOptionPane.showMessageDialog(this, "Correo invalido...", "ERROR", JOptionPane.ERROR_MESSAGE);
             return;
         }

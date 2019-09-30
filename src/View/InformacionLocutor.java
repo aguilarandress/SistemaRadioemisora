@@ -274,12 +274,12 @@ public class InformacionLocutor extends javax.swing.JFrame {
                 " | Fecha de Nacimiento: " + locutor.getFecha());
         
         // Validaciones
-        if (!locutorPrueba.telefonoValido()) {
+        if (!locutorPrueba.validarTelefono()) {
             System.out.println("Telefono: " + this.locutor.getTelefono());
             JOptionPane.showMessageDialog(this, "Telefono invalido...", "ERROR", JOptionPane.ERROR_MESSAGE);
             return;
         }
-        if(!locutorPrueba.correoValido()) {
+        if(!locutorPrueba.validarCorreo()) {
             JOptionPane.showMessageDialog(this, "Correo invalido...", "ERROR", JOptionPane.ERROR_MESSAGE);
             return;
         }

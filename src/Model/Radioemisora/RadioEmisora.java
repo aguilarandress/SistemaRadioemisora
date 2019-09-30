@@ -323,8 +323,8 @@ public class RadioEmisora {
     
     /**
      * Reproduce la cancion seleccionada
-     * @param pPlayer
-     * @param pCancionSelected 
+     * @param pPlayer Player en el cual se va a reproducir la cancion
+     * @param pCancionSelected Cancion que se quiere reproducir
      */
     public void reproducirCancion(MusicPlayer pPlayer,CancionArchivo pCancionSelected) {
         

@@ -163,7 +163,7 @@ public class Locutor {
      * Verifica si el telefono tiene un formato valido
      * @return true si el telefono es valido, false si no lo es
      */
-    public boolean telefonoValido() {
+    public boolean validarTelefono() {
         if(this.telefono.length() != 8) {
             return false;
         }
@@ -180,7 +180,7 @@ public class Locutor {
      * tenga el formato adecuado
      * @return true si el correo es valido, false de lo contrario 
      */
-    public boolean correoValido() {
+    public boolean validarCorreo() {
        String emailRegex =  "^[a-zA-Z0-9_+&*-]+(?:\\."+ 
                             "[a-zA-Z0-9_+&*-]+)*@" + 
                             "(?:[a-zA-Z0-9-]+\\.)+[a-z" + 
