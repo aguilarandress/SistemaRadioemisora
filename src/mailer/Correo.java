@@ -55,6 +55,7 @@ public class Correo {
         // Obtener datos del correo cliente
         String fromUsername = this.username;
         String fromPassword = this.password;
+        
         // Crear sesion
         Session session = Session.getInstance(this.props, new javax.mail.Authenticator() {
             protected PasswordAuthentication getPasswordAuthentication() {

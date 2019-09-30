@@ -2244,8 +2244,6 @@ public class MenuPrincipal extends javax.swing.JFrame {
         
         Programa programaSeleccionado = this.emisora.obtenerProgramaPorNombre((String) this.playlistProgramaComboBox.getSelectedItem());
         
-        System.out.println(programaSeleccionado.getNombre());
-        
         ArrayList<Programa> programas = this.emisora.getProgramas();
 
         for (Programa programaActual : programas) {
@@ -2310,10 +2308,15 @@ public class MenuPrincipal extends javax.swing.JFrame {
         this.playlistListModel.addElement("Nombre: " + nuevaPlaylist.getNombre()
                 + " | Genero: " + nuevaPlaylist.getGenero()
                 + " | Duracion: " + nuevaPlaylist.getDuracion());
-
-        JOptionPane.showMessageDialog(this, "Playlist creada...", "Exito", JOptionPane.INFORMATION_MESSAGE);
-
+        
         this.playlistComboBoxModel.addElement(nuevaPlaylist.getNombre());
+        
+        JOptionPane.showMessageDialog(this, "Playlist creada...", "Exito", JOptionPane.INFORMATION_MESSAGE);
+        
+        if (programaSeleccionado.getLocutor() == null) {
+            JOptionPane.showMessageDialog(this, "No hay locutor asignado al programa...", "Advertencia", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
         
         // Enviar correo
         programaSeleccionado.enviarCorreoPlayList();
